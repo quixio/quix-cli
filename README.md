@@ -82,19 +82,6 @@ in order to get a list of available commands run:
 quix --help
 ```
 
-### Context
-
-The CLI will use the Serverless platform as the default context.
-For Dedicated or Byoc you can add your own context by running: 
-```bash 
-quix context add <contextName>
-```
- 
-Select it using the following command:
-```bash
-quix context use <contextName>
-```
-
 ### Login
 
 You have 2 ways of logging in:
@@ -114,16 +101,30 @@ quix login <patToken>
 
 After setting up your context and logging in you will be able to run the remaining commands, ex:
 
-#### List Repositories
+#### List Projects
 
 ```bash
-quix get repositories
+quix projects get
 ```
 
 #### List Environments
 
 ```bash
-quix get environments
+quix environments get
+```
+
+### Using dedicated Quix clusters
+
+The CLI will use the Serverless platform as the default context: `https://portal-api.platform.quix.io/`
+
+For Dedicated or BYOC Quix clusters you can add your own context by running: 
+```bash 
+quix context add <name> <portalEndpoint>
+```
+ 
+Select it using the following command:
+```bash
+quix context use <name>
 ```
 
 ## Need help?
