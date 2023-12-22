@@ -2,8 +2,6 @@
 
 Welcome to Quix CLI, your powerful command-line companion for seamlessly managing and interacting with the features of our Quix Cloud product. While Quix offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
 
-## Key Features:
-
 - **Effortless Control:** Execute commands effortlessly to manage various aspects of your Quix environment.
   
 - **Script Automation:** Integrate Quix operations into your scripts for automated workflows and enhanced productivity.
@@ -12,25 +10,35 @@ Welcome to Quix CLI, your powerful command-line companion for seamlessly managin
 
 - **Scalability:** Seamlessly scale your Quix operations, whether you are working on a single instance or orchestrating tasks across multiple environments.
 
-Below are the commands for installing the Quix CLI on Linux, macOS, and Windows. Each command is provided in its own code block for easy copy-pasting into a terminal or PowerShell. Alternatives for each operating system are provided, including commands with and without the version parameter.
+For more information and detailed documentation, visit [quix.io](https://www.quix.io/).
+
+## Installation of Quix CLI
+
+To install the Quix CLI, users have multiple methods depending on their operating system. Here's an expanded installation section including the main ways to install Quix CLI on Linux, macOS, and Windows.
+
+**Note:** Replace `{version}` with the actual version number you intend to install (e.g., `1.2.3`). Omitting the `{version}` parameter will automatically default to installing the latest available version of Quix CLI.
 
 ### For Linux and macOS:
 
-- **Using Curl without Version (installs latest):**
+Install the Quix CLI using the Curl commands in your terminal. Choose between installing the latest version or specifying a specific version. For installations that modify system-wide settings, elevated privileges may be required.
+
+- **Install Latest Version without Specifying Version:**
+
+  Quickly install the most recent release of Quix CLI:
 
   ```bash
-  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash
+    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash
   ```
   
-- **Using Curl with Version:**
+- **Install Specific Version:**
+
+  To install a particular version of Quix CLI, replace `{version}` with the desired version number:
 
   ```bash
-  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
+    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash -s -- -v={version}
   ```
-  
-  Replace `{version}` with the desired version number in the command that includes the version parameter. If no version is specified, the script typically installs the latest version.
 
-### For Windows:
+### For Windows (PowerShell):
 
 - **Using PowerShell without Version (installs latest):**
 
@@ -44,24 +52,23 @@ Below are the commands for installing the Quix CLI on Linux, macOS, and Windows.
   $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
   ```
 
-Replace `{version}` with the specific version you want to install in the command that includes the version parameter. If the version is omitted, it defaults to the latest available version.
-
 #### Notes:
 
 - **Permissions:** You may need to run these commands with elevated privileges. On Linux and macOS, use `sudo` if necessary. On Windows, run PowerShell as an Administrator.
 - **Version Specification:** The `{version}` parameter is optional. If you know the specific version of Quix CLI you need, replace `{version}` with that version number (e.g., `1.2.3`). If you omit it, the script typically installs the latest version.
 - **PATH Verification:** After installation, ensure that the directory where Quix CLI is installed is included in your system's PATH.
 
-### Installation via Dotet Global tools
-
-```bash
-dotnet tool install --global Quix.CLI --prerelease
-```
 ### Installation using release binaries
 
 1. Go to the [release page](https://github.com/quixio/quix-cli/releases) and dowload the executable matching your OS/architecture.
 2. Copy the executable to a location of your choice.
 3. Add the location to your system's PATH.
+4. 
+### Installation via Dotet Global tools
+
+```bash
+dotnet tool install --global Quix.CLI --prerelease
+```
 
 ## Usage
 
