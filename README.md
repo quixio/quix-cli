@@ -16,9 +16,7 @@ For more information and detailed documentation, visit [quix.io](https://www.qui
 
 To install the Quix CLI, users have multiple methods depending on their operating system. Here's an expanded installation section including the main ways to install Quix CLI on Linux, macOS, and Windows.
 
-
-
-### For Linux and macOS:
+### For macOS:
 
 - **Install Latest Version without Specifying Version:**
 
@@ -31,35 +29,30 @@ To install the Quix CLI, users have multiple methods depending on their operatin
   ```bash
   curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
   ```
-  
-<details>
-  <summary>
-    Elevated Privileges Instructions
-  </summary>
-  If your user account lacks the necessary permissions to install software globally, you might need to execute the commands with elevated privileges. Use `sudo` to grant these privileges as shown:
 
-  - **Install Latest Version with Elevated Privileges:**
+### For Linux:
+
+- **Install Latest Version without Specifying Version:**
 
     ```bash
     curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash
     ```
     
-  - **Install Specific Version with Elevated Privileges:**
+- **Install Specific Version:**
 
     ```bash
     curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash -s -- -v={version}
     ```
-</details>
 
 ### For Windows (PowerShell):
 
-- **Using PowerShell without Version (installs latest):**
+- **Install Latest Version without Specifying Version:**
 
   ```powershell
   iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb | iex
   ```
   
-- **Using PowerShell with Version:**
+- **Install Specific Version:**
 
   ```powershell
   $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
