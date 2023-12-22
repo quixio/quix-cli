@@ -24,19 +24,34 @@ Install the Quix CLI using the Curl commands in your terminal. Choose between in
 
 - **Install Latest Version without Specifying Version:**
 
-  Quickly install the most recent release of Quix CLI:
-
   ```bash
-    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash
+    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash
   ```
   
 - **Install Specific Version:**
 
-  To install a particular version of Quix CLI, replace `{version}` with the desired version number:
-
   ```bash
-    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash -s -- -v={version}
+    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
   ```
+  
+<details>
+  <summary>
+    Elevated Privileges Instructions
+  </summary>
+  If your user account lacks the necessary permissions to install software globally, you might need to execute the commands with elevated privileges. Use `sudo` to grant these privileges as shown:
+
+  - **Install Latest Version with Elevated Privileges:**
+
+    ```bash
+    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash
+    ```
+    
+  - **Install Specific Version with Elevated Privileges:**
+
+    ```bash
+    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash -s -- -v={version}
+    ```
+</details>
 
 ### For Windows (PowerShell):
 
@@ -63,7 +78,7 @@ Install the Quix CLI using the Curl commands in your terminal. Choose between in
 1. Go to the [release page](https://github.com/quixio/quix-cli/releases) and dowload the executable matching your OS/architecture.
 2. Copy the executable to a location of your choice.
 3. Add the location to your system's PATH.
-4. 
+
 ### Installation via Dotet Global tools
 
 ```bash
