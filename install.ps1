@@ -27,10 +27,12 @@ $downloadedZip = "$BinDir\${Target}.zip"
 # GitHub requires TLS 1.2
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
+$version = $args[0]
+
 $ResourceUri = if (!$version) {
-    $ResourceUri = "${githubUrl}/${owner}/${repoName}/releases/latest/download/${Target}.zip"
+    "${githubUrl}/${owner}/${repoName}/releases/latest/download/${Target}.zip"
 } else {
-    $ResourceUri = "${githubUrl}/${owner}/${repoName}/releases/download/${version}/${Target}.zip"
+    "${githubUrl}/${owner}/${repoName}/releases/download/${version}/${Target}.zip"
 }
 
 
@@ -41,7 +43,7 @@ if (!(Test-Path $BinDir)) {
 Invoke-WebRequest $ResourceUri -OutFile $downloadedZip -UseBasicParsing -ErrorAction Stop
 
 if (Get-Command Expand-Archive -ErrorAction Ignore) {
-    Expand-Archive -Path $downloadedZip -DestinationPath $BinDir
+    Expand-Archive -Path $downloadedZip -DestinationPath $BinDir -Force
 }
 else {
     function Expand-Zip($zipFile, $dest) {
