@@ -58,7 +58,7 @@ To install the Quix CLI, users have multiple methods depending on their operatin
   $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
   ```
 
-#### Notes:
+#### Notes
 - **Version Specification:** Replace `{version}` with the actual version number you intend to install (e.g., `1.2.3`). Omitting the `{version}` parameter will automatically default to installing the latest available version of Quix CLI. You have the option to install the latest version or specify a particular version according to your needs. 
 To view and choose from all available versions, visit the [releases section](https://github.com/quixio/quix-cli/releases).
 - **PATH Verification:** After installation, ensure that the directory where Quix CLI is installed is included in your system's PATH.
