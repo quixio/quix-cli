@@ -16,22 +16,20 @@ For more information and detailed documentation, visit [quix.io](https://www.qui
 
 To install the Quix CLI, users have multiple methods depending on their operating system. Here's an expanded installation section including the main ways to install Quix CLI on Linux, macOS, and Windows.
 
-**Note:** Replace `{version}` with the actual version number you intend to install (e.g., `1.2.3`). Omitting the `{version}` parameter will automatically default to installing the latest available version of Quix CLI.
+
 
 ### For Linux and macOS:
-
-Install the Quix CLI using the Curl commands in your terminal. Choose between installing the latest version or specifying a specific version. For installations that modify system-wide settings, elevated privileges may be required.
 
 - **Install Latest Version without Specifying Version:**
 
   ```bash
-    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash
+  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash
   ```
   
 - **Install Specific Version:**
 
   ```bash
-    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
+  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
   ```
   
 <details>
@@ -68,9 +66,8 @@ Install the Quix CLI using the Curl commands in your terminal. Choose between in
   ```
 
 #### Notes:
-
-- **Permissions:** You may need to run these commands with elevated privileges. On Linux and macOS, use `sudo` if necessary. On Windows, run PowerShell as an Administrator.
-- **Version Specification:** The `{version}` parameter is optional. If you know the specific version of Quix CLI you need, replace `{version}` with that version number (e.g., `1.2.3`). If you omit it, the script typically installs the latest version.
+- **Version Specification:** Replace `{version}` with the actual version number you intend to install (e.g., `1.2.3`). Omitting the `{version}` parameter will automatically default to installing the latest available version of Quix CLI. You have the option to install the latest version or specify a particular version according to your needs. 
+To view and choose from all available versions, visit the [releases section](https://github.com/quixio/quix-cli/releases).
 - **PATH Verification:** After installation, ensure that the directory where Quix CLI is installed is included in your system's PATH.
 
 ### Installation using release binaries
