@@ -16,32 +16,32 @@ Below are the commands for installing the Quix CLI on Linux, macOS, and Windows.
 
 ### For Linux and macOS:
 
-- **Using Curl with Version:**
-
-  ```bash
-  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
-  ```
-
 - **Using Curl without Version (installs latest):**
 
   ```bash
   curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash
   ```
+  
+- **Using Curl with Version:**
 
+  ```bash
+  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
+  ```
+  
   Replace `{version}` with the desired version number in the command that includes the version parameter. If no version is specified, the script typically installs the latest version.
 
 ### For Windows:
-
-- **Using PowerShell with Version:**
-
-  ```powershell
-  $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
-  ```
 
 - **Using PowerShell without Version (installs latest):**
 
   ```powershell
   iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb | iex
+  ```
+  
+- **Using PowerShell with Version:**
+
+  ```powershell
+  $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
   ```
 
 Replace `{version}` with the specific version you want to install in the command that includes the version parameter. If the version is omitted, it defaults to the latest available version.
