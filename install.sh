@@ -21,8 +21,12 @@ get_arch() {
 }
 
 get_os(){
-    # darwin: Darwin
-    echo $(uname -s | awk '{print tolower($0)}')
+    os=$(uname -s | awk '{print tolower($0)}')
+    if [ "$os" == "darwin" ]; then
+        echo "osx"
+    else
+        echo "$os"
+    fi
 }
 
 # Parse arguments
