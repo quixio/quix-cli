@@ -1,8 +1,10 @@
 # Quix Command Line Interface (CLI)
 
-Welcome to Quix CLI, your powerful command-line companion for seamlessly managing and interacting with the features of our Quix Cloud product. While Quix offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
+> :warning: **WARNING: Internal Use Only & Work In Progress** :warning:
+>
+> This repository is intended for internal use only and is currently a work in progress. Features and documentation may be incomplete or subject to change. Please ensure you have the necessary permissions and understand the implications of using unreleased or unstable features.
 
-## Key Features:
+Welcome to Quix CLI, your powerful command-line companion for seamlessly managing and interacting with the features of our Quix Cloud product. While Quix offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
 
 - **Effortless Control:** Execute commands effortlessly to manage various aspects of your Quix environment.
   
@@ -12,14 +14,58 @@ Welcome to Quix CLI, your powerful command-line companion for seamlessly managin
 
 - **Scalability:** Seamlessly scale your Quix operations, whether you are working on a single instance or orchestrating tasks across multiple environments.
 
-## Installation
-In order to install the CLI you can use dotnet gobal tools, or download the binaries directly from the release page.
+For more information and detailed documentation, visit [quix.io](https://www.quix.io/).
 
-### Installation via Dotet Global tools
+## Installation of Quix CLI
 
-```bash
-dotnet tool install --global QuixCLI --prerelease
-```
+To install the Quix CLI, users have multiple methods depending on their operating system. Here's an expanded installation section including the main ways to install Quix CLI on Linux, macOS, and Windows.
+
+### For macOS:
+
+- **Install Latest Version without Specifying Version:**
+
+  ```bash
+  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash
+  ```
+  
+- **Install Specific Version:**
+
+  ```bash
+  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
+  ```
+
+### For Linux:
+
+- **Install Latest Version without Specifying Version:**
+
+    ```bash
+    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash
+    ```
+    
+- **Install Specific Version:**
+
+    ```bash
+    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash -s -- -v={version}
+    ```
+
+### For Windows (PowerShell):
+
+- **Install Latest Version without Specifying Version:**
+
+  ```powershell
+  iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb | iex
+  ```
+  
+- **Install Specific Version:**
+
+  ```powershell
+  $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
+  ```
+
+#### Notes
+- **Version Specification:** Replace `{version}` with the actual version number you intend to install (e.g., `1.2.3`). Omitting the `{version}` parameter will automatically default to installing the latest available version of Quix CLI. You have the option to install the latest version or specify a particular version according to your needs. 
+To view and choose from all available versions, visit the [releases section](https://github.com/quixio/quix-cli/releases).
+- **PATH Verification:** After installation, ensure that the directory where Quix CLI is installed is included in your system's PATH.
 
 ### Installation using release binaries
 
@@ -27,24 +73,17 @@ dotnet tool install --global QuixCLI --prerelease
 2. Copy the executable to a location of your choice.
 3. Add the location to your system's PATH.
 
+### Installation via Dotet Global tools
+
+```bash
+dotnet tool install --global QuixCLI --prerelease
+```
+
 ## Usage
 
 in order to get a list of available commands run: 
 ```bash
 quix --help
-```
-
-### Context
-
-The CLI will use the Serverless platform as the default context.
-For Dedicated or Byoc you can add your own context by running: 
-```bash 
-quix context add <contextName>
-```
- 
-Select it using the following command:
-```bash
-quix context use <contextName>
 ```
 
 ### Login
@@ -66,16 +105,30 @@ quix login <patToken>
 
 After setting up your context and logging in you will be able to run the remaining commands, ex:
 
-#### List Repositories
+#### List Projects
 
 ```bash
-quix get repositories
+quix projects get
 ```
 
 #### List Environments
 
 ```bash
-quix get environments
+quix environments get
+```
+
+### Using dedicated Quix clusters
+
+The CLI will use the Serverless platform as the default context: `https://portal-api.platform.quix.io/`
+
+For Dedicated or BYOC Quix clusters you can add your own context by running: 
+```bash 
+quix context add <name> <portalEndpoint>
+```
+ 
+Select it using the following command:
+```bash
+quix context use <name>
 ```
 
 ## Need help?
