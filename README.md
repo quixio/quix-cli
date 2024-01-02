@@ -25,13 +25,13 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 - **Install Latest Version without Specifying Version:**
 
   ```bash
-  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash
+  curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
   ```
   
 - **Install Specific Version:**
 
   ```bash
-  curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | bash -s -- -v={version}
+  curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash -s -- -v={version}
   ```
 
 ### For Linux:
@@ -39,13 +39,13 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 - **Install Latest Version without Specifying Version:**
 
     ```bash
-    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash
+    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash
     ```
     
 - **Install Specific Version:**
 
     ```bash
-    curl -fsSL https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.sh | sudo bash -s -- -v={version}
+    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash -s -- -v={version}
     ```
 
 ### For Windows (PowerShell):
@@ -53,13 +53,13 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 - **Install Latest Version without Specifying Version:**
 
   ```powershell
-  iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb | iex
+  iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb | iex
   ```
   
 - **Install Specific Version:**
 
   ```powershell
-  $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/cli-install-scripts/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
+  $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
   ```
 
 #### Notes
@@ -108,13 +108,13 @@ After setting up your context and logging in you will be able to run the remaini
 #### List Projects
 
 ```bash
-quix projects get
+quix project get
 ```
 
 #### List Environments
 
 ```bash
-quix environments get
+quix environment get
 ```
 
 ### Using dedicated Quix clusters
