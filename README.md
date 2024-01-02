@@ -108,13 +108,13 @@ After setting up your context and logging in you will be able to run the remaini
 #### List Projects
 
 ```bash
-quix projects get
+quix project get
 ```
 
 #### List Environments
 
 ```bash
-quix environments get
+quix environment get
 ```
 
 ### Using dedicated Quix clusters
