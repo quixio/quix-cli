@@ -70,8 +70,8 @@ echo "[1/5] Detected '${os}-${arch}' architecture"
 echo "[2/5] Downloading '${asset_uri}' to '${downloadFolder}'"
 curl --fail --location --output "${downloaded_file}" "${asset_uri}"
 
-echo "[3/5] Installing '${exe_name}' to ${executable_folder}"
-tar -xzvf "${downloaded_file}" -C "${executable_folder}"
+echo "[3/5] Installing '${exe_name}' to '${executable_folder}'"
+tar -xzf "${downloaded_file}" -C "${executable_folder}"
 
 exe="${executable_folder}/${exe_name}"
 chmod +x "${exe}"
