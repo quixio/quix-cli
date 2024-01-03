@@ -1,6 +1,8 @@
 #!/bin/sh
 # inherited from https://github.com/release-lab/install
 
+echo "Installing Quix CLI"
+
 set -e
 
 get_arch() {
@@ -53,6 +55,7 @@ os=$(get_os)
 arch=$(get_arch)
 file_extension="tar.gz"
 file_name="${os}-${arch}.${file_extension}" # the file name should be download
+
 downloaded_file="${downloadFolder}/${file_name}" # the file path should be download
 executable_folder="/usr/local/bin" # Eventually, the executable file will be placed here
 
@@ -63,25 +66,27 @@ else
     asset_uri="${githubUrl}/${owner}/${repo}/releases/download/${version}/${file_name}"
 fi
 
-echo "[1/3] Download ${asset_uri} to ${downloadFolder}"
-rm -f ${downloaded_file}
+echo "[1/5] Detected '${os}-${arch}' architecture"
+echo "[2/5] Downloading '${asset_uri}' to '${downloadFolder}'"
 curl --fail --location --output "${downloaded_file}" "${asset_uri}"
 
-echo "[2/3] Install ${exe_name} to the ${executable_folder}"
-echo  -o "${downloaded_file}" -d "${executable_folder}"
-tar -xzvf "${downloaded_file}" -C "${executable_folder}"
+echo "[3/5] Installing '${exe_name}' to '${executable_folder}'"
+tar -xzf "${downloaded_file}" -C "${executable_folder}"
 
 exe="${executable_folder}/${exe_name}"
 chmod +x "${exe}"
 
-echo "[3/3] Set environment variables"
-echo "${exe_name} was installed successfully to ${exe}"
+echo "[4/5] Cleaning '${downloaded_file}'"
+rm -f ${downloaded_file}
+
+echo "[5/5] Adding '${exe_name}' to the environment variables"
 if command -v $exe_name --version >/dev/null; then
-    echo "Run '$exe_name --help' to get started"
+    echo "Quix CLI was installed successfully"
 else
+    echo "We couldn't add '${exe_name}' to the environment variables"
     echo "Manually add the directory to your \$HOME/.bash_profile (or similar)"
     echo "  export PATH=${executable_folder}:\$PATH"
-    echo "Run '$exe_name --help' to get started"
 fi
 
+echo "Run '${exe_name} --help' to get started"
 exit 0
