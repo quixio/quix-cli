@@ -51,7 +51,8 @@ downloadFolder="${TMPDIR:-/tmp}"
 mkdir -p ${downloadFolder} # make sure download folder exists
 os=$(get_os)
 arch=$(get_arch)
-file_name="${os}-${arch}.zip" # the file name should be download
+file_extension="tar.gz"
+file_name="${os}-${arch}.${file_extension}" # the file name should be download
 downloaded_file="${downloadFolder}/${file_name}" # the file path should be download
 executable_folder="/usr/local/bin" # Eventually, the executable file will be placed here
 
@@ -68,7 +69,7 @@ curl --fail --location --output "${downloaded_file}" "${asset_uri}"
 
 echo "[2/3] Install ${exe_name} to the ${executable_folder}"
 echo  -o "${downloaded_file}" -d "${executable_folder}"
-unzip -o "${downloaded_file}" -d "${executable_folder}"
+tar -xzvf "${downloaded_file}" -C "${executable_folder}"
 
 exe="${executable_folder}/${exe_name}"
 chmod +x "${exe}"
