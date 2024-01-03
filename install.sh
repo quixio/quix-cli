@@ -1,86 +1,79 @@
-#!/bin/sh
+#!/usr/bin/env pwsh
 # inherited from https://github.com/release-lab/install
 
-set -e
+Write-Output "Installing Quix CLI"
+Write-Output ""
+$ErrorActionPreference = 'Stop'
 
-get_arch() {
-    # darwin/amd64: Darwin axetroydeMacBook-Air.local 20.5.0 Darwin Kernel Version 20.5.0: Sat May  8 05:10:33 PDT 2021; root:xnu-7195.121.3~9/RELEASE_X86_64 x86_64
-    # linux/amd64: Linux test-ubuntu1804 5.4.0-42-generic #46~18.04.1-Ubuntu SMP Fri Jul 10 07:21:24 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
-    a=$(uname -m)
-    case ${a} in
-        "x86_64" | "amd64" )
-            echo "x64"
-        ;;
-        "aarch64" | "arm64" | "arm")
-            echo "arm64"
-        ;;        
-        *)
-            echo ${NIL}
-        ;;
-    esac
+$githubUrl = "https://github.com"
+$owner = "quixio"
+$repoName = "quix-cli"
+$exeName = "quix"
+
+if ([System.Environment]::Is64BitOperatingSystem) {
+    $architecture = [System.Environment]::GetEnvironmentVariable("PROCESSOR_ARCHITECTURE")
+    if ($architecture -eq "ARM64") {
+        $arch = "arm64"
+    } else {
+        $arch = "x64"
+    }
+} else {
+    throw "Unsupported architecture: 32-bit operating system"
 }
 
-get_os(){
-    os=$(uname -s | awk '{print tolower($0)}')
-    if [ "$os" == "darwin" ]; then
-        echo "osx"
-    else
-        echo "$os"
-    fi
+$BinDir = "$Home\bin"
+$Target = "win-$arch"
+$downloadedZip = "$BinDir\${Target}.zip"
+
+# GitHub requires TLS 1.2
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
+
+$version = $args[0]
+
+$ResourceUri = if (!$version) {
+    "${githubUrl}/${owner}/${repoName}/releases/latest/download/${Target}.zip"
+} else {
+    "${githubUrl}/${owner}/${repoName}/releases/download/${version}/${Target}.zip"
 }
 
-# Parse arguments
-for i in "$@"; do
-    case $i in
-        -v=*|--version=*)
-            version="${i#*=}"
-            shift # past argument=value
-        ;;
-        *)
-            # unknown option
-        ;;
-    esac
-done
 
-owner="quixio"
-repo="quix-cli"
-githubUrl="https://github.com"
-exe_name="quix"
+if (!(Test-Path $BinDir)) {
+  New-Item $BinDir -ItemType Directory | Out-Null
+}
+Write-Output "[1/5] Detected '${arch}' architecture"
+Write-Output "[2/5] Downloading '${Target}.zip' to '${BinDir}'"
+Invoke-WebRequest $ResourceUri -OutFile $downloadedZip -UseBasicParsing -ErrorAction Stop
 
-downloadFolder="${TMPDIR:-/tmp}"
-mkdir -p ${downloadFolder} # make sure download folder exists
-os=$(get_os)
-arch=$(get_arch)
-file_name="${os}-${arch}.zip" # the file name should be download
-downloaded_file="${downloadFolder}/${file_name}" # the file path should be download
-executable_folder="/usr/local/bin" # Eventually, the executable file will be placed here
+Write-Output "[3/5] Decompressing '${Target}.zip' in '${BinDir}'"
+if (Get-Command Expand-Archive -ErrorAction Ignore) {
+    Expand-Archive -Path $downloadedZip -DestinationPath $BinDir -Force
+}
+else {
+    function Expand-Zip($zipFile, $dest) {
 
-# if version is empty
-if [ -z "$version" ]; then
-    asset_uri="${githubUrl}/${owner}/${repo}/releases/latest/download/${file_name}"
-else
-    asset_uri="${githubUrl}/${owner}/${repo}/releases/download/${version}/${file_name}"
-fi
+        if (-not (Get-Command Expand-7Zip -ErrorAction Ignore)) {
+            Install-Package -Scope CurrentUser -Force 7Zip4PowerShell > $null
+        }
 
-echo "[1/3] Download ${asset_uri} to ${downloadFolder}"
-rm -f ${downloaded_file}
-curl --fail --location --output "${downloaded_file}" "${asset_uri}"
+        Expand-7Zip $zipFile $dest
+    }
 
-echo "[2/3] Install ${exe_name} to the ${executable_folder}"
-echo  -o "${downloaded_file}" -d "${executable_folder}"
-unzip -o "${downloaded_file}" -d "${executable_folder}"
+    Expand-Zip $downloadedZip $BinDir
+}
 
-exe="${executable_folder}/${exe_name}"
-chmod +x "${exe}"
+Write-Output "[4/5] Cleaning '${downloadedZip}'"
 
-echo "[3/3] Set environment variables"
-echo "${exe_name} was installed successfully to ${exe}"
-if command -v $exe_name --version >/dev/null; then
-    echo "Run '$exe_name --help' to get started"
-else
-    echo "Manually add the directory to your \$HOME/.bash_profile (or similar)"
-    echo "  export PATH=${executable_folder}:\$PATH"
-    echo "Run '$exe_name --help' to get started"
-fi
+Remove-Item $downloadedZip
 
-exit 0
+Write-Output "[5/5] Adding '${BinDir}' to the environment variables"
+
+$User = [EnvironmentVariableTarget]::User
+$Path = [Environment]::GetEnvironmentVariable('Path', $User)
+if (!(";$Path;".ToLower() -like "*;$BinDir;*".ToLower())) {
+  [Environment]::SetEnvironmentVariable('Path', "$Path;$BinDir", $User)
+  $Env:Path += ";$BinDir"
+}
+
+Write-Output ""
+Write-Output "Quix CLI was installed successfully"
+Write-Output "Run '${exeName} --help' to get started"
