@@ -4,7 +4,7 @@
 >
 > This repository is intended for internal use only and is currently a work in progress. Features and documentation may be incomplete or subject to change. Please ensure you have the necessary permissions and understand the implications of using unreleased or unstable features.
 
-Welcome to Quix CLI, your powerful command-line companion for seamlessly managing and interacting with the features of our Quix Cloud product. While Quix offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
+Welcome to Quix CLI, your powerful command-line companion for seamlessly managing and interacting with the features of our Quix Cloud product. While Quix offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line. Following [CLI design best practices](https://clig.dev/), the Quix CLI is designed to be intuitive, consistent, and respectful of user preferences.
 
 - **Effortless Control:** Execute commands effortlessly to manage various aspects of your Quix environment.
   
