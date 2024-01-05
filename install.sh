@@ -31,6 +31,15 @@ get_os(){
     fi
 }
 
+sign_binary() {
+    os=$1
+    executable=$2
+    if [ "$os" == "osx" ]; then
+        echo "Signing '${executable}'"
+        codesign -s - "${executable}"
+    fi
+}
+
 # Parse arguments
 for i in "$@"; do
     case $i in
@@ -75,6 +84,8 @@ tar -xzf "${downloaded_file}" -C "${executable_folder}"
 
 exe="${executable_folder}/${exe_name}"
 chmod +x "${exe}"
+
+sign_binary "$os" "$exe"  # Sign the binary for macOS
 
 echo "[4/5] Cleaning '${downloaded_file}'"
 rm -f ${downloaded_file}
