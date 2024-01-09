@@ -6,7 +6,7 @@
 
 Welcome to Quix CLI, your powerful command-line companion for seamlessly managing and interacting with the features of our Quix Cloud product. While Quix offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
 
-- **Effortless Control:** Execute commands effortlessly to manage various aspects of your Quix environment.
+- **Effortless Control:** Execute commands effortlessly to manage various aspects of your Quix organisation.
   
 - **Script Automation:** Integrate Quix operations into your scripts for automated workflows and enhanced productivity.
 
@@ -24,13 +24,13 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 
 ### For macOS:
 
-- **Install Latest Version without Specifying Version:**
+- **Install latest version:**
 
   ```bash
   curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash
   ```
   
-- **Install Specific Version:**
+- **Install with explicit version:**
 
   ```bash
   curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash -s -- -v={version}
@@ -38,13 +38,13 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 
 ### For Linux:
 
-- **Install Latest Version without Specifying Version:**
+- **Install latest version:**
 
     ```bash
     curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash
     ```
     
-- **Install Specific Version:**
+- **Install with explicit version:**
 
     ```bash
     curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash -s -- -v={version}
@@ -52,13 +52,13 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 
 ### For Windows (PowerShell):
 
-- **Install Latest Version without Specifying Version:**
+- **Install latest version:**
 
   ```powershell
   iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb | iex
   ```
   
-- **Install Specific Version:**
+- **Install with explicit version:**
 
   ```powershell
   $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
@@ -107,16 +107,16 @@ quix login <patToken>
 
 After setting up your context and logging in you will be able to run the remaining commands, ex:
 
-#### List Projects
+#### List repositories
 
 ```bash
-quix project get
+quix repositories get
 ```
 
-#### List Environments
+#### List workspaces
 
 ```bash
-quix environment get
+quix workspaces get
 ```
 
 ### Using dedicated Quix clusters
@@ -125,12 +125,12 @@ The CLI will use the Serverless platform as the default context: `https://portal
 
 For Dedicated or BYOC Quix clusters you can add your own context by running: 
 ```bash 
-quix context add <name> <portalEndpoint>
+quix contexts add <name> <portalEndpoint>
 ```
  
 Select it using the following command:
 ```bash
-quix context use <name>
+quix contexts use <name>
 ```
 
 ## Need help?
