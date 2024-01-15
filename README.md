@@ -105,19 +105,7 @@ quix login <patToken>
 
 ### Get Started
 
-After setting up your context and logging in you will be able to run the remaining commands, ex:
-
-#### List repositories
-
-```bash
-quix repositories get
-```
-
-#### List workspaces
-
-```bash
-quix workspaces get
-```
+After setting up your context and logging in you will be able to access your Quix organisation. For more information visit [Quix Docs](https://quix.io/docs/get-started/cli.html).
 
 ### Using dedicated Quix clusters
 
