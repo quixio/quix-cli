@@ -32,6 +32,7 @@ $ResourceUri = if (!$version) {
     "${githubUrl}/${owner}/${repoName}/releases/latest/download/${Target}.zip"
 } else {
     "${githubUrl}/${owner}/${repoName}/releases/download/${version}/${Target}.zip"
+    $version = ""
 }
 
 
