@@ -61,7 +61,7 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 - **Install with explicit version:**
 
   ```powershell
-  $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb).Content; iex "$quixCliInstall {version}"
+  $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb).Content; $version="{version}"; iex "$quixCliInstall"
   ```
 
 #### Notes
