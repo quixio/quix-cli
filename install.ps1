@@ -28,8 +28,6 @@ $downloadedZip = "$BinDir\${Target}.zip"
 # GitHub requires TLS 1.2
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
-$version = $args[0]
-
 $ResourceUri = if (!$version) {
     "${githubUrl}/${owner}/${repoName}/releases/latest/download/${Target}.zip"
 } else {
