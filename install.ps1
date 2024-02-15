@@ -1,6 +1,10 @@
 #!/usr/bin/env pwsh
 # inherited from https://github.com/release-lab/install
 
+param(
+    [string]$version
+)
+
 Write-Output "Installing Quix CLI"
 Write-Output ""
 $ErrorActionPreference = 'Stop'
