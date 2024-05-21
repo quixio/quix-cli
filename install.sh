@@ -1,5 +1,5 @@
 #!/bin/sh
-# inherited from https://github.com/release-lab/install
+# Inspired by https://github.com/release-lab/install
 
 echo "Installing Quix CLI"
 
@@ -17,26 +17,33 @@ get_arch() {
             echo "arm64"
         ;;        
         *)
-            echo ${NIL}
+            echo "unsupported"
         ;;
     esac
 }
 
 get_os(){
     os=$(uname -s | awk '{print tolower($0)}')
-    if [ "$os" == "darwin" ]; then
+    if [ "$os" = "darwin" ]; then
         echo "osx"
     else
         echo "$os"
     fi
 }
 
+# Function to sign the binary
 sign_binary() {
     os=$1
     executable=$2
-    if [ "$os" == "osx" ]; then
+    use_sudo=${3:-false}  # Set default value to false if not provided explicitly
+
+    if [ "$os" = "osx" ]; then
         echo "Signing '${executable}'"
-        codesign -s - "${executable}"
+        if [ "$use_sudo" = "true" ]; then
+            sudo codesign -s - "${executable}"
+        else
+            codesign -s - "${executable}"
+        fi
     fi
 }
 
@@ -62,10 +69,16 @@ downloadFolder="${TMPDIR:-/tmp}"
 mkdir -p ${downloadFolder} # make sure download folder exists
 os=$(get_os)
 arch=$(get_arch)
-file_extension="tar.gz"
-file_name="${os}-${arch}.${file_extension}" # the file name should be download
 
-downloaded_file="${downloadFolder}/${file_name}" # the file path should be download
+if [ "$arch" = "unsupported" ]; then
+    echo "Unsupported architecture: ${arch}"
+    exit 1
+fi
+
+file_extension="tar.gz"
+file_name="${os}-${arch}.${file_extension}" # the file name to download
+
+downloaded_file="${downloadFolder}/${file_name}" # the file path to download
 executable_folder="/usr/local/bin" # Eventually, the executable file will be placed here
 
 # if version is empty
@@ -76,26 +89,32 @@ else
 fi
 
 echo "[1/5] Detected '${os}-${arch}' architecture"
-echo "[2/5] Downloading '${asset_uri}' to '${downloadFolder}'"
+echo "[2/5] Downloading '${asset_uri}' to '${downloaded_file}'"
 curl --fail --location --output "${downloaded_file}" "${asset_uri}"
 
 echo "[3/5] Installing '${exe_name}' to '${executable_folder}'"
-tar -xzf "${downloaded_file}" -C "${executable_folder}"
-
-exe="${executable_folder}/${exe_name}"
-chmod +x "${exe}"
-
-sign_binary "$os" "$exe"  # Sign the binary for macOS
+if [ ! -w "${executable_folder}" ]; then
+    echo "Permission denied for ${executable_folder}. Trying with sudo..."
+    sudo tar -xzf "${downloaded_file}" -C "${executable_folder}"
+    exe="${executable_folder}/${exe_name}"
+    sudo chmod +x "${exe}"
+    sign_binary "$os" "$exe" "true"
+else
+    tar -xzf "${downloaded_file}" -C "${executable_folder}"
+    exe="${executable_folder}/${exe_name}"
+    chmod +x "${exe}"
+    sign_binary "$os" "$exe"
+fi
 
 echo "[4/5] Cleaning '${downloaded_file}'"
-rm -f ${downloaded_file}
+rm -f "${downloaded_file}"
 
 echo "[5/5] Adding '${exe_name}' to the environment variables"
 if command -v $exe_name --version >/dev/null; then
     echo "Quix CLI was installed successfully"
 else
-    echo "We couldn't add '${exe_name}' to the environment variables"
-    echo "Manually add the directory to your \$HOME/.bash_profile (or similar)"
+    echo "We couldn't add '${exe_name}' to the environment variables automatically."
+    echo "Please add the directory to your \$HOME/.bash_profile (or similar):"
     echo "  export PATH=${executable_folder}:\$PATH"
 fi
 
