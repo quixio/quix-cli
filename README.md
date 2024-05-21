@@ -27,13 +27,13 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 - **Install latest version:**
 
   ```bash
-  curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash
+  curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
   ```
   
 - **Install with explicit version:**
 
   ```bash
-  curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash -s -- -v={version}
+  curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash -s -- -v={version}
   ```
 
 ### For Linux:
@@ -41,13 +41,13 @@ To install the Quix CLI, users have multiple methods depending on their operatin
 - **Install latest version:**
 
     ```bash
-    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash
+    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
     ```
     
 - **Install with explicit version:**
 
     ```bash
-    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | sudo bash -s -- -v={version}
+    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash -s -- -v={version}
     ```
 
 ### For Windows (PowerShell):
