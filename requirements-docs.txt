@@ -1,1 +1,1 @@
-markdown-include
+mkdocs-include-markdown-plugin

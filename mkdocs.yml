@@ -10,9 +10,10 @@ theme:
   features:
   - navigation.path
   - navigation.indexes
-markdown_extensions:
- - markdown_include.include:
-        base_path: docs
+
+plugins:
+  - include-markdown
+
 nav:
 - Reference:
   - applications get: reference/applications/get.md

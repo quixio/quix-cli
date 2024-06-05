@@ -1,2 +1,1 @@
-{!temp_dir/quix-cli-beta/reference/local/applications/create.gen.md!}
-{!reference/local/applications/create.gen.md!}
+{% include-markdown './create.gen.md' %}
