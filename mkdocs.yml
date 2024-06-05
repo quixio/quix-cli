@@ -11,9 +11,8 @@ theme:
   - navigation.path
   - navigation.indexes
 markdown_extensions:
-- mdx_include:
-    recursive_relative_path: true
-    base_path: docs
+ - markdown_include.include:
+        base_path: docs
 nav:
 - Reference:
   - applications get: reference/applications/get.md
