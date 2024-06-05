@@ -1,0 +1,1 @@
+{!reference/local-pipeline-sync.gen.md!}

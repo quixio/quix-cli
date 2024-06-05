@@ -1,0 +1,1 @@
+{!reference/deployments-metrics.gen.md!}

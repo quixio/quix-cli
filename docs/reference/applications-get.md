@@ -1,0 +1,1 @@
+{!reference/applications-get.gen.md!}

@@ -1,0 +1,1 @@
+{!reference/local-applications-variables-edit.gen.md!}
