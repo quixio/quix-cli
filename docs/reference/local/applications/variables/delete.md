@@ -1,1 +1,1 @@
-{!reference/local/applications/variables/delete.gen.md!}
+{% include - markdown './local\applications\variables\delete.gen.md' %}

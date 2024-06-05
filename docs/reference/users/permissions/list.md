@@ -1,1 +1,1 @@
-{!reference/users/permissions/list.gen.md!}
+{% include - markdown './users\permissions\list.gen.md' %}

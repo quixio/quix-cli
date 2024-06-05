@@ -1,1 +1,1 @@
-{!reference/local/pipeline/sync.gen.md!}
+{% include - markdown './local\pipeline\sync.gen.md' %}

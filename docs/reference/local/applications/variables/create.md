@@ -1,1 +1,1 @@
-{!reference/local/applications/variables/create.gen.md!}
+{% include - markdown './local\applications\variables\create.gen.md' %}

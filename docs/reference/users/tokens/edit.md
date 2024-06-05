@@ -1,1 +1,1 @@
-{!reference/users/tokens/edit.gen.md!}
+{% include - markdown './users\tokens\edit.gen.md' %}

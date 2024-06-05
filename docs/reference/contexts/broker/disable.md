@@ -1,1 +1,1 @@
-{!reference/contexts/broker/disable.gen.md!}
+{% include - markdown './contexts\broker\disable.gen.md' %}

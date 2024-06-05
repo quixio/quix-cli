@@ -1,1 +1,1 @@
-{!reference/local/pipeline/update.gen.md!}
+{% include - markdown './local\pipeline\update.gen.md' %}

@@ -1,1 +1,1 @@
-{!reference/contexts/environments/clear.gen.md!}
+{% include - markdown './contexts\environments\clear.gen.md' %}

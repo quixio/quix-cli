@@ -1,1 +1,1 @@
-{!reference/local/applications/list.gen.md!}
+{% include - markdown './local\applications\list.gen.md' %}
