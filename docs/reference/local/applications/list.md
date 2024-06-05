@@ -1,0 +1,1 @@
+{!reference/local/applications/list.gen.md!}

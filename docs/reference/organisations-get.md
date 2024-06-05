@@ -1,1 +1,0 @@
-{!reference/organisations-get.gen.md!}

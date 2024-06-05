@@ -1,1 +1,0 @@
-{!reference/local-pipeline-down.gen.md!}

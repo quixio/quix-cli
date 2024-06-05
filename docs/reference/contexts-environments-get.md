@@ -1,1 +1,0 @@
-{!reference/contexts-environments-get.gen.md!}

@@ -1,0 +1,1 @@
+{!reference/local/pipeline/deployments/delete.gen.md!}

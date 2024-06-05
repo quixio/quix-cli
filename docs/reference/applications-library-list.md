@@ -1,1 +1,0 @@
-{!reference/applications-library-list.gen.md!}

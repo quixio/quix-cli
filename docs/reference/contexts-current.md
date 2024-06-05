@@ -1,1 +1,0 @@
-{!reference/contexts-current.gen.md!}

@@ -1,1 +1,0 @@
-{!reference/deployments-get.gen.md!}

@@ -1,1 +1,0 @@
-{!reference/topics-get.gen.md!}

@@ -1,1 +1,0 @@
-{!reference/local-applications-convert.gen.md!}
