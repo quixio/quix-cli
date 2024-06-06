@@ -1,0 +1,37 @@
+name: Create Docs PR on Release
+
+on:
+  release:
+    types: [published]
+
+permissions: 
+  pull-requests: write
+  contents: write
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install Quix CLI
+      run: curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
+
+    - name: Run Quix CLI to generate docs
+      run: quix docs -b ${{ github.workspace }}/docs/reference
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update docs for the release ${{ env.GITHUB_REF_NAME }}
+        branch: "docs/update-docs-${{ github.run_id }}"
+        title: "Update docs for the release ${{ env.GITHUB_REF_NAME }}"
+        base: main  
+        body: |
+          This PR updates the documentation for the release ${{ env.GITHUB_REF_NAME }}.
+        reviewers: luisquix, emanuel-quix, PatrickMiraP
