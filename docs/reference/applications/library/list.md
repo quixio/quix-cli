@@ -1,1 +1,1 @@
-{% include - markdown './applications\library\list.gen.md' %}
+{% include-markdown './list.gen.md' %}

@@ -1,1 +1,1 @@
-{% include - markdown './deployments\stop.gen.md' %}
+{% include-markdown './stop.gen.md' %}

@@ -1,1 +1,1 @@
-{% include - markdown './deployments\metrics.gen.md' %}
+{% include-markdown './metrics.gen.md' %}

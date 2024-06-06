@@ -1,1 +1,1 @@
-{% include - markdown './users\permissions\copy.gen.md' %}
+{% include-markdown './copy.gen.md' %}

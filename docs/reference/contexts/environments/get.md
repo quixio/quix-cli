@@ -1,1 +1,1 @@
-{% include - markdown './contexts\environments\get.gen.md' %}
+{% include-markdown './get.gen.md' %}

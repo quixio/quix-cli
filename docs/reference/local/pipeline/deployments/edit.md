@@ -1,1 +1,1 @@
-{% include - markdown './local\pipeline\deployments\edit.gen.md' %}
+{% include-markdown './edit.gen.md' %}

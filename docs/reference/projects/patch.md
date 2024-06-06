@@ -1,1 +1,1 @@
-{% include - markdown './projects\patch.gen.md' %}
+{% include-markdown './patch.gen.md' %}

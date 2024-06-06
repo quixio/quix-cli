@@ -1,1 +1,1 @@
-{% include - markdown './environments\sync.gen.md' %}
+{% include-markdown './sync.gen.md' %}

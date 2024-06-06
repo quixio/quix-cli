@@ -1,1 +1,1 @@
-{% include - markdown './local\init.gen.md' %}
+{% include-markdown './init.gen.md' %}

@@ -1,1 +1,1 @@
-{% include - markdown './local\pipeline\view.gen.md' %}
+{% include-markdown './view.gen.md' %}

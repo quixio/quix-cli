@@ -1,1 +1,1 @@
-{% include - markdown './contexts\delete.gen.md' %}
+{% include-markdown './delete.gen.md' %}

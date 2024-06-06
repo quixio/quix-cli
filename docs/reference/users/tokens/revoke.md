@@ -1,1 +1,1 @@
-{% include - markdown './users\tokens\revoke.gen.md' %}
+{% include-markdown './revoke.gen.md' %}
