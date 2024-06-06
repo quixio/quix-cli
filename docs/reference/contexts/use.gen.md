@@ -9,7 +9,7 @@ Uses the specified context
 **Usage:**
 
 ```
-quix contexts use [<name>] [options]
+quix contexts use <name> [options]
 ```
 
 **Arguments:**
