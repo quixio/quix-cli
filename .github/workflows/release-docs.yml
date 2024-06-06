@@ -1,0 +1,44 @@
+name: Create PR on Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  create-pr:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Install Quix CLI
+      run: curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
+
+    - name: Run Quix CLI to generate docs
+      run: quix docs ${{ github.workspace }}/docs/reference
+
+    - name: Update CHANGELOG.md
+      run: |
+        echo "## $(date +"%Y-%m-%d") - $GITHUB_REF_NAME" >> CHANGELOG.md
+        echo "Release notes for $GITHUB_REF_NAME" >> CHANGELOG.md
+        echo "Updated CHANGELOG.md with new release $GITHUB_REF_NAME"
+      
+    - name: Commit changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git checkout -b update-changelog
+        git add .
+        git commit -m "Update CHANGELOG and docs for release $GITHUB_REF_NAME"
+        git push --set-upstream origin update-changelog
+
+    - name: Create Pull Request
+      uses: peter-evans/create-pull-request@v5
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        commit-message: Update CHANGELOG and docs for release $GITHUB_REF_NAME
+        branch: update-changelog
+        title: "Update CHANGELOG and docs for release $GITHUB_REF_NAME"
+        body: |
+          This PR updates the CHANGELOG.md file and documentation with information about the new release $GITHUB_REF_NAME.
