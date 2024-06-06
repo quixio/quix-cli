@@ -9,7 +9,7 @@ Login to your Quix account
 **Usage:**
 
 ```
-quix login [<pat>] [options]
+quix login <pat> [options]
 ```
 
 **Arguments:**
