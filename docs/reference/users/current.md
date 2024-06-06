@@ -1,0 +1,1 @@
+{% include-markdown './current.gen.md' %}
