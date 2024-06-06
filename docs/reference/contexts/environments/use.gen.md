@@ -9,7 +9,7 @@ Select the default environment for the current context
 **Usage:**
 
 ```
-quix contexts environments use [<workspace-id>] [options]
+quix contexts environments use <workspace-id> [options]
 ```
 
 **Arguments:**
