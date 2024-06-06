@@ -15,7 +15,7 @@ plugins:
 nav:
 - 'Overview': 'overview.md'
 - 'Quickstart': 'cli-quickstart.md'
-- 'Tutorials': 
+- 'Tutorials':
   - 'Using the CLI with a template': 'cli-template.md'
   - 'Using the CLI with GitHub Actions': 'cli-github-actions.md'
 - Reference:
