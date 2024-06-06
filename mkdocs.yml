@@ -10,6 +10,30 @@ theme:
   features:
   - navigation.path
   - navigation.indexes
+markdown_extensions:
+- attr_list
+- md_in_html
+- pymdownx.superfences
+- pymdownx.tabbed:
+    alternate_style: true
+- admonition
+- footnotes
+- pymdownx.critic
+- pymdownx.caret
+- pymdownx.keys
+- pymdownx.mark
+- pymdownx.tilde
+- pymdownx.emoji:
+    emoji_index: !!python/name:material.extensions.emoji.twemoji ''
+    emoji_generator: !!python/name:material.extensions.emoji.to_svg ''
+- pymdownx.details: 
+- pymdownx.highlight:
+    anchor_linenums: true
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format ''
 plugins:
 - include-markdown
 nav:
@@ -89,5 +113,4 @@ nav:
   - users tokens revoke: reference/users/tokens/revoke.md
   - users current: reference/users/current.md
   - users list: reference/users/list.md
-  - use: reference/use.md
 ...
