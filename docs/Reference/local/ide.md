@@ -1,6 +1,6 @@
 {% include-markdown './ide.gen.md' %}
 
-## Additional information
+## How it works
 
 When you run this command, it generates all the necessary IDE-dependent files to integrate the run and debug capabilities of your chosen IDE. It also exports the variables from the `app.yaml` file to a `.env` file or a devcontainer configuration, ensuring that the environment is correctly set up before you begin editing and debugging. This seamless setup process allows you to focus on development without manual configuration.
 

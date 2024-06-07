@@ -1,16 +1,25 @@
 {% include-markdown './update.gen.md' %}
 
-## Regular usage
+## How It Works
+
+When you run this command, it updates the `quix.yaml` file with new local applications and updates the variables of existing deployments. It scans your current directory and subdirectories to detect any new or updated applications. This ensures that your pipeline configuration in `quix.yaml` reflects the latest state of your local applications.
+
+During the update process, the command checks for any new variables or changes in existing ones. If required variables are missing values, it generates warnings and prompts for manual intervention. This helps maintain an accurate and up-to-date pipeline configuration, preventing deployment issues due to misconfigured variables.
+
+!!! warning
+    If a required variable is missing a value, the update process will generate warnings and prevent the pipeline from being updated correctly. Manual intervention is necessary to resolve these issues.
+
+## Example usage
 
 When you execute the update local pipeline command without any options:
 
-```
+```bash
 $ quix local pipeline update
 ```
 
 The update process starts:
 
-```
+```text
 Updating applications ...
 ✓ demo-data-source
 ✓ Event Detection Transformation
@@ -18,23 +27,27 @@ Updating applications ...
 
 If everything is updated successfully:
 
-```
+```text
 ✓ 'quix.yaml' is updated
 ```
 
-If there are no changes detected:
+!!! info
+    If there are no changes detected:
 
-```
-! 'quix.yaml' has no changes
-```
+    ```text
+    ! 'quix.yaml' has no changes
+    ```
 
-If there are warnings and manual intervention is needed:
+??? danger "Manual Intervention Needed"
+    If there are warnings and manual intervention is needed:
 
-```
-✗ Deployment demo-data-source can't be updated because variable 'my-new-variable' is required and it has no value
-✓ 'quix.yaml' is updated
-✗ Some deployments have warnings. Please, update 'quix.yaml' manually and try again
-```
+    ```text
+    ✗ Deployment demo-data-source can't be updated because variable 'my-new-variable' is required and it has no value
+    ✓ 'quix.yaml' is updated
+    ✗ Some deployments have warnings. Please, update 'quix.yaml' manually and try again
+    ```
+
+    If you encounter a warning about a required variable, such as `my-new-variable`, it indicates that the pipeline cannot be updated because a necessary value is missing. You must manually edit the `quix.yaml` file to provide the missing value.
 
 In this case, a new variable `my-new-variable` has been added, and it is required without a default value. The relevant section in the `quix.yaml` file might look like this:
 
@@ -47,7 +60,7 @@ variables:
     required: true
 ```
 
-When the update command runs, it identifies that `my-new-variable` is required but has no value assigned. This triggers a warning because the pipeline cannot be updated with missing required variables. 
+When the update command runs, it identifies that `my-new-variable` is required but has no value assigned. This triggers a warning because the pipeline cannot be updated with missing required variables.
 
 To resolve this, you need to manually edit the `quix.yaml` file and provide a value for the `my-new-variable`:
 

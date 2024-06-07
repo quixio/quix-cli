@@ -1,6 +1,6 @@
 {% include-markdown './delete.gen.md' %}
 
-## Example Usage
+## Example usage
 
 When you execute the delete local variable command without any options:
 

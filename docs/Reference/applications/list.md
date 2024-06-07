@@ -1,8 +1,6 @@
 {% include-markdown './list.gen.md' %}
 
-
-
-# Example usage
+## Example usage
 
 When you execute the list local applications variable command without any options:
 

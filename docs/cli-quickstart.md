@@ -13,9 +13,23 @@ This guide assumes you have the following installed:
 
 To install Quix CLI:
 
-```
-curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
-```
+=== "macOS"
+
+    ```
+    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
+    ```
+
+=== "Linux"
+
+    ```
+    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
+    ```
+
+=== "Windows"
+
+    ```
+    iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb | iex
+    ```
 
 For further details on installation, including instructions for Microsoft Windows, see the [install guide](https://github.com/quixio/quix-cli?tab=readme-ov-file#installation-of-quix-cli){target=_blank}.
 

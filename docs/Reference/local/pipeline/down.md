@@ -1,6 +1,26 @@
 {% include-markdown './down.gen.md' %}
 
+## How It Works
+
+The `quix local pipeline down` command stops and removes all the Docker containers defined in your `compose.yaml` file. It acts as a shortcut for the `docker compose down` command, ensuring that all running services are stopped and all associated containers, networks, and volumes are removed.
+
+When executed, this command performs the following steps:
+
+1. **Stops Running Containers**: It stops all containers that were started as part of your pipeline.
+2. **Removes Containers**: After stopping the containers, it removes them from your Docker environment.
+3. **Removes Networks and Volumes**: Finally, it removes the Docker networks and volumes associated with the pipeline, ensuring a clean state.
+
+This process ensures that your environment is clean and ready for the next time you need to start the pipeline. For more details on how the `docker compose down` command works, refer to the [official Docker documentation](https://docs.docker.com/compose/reference/down/).
+
+!!! warning
+    Ensure that Docker is running before executing this command. If Docker is not running, the command will fail. You can verify Docker is running by executing the following command:
+
+    ```bash
+    docker info
+    ```
+    
 ## Example usage
+
 ### Shutting Down the Pipeline with Docker Compose
 
 To stop and remove all the containers defined in your `compose.yaml` file, use the following command:
@@ -36,4 +56,4 @@ Executing 'docker compose down'
  Network githubrepo_default  Removed
 ```
 
-This ensures that your environment is clean and ready for the next time you need to start the pipeline. For more details on how the `docker compose down` command works, refer to the [official Docker documentation](https://docs.docker.com/compose/reference/down/).
+This ensures that your environment is clean and ready for the next time you need to start the pipeline.
