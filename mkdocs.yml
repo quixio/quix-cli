@@ -64,74 +64,92 @@ nav:
   - 'Using the CLI with a template': 'cli-template.md'
   - 'Using the CLI with GitHub Actions': 'cli-github-actions.md'
 - Reference:
-  - applications get: reference/applications/get.md
-  - applications list: reference/applications/list.md
-  - applications library list: reference/applications/library/list.md
-  - login: reference/login.md
-  - contexts create: reference/contexts/create.md
-  - contexts current: reference/contexts/current.md
-  - contexts list: reference/contexts/list.md
-  - contexts delete: reference/contexts/delete.md
-  - contexts reset: reference/contexts/reset.md
-  - contexts use: reference/contexts/use.md
-  - contexts environments clear: reference/contexts/environments/clear.md
-  - contexts environments get: reference/contexts/environments/get.md
-  - contexts environments use: reference/contexts/environments/use.md
-  - contexts broker disable: reference/contexts/broker/disable.md
-  - contexts broker enable: reference/contexts/broker/enable.md
-  - contexts broker set: reference/contexts/broker/set.md
-  - contexts broker toggle: reference/contexts/broker/toggle.md
-  - deployments get: reference/deployments/get.md
-  - deployments list: reference/deployments/list.md
-  - deployments logs: reference/deployments/logs.md
-  - deployments metrics: reference/deployments/metrics.md
-  - deployments start: reference/deployments/start.md
-  - deployments stop: reference/deployments/stop.md
-  - environments get: reference/environments/get.md
-  - environments list: reference/environments/list.md
-  - environments use: reference/environments/use.md
-  - environments sync: reference/environments/sync.md
-  - local applications convert: reference/local/applications/convert.md
-  - local applications create: reference/local/applications/create.md
-  - local applications list: reference/local/applications/list.md
-  - local applications variables create: reference/local/applications/variables/create.md
-  - local applications variables delete: reference/local/applications/variables/delete.md
-  - local applications variables edit: reference/local/applications/variables/edit.md
-  - local applications variables export: reference/local/applications/variables/export.md
-  - local applications variables import: reference/local/applications/variables/import.md
-  - local applications variables list: reference/local/applications/variables/list.md
-  - local ide: reference/local/ide.md
-  - local init: reference/local/init.md
-  - local pipeline deployments create: reference/local/pipeline/deployments/create.md
-  - local pipeline deployments delete: reference/local/pipeline/deployments/delete.md
-  - local pipeline deployments edit: reference/local/pipeline/deployments/edit.md
-  - local pipeline deployments get: reference/local/pipeline/deployments/get.md
-  - local pipeline deployments list: reference/local/pipeline/deployments/list.md
-  - local pipeline down: reference/local/pipeline/down.md
-  - local pipeline sync: reference/local/pipeline/sync.md
-  - local pipeline up: reference/local/pipeline/up.md
-  - local pipeline update: reference/local/pipeline/update.md
-  - local pipeline view: reference/local/pipeline/view.md
-  - local variables export: reference/local/variables/export.md
-  - organisations get: reference/organisations/get.md
-  - projects patch: reference/projects/patch.md
-  - projects get: reference/projects/get.md
-  - projects list: reference/projects/list.md
-  - status: reference/status.md
-  - topics get: reference/topics/get.md
-  - topics list: reference/topics/list.md
-  - update: reference/update.md
-  - users audit: reference/users/audit.md
-  - users permissions copy: reference/users/permissions/copy.md
-  - users permissions delete: reference/users/permissions/delete.md
-  - users permissions edit: reference/users/permissions/edit.md
-  - users permissions get: reference/users/permissions/get.md
-  - users permissions list: reference/users/permissions/list.md
-  - users permissions set: reference/users/permissions/set.md
-  - users tokens create: reference/users/tokens/create.md
-  - users tokens edit: reference/users/tokens/edit.md
-  - users tokens list: reference/users/tokens/list.md
-  - users tokens revoke: reference/users/tokens/revoke.md
-  - users current: reference/users/current.md
-  - users list: reference/users/list.md
-  - use: reference/use.md
+  - applications:
+    - applications get: Reference/applications/get.md
+    - applications list: Reference/applications/list.md
+    - applications library:
+      - applications library list: Reference/applications/library/list.md
+  - login: Reference/login.md
+  - contexts:
+    - contexts create: Reference/contexts/create.md
+    - contexts current: Reference/contexts/current.md
+    - contexts list: Reference/contexts/list.md
+    - contexts delete: Reference/contexts/delete.md
+    - contexts reset: Reference/contexts/reset.md
+    - contexts use: Reference/contexts/use.md
+    - contexts environments:
+      - contexts environments clear: Reference/contexts/environments/clear.md
+      - contexts environments get: Reference/contexts/environments/get.md
+      - contexts environments use: Reference/contexts/environments/use.md
+    - contexts broker:
+      - contexts broker disable: Reference/contexts/broker/disable.md
+      - contexts broker enable: Reference/contexts/broker/enable.md
+      - contexts broker set: Reference/contexts/broker/set.md
+      - contexts broker toggle: Reference/contexts/broker/toggle.md
+  - deployments:
+    - deployments get: Reference/deployments/get.md
+    - deployments list: Reference/deployments/list.md
+    - deployments logs: Reference/deployments/logs.md
+    - deployments metrics: Reference/deployments/metrics.md
+    - deployments start: Reference/deployments/start.md
+    - deployments stop: Reference/deployments/stop.md
+  - environments:
+    - environments get: Reference/environments/get.md
+    - environments list: Reference/environments/list.md
+    - environments use: Reference/environments/use.md
+    - environments sync: Reference/environments/sync.md
+  - local:
+    - local applications:
+      - local applications convert: Reference/local/applications/convert.md
+      - local applications create: Reference/local/applications/create.md
+      - local applications list: Reference/local/applications/list.md
+      - local applications variables:
+        - local applications variables create: Reference/local/applications/variables/create.md
+        - local applications variables delete: Reference/local/applications/variables/delete.md
+        - local applications variables edit: Reference/local/applications/variables/edit.md
+        - local applications variables export: Reference/local/applications/variables/export.md
+        - local applications variables import: Reference/local/applications/variables/import.md
+        - local applications variables list: Reference/local/applications/variables/list.md
+    - local ide: Reference/local/ide.md
+    - local init: Reference/local/init.md
+    - local pipeline:
+      - local pipeline deployments:
+        - local pipeline deployments create: Reference/local/pipeline/deployments/create.md
+        - local pipeline deployments delete: Reference/local/pipeline/deployments/delete.md
+        - local pipeline deployments edit: Reference/local/pipeline/deployments/edit.md
+        - local pipeline deployments get: Reference/local/pipeline/deployments/get.md
+        - local pipeline deployments list: Reference/local/pipeline/deployments/list.md
+      - local pipeline down: Reference/local/pipeline/down.md
+      - local pipeline sync: Reference/local/pipeline/sync.md
+      - local pipeline up: Reference/local/pipeline/up.md
+      - local pipeline update: Reference/local/pipeline/update.md
+      - local pipeline view: Reference/local/pipeline/view.md
+  - organisations:
+    - organisations get: Reference/organisations/get.md
+  - projects:
+    - projects patch: Reference/projects/patch.md
+    - projects get: Reference/projects/get.md
+    - projects list: Reference/projects/list.md
+  - status: Reference/status.md
+  - topics:
+    - topics get: Reference/topics/get.md
+    - topics list: Reference/topics/list.md
+  - update: Reference/update.md
+  - users:
+    - users audit: Reference/users/audit.md
+    - users permissions:
+      - users permissions copy: Reference/users/permissions/copy.md
+      - users permissions delete: Reference/users/permissions/delete.md
+      - users permissions edit: Reference/users/permissions/edit.md
+      - users permissions get: Reference/users/permissions/get.md
+      - users permissions list: Reference/users/permissions/list.md
+      - users permissions set: Reference/users/permissions/set.md
+    - users tokens:
+      - users tokens create: Reference/users/tokens/create.md
+      - users tokens edit: Reference/users/tokens/edit.md
+      - users tokens list: Reference/users/tokens/list.md
+      - users tokens revoke: Reference/users/tokens/revoke.md
+    - users current: Reference/users/current.md
+    - users list: Reference/users/list.md
+  - use: Reference/use.md
+...
