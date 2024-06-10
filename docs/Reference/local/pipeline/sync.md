@@ -39,7 +39,7 @@ Then, it commits the staged changes:
 Executing commit ...
 ```
 
-??? note "Add a Commit Message"
+!!! tip "Add a Commit Message"
     Use the `--commit-message` option to include a meaningful commit message, making it easier to track changes:
 
     ```bash
@@ -52,7 +52,7 @@ Finally, after it pushes the committed changes to the remote repository:
 ✓ Sync completed
 ```
 
-??? warning "Out of sync error"
+!!! Tip
     If you see the message:
     
     ```

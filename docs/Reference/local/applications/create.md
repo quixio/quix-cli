@@ -7,6 +7,7 @@ The `quix local applications create` command initializes a new application withi
 When you run this command, it will prompt you to select a library item from an interactive list if no arguments are provided. This list includes various predefined application templates such as data sources, transformations, and sinks. Once you select a library item, the command will guide you through naming the application and choosing its directory location.
 
 The command generates the application with a default structure relative to the current path, which typically includes the following essential files:
+
 - The main Python file, usually `main.py`
 - `app.yaml` for application configuration
 - `requirements.txt` for Python dependencies

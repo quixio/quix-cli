@@ -6,8 +6,16 @@ When you run this command, it updates the `quix.yaml` file with new local applic
 
 During the update process, the command checks for any new variables or changes in existing ones. If required variables are missing values, it generates warnings and prompts for manual intervention. This helps maintain an accurate and up-to-date pipeline configuration, preventing deployment issues due to misconfigured variables.
 
-!!! warning
-    If a required variable is missing a value, the update process will generate warnings and prevent the pipeline from being updated correctly. Manual intervention is necessary to resolve these issues.
+!!! info
+    If there are warnings and manual intervention is needed:
+
+    ```text
+    ✗ Deployment demo-data-source can't be updated because variable 'my-new-variable' is required and it has no value
+    ✓ 'quix.yaml' is updated
+    ✗ Some deployments have warnings. Please, update 'quix.yaml' manually and try again
+    ```
+
+    If you encounter a warning about a required variable, such as `my-new-variable`, it indicates that the pipeline cannot be updated because a necessary value is missing. You must manually edit the `quix.yaml` file to provide the missing value.
 
 ## Example usage
 
@@ -37,17 +45,6 @@ If everything is updated successfully:
     ```text
     ! 'quix.yaml' has no changes
     ```
-
-??? danger "Manual Intervention Needed"
-    If there are warnings and manual intervention is needed:
-
-    ```text
-    ✗ Deployment demo-data-source can't be updated because variable 'my-new-variable' is required and it has no value
-    ✓ 'quix.yaml' is updated
-    ✗ Some deployments have warnings. Please, update 'quix.yaml' manually and try again
-    ```
-
-    If you encounter a warning about a required variable, such as `my-new-variable`, it indicates that the pipeline cannot be updated because a necessary value is missing. You must manually edit the `quix.yaml` file to provide the missing value.
 
 In this case, a new variable `my-new-variable` has been added, and it is required without a default value. The relevant section in the `quix.yaml` file might look like this:
 
