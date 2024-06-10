@@ -1,5 +1,13 @@
 {% include-markdown './create.gen.md' %}
 
+## How It Works
+
+The `quix local apps vars create` command allows you to create new variables for your application through an interactive process. This command updates the `app.yaml` file with the new variables, ensuring your application configuration is current.
+
+When you run the command, you are prompted to select an application (if not already in an application directory), choose the variable type (Input Topic, Output Topic, Free Text, Secret), and provide details such as the variable name, description, default value, and whether it is required. The new variable is then added to the `app.yaml` file.
+
+!!! tip
+    You can create required variables without providing a value, but this may slow down the deployment process if you rely on the default application values. Providing values for required variables helps ensure a smoother and faster deployment.
 
 ## Example usage
 

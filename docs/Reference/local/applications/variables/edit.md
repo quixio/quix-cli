@@ -1,5 +1,14 @@
 {% include-markdown './edit.gen.md' %}
 
+## How It Works
+
+The `quix local apps vars edit` command allows you to edit existing variables for your application through an interactive process. This command updates the `app.yaml` file with the modified variable values, ensuring your application configuration remains current.
+
+When you run the command, you are prompted to select an application (if not already in an application directory), choose the variable you want to edit, and modify its details such as the variable type (Input Topic, Output Topic, Free Text, Secret), description, default value, and whether it is required. The updated variable is then saved to the `app.yaml` file.
+
+!!! tip
+    Editing variables promptly ensures that your application configuration is always accurate and up-to-date, preventing potential issues during deployment.
+
 ## Example usage
 
 When you execute the edit local applications variable command without any options:
