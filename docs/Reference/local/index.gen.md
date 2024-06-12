@@ -15,6 +15,7 @@ quix local [command] [options]
 **Commands:**
 
 - [applications](applications\index.md) : Manage your local applications
+- [broker](broker\index.md) : Manage the local broker instance
 - [pipeline](pipeline\index.md) : Manage your local pipeline and your 'quix.yaml'
 - [init](init.md) : Generate the initial Quix files based on the existing repository
 - [ide](ide.md) : Setup everything needed for local application development and open your local IDE
