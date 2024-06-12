@@ -9,7 +9,7 @@ Get all topics information for the specified environment
 **Usage:**
 
 ```
-quix topics list [<workspace-id>] [options]
+quix topics list <workspace-id> [options]
 ```
 
 **Arguments:**

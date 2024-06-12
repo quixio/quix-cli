@@ -9,7 +9,7 @@ Update the version of the CLI
 **Usage:**
 
 ```
-quix update [<version>] [options]
+quix update <version> [options]
 ```
 
 **Arguments:**

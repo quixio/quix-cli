@@ -9,7 +9,7 @@ Get a local deployment
 **Usage:**
 
 ```
-quix local pipeline deployments create [<application-id>] [options]
+quix local pipeline deployments create <application-id> [options]
 ```
 
 **Arguments:**

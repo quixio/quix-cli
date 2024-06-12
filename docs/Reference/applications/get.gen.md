@@ -9,7 +9,7 @@ Get an application in the specified environment
 **Usage:**
 
 ```
-quix applications get [<workspace-id> <application-id>] [options]
+quix applications get <workspace-id> <application-id> [options]
 ```
 
 **Arguments:**
