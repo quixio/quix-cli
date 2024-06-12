@@ -29,6 +29,9 @@ To stop and remove all the containers defined in your `compose.yaml` file, use t
 $ quix local pipeline down
 ```
 
+!!! tip
+    The `--keep-broker` option allows you to keep the local broker running while stopping and removing the other containers. This is useful if you need the broker to remain active for other purposes like using it for local as your local debug broker.
+
 In practice, this command is a shortcut for `docker compose down`. It stops all running services and removes the containers, networks, and volumes associated with the Docker Compose configuration.
 
 For example:

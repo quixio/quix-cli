@@ -44,10 +44,10 @@ Generating deployment event-detection-transformation
     $ quix local pipeline up --dry-run
     ```
 
-Next, it executes `docker compose up --build -d` to build and run the Docker containers:
+Next, it executes `docker compose up --build -d --remove-orphans` to build and run the Docker containers:
 
 ```text
-Executing 'docker compose up --build -d'
+Executing 'docker compose up --build -d --remove-orphans'
 ```
 
 #### Running the Containers
@@ -74,6 +74,7 @@ Containers  Started
     $ quix local pipeline update
     $ quix local pipeline up
     ```
+
 #### Generated `compose.yaml` File Overview
 
 The `compose.yaml` file configures the services in your pipeline. Here's an overview of what will be generated:
@@ -85,14 +86,14 @@ The `compose.yaml` file configures the services in your pipeline. Here's an over
 
     ```yaml
     environment:
-      input1: f1-data
+      input: f1-data
       output: hard-braking
       Quix__Broker__Address: kafka-broker:9092
     ```
 
     These environment variables are injected into the container at runtime:
 
-    - **input1**: Specifies the input data stream (`f1-data`).
+    - **input**: Specifies the input data stream (`f1-data`).
 
     - **output**: Specifies the output data stream (`hard-braking`).
 

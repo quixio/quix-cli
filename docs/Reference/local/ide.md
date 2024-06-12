@@ -4,11 +4,34 @@
 
 The `quix local ide` command sets up your development environment for a specified application by generating all necessary IDE-dependent files. This integration allows you to run and debug your application directly from your chosen IDE.
 
-Each time you run or debug your code using the generated run configuration, the command exports variables from the `app.yaml` file to a `.env` file or a devcontainer configuration. This ensures that the environment is correctly set up before you begin editing and debugging.
+Each time you run or debug your code using the generated run configuration, the command exports variables from the `app.yaml` file to a `.env` file or a devcontainer configuration. This ensures that the environment is correctly set up before you begin editing and debugging. Specifically, this command executes `quix local application variables export`, which adds the application values along with broker or SDK tokens to a `.env` file.
 
 This command is particularly useful the first time you edit an application, as it automates the setup process. While you can run it multiple times, its primary benefits are realized during the initial setup.
 
 You need to have [VS Code](https://code.visualstudio.com/) or [PyCharm](https://www.jetbrains.com/pycharm/) installed for this command to be effective.
+
+### Debug Broker Configuration
+
+To facilitate debugging, the `quix local ide` command sets up a default *debug broker configuration* that points to `localhost:19092`. This configuration allows your application to connect to a local broker instance for testing and debugging purposes.
+
+You can edit the *debug broker configuration* to suit your needs. The default configuration is designed to work out-of-the-box, but you can change it to point to any broker, including a Quix Cloud environment.
+
+To use a local debug broker, you can easily set one up by running `quix local pipeline up` or `quix local broker up`. These commands will start a local broker instance that listens on `localhost:19092`.
+
+!!! tip
+    You can change your debug broker address using `quix context broker set`. To use the broker address from your Quix Cloud environment, use `quix context broker cloud`.
+
+In practice, this setup adds the following environment variable to your configuration:
+
+```
+Quix__Broker__Address={your_debug_broker_address}
+```
+
+If you set your local debug broker configuration to point to Quix Cloud, it will add:
+
+```
+Quix__Sdk__Token={your_token}
+```
 
 !!! warning
     Ensure you have a local broker configured or a Quix Cloud workspace set up. Without these, you won't have a Kafka instance to run your application against, and the command will not function properly.
@@ -110,7 +133,7 @@ After selecting the application, the command performs several checks to ensure t
 
 ```text
 ✓ Found application 'Starter Source'
-✓ Using localhost:9092
+✓ Using localhost:19092
 ✓ VS Code is installed
 ✓ PyCharm is installed
 ```
