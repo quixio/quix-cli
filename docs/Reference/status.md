@@ -1,4 +1,5 @@
 {% include-markdown './status.gen.md' %}
+
 ## How it Works
 
 The `quix status` command is used to perform a global status check within the Quix CLI environment. It provides information about the current user's authentication status, context information, Git repository status, installed IDEs, and the presence of Docker and Git installations.
