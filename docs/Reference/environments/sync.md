@@ -1,27 +1,24 @@
 {% include-markdown './sync.gen.md' %}
-
-{% include-markdown './sync.gen.md' %}
-
 ## How It Works
 
-The `quix environment sync` command orchestrates the synchronization process between your local development environment and the cloud environment based on the configurations specified in the `quix.yaml` file. Here's an overview of its functionality:
-
-1. **Identification of Workspace**: 
-   If no default workspace ID is detected, the user is prompted to select one. This workspace serves as the target environment for synchronization.
-
-2. **Project and Environment Validation**: 
-   The command validates the project and environment configurations to ensure they are correctly set up for synchronization.
-
-3. **Changes Analysis**: 
-   It analyzes the `quix.yaml` file to identify any updates or modifications to deployments and topics.
-
-4. **Cloud Environment Synchronization**: 
-   Based on the changes detected, the command synchronizes the cloud environment with the configurations specified in `quix.yaml`. This includes updating existing deployments, adding new ones, and aligning topics as per the defined specifications.
-
+The `quix environment sync` command orchestrates the synchronization process between your local development environment and the cloud environment based on the configurations specified in the `quix.yaml` file. 
+Based on the changes detected, the command synchronizes the cloud environment with the configurations specified in `quix.yaml`. This includes updating existing deployments, adding new ones, and aligning topics as per the defined specifications.
 
 ## Example Usage
 
-The `quix env sync` command facilitates the synchronization of your cloud environment with configurations specified in the `quix.yaml` file. Below is an example showcasing the synchronization process:
+### Check the sync status
+
+```bash
+$ quix env sync quixdev-quickstart-prod --status
+! Out of sync
+Synchronized to commit: [9a9483d]
+✗ 1 commits behind the repository's head: [d570a96]
+```
+
+### Sync a given environment
+
+!!! tip
+    Use the option ``--dry-run`` if you just want to preview the changes, before applying
 
 ```bash
 $ quix env sync quixdev-quickstart-prod
