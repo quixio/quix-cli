@@ -66,12 +66,15 @@ nav:
   - 'Using the CLI with GitHub Actions': 'cli-github-actions.md'
 - Reference:
   - applications:
+    - Reference/applications/index.md
     - applications get: Reference/applications/get.md
     - applications list: Reference/applications/list.md
     - applications library:
+      - Reference/applications/library/index.md
       - applications library list: Reference/applications/library/list.md
   - login: Reference/login.md
   - contexts:
+    - Reference/contexts/index.md
     - contexts create: Reference/contexts/create.md
     - contexts current: Reference/contexts/current.md
     - contexts list: Reference/contexts/list.md
@@ -79,15 +82,18 @@ nav:
     - contexts reset: Reference/contexts/reset.md
     - contexts use: Reference/contexts/use.md
     - contexts environments:
+      - Reference/contexts/environments/index.md
       - contexts environments clear: Reference/contexts/environments/clear.md
       - contexts environments get: Reference/contexts/environments/get.md
       - contexts environments use: Reference/contexts/environments/use.md
     - contexts broker:
+      - Reference/contexts/broker/index.md
       - contexts broker disable: Reference/contexts/broker/disable.md
       - contexts broker enable: Reference/contexts/broker/enable.md
       - contexts broker set: Reference/contexts/broker/set.md
       - contexts broker toggle: Reference/contexts/broker/toggle.md
   - deployments:
+    - Reference/deployments/index.md
     - deployments get: Reference/deployments/get.md
     - deployments list: Reference/deployments/list.md
     - deployments logs: Reference/deployments/logs.md
@@ -95,16 +101,20 @@ nav:
     - deployments start: Reference/deployments/start.md
     - deployments stop: Reference/deployments/stop.md
   - environments:
+    - Reference/environments/index.md
     - environments get: Reference/environments/get.md
     - environments list: Reference/environments/list.md
     - environments use: Reference/environments/use.md
     - environments sync: Reference/environments/sync.md
   - local:
+    - Reference/local/index.md
     - local applications:
+      - Reference/local/applications/index.md
       - local applications convert: Reference/local/applications/convert.md
       - local applications create: Reference/local/applications/create.md
       - local applications list: Reference/local/applications/list.md
       - local applications variables:
+        - Reference/local/applications/variables/index.md
         - local applications variables create: Reference/local/applications/variables/create.md
         - local applications variables delete: Reference/local/applications/variables/delete.md
         - local applications variables edit: Reference/local/applications/variables/edit.md
@@ -114,7 +124,9 @@ nav:
     - local ide: Reference/local/ide.md
     - local init: Reference/local/init.md
     - local pipeline:
+      - Reference/local/pipeline/index.md
       - local pipeline deployments:
+        - Reference/local/pipeline/deployments/index.md
         - local pipeline deployments create: Reference/local/pipeline/deployments/create.md
         - local pipeline deployments delete: Reference/local/pipeline/deployments/delete.md
         - local pipeline deployments edit: Reference/local/pipeline/deployments/edit.md
@@ -126,19 +138,24 @@ nav:
       - local pipeline update: Reference/local/pipeline/update.md
       - local pipeline view: Reference/local/pipeline/view.md
   - organisations:
+    - Reference/organisations/index.md
     - organisations get: Reference/organisations/get.md
   - projects:
+    - Reference/projects/index.md
     - projects patch: Reference/projects/patch.md
     - projects get: Reference/projects/get.md
     - projects list: Reference/projects/list.md
   - status: Reference/status.md
   - topics:
+    - Reference/topics/index.md
     - topics get: Reference/topics/get.md
     - topics list: Reference/topics/list.md
   - update: Reference/update.md
   - users:
+    - Reference/users/index.md
     - users audit: Reference/users/audit.md
     - users permissions:
+      - Reference/users/permissions/index.md
       - users permissions copy: Reference/users/permissions/copy.md
       - users permissions delete: Reference/users/permissions/delete.md
       - users permissions edit: Reference/users/permissions/edit.md
@@ -146,6 +163,7 @@ nav:
       - users permissions list: Reference/users/permissions/list.md
       - users permissions set: Reference/users/permissions/set.md
     - users tokens:
+      - Reference/users/tokens/index.md
       - users tokens create: Reference/users/tokens/create.md
       - users tokens edit: Reference/users/tokens/edit.md
       - users tokens list: Reference/users/tokens/list.md

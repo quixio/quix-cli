@@ -105,7 +105,7 @@ quix login <patToken>
 
 ### Get Started
 
-After setting up your context and logging in you will be able to access your Quix organisation. For more information visit [Quix Docs](https://quix.io/docs/get-started/cli.html).
+After setting up your context and logging in you will be able to access your Quix organisation. For more information visit [Quix Docs](https://quix.io/docs/cli/overview.html).
 
 ### Using dedicated Quix clusters
 
