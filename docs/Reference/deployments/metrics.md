@@ -31,15 +31,15 @@ If no deployment ID is provided, the command will prompt you to select a workspa
 ```bash
 $ quix deployment metrics
 ? Select project:
-  petertestconfluentsource
-  quick start
-  QuixDemo
-  QuixTets2
-  Simon COWL
-  Test Performance
-  Test Secrets
-  tim testing
-> WEF
+  projA
+  projB
+> projC
+  ✗ Cancel
+
+? Select environment:
+  envX
+  envY
+> envZ
   ✗ Cancel
 
 ? Select deployment:
