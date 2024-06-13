@@ -9,7 +9,7 @@ Sets the whole permissions of a user, replacing the current ones. Available role
 **Usage:**
 
 ```
-quix users permissions set [<user-id>] [options]
+quix users permissions set <user-id> [options]
 ```
 
 **Arguments:**

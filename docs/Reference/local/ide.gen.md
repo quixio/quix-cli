@@ -9,7 +9,7 @@ Setup everything needed for local application development and open your local ID
 **Usage:**
 
 ```
-quix local ide [<directory>] [options]
+quix local ide <directory> [options]
 ```
 
 **Arguments:**

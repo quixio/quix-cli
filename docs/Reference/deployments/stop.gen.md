@@ -9,7 +9,7 @@ Stop a deployment
 **Usage:**
 
 ```
-quix deployments stop [<deployment-id>] [options]
+quix deployments stop <deployment-id> [options]
 ```
 
 **Arguments:**

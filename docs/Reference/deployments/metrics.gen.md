@@ -9,7 +9,7 @@ Get deployments metrics
 **Usage:**
 
 ```
-quix deployments metrics [<deployment-id>] [options]
+quix deployments metrics <deployment-id> [options]
 ```
 
 **Arguments:**
