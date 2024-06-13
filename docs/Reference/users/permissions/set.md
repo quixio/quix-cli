@@ -12,6 +12,8 @@ This command is used to set the permissions of a user in your organization. This
 
 ### Example Usage
 
+## Interactivity
+
 Select the user
 
 ```bash
@@ -63,3 +65,15 @@ Confirm the permissions
 
 ? Use these permissions?: [y/n] (y):
 ```
+
+## Without Interactivity
+
+```bash
+
+ quix user permissions set userId --scope Workspace:myorg-projecta-environmentx --role Admin
+
+```
+
+!!! tip
+
+    In order to get the user id you can use [this](../list.md) command
