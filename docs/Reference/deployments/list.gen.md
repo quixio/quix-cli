@@ -9,7 +9,7 @@ Get the information for all the deployments in an environment
 **Usage:**
 
 ```
-quix deployments list <workspace-id> [options]
+quix deployments list [<workspace-id>] [options]
 ```
 
 **Arguments:**

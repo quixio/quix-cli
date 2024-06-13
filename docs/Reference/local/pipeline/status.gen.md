@@ -1,15 +1,15 @@
-# status
+# local pipeline status
 
 ## Overview
 
-Global status check
+Display the current status of the local pipeline
 
 **Aliases:** status
 
 **Usage:**
 
 ```
-quix status [options]
+quix local pipeline status [options]
 ```
 
 **Options:**

@@ -9,7 +9,7 @@ Deletes the value of a single permission of a user in the organisation
 **Usage:**
 
 ```
-quix users permissions delete <user-id> [options]
+quix users permissions delete [<user-id>] [options]
 ```
 
 **Arguments:**

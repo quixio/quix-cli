@@ -9,7 +9,7 @@ Get the permissions of a user or all the users in the organisation
 **Usage:**
 
 ```
-quix users permissions get <user-id> [options]
+quix users permissions get [<user-id>] [options]
 ```
 
 **Arguments:**

@@ -9,7 +9,7 @@ Get a local deployment
 **Usage:**
 
 ```
-quix local pipeline deployments get <deployment-name> [options]
+quix local pipeline deployments get [<deployment-name>] [options]
 ```
 
 **Arguments:**

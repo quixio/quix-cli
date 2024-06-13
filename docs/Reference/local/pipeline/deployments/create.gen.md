@@ -2,14 +2,14 @@
 
 ## Overview
 
-Get a local deployment
+Add a local deployment
 
 **Aliases:** create, add
 
 **Usage:**
 
 ```
-quix local pipeline deployments create <application-id> [options]
+quix local pipeline deployments create [<application-id>] [options]
 ```
 
 **Arguments:**

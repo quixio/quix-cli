@@ -2,14 +2,14 @@
 
 ## Overview
 
-Login to your Quix account
+Login to your Quix Cloud account
 
 **Aliases:** login
 
 **Usage:**
 
 ```
-quix login <pat> [options]
+quix login [<pat>] [options]
 ```
 
 **Arguments:**

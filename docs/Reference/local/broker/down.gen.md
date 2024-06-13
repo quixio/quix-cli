@@ -1,19 +1,19 @@
-# local pipeline down
+# local broker down
 
 ## Overview
 
-Stop the execution of your local pipeline
+Stop the local broker instance and all the services depending on it
 
 **Aliases:** down, stop
 
 **Usage:**
 
 ```
-quix local pipeline down [options]
+quix local broker down [options]
 ```
 
 **Options:**
 
 - `--directory <directory>` : If specified, it will use that directory instead of the current one
-- `--keep-broker` : Keep the local broker running
+- `--force` : Bypass all safety checks
 

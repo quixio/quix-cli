@@ -9,7 +9,7 @@ Get deployments logs
 **Usage:**
 
 ```
-quix deployments logs <deployment-id> [options]
+quix deployments logs [<deployment-id>] [options]
 ```
 
 **Arguments:**

@@ -9,7 +9,7 @@ Get information of a topic for the specified environment
 **Usage:**
 
 ```
-quix topics get <topic-id> <workspace-id> [options]
+quix topics get <topic-id> [<workspace-id>] [options]
 ```
 
 **Arguments:**

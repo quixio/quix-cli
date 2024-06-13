@@ -2,14 +2,14 @@
 
 ## Overview
 
-Get a local deployment
+Edit a local deployment
 
 **Aliases:** edit
 
 **Usage:**
 
 ```
-quix local pipeline deployments edit <deployment-name> [options]
+quix local pipeline deployments edit [<deployment-name>] [options]
 ```
 
 **Arguments:**

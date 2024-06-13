@@ -9,7 +9,7 @@ Start a deployment
 **Usage:**
 
 ```
-quix deployments start <deployment-id> [options]
+quix deployments start [<deployment-id>] [options]
 ```
 
 **Arguments:**

@@ -9,15 +9,17 @@ Add a new context to the CLI
 **Usage:**
 
 ```
-quix contexts create <name> <endpoint> [options]
+quix contexts create [<name>] [options]
 ```
 
 **Arguments:**
 
 - `<name>` : Name of the context
-- `<endpoint>` : Portal endpoint or local broker address if --local is used
 
 **Options:**
 
-- `--local-broker <local-broker>` : Use a local broker address instead of portal endpoint
+- `-e, --endpoint <endpoint>` : Portal endpoint
+- `-b, --debug-broker-address <debug-broker-address>` : Local debug broker address
+- `-c, --use-quix-cloud-broker` : Set the local debug broker to the one in your Quix Cloud environment
+- `-l, --use-local-broker` : Set the local debug broker to one accessible from your local machine
 
