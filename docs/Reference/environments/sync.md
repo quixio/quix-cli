@@ -23,29 +23,28 @@ Synchronized to commit: [9a9483d]
 ```bash
 $ quix env sync quixdev-quickstart-prod
 
-  Changes              │ Current                             │ Target
- ──────────────────────┼─────────────────────────────────────┼─────────────────────────────────────
-  add topic 'csv-data' │                                     │ name: csv-data
-                       │                                     │ configuration:
-                       │                                     │   partitions: 1
-                       │                                     │
-  add deployment       │                                     │ name: Starter Source
-  'Starter Source'     │                                     │ application: Starter Source
-                       │                                     │ version:
-                       │                                     │ b07133f7c7aca77aeece1063013b0b47cd3
-                       │                                     │ e4803
-                       │                                     │ deploymentType: Job
-                       │                                     │ resources:
-                       │                                     │   cpu: 100
-                       │                                     │   memory: 100
-                       │                                     │   replicas: 1
-                       │                                     │ variables:
-                       │                                     │   - name: output
-                       │                                     │     inputType: OutputTopic
-                       │                                     │     description: Name of the output
-                       │                                     │ topic to write into
-                       │                                     │     required: true
-                       │                                     │     value: csv-data
+  Changes               | Current     | Target
+ -----------------------|-------------|---------------------------------------------------------
+  add topic 'csv-data'  |             | name: csv-data
+                        |             | configuration:
+                        |             |   partitions: 1
+                        |             |
+  add deployment        |             | name: Starter Source
+  'Starter Source'      |             | application: Starter Source
+                        |             | version: b07133f7c7aca77aeece1063013b0b47cd3e4803
+                        |             | deploymentType: Job
+                        |             | resources:
+                        |             |   cpu: 100
+                        |             |   memory: 100
+                        |             |   replicas: 1
+                        |             | variables:
+                        |             |   - name: output
+                        |             |     inputType: OutputTopic
+                        |             |     description: Name of the output topic to write into
+                        |             |     required: true
+                        |             |     value: csv-data
+
+
 ```
 
 * Changes Column: This column provides a description of the changes detected during the synchronization process. It outlines what specific modifications or additions have been identified in the quix.yaml configuration file compared to the current environment state.

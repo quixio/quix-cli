@@ -26,9 +26,11 @@ When you execute the `quix login` command without any options:
 $ quix login
 If your browser did not open, please copy the following URL and paste it in your browser:
 https://auth.quix.ai/activate?user_code=XVHF-MSMG
-╭─Your code is:──╮
-│ XVHF-MSMG      │
-╰────────────────╯
++----------------+
+| Your code is:  |
+| XVHF-MSMG      |
++----------------+
+
 ✓ Logged in successfully
 ```
 

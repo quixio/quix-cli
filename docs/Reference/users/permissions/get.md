@@ -18,9 +18,9 @@ The `quix user permissions get` command retrieves the permissions of a specified
 
 ✓ User: john.doe@example.com
 
-  Scope                │ Role
- ──────────────────────┼───────
-  Organisation:myorg   │ Admin
+Scope               | Role
+--------------------|-------
+Organisation:myorg  | Admin
 ```
 
 ### Without Interactivity
@@ -28,9 +28,9 @@ The `quix user permissions get` command retrieves the permissions of a specified
 ```bash
  quix users permissions get <userId>
 
-  Scope                │ Role
- ──────────────────────┼───────
-  Organisation:myorg   │ Admin
+Scope               | Role
+--------------------|-------
+Organisation:myorg  | Admin
 ```
 
 !!! tip
