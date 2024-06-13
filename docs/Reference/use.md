@@ -3,7 +3,7 @@
 
 The `quix use` command allows you to set a default workspace for the current context in your local development environment. This command streamlines your workflow by ensuring that the correct workspace is configured without the need for manual adjustments each time, reducing the risk of errors and increasing efficiency.
 
-## Exemple Usage
+## Example Usage
 
 ### Interactivity
 

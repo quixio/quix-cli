@@ -1,2 +1,5 @@
 {% include-markdown './use.gen.md' %}
-Alias for [this](../use.md) command
+!!! info
+
+    Used as an Alias for [this](../use.md) command
+
