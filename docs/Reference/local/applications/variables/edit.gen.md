@@ -2,7 +2,7 @@
 
 ## Overview
 
-Edits a new variable of the current application
+Creates a new variable of the current application
 
 **Aliases:** edit
 

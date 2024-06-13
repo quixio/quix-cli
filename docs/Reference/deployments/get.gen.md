@@ -9,7 +9,7 @@ Get the details for a deployment
 **Usage:**
 
 ```
-quix deployments get [<deployment-id> [<workspace-id>]] [options]
+quix deployments get <deployment-id> <workspace-id> [options]
 ```
 
 **Arguments:**

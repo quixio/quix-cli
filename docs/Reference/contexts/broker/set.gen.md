@@ -9,7 +9,7 @@ Sets the address for the local broker of the current context
 **Usage:**
 
 ```
-quix contexts broker set [<address>] [options]
+quix contexts broker set <address> [options]
 ```
 
 **Arguments:**

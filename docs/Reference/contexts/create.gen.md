@@ -9,7 +9,7 @@ Add a new context to the CLI
 **Usage:**
 
 ```
-quix contexts create [<name> [<endpoint>]] [options]
+quix contexts create <name> <endpoint> [options]
 ```
 
 **Arguments:**

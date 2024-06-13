@@ -9,7 +9,7 @@ Sync your environment based on the attached project
 **Usage:**
 
 ```
-quix environments sync [<workspace-id>] [options]
+quix environments sync <workspace-id> [options]
 ```
 
 **Arguments:**

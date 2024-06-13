@@ -1,4 +1,4 @@
-# local applications variables export
+# local variables export
 
 ## Overview
 
@@ -9,7 +9,7 @@ Exports the variables from app.yaml to an .env file
 **Usage:**
 
 ```
-quix local applications variables export [options]
+quix local variables export [options]
 ```
 
 **Options:**

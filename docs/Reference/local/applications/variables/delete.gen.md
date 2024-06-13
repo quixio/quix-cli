@@ -9,7 +9,7 @@ Deletes a variable of the current application
 **Usage:**
 
 ```
-quix local applications variables delete [<name>] [options]
+quix local applications variables delete <name> [options]
 ```
 
 **Arguments:**

@@ -9,7 +9,7 @@ Adds or edits the value of a single permission of a user in the organisation. Av
 **Usage:**
 
 ```
-quix users permissions edit [<user-id>] [options]
+quix users permissions edit <user-id> [options]
 ```
 
 **Arguments:**
