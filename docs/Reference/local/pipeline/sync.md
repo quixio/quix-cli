@@ -25,7 +25,7 @@ $ quix local pipeline sync
 ```
 
 !!! tip
-    Using the `--update` option will perform the same actions as running `quix local pipeline update` before syncing.
+    Using the `--update` option will perform the same actions as running [`quix local pipeline update`](update.md) before syncing.
 
 This command stages all changes in your local repository:
 

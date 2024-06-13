@@ -13,7 +13,7 @@ The `quix local applications variables import` command updates the `app.yaml` fi
 This ensures that your application configuration is kept up-to-date with the latest environment variables, making it easier to manage and deploy your applications consistently.
 
 !!! warning
-    It is generally better to manually edit the `app.yaml` file or use the CLI commands under `quix local applications variables` to ensure all configurations are correct and intentional. Regular use of this import command is not recommended.
+    It is generally better to manually edit the `app.yaml` file or use the CLI commands under [`quix local applications variables`](index.md) to ensure all configurations are correct and intentional. Regular use of this import command is not recommended.
 
 ## Example usage
 

@@ -62,18 +62,8 @@ Containers  Started
 ```
 
 !!! tip
-    To update `quix.yaml` with the new local applications and update the variables of existing deployments before running the pipeline, use the following command:
-
-    ```bash
-    $ quix local pipeline up --update
-    ```
-
-    This command is shorthand for performing both the update and synchronization in one step. Specifically, it executes:
-
-    ```bash
-    $ quix local pipeline update
-    $ quix local pipeline up
-    ```
+    Using the `--update` option will perform the same actions as running [`quix local pipeline update`](update.md) before generating the `compose.yaml` file.
+    
 
 #### Generated `compose.yaml` File Overview
 

@@ -4,22 +4,32 @@
 
 The `quix local ide` command sets up your development environment for a specified application by generating all necessary IDE-dependent files. This integration allows you to run and debug your application directly from your chosen IDE.
 
-Each time you run or debug your code using the generated run configuration, the command exports variables from the `app.yaml` file to a `.env` file or a devcontainer configuration. This ensures that the environment is correctly set up before you begin editing and debugging. Specifically, this command executes `quix local application variables export`, which adds the application values along with broker or SDK tokens to a `.env` file.
-
 This command is particularly useful the first time you edit an application, as it automates the setup process. While you can run it multiple times, its primary benefits are realized during the initial setup.
 
-You need to have [VS Code](https://code.visualstudio.com/) or [PyCharm](https://www.jetbrains.com/pycharm/) installed for this command to be effective.
+!!! note
+    You need to have [VS Code](https://code.visualstudio.com/) or [PyCharm](https://www.jetbrains.com/pycharm/) installed for this command to be effective.
 
-### Debug Broker Configuration
+### Automatic Environment Variable Export
 
-To facilitate debugging, the `quix local ide` command sets up a default *debug broker configuration* that points to `localhost:19092`. This configuration allows your application to connect to a local broker instance for testing and debugging purposes.
+Each time you run or debug your code using the generated run configuration, the command exports variables from the `app.yaml` file to a `.env` file or a devcontainer configuration. This ensures that the environment is correctly set up before you begin editing and debugging. 
 
-You can edit the *debug broker configuration* to suit your needs. The default configuration is designed to work out-of-the-box, but you can change it to point to any broker, including a Quix Cloud environment.
+Specifically, this command executes [`quix local application variables export`](applications/variables/export.md), which adds the application values along with the broker or SDK token to a `.env` file.
 
-To use a local debug broker, you can easily set one up by running `quix local pipeline up` or `quix local broker up`. These commands will start a local broker instance that listens on `localhost:19092`.
+#### Debug Broker Configuration
 
-!!! tip
-    You can change your debug broker address using `quix context broker set`. To use the broker address from your Quix Cloud environment, use `quix context broker cloud`.
+=== "Pipeline Broker"
+
+    To use a local debug broker, you can easily set one up by running `quix local broker up`. This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix context broker local`.
+
+=== "Quix Cloud Broker"
+
+    To use the broker address from your Quix Cloud environment, use `quix context broker cloud`. Ensure you are logged into Quix Cloud by running `quix login` if you are not already logged in. If you have never selected an environment, run `quix use` to select it.
+
+=== "Other Broker"
+
+    To use a broker address other than `localhost:19092`, run `quix context broker set`.
+
+    You can edit the *debug broker configuration* to suit your needs. The default configuration is designed to work out-of-the-box, but you can change it to point to any broker, including a Quix Cloud environment. 
 
 In practice, this setup adds the following environment variable to your configuration:
 
@@ -33,81 +43,43 @@ If you set your local debug broker configuration to point to Quix Cloud, it will
 Quix__Sdk__Token={your_token}
 ```
 
-!!! warning
+!!! tip
     Ensure you have a local broker configured or a Quix Cloud workspace set up. Without these, you won't have a Kafka instance to run your application against, and the command will not function properly.
 
+### Generated Files
 
-??? info "Generated files"
+#### IDE Files
 
-    === "VS Code"
-    
-        The `launch.json` file configures the Python debugger to use the integrated terminal and ensures that environment variables are set correctly by running the `quix-variables-export` task before debugging starts.
-        
-        ``` json title=".vscode\launch.json"
-        {
-            "version": "0.2.0",
-            "configurations": [
-                {
-                    "name": "Python Debugger: Current File",
-                    "type": "debugpy",
-                    "request": "launch",
-                    "program": "${file}",
-                    "console": "integratedTerminal",
-                    "preLaunchTask": "quix-variables-export",
-                    "envFile": "${workspaceFolder}/.env"
-                }
-            ]
-        }
-        ```
-        
-        The `tasks.json` file defines a custom task to export the application variables from the `app.yaml` file to a `.env` file. This task is executed before running the debugger.
-        
-        ``` json title=".vscode\tasks.json"
-        {
-          "version": "2.0.0",
-          "tasks": [
-            {
-              "label": "quix-variables-export",
-              "type": "shell",
-              "problemMatcher": [],
-              "command": "quix",
-              "args": [ "local", "application", "variables", "export" ]
-            }
-          ]
-        }
-        ```
+=== "VS Code"
 
-    === "PyCharm"
-    
-        The `Quix.xml` file configures a run configuration in PyCharm, specifying how to execute and debug the application. It includes a pre-launch task to export environment variables using the `quix-variables-export` external tool.
-        
-        ``` xml title=".idea\runConfigurations\Quix.xml"
-        <component name="ProjectRunConfigurationManager">
-          <configuration default="false" name="Quix" type="PythonConfigurationType" factoryName="Python">
-            <module name="{{appId}}" />
-            <!-- ... -->
-            <method v="2">
-              <option name="ToolBeforeRunTask" enabled="true" actionId="Tool_External Tools_quix-variables-export" />
-            </method>
-          </configuration>
-        </component>
-        ```
+    For VS Code, the `quix local ide` command generates the necessary configurations to ensure smooth debugging and development:
 
-        The `External Tools.xml` file defines an external tool in PyCharm to export the application variables from the `app.yaml` file to a `.env` file. This tool is run before the main application execution starts.
+    - **launch.json**: Configures the Python debugger to use the integrated terminal. It includes a pre-launch task `quix-variables-export` to set environment variables correctly before debugging.
+    - **tasks.json**: Defines a custom task `quix-variables-export` that exports application variables from the `app.yaml` file to a `.env` file. This task is executed before running the debugger.
 
-        ``` xml title="~/JetBrains/External Tools.xml"
-        <tool name="quix-variables-export" description="Quix Variables Export" showInMainMenu="false" showInEditor="false" showInProject="false" showInSearchPopup="false" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
-          <exec>
-            <option name="COMMAND" value="quix" />
-            <option name="PARAMETERS" value="local application variables export" />
-            <option name="WORKING_DIRECTORY" value="$ProjectFileDir$" />
-          </exec>
-        </tool>
-        ```
+=== "PyCharm"
 
-### Dev Containers
+    For PyCharm, the `quix local ide` command generates configurations to facilitate debugging:
 
-Dev Containers provide an isolated and consistent development environment. By using the `--devcontainer` option, the command sets up the necessary configurations for Dev Containers, which is particularly useful for ensuring your development environment matches your production environment. This helps to avoid "it works on my machine" issues by creating a reproducible setup.
+    - **Quix.xml**: Configures a run configuration that includes a pre-launch task to export environment variables using the `quix-variables-export` external tool.
+    - **External Tools.xml**: Defines an external tool to export application variables from the `app.yaml` file to a `.env` file. This tool runs before the main application execution starts.
+
+These configurations ensure that your development environment is correctly set up, enabling you to run and debug your application seamlessly.
+
+#### Dev Containers
+
+Dev Containers provide an isolated and consistent development environment. By using the `--devcontainer` option, the command sets up the necessary configurations for Dev Containers. This is particularly useful for ensuring your development environment matches your production environment, helping to avoid the common "it works on my machine" issues by creating a reproducible setup.
+
+The dev container configuration reuses your existing Dockerfile, installs Python and Docker extensions, and sets up the Quix CLI within the dev container.
+
+The configuration includes:
+
+- **Build**: Uses your existing Dockerfile to build the dev container.
+- **Features**: Adds SSHD and Git features from Dev Containers, along with the Quix CLI.
+- **Customizations**: Configures VS Code settings and extensions, ensuring Python and Docker tools are available.
+- **Mounts**: Binds your local Quix configuration to the dev container, ensuring consistency.
+
+This setup ensures that your development environment is as close to the production environment as possible, providing a smooth and consistent development experience.
 
 For more information on Dev Containers, visit [Dev Containers](https://containers.dev/).
 
