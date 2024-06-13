@@ -13,17 +13,25 @@ When you pass any argument it will show you a list of environments:
 $ quix use
 ? Select project:
 
-> EnvA
-  EnvB
-  EnvC
+> projA
+  projB
+  projC
 ```
 Then you select the desired environment:
 
 ```bash
-$ quix use
-✓ Project: quick start
-✓ Environment: quick start - EnvA
-✓ workspace-id: quix-quickstart-enva
+✓ Project: projA
+? Select environment:
+
+> envX
+  envY
+  envZ
+  ✗ Cancel
+  ← Back
+
+✓ Project: projA
+✓ Environment: envX
+✓ workspace-id: quix-proja-envx
 ```
 
 ### No Interactivity
@@ -31,5 +39,5 @@ $ quix use
 You can directly choose the environment that you want to use
 
 ```bash
-quix use quix-quickstart-enva
+quix use quix-projA-envx
 ```
