@@ -40,10 +40,10 @@ Page: 1
 
   Email           │ Controller │ Action           │ Parameters                           │ UTC Time
  ─────────────────┼────────────┼──────────────────┼──────────────────────────────────────┼───────────────────────────────────
-  emanuel@quix.io │ Workspace  │ UpdateDescriptor │ workspaceId: quix-projA-envX         │ 2024-06-12T11:24:38.4490000+00:00
+  user@quix.io    │ Workspace  │ UpdateDescriptor │ workspaceId: quix-projA-envX         │ 2024-06-12T11:24:38.4490000+00:00
                   │            │                  │ commitMessage: Edited 'quix.yaml'    │
-  emanuel@quix.io │ Workspace  │ Sync             │ workspaceId: quix-projA-envX         │ 2024-06-12T11:24:56.9710000+00:00
-  emanuel@quix.io │ Workspace  │ Sync             │ workspaceId: quix-projA-envX         │ 2024-06-12T11:25:13.2770000+00:00
+  user@quix.io    │ Workspace  │ Sync             │ workspaceId: quix-projA-envX         │ 2024-06-12T11:24:56.9710000+00:00
+  user@quix.io    │ Workspace  │ Sync             │ workspaceId: quix-projA-envX         │ 2024-06-12T11:25:13.2770000+00:00
 
 Press any key to continue to the next page (Press ESC to exit)
 ```
