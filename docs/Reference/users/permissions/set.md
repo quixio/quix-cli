@@ -70,7 +70,7 @@ Confirm the permissions
 
 ```bash
 
- quix user permissions set userId --scope Workspace:myorg-projecta-environmentx --role Admin
+ quix user permissions set <userId> --scope Workspace:myorg-projecta-environmentx --role Admin
 
 ```
 
