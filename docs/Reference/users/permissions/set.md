@@ -12,9 +12,7 @@ This command is used to set the permissions of a user in your organization. This
 
 ### Example Usage
 
-Below is an example showcasing how to use the `quix user permissions set` command:
-
-* Select the user
+Select the user
 
 ```bash
 
@@ -26,4 +24,42 @@ $ quix user permissions set
   user2@example.com                       User Two
   user3@example.com                       User Three
 
+```
+
+Then select the resource
+
+```bash
+
+? Select resources:
+> [ ] MyOrg
+  [ ] Project A
+    [X] Environment X
+   [ ] ProjectB
+    [ ] EnvironmentY
+
+
+Use the arrow keys to navigate: ↑ ↓
+(Press <space> to select, <enter> to accept)
+```
+
+Select the role for this resource
+
+```bash
+? Select role for scope Project A - Environment X (Workspace) []:
+
+> Admin
+  Manager
+  Editor
+  Viewer
+
+```
+
+Confirm the permissions
+
+```bash
+  Scope                                           │ Role
+ ─────────────────────────────────────────────────┼───────
+  Workspace:myorg-projecta-environmentx           │ Admin
+
+? Use these permissions?: [y/n] (y):
 ```

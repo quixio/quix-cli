@@ -13,25 +13,25 @@ When you pass any argument it will show you a list of environments:
 $ quix use
 ? Select project:
 
-> projA
-  projB
-  projC
+> Project A
+  Project B
+  Project C
 ```
 Then you select the desired environment:
 
 ```bash
-✓ Project: projA
+✓ Project: Project A
 ? Select environment:
 
-> envX
-  envY
-  envZ
+> Environment X
+  Environment Y
+  Environment Z
   ✗ Cancel
   ← Back
 
-✓ Project: projA
-✓ Environment: envX
-✓ workspace-id: quix-proja-envx
+✓ Project: Project A
+✓ Environment: Environment X
+✓ workspace-id: myorg-projecta-environmentx
 ```
 
 ### No Interactivity
@@ -39,5 +39,5 @@ Then you select the desired environment:
 You can directly choose the environment that you want to use
 
 ```bash
-quix use quix-projA-envx
+quix use myorg-projecta-environmentx
 ```
