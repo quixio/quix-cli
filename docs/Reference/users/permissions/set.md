@@ -20,11 +20,11 @@ Select the user
 
 $ quix user permissions set
 ? Select user:
-> john.doe@example.com                    John Doe
-  jane.doe@example.com                    Jane Doe
-  user1@example.com                       User One
-  user2@example.com                       User Two
-  user3@example.com                       User Three
+> john.doe@myorg.com                    John Doe
+  jane.doe@myorg.com                    Jane Doe
+  user1@myorg.com                       User One
+  user2@myorg.com                       User Two
+  user3@myorg.com                       User Three
 
 ```
 
