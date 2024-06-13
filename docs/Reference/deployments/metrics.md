@@ -6,6 +6,8 @@ This command retrieves and displays real-time metrics for a specified deployment
 
 ## Example Usage
 
+{% include-markdown '../utils/tip-use.md' %}
+
 The `quix deployment metrics` command is used to retrieve and display real-time metrics for a specific deployment. Below are examples showcasing how to use this command:
 
 ### Fetching Metrics for a Specific Deployment
@@ -30,18 +32,6 @@ If no deployment ID is provided, the command will prompt you to select a workspa
 
 ```bash
 $ quix deployment metrics
-? Select project:
-  projA
-  projB
-> projC
-  ✗ Cancel
-
-? Select environment:
-  envX
-  envY
-> envZ
-  ✗ Cancel
-
 ? Select deployment:
   deployment-1
   deployment-2

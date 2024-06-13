@@ -7,6 +7,7 @@ The `quix deployment logs` command allows you to retrieve logs for a specific de
 
 ## Example Usage
 
+{% include-markdown '../utils/tip-use.md' %}
 
 ### Fetching Logs for a Specific Deployment
 
@@ -28,18 +29,6 @@ $ quix deployment logs deployment-4
 
 ```bash
 $ quix deployment logs
-
-? Select project:
-  projA
-  projB
-> projC
-  ✗ Cancel
-
-? Select environment:
-  envX
-  envY
-> envZ
-  ✗ Cancel
 
 ? Select deployment:
   deployment-1
