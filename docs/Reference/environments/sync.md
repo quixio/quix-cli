@@ -2,11 +2,11 @@
 
 ## How It Works
 
-The `quix environments sync` command orchestrates the synchronization process between your local development environment and the cloud environment based on the configurations specified in the `quix.yaml` file. It detects changes in your local configuration and synchronizes the cloud environment accordingly. This includes updating existing deployments, adding new ones, and aligning topics as per the defined specifications.
+The `quix environments sync` command facilitates the synchronization between your local development environment and the cloud environment based on configurations specified in the `quix.yaml` file. It detects changes in your local configuration and updates the cloud environment accordingly. This includes updating existing deployments, adding new ones, and aligning topics as defined in the specifications.
 
 ## Example Usage
 
-### Check the Sync Status
+### Check Sync Status
 
 To check the synchronization status of a specific environment, use the following command:
 
@@ -22,7 +22,7 @@ Synchronized to commit: [9a9483d]
 ✗ 1 commit behind the repository's head: [d570a96]
 ```
 
-### Sync a Given Environment
+### Synchronize Environment
 
 To synchronize a specific environment, use the following command:
 
@@ -57,8 +57,8 @@ The output will display the changes to be applied:
 
 #### Columns Explanation
 
-- **Changes Column**: Describes the changes detected during the synchronization process. It outlines specific modifications or additions identified in the `quix.yaml` configuration file compared to the current environment state.
-- **Current Column**: Displays the previous state of the environment or configuration. If both the topic and deployments are new additions, this column appears empty to indicate no previous configurations for these entities.
+- **Changes Column**: Describes the changes detected during synchronization. It outlines specific modifications or additions identified in the `quix.yaml` configuration file compared to the current environment state.
+- **Current Column**: Displays the previous state of the environment or configuration. If both the topic and deployments are new additions, this column appears empty, indicating no previous configurations for these entities.
 - **Target Column**: Represents the desired state after synchronization. It shows how the environment or configuration should look after applying the changes outlined in the `quix.yaml` file.
 
 !!! tip

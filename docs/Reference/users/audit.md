@@ -1,6 +1,6 @@
 {% include-markdown './audit.gen.md' %}
 
-### How It Works
+## How It Works
 
 1. **Email Filtering**:
     - You can specify an email address to fetch audit details for a particular user.
@@ -15,7 +15,7 @@
 4. **Key-Value Filtering**:
     - You can specify keys and values to filter the audit records.
 
-### Example Usage
+## Example Usage
 
 ```bash
 $ quix user audit --email user@quix.io "06/12/2024" "06/13/2024" -s 3 -p 1
@@ -31,7 +31,7 @@ user@quix.io    | Repository | Create          |                              | 
 Press any key to continue to the next page (Press ESC to exit)
 ```
 
-You can also filter the parameters, example how to filter by workspaceId:
+You can also filter the parameters. For example, to filter by workspaceId:
 
 ```bash
 quix user audit --email user@quix.io "06/12/2024" "06/13/2024" -s 3 -p 1 -k workspaceId -v quix-proja-envx
@@ -47,3 +47,4 @@ user@quix.io    | Workspace  | Sync             | workspaceId: quix-proja-envx  
 
 Press any key to continue to the next page (Press ESC to exit)
 ```
+

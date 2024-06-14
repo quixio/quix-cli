@@ -1,6 +1,6 @@
 {% include-markdown './patch.gen.md' %}
 
-## How it Works
+## How It Works
 
 When the `quix project patch` command is executed:
 
@@ -12,18 +12,24 @@ When the `quix project patch` command is executed:
 
 ### Edit Project Name
 
+To edit the name of a project:
+
 ```bash
 $ quix project patch my-project-id --name "New Project Name"
 ```
 
 ### Set Custom Pull Request URL Pattern
 
-```
+To set a custom pull request URL pattern:
+
+```bash
 $ quix project patch my-project-id --pull-request-url-pattern "https://example.com/pr/{{sourceBranch}}/{{destinationBranch}}"
 ```
 
 ### Remove Custom Pull Request URL Pattern
 
-```
+To remove the custom pull request URL pattern:
+
+```bash
 $ quix project patch my-project-id --no-pull-request-url-pattern
 ```

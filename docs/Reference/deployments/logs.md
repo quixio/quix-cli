@@ -1,6 +1,5 @@
 {% include-markdown './logs.gen.md' %}
 
-
 ## How It Works
 
 The `quix deployment logs` command allows you to retrieve logs for a specific deployment. This command helps you monitor and debug your deployments by providing access to their log outputs.
@@ -9,7 +8,7 @@ The `quix deployment logs` command allows you to retrieve logs for a specific de
 
 {% include-markdown '../utils/tip-use.md' %}
 
-### Interactive
+### Interactive Mode
 
 ```bash
 $ quix deployment logs
@@ -31,7 +30,7 @@ $ quix deployment logs
 ...
 ```
 
-### Non-Interactive
+### Non-Interactive Mode
 
 ```bash
 $ quix deployment logs deployment-4
@@ -46,6 +45,5 @@ $ quix deployment logs deployment-4
 ...
 ```
 
-!!! note ""
-
-    You can also dump the logs to a file by using `--file` option
+!!! note
+    You can also dump the logs to a file by using the `--file` option.
