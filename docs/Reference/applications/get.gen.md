@@ -14,8 +14,8 @@ quix applications get [<workspace-id> <application-id>] [options]
 
 **Arguments:**
 
-- `<workspace-id>`
-- `<application-id>`
+- `<workspace-id>` : The ID of the environment to set as default
+- `<application-id>` : The ID of the application
 
 **Options:**
 

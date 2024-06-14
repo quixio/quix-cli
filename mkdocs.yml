@@ -7,15 +7,28 @@ edit_uri: tree/main/docs
 exclude_docs: '*.gen.md'
 theme:
   name: material
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: blue grey
+    accent: blue
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: indigo
+    accent: light blue
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to light mode
   features:
   - navigation.path
   - navigation.indexes
+  - content.tabs.link
 markdown_extensions:
 - attr_list
 - md_in_html
-- pymdownx.superfences
-- pymdownx.tabbed:
-    alternate_style: true
 - admonition
 - footnotes
 - pymdownx.critic
@@ -34,6 +47,8 @@ markdown_extensions:
     - name: mermaid
       class: mermaid
       format: !!python/name:pymdownx.superfences.fence_code_format ''
+- pymdownx.tabbed:
+    alternate_style: true
 plugins:
 - include-markdown
 nav:
