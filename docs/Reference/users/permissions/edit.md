@@ -35,9 +35,9 @@ Next, you will be prompted to select the role for the existing scopes
 Finally, confirm the permissions.
 
 ```bash
-  Scope                                           │ Role
- ─────────────────────────────────────────────────┼───────
-  Workspace:myorg-projecta-environmentx           │ Admin
+  Scope                                           | Role
+ -------------------------------------------------|------
+  Workspace:myorg-projecta-environmentx           | Admin
 
 ? Use these permissions?: [y/n] (y):
 ```
@@ -53,9 +53,9 @@ $ quix user permissions edit user1@myorg.com --permission-assignments "[{Workspa
 After setting or editing the permissions, you will be asked to confirm the changes. If confirmed, the updated permissions will be saved.
 
 ```bash
-  Scope                                           │ Role
- ─────────────────────────────────────────────────┼───────
-  Workspace:myorg-projecta-environmentx           │ Admin
+  Scope                                           | Role
+ -------------------------------------------------|------
+  Workspace:myorg-projecta-environmentx           | Admin
 
 ? Use these permissions?: [y/n] (y):
 ```
