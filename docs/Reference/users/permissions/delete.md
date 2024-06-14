@@ -7,19 +7,7 @@ In interactive mode, if the user ID is not provided, the command will prompt you
 
 ## Example Usage
 
-### Non-Interactive Mode
-
-To delete a user's permission by directly specifying the user ID and permission scope:
-
-```bash
-$ quix users permissions delete <user-id> --scope "Workspace:myorg-projecta-environmentx"
-```
-
-!!! tip
-
-    In order to get the user id you can use [this](../list.md) command
-
-### Interactive Mode
+### Interactive
 
 If you run the command without specifying the user ID, it will enter interactive mode:
 
@@ -40,3 +28,16 @@ In this mode, you will be prompted to select the user from a list:
 ```
 
 After successfully deleting the permission, the console will display your current permissions
+
+### Non-Interactive
+
+To delete a user's permission by directly specifying the user ID and permission scope:
+
+```bash
+$ quix users permissions delete <user-id> --scope "Workspace:myorg-projecta-environmentx"
+```
+
+!!! tip
+
+    In order to get the user id you can use [this](../list.md) command
+

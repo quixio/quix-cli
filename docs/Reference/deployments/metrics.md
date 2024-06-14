@@ -10,23 +10,7 @@ This command retrieves and displays real-time metrics for a specified deployment
 
 The `quix deployment metrics` command is used to retrieve and display real-time metrics for a specific deployment. Below are examples showcasing how to use this command:
 
-### Fetching Metrics for a Specific Deployment
-
-If you know the deployment ID, you can provide it directly as an argument:
-
-```bash
-$ quix deployment metrics my-deployment-id
-
-Deployment metrics for my-deployment
-Deployment ID: my-deployment-id
-
-| Replica | Memory (MB) | CPU (millicores) | Last Update        |
-|---------|--------------|------------------|--------------------|
-| 0       | 256          | 500              | 2024-06-12 12:34:56|
-| 1       | 128          | 250              | 2024-06-12 12:35:00|
-```
-
-### Interactive Deployment Selection
+### Interactive
 
 If no deployment ID is provided, the command will prompt you to select a workspace and deployment interactively:
 
@@ -46,4 +30,20 @@ Deployment ID: deployment-4
 |---------|--------------|------------------|--------------------|
 | 0       | 512          | 1000             | 2024-06-12 12:40:00|
 | 1       | 256          | 500              | 2024-06-12 12:40:05|
+```
+
+### Non-Interactive
+
+If you know the deployment ID, you can provide it directly as an argument:
+
+```bash
+$ quix deployment metrics my-deployment-id
+
+Deployment metrics for my-deployment
+Deployment ID: my-deployment-id
+
+| Replica | Memory (MB) | CPU (millicores) | Last Update        |
+|---------|--------------|------------------|--------------------|
+| 0       | 256          | 500              | 2024-06-12 12:34:56|
+| 1       | 128          | 250              | 2024-06-12 12:35:00|
 ```

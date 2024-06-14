@@ -5,7 +5,7 @@ The `quix use` command allows you to set a default workspace for the current con
 
 ## Example Usage
 
-### Interactivity
+### Interactive
 
 When you pass any argument it will show you a list of environments:
 
@@ -34,7 +34,7 @@ Then you select the desired environment:
 ✓ workspace-id: myorg-projecta-environmentx
 ```
 
-### No Interactivity
+### Non-Interactive
 
 You can directly choose the environment that you want to use
 

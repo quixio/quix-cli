@@ -6,7 +6,7 @@ This command is used to copy the permissions from one user to other users in you
 
 ## Example Usage
 
-### Interactivity
+### Interactive
 
 Select the source user
 
@@ -38,7 +38,7 @@ Then you select the target user
 
 ```
 
-### No interactivity
+### Non-Interactive
 
 ```bash
 

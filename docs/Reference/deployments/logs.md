@@ -9,10 +9,17 @@ The `quix deployment logs` command allows you to retrieve logs for a specific de
 
 {% include-markdown '../utils/tip-use.md' %}
 
-### Fetching Logs for a Specific Deployment
+### Interactive
 
 ```bash
-$ quix deployment logs deployment-4
+$ quix deployment logs
+
+? Select deployment:
+  deployment-1
+  deployment-2
+  deployment-3
+> deployment-4
+  ✗ Cancel
 
 [ - Logs stream started - ]
 
@@ -24,18 +31,10 @@ $ quix deployment logs deployment-4
 ...
 ```
 
-
-### Interactive Deployment Selection
+### Non-Interactive
 
 ```bash
-$ quix deployment logs
-
-? Select deployment:
-  deployment-1
-  deployment-2
-  deployment-3
-> deployment-4
-  ✗ Cancel
+$ quix deployment logs deployment-4
 
 [ - Logs stream started - ]
 

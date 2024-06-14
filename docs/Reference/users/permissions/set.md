@@ -1,5 +1,5 @@
 {% include-markdown './set.gen.md' %}
-### How It Works
+## How It Works
 
 This command is used to set the permissions of a user in your organization. This command replaces the current permissions with the ones specified.
 
@@ -10,9 +10,9 @@ This command is used to set the permissions of a user in your organization. This
     - You can define the scope and role of the permissions. If not specified, the command will enter interactive mode to select projects, environments, and roles.
 
 
-### Example Usage
+## Example Usage
 
-## Interactivity
+### Interactive
 
 Select the user
 
@@ -66,7 +66,7 @@ Confirm the permissions
 ? Use these permissions?: [y/n] (y):
 ```
 
-## Without Interactivity
+### Non-Interactive
 
 ```bash
 

@@ -6,7 +6,7 @@ The `quix user permissions edit` command is used to add or edit the value of a s
 
 ### Example Usage
 
-#### Interactivity
+#### Interactive
 
 When you run the command without specifying the user ID or permission assignments, it will guide you through selecting a user and editing permissions interactively.
 
@@ -42,7 +42,7 @@ Finally, confirm the permissions.
 ? Use these permissions?: [y/n] (y):
 ```
 
-#### Without Interactivity
+### Non-Interactive
 
 You can also run the command by specifying the user ID and permission assignments directly. This allows for quick updates without interactive prompts.
 

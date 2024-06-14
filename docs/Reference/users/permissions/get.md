@@ -5,7 +5,7 @@ The `quix user permissions get` command retrieves the permissions of a specified
 
 ## Example Usage
 
-### Interactivity
+### Interactive
 
 ```bash
  quix users permissions get
@@ -23,7 +23,7 @@ Scope               | Role
 Organisation:myorg  | Admin
 ```
 
-### Without Interactivity
+### Non interactive
 
 ```bash
  quix users permissions get <userId>
