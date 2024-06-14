@@ -2,13 +2,13 @@
 
 ## How It Works
 
-This command is used to copy the permissions from one user to other users in your organization. It allows you to easily replicate permissions settings across multiple users.
+The `copy` command is used to replicate the permissions from one user to other users within your organization. This allows for efficient management of user permissions across multiple accounts.
 
 ## Example Usage
 
-### Interactive
+### Interactive Mode
 
-Select the source user
+Select the source user:
 
 ```bash
 $ quix user permissions copy
@@ -20,10 +20,9 @@ $ quix user permissions copy
   user3@myorg.com                       User Three
 ```
 
-Then you select the target user
+Then select the target user:
 
 ```bash
-
 ✓ User: john.doe@myorg.com
 
   Scope                                           | Role
@@ -31,17 +30,15 @@ Then you select the target user
   Workspace:myorg-projecta-environmentx           | Admin
 
 ? Select user:
-> jane.doe@myorg.com                    John Doe
+> jane.doe@myorg.com                    Jane Doe
   user1@myorg.com                       User One
   user2@myorg.com                       User Two
   user3@myorg.com                       User Three
-
 ```
 
-### Non-Interactive
+### Non-Interactive Mode
 
 ```bash
-
 $ quix user permissions copy <sourceUserId> --to <targetUserId1> --to <targetUserId2>
 
   Scope                                           | Role
@@ -53,5 +50,4 @@ $ quix user permissions copy <sourceUserId> --to <targetUserId1> --to <targetUse
 ```
 
 !!! tip
-
-    In order to get the user id you can use [this](../list.md) command
+    To get the user ID, you can use [this](../list.md) command.
