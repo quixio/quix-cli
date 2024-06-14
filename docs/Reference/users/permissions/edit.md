@@ -1,12 +1,12 @@
 {% include-markdown './edit.gen.md' %}
 
-### How It Works
+## How It Works
 
 The `quix user permissions edit` command is used to add or edit the value of a single permission of a user in the organization. This command allows specifying the scope and role for the permission, effectively updating the user's permissions.
 
-### Example Usage
+## Example Usage
 
-#### Interactive
+### Interactive Mode
 
 When you run the command without specifying the user ID or permission assignments, it will guide you through selecting a user and editing permissions interactively.
 
@@ -42,7 +42,7 @@ Finally, confirm the permissions.
 ? Use these permissions?: [y/n] (y):
 ```
 
-### Non-Interactive
+### Non-Interactive Mode
 
 You can also run the command by specifying the user ID and permission assignments directly. This allows for quick updates without interactive prompts.
 
@@ -58,4 +58,3 @@ After setting or editing the permissions, you will be asked to confirm the chang
   Workspace:myorg-projecta-environmentx           | Admin
 
 ? Use these permissions?: [y/n] (y):
-```
