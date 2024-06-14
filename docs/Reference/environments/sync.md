@@ -1,28 +1,38 @@
 {% include-markdown './sync.gen.md' %}
+
 ## How It Works
 
-The `quix environment sync` command orchestrates the synchronization process between your local development environment and the cloud environment based on the configurations specified in the `quix.yaml` file. 
-Based on the changes detected, the command synchronizes the cloud environment with the configurations specified in `quix.yaml`. This includes updating existing deployments, adding new ones, and aligning topics as per the defined specifications.
+The `quix environments sync` command orchestrates the synchronization process between your local development environment and the cloud environment based on the configurations specified in the `quix.yaml` file. It detects changes in your local configuration and synchronizes the cloud environment accordingly. This includes updating existing deployments, adding new ones, and aligning topics as per the defined specifications.
 
 ## Example Usage
 
-### Check the sync status
+### Check the Sync Status
+
+To check the synchronization status of a specific environment, use the following command:
 
 ```bash
 $ quix env sync quixdev-quickstart-prod --status
-! Out of sync
-Synchronized to commit: [9a9483d]
-✗ 1 commits behind the repository's head: [d570a96]
 ```
 
-### Sync a given environment
+The output will indicate whether the environment is in sync with the local repository:
 
-!!! tip
-    Use the option ``--dry-run`` if you just want to preview the changes, before applying
+```text
+! Out of sync
+Synchronized to commit: [9a9483d]
+✗ 1 commit behind the repository's head: [d570a96]
+```
+
+### Sync a Given Environment
+
+To synchronize a specific environment, use the following command:
 
 ```bash
 $ quix env sync quixdev-quickstart-prod
+```
 
+The output will display the changes to be applied:
+
+```text
   Changes               | Current     | Target
  -----------------------|-------------|---------------------------------------------------------
   add topic 'csv-data'  |             | name: csv-data
@@ -43,12 +53,18 @@ $ quix env sync quixdev-quickstart-prod
                         |             |     description: Name of the output topic to write into
                         |             |     required: true
                         |             |     value: csv-data
-
-
 ```
 
-* Changes Column: This column provides a description of the changes detected during the synchronization process. It outlines what specific modifications or additions have been identified in the quix.yaml configuration file compared to the current environment state.
+#### Columns Explanation
 
-* Current Column: The Current column displays the previous state of the environment or configuration. In this case, since both the topic and deployments are new additions, the Current column appears empty to indicate that there were no previous configurations for these entities.
+- **Changes Column**: Describes the changes detected during the synchronization process. It outlines specific modifications or additions identified in the `quix.yaml` configuration file compared to the current environment state.
+- **Current Column**: Displays the previous state of the environment or configuration. If both the topic and deployments are new additions, this column appears empty to indicate no previous configurations for these entities.
+- **Target Column**: Represents the desired state after synchronization. It shows how the environment or configuration should look after applying the changes outlined in the `quix.yaml` file.
 
-* Target Column: The Target column represents the desired state after synchronization. It shows how the environment or configuration should look after applying the changes outlined in the quix.yaml file. In this example, it displays the configurations specified in quix.yaml for the new topic (csv-data) and deployment (Starter Source).
+!!! tip
+    Use the `--dry-run` option to preview the changes before applying them.
+
+!!! tip
+    Ensure your `quix.yaml` file is up-to-date with the desired configurations before running the synchronization command. This helps avoid unexpected changes to your environment.
+
+By using the `quix environments sync` command, you can easily keep your cloud environment in sync with your local configurations, ensuring consistency and reliability across your development and production setups.
