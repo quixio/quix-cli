@@ -36,3 +36,5 @@ Organisation:myorg  | Admin
 !!! tip
 
     In order to get the user id you can use [this](../list.md) command
+
+{% include-markdown '../../utils/note-output.md' %}
