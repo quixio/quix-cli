@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage the local broker of the current context
+Manage the local debug broker configuration of the current context
 
 **Aliases:** broker
 
@@ -14,8 +14,7 @@ quix contexts broker [command] [options]
 
 **Commands:**
 
-- [disable](disable.md) : Disables the use of a local broker of the current context
-- [enable](enable.md) : Enables the use of a local broker of the current context
-- [set](set.md) : Sets the address for the local broker of the current context
-- [toggle](toggle.md) : Toggles the usage of a local broker of the current context
+- [cloud](cloud.md) : Set the local debug broker to the one in your Quix Cloud environment
+- [local](local.md) : Sets the local debug broker to one accessible from your local machine (default: pipeline broker)
+- [set](set.md) : Sets the address for the local debug broker of the current context
 

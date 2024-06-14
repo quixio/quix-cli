@@ -13,9 +13,23 @@ This guide assumes you have the following installed:
 
 To install Quix CLI:
 
-```
-curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
-```
+=== "macOS"
+
+    ```
+    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
+    ```
+
+=== "Linux"
+
+    ```
+    curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
+    ```
+
+=== "Windows"
+
+    ```
+    iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb | iex
+    ```
 
 For further details on installation, including instructions for Microsoft Windows, see the [install guide](https://github.com/quixio/quix-cli?tab=readme-ov-file#installation-of-quix-cli){target=_blank}.
 
@@ -37,16 +51,16 @@ This produces output similar to the following:
 
 ```
 ✗ Not logged in
-  User:                 ! Not logged in to Quix Cloud
-  Current context:      default (https://portal-api.platform.quix.io)
-  Default environment:  ! Not set
-  Local Broker:         ! Not set
-  Local Broker enabled? ✗ No
-✗ No git root detected
-✓ VS Code installed
-! PyCharm not installed
+  User:                       ! Not logged in to Quix Cloud
+  Current context:            default (https://portal-api.platform.quix.io)
+  Default environment:        ! Not set
+  Local Debug Broker:         Local (localhost:19092)
 ✓ Docker installed
+! Local Pipeline Status:      Not Running
 ✓ Git installed
+  Git Root:                   \path\to\your\repo
+✓ VS Code installed
+✓ PyCharm installed
 ```
 
 View the output carefully to confirm you have Git and Docker installed:

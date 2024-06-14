@@ -2,7 +2,7 @@
 
 ## Overview
 
-Login to your Quix account
+Login to your Quix Cloud account
 
 **Aliases:** login
 

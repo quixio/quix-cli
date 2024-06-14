@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get a local deployment
+Edit a local deployment
 
 **Aliases:** edit
 

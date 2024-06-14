@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get a local deployment
+Add a local deployment
 
 **Aliases:** create, add
 

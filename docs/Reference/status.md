@@ -1,31 +1,89 @@
 {% include-markdown './status.gen.md' %}
 
-## How it Works
+## How It Works
 
-The `quix status` command is used to perform a global status check within the Quix CLI environment. It provides information about the current user's authentication status, context information, Git repository status, installed IDEs, and the presence of Docker and Git installations.
+The `quix status` command provides a quick and comprehensive overview of your Quix CLI environment. It checks several key aspects to ensure your system is properly configured.
 
-When the `quix status` command is executed:
+It performs the following checks:
 
-1. It checks if the user is logged into Quix Cloud and displays the user's information if logged in.
-3. It displays information about the current context, including name, URL, workspace ID, and local broker settings.
-4. It attempts to find the root directory of the Git repository and displays it.
-5. It checks for installed IDEs and reports any issues encountered.
-6. It checks if Docker is installed and reports the result.
-7. It checks if Git is installed and reports the result.
+1. **Authentication Status**: Verifies if you are logged into Quix Cloud and displays your user information if logged in.
+2. **Current Context**: Shows details about the current context, including the name, URL, environment ID, and local broker settings.
+3. **Git Repository**: Identifies and displays the root directory of your Git repository.
+4. **Installed IDEs**: Checks for installed IDEs (VS Code and PyCharm) and reports any issues.
+5. **Docker Installation**: Verifies if Docker is installed and reports the status.
+6. **Git Installation**: Confirms if Git is installed and reports the status.
+7. **Local Pipeline Status**: Checks and reports the status of your local pipeline.
 
-## Example usage
+This command is useful for quickly assessing the overall health and configuration of your development environment.
+
+## Example Usage
+
+### Not Logged In
+
 
 ```bash
 $ quix status
-✗ Not logged in
-  User:                 ! Not logged in to Quix Cloud
-  Current context:      default (https://portal-api.platform.quix.io)
-  Default environment:  ! Not set
-  Local Broker:         ! Not set
-  Local Broker enabled? ✗ No
-✗ No git root detected
-✓ VS Code installed
-! PyCharm not installed
-✓ Docker installed
-✓ Git installed
 ```
+
+If you are not logged into Quix Cloud, the status command will indicate this and provide relevant details:
+
+
+```text
+✗ Not logged in
+  User:                       ! Not logged in to Quix Cloud
+  Current context:            default (https://portal-api.platform.quix.io)
+  Default environment:        ! Not set
+  Local Debug Broker:         Local (localhost:19092)
+✓ Docker installed
+! Local Pipeline Status:      Not Running
+✓ Git installed
+  Git Root:                   \path\to\your\repo
+✓ VS Code installed
+✓ PyCharm installed
+```
+
+### Logged In with Default Environment
+
+!!! tip
+    Log in to Quix Cloud by using the [`quix login`](login.md) command.
+
+If you are logged into Quix Cloud and have a default environment set, the status command will display the following:
+
+```text
+✓ Logged in
+  User:                       test@example.com (Test User)
+  Organization:               Example (example-org)
+  Current context:            default (https://portal-api.platform.quix.io)
+  Default environment:        example-org-project-env
+  Local Debug Broker:         Local (localhost:19092)
+✓ Docker installed
+! Local Pipeline Status:      Not Running
+✓ Git installed
+  Git Root:                   \path\to\your\repo
+✓ VS Code installed
+✓ PyCharm installed
+```
+
+!!! tip
+    If you are logged in, use the [`quix use`](use.md) command to select your default Quix Cloud environment.
+
+### Pipeline Status
+
+The status of your local pipeline is also displayed. If the pipeline is running but not all services are up, it will be indicated:
+
+```text
+✗ Local Pipeline Status:      Running (3/4)
+```
+
+!!! tip
+    Use the [`quix local pipeline status`](local/pipeline/status.md) command to get detailed information about which services in your local pipeline are running and which are not.
+
+### Git Repository Not Found
+
+If the current execution path is not inside a local Git repository, the command will indicate this:
+
+```text
+✗ No git root detected
+```
+
+By using the `quix status` command, you can quickly get a comprehensive overview of your Quix CLI environment, allowing you to identify and address any issues efficiently.

@@ -7,15 +7,28 @@ edit_uri: tree/main/docs
 exclude_docs: '*.gen.md'
 theme:
   name: material
+  palette:
+  - media: "(prefers-color-scheme: light)"
+    scheme: default
+    primary: blue grey
+    accent: blue
+    toggle:
+      icon: material/weather-night
+      name: Switch to dark mode
+  - media: "(prefers-color-scheme: dark)"
+    scheme: slate
+    primary: indigo
+    accent: light blue
+    toggle:
+      icon: material/weather-sunny
+      name: Switch to light mode
   features:
   - navigation.path
   - navigation.indexes
+  - content.tabs.link
 markdown_extensions:
 - attr_list
 - md_in_html
-- pymdownx.superfences
-- pymdownx.tabbed:
-    alternate_style: true
 - admonition
 - footnotes
 - pymdownx.critic
@@ -34,6 +47,8 @@ markdown_extensions:
     - name: mermaid
       class: mermaid
       format: !!python/name:pymdownx.superfences.fence_code_format ''
+- pymdownx.tabbed:
+    alternate_style: true
 plugins:
 - include-markdown
 nav:
@@ -53,6 +68,11 @@ nav:
   - login: Reference/login.md
   - contexts:
     - Reference/contexts/index.md
+    - contexts broker:
+      - Reference/contexts/broker/index.md
+      - contexts broker cloud: Reference/contexts/broker/cloud.md
+      - contexts broker local: Reference/contexts/broker/local.md
+      - contexts broker set: Reference/contexts/broker/set.md
     - contexts create: Reference/contexts/create.md
     - contexts current: Reference/contexts/current.md
     - contexts list: Reference/contexts/list.md
@@ -64,12 +84,6 @@ nav:
       - contexts environments clear: Reference/contexts/environments/clear.md
       - contexts environments get: Reference/contexts/environments/get.md
       - contexts environments use: Reference/contexts/environments/use.md
-    - contexts broker:
-      - Reference/contexts/broker/index.md
-      - contexts broker disable: Reference/contexts/broker/disable.md
-      - contexts broker enable: Reference/contexts/broker/enable.md
-      - contexts broker set: Reference/contexts/broker/set.md
-      - contexts broker toggle: Reference/contexts/broker/toggle.md
   - deployments:
     - Reference/deployments/index.md
     - deployments get: Reference/deployments/get.md
@@ -99,6 +113,10 @@ nav:
         - local applications variables export: Reference/local/applications/variables/export.md
         - local applications variables import: Reference/local/applications/variables/import.md
         - local applications variables list: Reference/local/applications/variables/list.md
+    - local broker:
+      - Reference/local/broker/index.md
+      - local broker down: Reference/local/broker/down.md
+      - local broker up: Reference/local/broker/up.md
     - local ide: Reference/local/ide.md
     - local init: Reference/local/init.md
     - local pipeline:
@@ -111,6 +129,7 @@ nav:
         - local pipeline deployments get: Reference/local/pipeline/deployments/get.md
         - local pipeline deployments list: Reference/local/pipeline/deployments/list.md
       - local pipeline down: Reference/local/pipeline/down.md
+      - local pipeline status: Reference/local/pipeline/status.md
       - local pipeline sync: Reference/local/pipeline/sync.md
       - local pipeline up: Reference/local/pipeline/up.md
       - local pipeline update: Reference/local/pipeline/update.md

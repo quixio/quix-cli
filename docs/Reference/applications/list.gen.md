@@ -14,7 +14,7 @@ quix applications list [<workspace-id>] [options]
 
 **Arguments:**
 
-- `<workspace-id>`
+- `<workspace-id>` : The ID of the environment
 
 **Options:**
 

@@ -14,8 +14,8 @@ quix local applications variables export [options]
 
 **Options:**
 
-- `--workspace-id <workspace-id>` : 
-- `--env-file-name <env-file-name>` : [default: .env]
+- `--workspace-id <workspace-id>` : The environment to use if your local debug broker is set to Quix Cloud
+- `--env-file-name <env-file-name>` : Set the name of the environment file [default: .env]
 - `--directory <directory>` : Base directory (defaults to current directory)
 - `--reset` : Removes all the values of existing env variables and adds them from the app.yaml file [default: False]
 

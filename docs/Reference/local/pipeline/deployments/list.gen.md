@@ -2,7 +2,7 @@
 
 ## Overview
 
-List the local deployments
+List all the local deployments
 
 **Aliases:** list, ls
 
