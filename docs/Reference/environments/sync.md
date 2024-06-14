@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix environments sync` command facilitates the synchronization between your local development environment and the cloud environment based on configurations specified in the `quix.yaml` file. It detects changes in your local configuration and updates the cloud environment accordingly. This includes updating existing deployments, adding new ones, and aligning topics as defined in the specifications.
+The `quix environments sync` command facilitates the synchronization between your local development environment and the cloud environment based on configurations specified in the `quix.yaml` file. It detects changes in your local configuration and updates the cloud environment accordingly. This includes updating existing deployments, adding new ones, and aligning topics as defined in the specification.
 
 ## Example Usage
 
@@ -28,6 +28,32 @@ To synchronize a specific environment, use the following command:
 
 ```bash
 $ quix env sync quixdev-quickstart-prod
+```
+
+Given this `quix.yaml`:
+
+```yaml
+metadata:
+  version: 1.0
+
+deployments:
+  - name: Starter Source
+    application: Starter Source
+    version: latest
+    deploymentType: Job
+    resources:
+      cpu: 100
+      memory: 100
+      replicas: 1
+    variables:
+      - name: output
+        inputType: OutputTopic
+        description: Name of the output topic to write into
+        required: true
+        value: csv-data
+
+topics:
+  - name: csv-data
 ```
 
 The output will display the changes to be applied:
