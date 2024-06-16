@@ -286,13 +286,14 @@ You're not connected to Quix Cloud
 
 ## Are you ready to level up?
 
-Quix Cloud offers a robust and user-friendly platform for managing data pipelines, making it an ideal choice for organizations looking to streamline their development processes, enhance collaboration, and maintain high levels of observability and security.
+**Quix Cloud** offers a robust and user-friendly platform for managing data pipelines, making it an ideal choice for organizations looking to streamline their development processes, enhance collaboration, and maintain high levels of observability and security.
 
 - **Streamlined Development and Deployment**: Quix Cloud simplifies the development and deployment of data pipelines with its integrated online code editors, CI/CD tools, and YAML synchronization features.
 - **Enhanced Collaboration**: The platform allows multiple users to collaborate efficiently, manage permissions, and maintain visibility over projects and environments.
 - **Comprehensive Monitoring and Observability**: Real-time logs, metrics, and data explorers provide deep insights into the performance and status of your pipelines, enabling proactive management.
 - **Scalability and Flexibility**: Easily scale resources and manage multiple environments, making it suitable for both small teams and large organizations.
 - **Security and Compliance**: Securely manage secrets and ensure compliance with dedicated infrastructure and SLA options.
+- **Fully Managed Infrastructure**: Isolated cloud infrastructure, managed Kafka or BYO broker, topics management, and YAML-based infrastructure as code.
 
 ??? "Why use Quix Cloud?"
       1. **Pipeline Management**
@@ -305,38 +306,44 @@ Quix Cloud offers a robust and user-friendly platform for managing data pipeline
         - **Pipelines as Code**: Use YAML files for defining pipelines and environment variables.
         - **Secrets Management**: Securely manage sensitive information.
         - **CLI Commands**: Use GitHub actions to synchronize changes.
-    3. **User Collaboration**
-        - **Organization Management**: Invite users and manage their permissions within your organization.
-        - **Project Visibility**: Assign visibility and permissions to projects and environments.
-    4. **Development Tools**
-        - **Online Code Editors**: Modify applications and YAML files directly in the cloud.
-        - **Scaling**: Easily scale pipelines by adjusting replicas, CPU, and memory.
-        - **Synchronization**: Sync changes to your pipeline with a single operation.
-        - **Code Templates**: Access ready-made code samples and templates.
-        - **Connectors**: Connect to relevant data sources and sinks.
-        - **Dev Containers Support**: (Coming soon) Support for development containers.
-    5. **Data Exploration**
-        - **Data Explorer**: Query and explore data using waveform and table views.
-        - **Message Visualizer**: Visualize messages in your data topics.
-        - **Metrics Monitoring**: Track consumer lag and other metrics.
-    6. **Monitoring and Logging**
-        - **Real-Time Logs**: Monitor logs in real-time.
-        - **Build Logs**: View logs related to builds.
-        - **Data and Deployment Metrics**: Monitor topic data and deployment metrics (CPU/Memory).
-    7. **Dedicated/BYOC (Bring Your Own Cloud)**
-        - **Dedicated Infrastructure**: Run pipelines on a dedicated, private infrastructure.
-        - **SLA**: Service Level Agreements for guaranteed performance.
-        - **Historical Logs and Metrics**: Access historical logs and metrics using Loki and Prometheus.
-        - **Grafana Dashboards**: Visualize metrics with Grafana.
-        - **Private Code Samples Library**: Access a library of deployable application samples specific to your organization.
+      3. **Fully Managed Infrastructure**
+        - **Provision Isolated Infrastructure**: Run your pipelines in the cloud with isolated infrastructure.
+        - **Managed Kafka or BYO Broker**: Use managed Kafka or bring your own broker.
+        - **Topics Management and Configuration**: Efficiently manage and configure topics.
+        - **Infrastructure as Code**: Define infrastructure using YAML files.
+      4. **User Collaboration**
+          - **Organization Management**: Invite users and manage their permissions within your organization.
+          - **Project Visibility**: Assign visibility and permissions to projects and environments.
+      5. **Development Tools**
+          - **Online Code Editors**: Modify applications and YAML files directly in the cloud.
+          - **Scaling**: Easily scale pipelines by adjusting replicas, CPU, and memory.
+          - **Synchronization**: Sync changes to your pipeline with a single operation.
+          - **Code Templates**: Access ready-made code samples and templates.
+          - **Connectors**: Connect to relevant data sources and sinks.
+          - **Dev Containers Support**: (Coming soon) Support for development containers.
+      6. **Data Exploration**
+          - **Data Explorer**: Query and explore data using waveform and table views.
+          - **Message Visualizer**: Visualize messages in your data topics.
+          - **Metrics Monitoring**: Track consumer lag and other metrics.
+      7. **Monitoring and Logging**
+          - **Real-Time Logs**: Monitor logs in real-time.
+          - **Build Logs**: View logs related to builds.
+          - **Data and Deployment Metrics**: Monitor topic data and deployment metrics (CPU/Memory).
+      8. **Dedicated/BYOC (Bring Your Own Cloud)**
+          - **Dedicated Infrastructure**: Run pipelines on a dedicated, private infrastructure.
+          - **SLA**: Service Level Agreements for guaranteed performance.
+          - **Historical Logs and Metrics**: Access historical logs and metrics using Loki and Prometheus.
+          - **Grafana Dashboards**: Visualize metrics with Grafana.
+          - **Private Code Samples Library**: Access a library of deployable application samples specific to your organization.
 
-    [Learn more about Quix Cloud features](../quix-cloud/why-quix-cloud.md) 
+      [Learn more about Quix Cloud features](../quix-cloud/why-quix-cloud.md) 
 
-## Next steps
+
+## Next step
 
 <div class="grid cards" markdown>
 
-- __Time to level up!__
+- __Time to level up?__
 
     ---
 
@@ -345,4 +352,3 @@ Quix Cloud offers a robust and user-friendly platform for managing data pipeline
     [Deploy to Quix Cloud :octicons-arrow-right-24:](../quix-cloud/quickstart.md)
 
 </div>
-
