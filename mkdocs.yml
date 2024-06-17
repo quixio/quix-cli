@@ -1,11 +1,9 @@
 site_name: Quix Docs
 site_description: Quix CLI Documentation
 docs_dir: docs/
-include_docs: README.md
 repo_name: quixio/quix-cli
 repo_url: https://github.com/quixio/quix-cli
 edit_uri: tree/main/docs
-exclude_docs: '*.gen.md'
 theme:
   name: material
   palette:
@@ -54,7 +52,7 @@ plugins:
 - include-markdown
 nav:
 - 'Overview': 'overview.md'
-- 'README': 'include-readme.md'
+# - 'README': 'include-readme.md'
 - 'Quickstart': 'cli-quickstart.md'
 - 'Tutorials':
   - 'Using the CLI with a template': 'cli-template.md'
