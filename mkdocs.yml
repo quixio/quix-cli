@@ -53,6 +53,7 @@ plugins:
 - include-markdown
 nav:
 - 'Overview': 'overview.md'
+- 'README': 'include-readme.md'
 - 'Quickstart': 'cli-quickstart.md'
 - 'Tutorials':
   - 'Using the CLI with a template': 'cli-template.md'
