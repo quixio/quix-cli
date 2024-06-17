@@ -1,1 +1,3 @@
-{% include-markdown "{./**/quix-cli-beta/**,../}README.md" %}
+{%
+  include-markdown "{**/quix-cli-beta/**,../}README.md"
+%}
