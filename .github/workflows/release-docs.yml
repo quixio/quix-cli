@@ -10,6 +10,7 @@ permissions:
 
 jobs:
   create-pr:
+    if: github.event.release.prerelease == false
     runs-on: ubuntu-latest
     
     steps:
@@ -22,16 +23,16 @@ jobs:
       run: curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
 
     - name: Run Quix CLI to generate docs
-      run: quix docs -b ${{ github.workspace }}/docs/Reference
+      run: quix docs ${{ github.workspace }}/docs/Reference
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        commit-message: Update docs for the release ${{ env.GITHUB_REF_NAME }}
+        commit-message: Update docs for the release ${{ github.event.release.tag_name }}
         branch: "docs/update-docs-${{ github.run_id }}"
-        title: "Update docs for the release ${{ env.GITHUB_REF_NAME }}"
+        title: "Update docs for the release ${{ github.event.release.tag_name }}"
         base: main  
         body: |
-          This PR updates the documentation for the release ${{ env.GITHUB_REF_NAME }}.
+          This PR updates the documentation for the release ${{ github.event.release.tag_name }}.
         reviewers: luisquix, emanuel-quix, PatrickMiraP
