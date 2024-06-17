@@ -1,3 +1,3 @@
 {%
-  include-markdown "{**/quix-cli-beta/**,../}README.md"
+  include-markdown "{./README.md,../README.md}"
 %}
