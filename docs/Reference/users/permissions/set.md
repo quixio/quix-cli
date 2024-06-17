@@ -10,6 +10,9 @@ The `set` command is used to assign permissions to a user in your organization. 
 2. **Scope and Role Specification**:
     - You can define the scope and role of the permissions. If not specified, the command will enter interactive mode to select projects, environments, and roles.
 
+!!! note
+  If you just want to modify a specific permission instead, refer to [this](./edit.md) command.
+
 ## Example Usage
 
 ### Interactive Mode

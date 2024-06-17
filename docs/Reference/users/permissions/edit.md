@@ -4,6 +4,9 @@
 
 The `quix user permissions edit` command is used to add or edit the value of a single permission of a user in the organization. This command allows specifying the scope and role for the permission, effectively updating the user's permissions.
 
+!!! note
+  If you want to assign multiple permissions at once, refer to [this](./set.md) command.
+
 ## Example Usage
 
 ### Interactive Mode
