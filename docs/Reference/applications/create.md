@@ -2,7 +2,7 @@
 
 ## How it Works
 
-The `quix local applications create` command initializes a new application within your local environment based on the chosen library item. When executed, it creates the necessary file structure and configuration files for the specified application, ensuring that it is ready for development and integration with the Quix ecosystem.
+The `quix applications create` command initializes a new application within your local environment based on the chosen library item. When executed, it creates the necessary file structure and configuration files for the specified application, ensuring that it is ready for development and integration with the Quix ecosystem.
 
 When you run this command, it will prompt you to select a library item from an interactive list if no arguments are provided. This list includes various predefined application templates such as data sources, transformations, and sinks. Once you select a library item, the command will guide you through naming the application and choosing its directory location.
 
@@ -28,7 +28,7 @@ This setup facilitates a quick start to your development process, allowing you t
 When you execute the create local application command without any arguments:
 
 ```
-$ quix local applications create
+$ quix applications create
 ```
 
 The interactive command starts:

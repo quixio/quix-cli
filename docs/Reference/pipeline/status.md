@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local pipeline status` command retrieves the current status of the local pipeline by executing the `docker compose ps --format json -a` command. This command fetches the status of all services defined in your `docker-compose` file and presents the relevant information in a concise and readable format.
+The `quix pipeline status` command retrieves the current status of the local pipeline by executing the `docker compose ps --format json -a` command. This command fetches the status of all services defined in your `docker-compose` file and presents the relevant information in a concise and readable format.
 
 For more information, refer to the [Docker documentation](https://docs.docker.com/compose/reference/ps/).
 
@@ -20,7 +20,7 @@ For more information, refer to the [Docker documentation](https://docs.docker.co
 To display the current status of your local pipeline, use the following command:
 
 ```bash
-$ quix local pipeline status
+$ quix pipeline status
 ```
 
 #### All Services Running
@@ -55,4 +55,4 @@ If no services are running, you will see the following message:
 Local Pipeline Status: Not Running
 ```
 
-By using the `quix local pipeline status` command, you can easily keep track of the state of your local pipeline and ensure that all necessary services are running smoothly.
+By using the `quix pipeline status` command, you can easily keep track of the state of your local pipeline and ensure that all necessary services are running smoothly.

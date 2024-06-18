@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local ide` command sets up your development environment for a specified application by generating all necessary IDE-dependent files. This integration allows you to run and debug your application directly from your chosen IDE.
+The `quix debug ide` command sets up your development environment for a specified application by generating all necessary IDE-dependent files. This integration allows you to run and debug your application directly from your chosen IDE.
 
 This command is particularly useful the first time you edit an application, as it automates the setup process. While you can run it multiple times, its primary benefits are realized during the initial setup.
 
@@ -13,13 +13,13 @@ This command is particularly useful the first time you edit an application, as i
 
 Each time you run or debug your code using the generated run configuration, the command exports variables from the `app.yaml` file to a `.env` file or a devcontainer configuration. This ensures that the environment is correctly set up before you begin editing and debugging. 
 
-Specifically, this command executes [`quix local application variables export`](applications/variables/export.md), which adds the application values along with the broker or SDK token to a `.env` file.
+Specifically, this command executes [`quix application variables export`](../applications/variables/export.md), which adds the application values along with the broker or SDK token to a `.env` file.
 
 #### Debug Broker Configuration
 
 === "Pipeline Broker"
 
-    To use a local debug broker, you can easily set one up by running `quix local broker up`. This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix context broker local`.
+    To use a local debug broker, you can easily set one up by running `quix broker up`. This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix context broker local`.
 
 === "Quix Cloud Broker"
 
@@ -52,14 +52,14 @@ Quix__Sdk__Token={your_token}
 
 === "VS Code"
 
-    For VS Code, the `quix local ide` command generates the necessary configurations to ensure smooth debugging and development:
+    For VS Code, the `quix debug ide` command generates the necessary configurations to ensure smooth debugging and development:
 
     - **launch.json**: Configures the Python debugger to use the integrated terminal. It includes a pre-launch task `quix-variables-export` to set environment variables correctly before debugging.
     - **tasks.json**: Defines a custom task `quix-variables-export` that exports application variables from the `app.yaml` file to a `.env` file. This task is executed before running the debugger.
 
 === "PyCharm"
 
-    For PyCharm, the `quix local ide` command generates configurations to facilitate debugging:
+    For PyCharm, the `quix debug ide` command generates configurations to facilitate debugging:
 
     - **Quix.xml**: Configures a run configuration that includes a pre-launch task to export environment variables using the `quix-variables-export` external tool.
     - **External Tools.xml**: Defines an external tool to export application variables from the `app.yaml` file to a `.env` file. This tool runs before the main application execution starts.
@@ -88,7 +88,7 @@ For more information on Dev Containers, visit [Dev Containers](https://container
 When you execute the local ide command without any options:
 
 ```bash
-$ quix local ide
+$ quix debug ide
 ```
 
 The interactive command starts. If your current directory is not an application directory, you are prompted to select the application you want to edit and debug in your IDE:

@@ -65,7 +65,7 @@ There are various ways you can run your code locally. In this tutorial you run t
 1. To run the pipeline locally, in your terminal enter the following command:
 
     ```
-    quix local pipeline up
+    quix pipeline up
     ```
 
     !!! tip 
@@ -77,7 +77,7 @@ There are various ways you can run your code locally. In this tutorial you run t
 3. When you are satisfied the pipeline is running correctly, use the following command to shut down the pipeline:
 
     ```
-    quix local pipeline down
+    quix pipeline down
     ```
 
 ## Step 5: Modify your code
@@ -89,7 +89,7 @@ You can now modify your code in any way you wish. For example, you could edit a 
 Having worked on your code and tested it locally, you can now push up your code to deploy it in Quix Cloud. You can do this with:
 
 ```
-quix local pipeline sync --update
+quix pipeline sync --update
 ```
 
 This updates your `quix.yaml` and pushes your modified code to the Gitea repository and syncs with Quix Cloud.

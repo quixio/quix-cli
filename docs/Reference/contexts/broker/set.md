@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix contexts broker set` command allows you to specify the address for the local debug broker for the current context. By default, this sets the broker to `localhost:19092`, which is the default pipeline broker address that can be started with the [`quix local broker up`](../../local/broker/up.md) command.
+The `quix contexts broker set` command allows you to specify the address for the local debug broker for the current context. By default, this sets the broker to `localhost:19092`, which is the default pipeline broker address that can be started with the [`quix broker up`](../../local/broker/up.md) command.
 
 However, using this default broker address is not required. You can change it to suit your development setup. For instance, if you already have a Kafka broker running locally, you might set the address to `localhost:9092`. Alternatively, you can set it to any other Kafka broker address, such as `kafka.example.com:9092`.
 

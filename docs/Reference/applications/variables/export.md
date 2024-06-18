@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local applications variables export` command exports variables from your `app.yaml` file to a `.env` file. This command simplifies the management of environment variables by maintaining them in a standardized format. An `.env` file is a simple text file used to set environment variables, which can be easily loaded into your application's runtime environment.
+The `quix applications variables export` command exports variables from your `app.yaml` file to a `.env` file. This command simplifies the management of environment variables by maintaining them in a standardized format. An `.env` file is a simple text file used to set environment variables, which can be easily loaded into your application's runtime environment.
 
 When you run the command, you are prompted to select an application (if not already in an application directory). The command then exports the variables from the `app.yaml` file to an `.env` file in the specified directory. By default, the `.env` file will be created in the current directory with the name `.env`.
 
@@ -38,7 +38,7 @@ These environment variables are crucial for ensuring that your application can c
 To export variables from your `app.yaml` file to an `.env` file, use the following command:
 
 ```bash
-$ quix local applications variables export
+$ quix applications variables export
 ```
 
 !!! tip

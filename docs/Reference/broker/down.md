@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local broker down` command stops your local broker instance along with all the services that depend on it. When executed, it stops and removes the Docker containers defined in the `compose.yaml` file, effectively shutting down the local broker environment.
+The `quix broker down` command stops your local broker instance along with all the services that depend on it. When executed, it stops and removes the Docker containers defined in the `compose.yaml` file, effectively shutting down the local broker environment.
 
 If the force option is used, the command bypasses all safety checks, allowing for an immediate shutdown without any prompts or checks.
 
@@ -15,7 +15,7 @@ This ensures that your local environment is cleanly stopped and all resources ar
 To stop your local broker, use the following command:
 
 ```bash
-$ quix local broker down
+$ quix broker down
 ```
 
 This command stops and removes the Docker containers:

@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local apps vars create` command allows you to create new variables for your application through an interactive process. This command updates the `app.yaml` file with the new variables, ensuring your application configuration is current.
+The `quix apps vars create` command allows you to create new variables for your application through an interactive process. This command updates the `app.yaml` file with the new variables, ensuring your application configuration is current.
 
 When you run the command, you are prompted to select an application (if not already in an application directory), choose the variable type (Input Topic, Output Topic, Free Text, Secret), and provide details such as the variable name, description, default value, and whether it is required. The new variable is then added to the `app.yaml` file.
 
@@ -14,7 +14,7 @@ When you run the command, you are prompted to select an application (if not alre
 When you execute the create local variable command without any options:
 
 ```
-$ quix local apps vars create
+$ quix apps vars create
 ```
 
 The interactive command starts. If your current directory is not an application directory, you are prompted to select the application for which you want to edit variables:

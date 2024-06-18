@@ -5,7 +5,7 @@
 When you enter the command without any options:
 
 ```
-$ quix local applications list
+$ quix applications list
 ```
 
 A table containing all your local applications is printed:

@@ -21,11 +21,11 @@ If your local repository is in sync with the remote, the command will:
 To synchronize your local pipeline to Quix Cloud without any additional options, use:
 
 ```bash
-$ quix local pipeline sync
+$ quix pipeline sync
 ```
 
 !!! tip
-    Using the `--update` option will perform the same actions as running [`quix local pipeline update`](update.md) before syncing.
+    Using the `--update` option will perform the same actions as running [`quix pipeline update`](update.md) before syncing.
 
 This command stages all changes in your local repository:
 
@@ -43,7 +43,7 @@ Executing commit ...
     Use the `--commit-message` option to include a meaningful commit message, making it easier to track changes:
 
     ```bash
-    $ quix local pipeline sync --commit-message "Initial deployment to Quix Cloud"
+    $ quix pipeline sync --commit-message "Initial deployment to Quix Cloud"
     ```
 
 Finally, after it pushes the committed changes to the remote repository:

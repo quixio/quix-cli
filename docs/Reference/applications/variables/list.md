@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local apps vars list` command lists all variables for a selected application. This command provides an overview of the current configuration variables in the `app.yaml` file.
+The `quix apps vars list` command lists all variables for a selected application. This command provides an overview of the current configuration variables in the `app.yaml` file.
 
 When you run the command, you are prompted to select an application (if not already in an application directory). After selecting the application, the command retrieves and displays a table of all variables, including their names, default values, descriptions, types (Input Topic, Output Topic, Free Text, Secret), and whether they are required.
 
@@ -14,7 +14,7 @@ When you run the command, you are prompted to select an application (if not alre
 When you execute the list local applications variable command without any options:
 
 ```
-$ quix local apps vars ls
+$ quix apps vars ls
 ```
 
 The interactive command starts. If your current directory is not an application directory, you are prompted to select the application for which you want to list the variables:

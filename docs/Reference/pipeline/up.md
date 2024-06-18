@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local pipeline up` command sets up and runs your pipeline using Docker Compose. When executed, it generates the necessary `compose.yaml` file that defines the services in your pipeline. It then builds and starts the Docker containers based on this configuration by running the equivalent of `docker compose up --build -d`.
+The `quix pipeline up` command sets up and runs your pipeline using Docker Compose. When executed, it generates the necessary `compose.yaml` file that defines the services in your pipeline. It then builds and starts the Docker containers based on this configuration by running the equivalent of `docker compose up --build -d`.
 
 If the update option is used, the command updates the `quix.yaml` file with new local applications and variables of existing deployments. The dry-run option allows you to generate the `compose.yaml` file without starting the containers, providing a preview of the configuration.
 
@@ -23,7 +23,7 @@ This process ensures that your pipeline is correctly configured and running with
 To start your pipeline, use the following command:
 
 ```bash
-$ quix local pipeline up
+$ quix pipeline up
 ```
 
 This command generates the necessary `compose.yaml` file and deployment configurations:
@@ -41,7 +41,7 @@ Generating deployment event-detection-transformation
     You can also use the `--dry-run` option to generate the `compose.yaml` file without running it:
 
     ```bash
-    $ quix local pipeline up --dry-run
+    $ quix pipeline up --dry-run
     ```
 
 Next, it executes `docker compose up --build -d --remove-orphans` to build and run the Docker containers:
@@ -62,7 +62,7 @@ Containers  Started
 ```
 
 !!! tip
-    Using the `--update` option will perform the same actions as running [`quix local pipeline update`](update.md) before generating the `compose.yaml` file.
+    Using the `--update` option will perform the same actions as running [`quix pipeline update`](update.md) before generating the `compose.yaml` file.
     
 
 #### Generated `compose.yaml` File Overview

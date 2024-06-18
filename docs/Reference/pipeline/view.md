@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local pipeline view` command generates a visual representation of your pipeline using a mermaid diagram. When executed, it creates or updates the `pipeline.md` and `quix-pipeline.html` files in your project directory. 
+The `quix pipeline view` command generates a visual representation of your pipeline using a mermaid diagram. When executed, it creates or updates the `pipeline.md` and `quix-pipeline.html` files in your project directory. 
 
 These files contain mermaid code that visualizes your pipeline's structure and data flow. The command can open these files in VS Code or your default browser, providing an interactive and up-to-date view of your pipeline configuration. This helps you easily visualize and document your pipeline setup.
 
@@ -13,7 +13,7 @@ These files contain mermaid code that visualizes your pipeline's structure and d
 To view the pipeline documentation in VS Code, use the following command:
 
 ```
-$ quix local pipeline view
+$ quix pipeline view
 ✓ 'pipeline.md' was updated
 ✓ VS Code started
 ```
@@ -35,7 +35,7 @@ demo-data-source[demo-data-source] -->|f1-data|event-detection-transformation[ev
 If you prefer not to use VS Code or it is not installed, you can still view the pipeline documentation in your browser. Use the same command:
 
 ```
-$ quix local pipeline view
+$ quix pipeline view
 ```
 
 This command will attempt to open the generated `quix-pipeline.html` file in your default browser. If it does not open automatically, you will see a message with a file path like this:

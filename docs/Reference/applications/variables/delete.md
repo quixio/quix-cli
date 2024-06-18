@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix local apps vars delete` command allows you to remove variables from your application through an interactive process. This command updates the `app.yaml` file by removing the specified variable, ensuring your application configuration is current.
+The `quix apps vars delete` command allows you to remove variables from your application through an interactive process. This command updates the `app.yaml` file by removing the specified variable, ensuring your application configuration is current.
 
 When you run the command, you are prompted to select an application (if not already in an application directory), choose the variable you want to delete, and confirm the deletion. The variable is then removed from the `app.yaml` file.
 
@@ -14,7 +14,7 @@ When you run the command, you are prompted to select an application (if not alre
 When you execute the delete local variable command without any options:
 
 ```
-$ quix local app vars delete
+$ quix app vars delete
 ```
 
 The interactive command starts. If your current directory is not an application directory, you are prompted to select the application for which you want to remove variables:

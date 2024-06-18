@@ -22,7 +22,7 @@ During the update process, the command checks for any new variables or changes i
 When you execute the update local pipeline command without any options:
 
 ```bash
-$ quix local pipeline update
+$ quix pipeline update
 ```
 
 The update process starts:

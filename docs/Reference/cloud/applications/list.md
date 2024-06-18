@@ -5,7 +5,7 @@
 When you execute the list local applications variable command without any options:
 
 ```
-$ quix local apps vars ls
+$ quix apps vars ls
 ```
 
 The interactive command starts. If your current directory is not an application directory, you are prompted to select the application for which you want to list the variables:
