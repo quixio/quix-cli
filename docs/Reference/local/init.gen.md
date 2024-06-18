@@ -9,7 +9,7 @@ Generate the initial Quix files based on the existing repository
 **Usage:**
 
 ```
-quix local init [<directory>] [options]
+quix local init <directory> [options]
 ```
 
 **Arguments:**

@@ -9,13 +9,13 @@ Get an application in the specified environment
 **Usage:**
 
 ```
-quix applications get [<workspace-id> <application-id>] [options]
+quix applications get <workspace-id> <application-id> [options]
 ```
 
 **Arguments:**
 
-- `<workspace-id>` : The ID of the environment to set as default
-- `<application-id>` : The ID of the application
+- `<workspace-id>`
+- `<application-id>`
 
 **Options:**
 

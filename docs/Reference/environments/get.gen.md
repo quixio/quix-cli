@@ -14,7 +14,7 @@ quix environments get <workspace-id> [options]
 
 **Arguments:**
 
-- `<workspace-id>` : The ID of the environment
+- `<workspace-id>`
 
 **Options:**
 

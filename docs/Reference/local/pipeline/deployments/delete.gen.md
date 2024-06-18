@@ -2,14 +2,14 @@
 
 ## Overview
 
-Delete a local deployment
+Get a local deployment
 
 **Aliases:** delete, del, remove, rm
 
 **Usage:**
 
 ```
-quix local pipeline deployments delete [<deployment-name>] [options]
+quix local pipeline deployments delete <deployment-name> [options]
 ```
 
 **Arguments:**

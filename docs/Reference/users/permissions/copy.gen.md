@@ -9,7 +9,7 @@ Copy the user permissions from a user to other users
 **Usage:**
 
 ```
-quix users permissions copy [<user-id>] [options]
+quix users permissions copy <user-id> [options]
 ```
 
 **Arguments:**

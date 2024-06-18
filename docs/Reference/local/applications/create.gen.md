@@ -9,7 +9,7 @@ Creates an application locally
 **Usage:**
 
 ```
-quix local applications create [<library-item>] [options]
+quix local applications create <library-item> [options]
 ```
 
 **Arguments:**

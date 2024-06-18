@@ -12,7 +12,3 @@ Global status check
 quix status [options]
 ```
 
-**Options:**
-
-- `--directory <directory>` : If specified, it will use that directory instead of the current one
-
