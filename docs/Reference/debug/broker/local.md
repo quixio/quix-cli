@@ -1,0 +1,1 @@
+{% include-markdown './local.gen.md' %}

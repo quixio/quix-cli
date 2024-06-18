@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage the applications of an environment
+Manage your local applications
 
 **Aliases:** applications, application, apps, app
 
@@ -14,7 +14,8 @@ quix applications [command] [options]
 
 **Commands:**
 
-- [get](get.md) : Get an application in the specified environment
-- [library](library\index.md) : Manage the library items of an environment
-- [list](list.md) : Get all applications in the specified environment
+- [convert](convert.md) : Converts applications from and to library item format
+- [create](create.md) : Creates an application locally
+- [list](list.md) : lists local applications
+- [variables](variables\index.md) : Manage your local application's variables
 
