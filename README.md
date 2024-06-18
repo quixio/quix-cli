@@ -75,7 +75,7 @@ To view and choose from all available versions, visit the [releases section](htt
 2. Copy the executable to a location of your choice.
 3. Add the location to your system's PATH.
 
-### Installation via Dotet Global tools
+### Installation via Dotnet Global tools
 
 ```bash
 dotnet tool install --global QuixCLI --prerelease
