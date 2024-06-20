@@ -1,15 +1,15 @@
-# broker up
+# pipeline broker up
 
 ## Overview
 
-Start the local broker instance
+Start the broker instance of the local pipeline
 
 **Aliases:** up, run
 
 **Usage:**
 
 ```
-quix broker up [options]
+quix pipeline broker up [options]
 ```
 
 **Options:**

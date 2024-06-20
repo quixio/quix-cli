@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix broker up` command sets up and runs your local broker instance using Docker Compose. When executed, it generates the necessary `compose.yaml` file that defines the broker services required for your setup. It then builds and starts the Docker containers based on this configuration by running the equivalent of `docker compose up --build -d --remove-orphans`.
+The `quix pipeline broker up` command sets up and runs your local broker instance using Docker Compose. When executed, it generates the necessary `compose.yaml` file that defines the broker services required for your setup. It then builds and starts the Docker containers based on this configuration by running the equivalent of `docker compose up --build -d --remove-orphans`.
 
 If the dry-run option is used, the command allows you to generate the `compose.yaml` file without starting the containers, providing a preview of the configuration. This is particularly useful for validating your setup before making any changes to your running environment.
 
@@ -22,7 +22,7 @@ Deployments are connected using variables that ensure seamless data flow between
 To start your local broker, use the following command:
 
 ```bash
-$ quix broker up
+$ quix pipeline broker up
 ```
 
 This command generates the necessary `compose.yaml` file and deployment configurations:
