@@ -1,15 +1,15 @@
-# debug ide
+# ide
 
 ## Overview
 
-Setup everything needed for local application development and open your local IDE
+Launch your local IDE configuring all the settings for local application development
 
-**Aliases:** ide, develop, dev
+**Aliases:** ide
 
 **Usage:**
 
 ```
-quix debug ide [<directory>] [options]
+quix ide [<directory>] [options]
 ```
 
 **Arguments:**
