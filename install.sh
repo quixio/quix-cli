@@ -81,6 +81,9 @@ file_name="${os}-${arch}.${file_extension}" # the file name to download
 downloaded_file="${downloadFolder}/${file_name}" # the file path to download
 executable_folder="/usr/local/bin" # Eventually, the executable file will be placed here
 
+# Create executable_folder if it does not exist
+mkdir -p "${executable_folder}"
+
 # if version is empty
 if [ -z "$version" ]; then
     asset_uri="${githubUrl}/${owner}/${repo}/releases/latest/download/${file_name}"
