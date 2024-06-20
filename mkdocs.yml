@@ -58,72 +58,6 @@ nav:
   - 'Using the CLI with a template': 'cli-template.md'
   - 'Using the CLI with GitHub Actions': 'cli-github-actions.md'
 - Reference:
-  - Other Commands:
-    - contexts:
-      - Reference/contexts/index.md
-      - contexts broker:
-        - Reference/contexts/broker/index.md
-        - contexts broker cloud: Reference/contexts/broker/cloud.md
-        - contexts broker local: Reference/contexts/broker/local.md
-        - contexts broker set: Reference/contexts/broker/set.md
-      - contexts create: Reference/contexts/create.md
-      - contexts current: Reference/contexts/current.md
-      - contexts list: Reference/contexts/list.md
-      - contexts delete: Reference/contexts/delete.md
-      - contexts reset: Reference/contexts/reset.md
-      - contexts use: Reference/contexts/use.md
-      - contexts environments:
-        - Reference/contexts/environments/index.md
-        - contexts environments clear: Reference/contexts/environments/clear.md
-        - contexts environments get: Reference/contexts/environments/get.md
-        - contexts environments use: Reference/contexts/environments/use.md
-    - status: Reference/status.md
-    - use: Reference/use.md
-    - login: Reference/login.md
-    - update: Reference/update.md
-  - Local Commands:
-    - applications:
-      - Reference/applications/index.md
-      - applications convert: Reference/applications/convert.md
-      - applications create: Reference/applications/create.md
-      - applications list: Reference/applications/list.md
-      - applications variables:
-        - Reference/applications/variables/index.md
-        - applications variables create: Reference/applications/variables/create.md
-        - applications variables delete: Reference/applications/variables/delete.md
-        - applications variables edit: Reference/applications/variables/edit.md
-        - applications variables export: Reference/applications/variables/export.md
-        - applications variables import: Reference/applications/variables/import.md
-        - applications variables list: Reference/applications/variables/list.md
-    - pipeline:
-      - Reference/pipeline/index.md
-      - pipeline broker:
-        - Reference/pipeline/broker/index.md
-        - pipeline broker down: Reference/pipeline/broker/down.md
-        - pipeline broker up: Reference/pipeline/broker/up.md
-      - pipeline deployments:
-        - Reference/pipeline/deployments/index.md
-        - pipeline deployments create: Reference/pipeline/deployments/create.md
-        - pipeline deployments delete: Reference/pipeline/deployments/delete.md
-        - pipeline deployments edit: Reference/pipeline/deployments/edit.md
-        - pipeline deployments get: Reference/pipeline/deployments/get.md
-        - pipeline deployments list: Reference/pipeline/deployments/list.md
-      - pipeline down: Reference/pipeline/down.md
-      - pipeline status: Reference/pipeline/status.md
-      - pipeline sync: Reference/pipeline/sync.md
-      - pipeline up: Reference/pipeline/up.md
-      - pipeline update: Reference/pipeline/update.md
-      - pipeline view: Reference/pipeline/view.md
-    - init: Reference/init.md
-    - ide: Reference/ide.md
-    - sdk:
-      - Reference/sdk/index.md
-      - sdk broker:
-        - Reference/sdk/broker/index.md
-        - sdk broker cloud: Reference/sdk/broker/cloud.md
-        - sdk broker local: Reference/sdk/broker/local.md
-        - sdk broker set: Reference/sdk/broker/set.md
-        - sdk broker update: Reference/sdk/broker/update.md
   - Cloud Commands:
     - Reference/cloud/index.md
     - cloud applications:
@@ -178,4 +112,70 @@ nav:
         - cloud users tokens revoke: Reference/cloud/users/tokens/revoke.md
       - cloud users current: Reference/cloud/users/current.md
       - cloud users list: Reference/cloud/users/list.md
+  - Local Commands:
+    - applications:
+      - Reference/applications/index.md
+      - applications convert: Reference/applications/convert.md
+      - applications create: Reference/applications/create.md
+      - applications list: Reference/applications/list.md
+      - applications variables:
+        - Reference/applications/variables/index.md
+        - applications variables create: Reference/applications/variables/create.md
+        - applications variables delete: Reference/applications/variables/delete.md
+        - applications variables edit: Reference/applications/variables/edit.md
+        - applications variables export: Reference/applications/variables/export.md
+        - applications variables import: Reference/applications/variables/import.md
+        - applications variables list: Reference/applications/variables/list.md
+    - ide: Reference/ide.md
+    - init: Reference/init.md
+    - pipeline:
+      - Reference/pipeline/index.md
+      - pipeline broker:
+        - Reference/pipeline/broker/index.md
+        - pipeline broker down: Reference/pipeline/broker/down.md
+        - pipeline broker up: Reference/pipeline/broker/up.md
+      - pipeline deployments:
+        - Reference/pipeline/deployments/index.md
+        - pipeline deployments create: Reference/pipeline/deployments/create.md
+        - pipeline deployments delete: Reference/pipeline/deployments/delete.md
+        - pipeline deployments edit: Reference/pipeline/deployments/edit.md
+        - pipeline deployments get: Reference/pipeline/deployments/get.md
+        - pipeline deployments list: Reference/pipeline/deployments/list.md
+      - pipeline down: Reference/pipeline/down.md
+      - pipeline status: Reference/pipeline/status.md
+      - pipeline sync: Reference/pipeline/sync.md
+      - pipeline up: Reference/pipeline/up.md
+      - pipeline update: Reference/pipeline/update.md
+      - pipeline view: Reference/pipeline/view.md
+    - sdk:
+      - Reference/sdk/index.md
+      - sdk broker:
+        - Reference/sdk/broker/index.md
+        - sdk broker cloud: Reference/sdk/broker/cloud.md
+        - sdk broker local: Reference/sdk/broker/local.md
+        - sdk broker set: Reference/sdk/broker/set.md
+        - sdk broker update: Reference/sdk/broker/update.md
+  - Other Commands:
+    - login: Reference/login.md
+    - contexts:
+      - Reference/contexts/index.md
+      - contexts broker:
+        - Reference/contexts/broker/index.md
+        - contexts broker cloud: Reference/contexts/broker/cloud.md
+        - contexts broker local: Reference/contexts/broker/local.md
+        - contexts broker set: Reference/contexts/broker/set.md
+      - contexts create: Reference/contexts/create.md
+      - contexts current: Reference/contexts/current.md
+      - contexts list: Reference/contexts/list.md
+      - contexts delete: Reference/contexts/delete.md
+      - contexts reset: Reference/contexts/reset.md
+      - contexts use: Reference/contexts/use.md
+      - contexts environments:
+        - Reference/contexts/environments/index.md
+        - contexts environments clear: Reference/contexts/environments/clear.md
+        - contexts environments get: Reference/contexts/environments/get.md
+        - contexts environments use: Reference/contexts/environments/use.md
+    - status: Reference/status.md
+    - update: Reference/update.md
+    - use: Reference/use.md
 ...
