@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix debug ide` command sets up your development environment for a specified application by generating all necessary IDE-dependent files. This integration allows you to run and debug your application directly from your chosen IDE.
+The `quix ide` command sets up your development environment for a specified application by generating all necessary IDE-dependent files. This integration allows you to run and debug your application directly from your chosen IDE.
 
 This command is particularly useful the first time you edit an application, as it automates the setup process. While you can run it multiple times, its primary benefits are realized during the initial setup.
 
@@ -52,14 +52,14 @@ Quix__Sdk__Token={your_token}
 
 === "VS Code"
 
-    For VS Code, the `quix debug ide` command generates the necessary configurations to ensure smooth debugging and development:
+    For VS Code, the `quix ide` command generates the necessary configurations to ensure smooth debugging and development:
 
     - **launch.json**: Configures the Python debugger to use the integrated terminal. It includes a pre-launch task `quix-variables-export` to set environment variables correctly before debugging.
     - **tasks.json**: Defines a custom task `quix-variables-export` that exports application variables from the `app.yaml` file to a `.env` file. This task is executed before running the debugger.
 
 === "PyCharm"
 
-    For PyCharm, the `quix debug ide` command generates configurations to facilitate debugging:
+    For PyCharm, the `quix ide` command generates configurations to facilitate debugging:
 
     - **Quix.xml**: Configures a run configuration that includes a pre-launch task to export environment variables using the `quix-variables-export` external tool.
     - **External Tools.xml**: Defines an external tool to export application variables from the `app.yaml` file to a `.env` file. This tool runs before the main application execution starts.
@@ -88,7 +88,7 @@ For more information on Dev Containers, visit [Dev Containers](https://container
 When you execute the local ide command without any options:
 
 ```bash
-$ quix debug ide
+$ quix ide
 ```
 
 The interactive command starts. If your current directory is not an application directory, you are prompted to select the application you want to edit and debug in your IDE:
