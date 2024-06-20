@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage your local applications
+Manage your local applications and their variables
 
 **Aliases:** applications, application, apps, app
 

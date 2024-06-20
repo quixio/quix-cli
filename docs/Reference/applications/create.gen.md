@@ -14,7 +14,7 @@ quix applications create [<library-item>] [options]
 
 **Arguments:**
 
-- `<library-item>` : If omitted, an interactive list is displayed. Use this argument to manually specify the library item you want to use. Use `quix cloud applications library list` to see all available items.
+- `<library-item>` : If omitted, an interactive list is displayed. Use this argument to manually specify the library item you want to use. Use `quix applications library list` to see all available items.
 
 **Options:**
 

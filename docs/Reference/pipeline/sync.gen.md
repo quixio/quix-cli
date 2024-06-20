@@ -2,7 +2,7 @@
 
 ## Overview
 
-Synchronize your local pipeline to Quix Cloud.
+Synchronize your local pipeline to Quix Cloud
 
 **Aliases:** sync, deploy
 

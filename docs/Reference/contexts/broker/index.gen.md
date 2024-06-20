@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage the local debug broker configuration of the current context
+Manage the Sdk broker configuration that is injected to QuixStreams while developing locally
 
 **Aliases:** broker
 
@@ -14,7 +14,7 @@ quix contexts broker [command] [options]
 
 **Commands:**
 
-- [cloud](cloud.md) : Set the local debug broker to the one in your Quix Cloud environment
-- [local](local.md) : Sets the local debug broker to one accessible from your local machine (default: pipeline broker)
-- [set](set.md) : Sets the address for the local debug broker of the current context
+- [cloud](cloud.md) : Set the Sdk broker configuration to point to a 'Quix Cloud' broker
+- [local](local.md) : Set the Sdk broker configuration to point to a 'Local' broker (default: pipeline broker)
+- [set](set.md) : Set a local broker address for the Sdk broker configuration
 

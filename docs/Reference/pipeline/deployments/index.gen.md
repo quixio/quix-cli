@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage the local deployments
+Manage the deployments of the local pipeline
 
 **Aliases:** deployments, deployment
 

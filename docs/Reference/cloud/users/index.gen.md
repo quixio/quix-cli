@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage the users of the current organisation
+Manage the users of the organisation including audit, permissions and tokens
 
 **Aliases:** users, user
 

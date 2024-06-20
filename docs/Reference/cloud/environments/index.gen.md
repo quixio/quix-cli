@@ -2,7 +2,7 @@
 
 ## Overview
 
-Manage the environments
+Manage the environments of your projects (e.g., Dev, Staging, Production)
 
 **Aliases:** environments, environment, envs, env, workspaces, workspace
 
