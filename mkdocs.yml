@@ -122,6 +122,7 @@ nav:
         - Reference/sdk/broker/index.md
         - sdk broker cloud: Reference/sdk/broker/cloud.md
         - sdk broker local: Reference/sdk/broker/local.md
+        - sdk broker set: Reference/sdk/broker/set.md
         - sdk broker update: Reference/sdk/broker/update.md
   - Cloud Commands:
     - Reference/cloud/index.md
