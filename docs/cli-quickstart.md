@@ -242,7 +242,7 @@ quix pipeline view
 
 If you have VSCode installed, the pipeline is displayed in the IDE for you, otherwise the pipeline is displayed on your default browser:
 
-![VSCode pipeline view](../images/quix-cli/vscode-pipeline-view.png)
+![VSCode pipeline view](./images/cli/vscode-pipeline-view.png)
 
 When you update your `quix.yaml` using the command `quix pipeline update`, the visualization is updated for you.
 
@@ -260,11 +260,11 @@ You'll see various console messages displayed in your terminal. When these have 
 
 Now switch to Docker Desktop and view the container:
 
-![Docker Desktop container](../images/quix-cli/docker-desktop-container.png)
+![Docker Desktop container](./images/cli/docker-desktop-container.png)
 
 You can also click on a deployed application and check its logging:
 
-![Event detection transformation](../images/quix-cli/docker-event-detection.png)
+![Event detection transformation](./images/cli/docker-event-detection.png)
 
 You can see that hard braking has been detected.
 

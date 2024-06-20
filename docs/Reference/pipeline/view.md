@@ -20,7 +20,7 @@ $ quix pipeline view
 
 This command updates the `pipeline.md` file and opens it in VS Code automatically, allowing you to view and edit your pipeline documentation directly in the editor.
 
-![VSCode pipeline view](../../../images/quix-cli/vscode-pipeline-view.png)
+![VSCode pipeline view](../../../images/cli/vscode-pipeline-view.png)
 
 The `pipeline.md` file is generated with the following mermaid code to visualize your pipeline:
 
