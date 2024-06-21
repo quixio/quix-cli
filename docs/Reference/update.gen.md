@@ -4,12 +4,12 @@
 
 Update the version of the CLI
 
-**Aliases:** `update`
+**Aliases:** update
 
 **Usage:**
 
 ```
-quix update [<version>] [options]
+quix update <version> [options]
 ```
 
 **Arguments:**

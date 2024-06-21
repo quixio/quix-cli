@@ -4,22 +4,20 @@
 
 Add a new context to the CLI
 
-**Aliases:** `create`, `add`
+**Aliases:** create, add
 
 **Usage:**
 
 ```
-quix contexts create [<name>] [options]
+quix contexts create <name> <endpoint> [options]
 ```
 
 **Arguments:**
 
 - `<name>` : Name of the context
+- `<endpoint>` : Portal endpoint or local broker address if --local is used
 
 **Options:**
 
-- `-e, --endpoint <endpoint>` : Portal endpoint
-- `-b, --sdk-broker-address <sdk-broker-address>` : Sdk broker configuration address
-- `-c, --use-quix-cloud-broker` : Set the Sdk broker configuration to the one in your Quix Cloud environment
-- `-l, --use-local-broker` : Set the Sdk broker configuration to one accessible from your local machine
+- `--local-broker <local-broker>` : Use a local broker address instead of portal endpoint
 

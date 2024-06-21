@@ -4,7 +4,7 @@
 
 Get the default environment of the current context
 
-**Aliases:** `get`
+**Aliases:** get
 
 **Usage:**
 

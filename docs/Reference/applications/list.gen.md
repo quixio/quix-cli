@@ -2,18 +2,21 @@
 
 ## Overview
 
-Lists all the local applications of the project
+Get all applications in the specified environment
 
-**Aliases:** `list`, `ls`
+**Aliases:** list, ls
 
 **Usage:**
 
 ```
-quix applications list [options]
+quix applications list <workspace-id> [options]
 ```
+
+**Arguments:**
+
+- `<workspace-id>`
 
 **Options:**
 
 - `-o, --output <json|table>` : Output type of the retrieved data
-- `-d, --directory <directory>` : Base directory (defaults to current directory)
 

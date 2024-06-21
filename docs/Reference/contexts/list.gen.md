@@ -4,7 +4,7 @@
 
 Get all contexts
 
-**Aliases:** `list`, `ls`
+**Aliases:** list, ls
 
 **Usage:**
 

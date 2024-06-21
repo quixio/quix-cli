@@ -2,17 +2,13 @@
 
 ## Overview
 
-Get a global status check of the settings, dependencies and services managed by the CLI
+Global status check
 
-**Aliases:** `status`
+**Aliases:** status
 
 **Usage:**
 
 ```
 quix status [options]
 ```
-
-**Options:**
-
-- `--directory <directory>` : If specified, it will use that directory instead of the current one
 

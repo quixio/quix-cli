@@ -4,12 +4,12 @@
 
 Uses the specified context
 
-**Aliases:** `use`
+**Aliases:** use
 
 **Usage:**
 
 ```
-quix contexts use [<name>] [options]
+quix contexts use <name> [options]
 ```
 
 **Arguments:**
