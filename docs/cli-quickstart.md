@@ -1,6 +1,6 @@
 # Quix CLI Quickstart
 
-In this guide you will use the Quix CLI to **create a simple streaming pipeline**, and test it locally by running it in Docker.
+In this guide you will use the Quix CLI to **create a simple streaming pipeline**, and test it locally by running it in Docker. The pipeline generates telemetry data from a car and processes it to **send an event** whenever the driver applies a **hard brake**.
 
 You will learn how to:
 
@@ -65,13 +65,14 @@ This produces output similar to the following:
   User:                       ! Not logged in to Quix Cloud
   Current context:            default (https://portal-api.platform.quix.io)
   Default environment:        ! Not set
-  Local Debug Broker:         Local (localhost:19092)
-✓ Docker installed
+  Sdk Broker configuration:   Local (localhost:19092)
 ! Local Pipeline Status:      Not Running
+! Local Broker Status:        Not Running
+✓ Docker installed
 ✓ Git installed
   Git Root:                   \path\to\your\repo
 ✓ VS Code installed
-✓ PyCharm installed
+! PyCharm not installed
 ```
 
 View the output carefully to confirm you have Git and Docker installed:
@@ -86,6 +87,11 @@ View the output carefully to confirm you have Git and Docker installed:
 Create a Git repo in GitHub, where you are going to store your project files. Create a repo initialized with a `README.md` file, so it can be cloned more easily.
 
 See also the [GitHub documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories){target=_blank}.
+
+!!! note
+
+    Make sure your GitHub repo is properly configured in your Git client to push changes to the remote repo.
+
 
 ## Step 4: Clone your GitHub repo into your local project directory
 
@@ -258,15 +264,15 @@ You'll see various console messages displayed in your terminal. When these have 
 
 ## Step 12: View your pipeline running in Docker
 
-Now switch to Docker Desktop and view the container:
+Now switch to Docker Desktop and view the containers of the pipeline running:
 
 ![Docker Desktop container](./images/cli/docker-desktop-container.png)
 
-You can also click on a deployed application and check its logging:
+You can also click on a **Event Detection** container and check its logs:
 
 ![Event detection transformation](./images/cli/docker-event-detection.png)
 
-You can see that hard braking has been detected.
+You can see that **hard braking** has been detected.
 
 !!! tip
 
@@ -309,48 +315,7 @@ You're not connected to Quix Cloud
 - **Security and Compliance**: Securely manage secrets and ensure compliance with dedicated infrastructure and SLA options.
 - **Fully Managed Infrastructure**: Isolated cloud infrastructure, managed Kafka or BYO broker, topics management, and YAML-based infrastructure as code.
 
-??? "Why use Quix Cloud?"
-      1. **Pipeline Management**
-        - **Pipeline View**: Visualize and manage the status of your data pipelines.
-        - **Real-Time Data Metrics**: Monitor data metrics in real-time between deployments.
-        - **Deployment Management**: Easily add, edit, delete, start, and stop deployments.
-      2. **CI/CD Integration**
-        - **Git Integration**: Connect with any Git provider for seamless CI/CD processes.
-        - **Environment Management**: Manage multiple environments linked to Git branches.
-        - **Pipelines as Code**: Use YAML files for defining pipelines and environment variables.
-        - **Secrets Management**: Securely manage sensitive information.
-        - **CLI Commands**: Use GitHub actions to synchronize changes.
-      3. **Fully Managed Infrastructure**
-        - **Provision Isolated Infrastructure**: Run your pipelines in the cloud with isolated infrastructure.
-        - **Managed Kafka or BYO Broker**: Use managed Kafka or bring your own broker.
-        - **Topics Management and Configuration**: Efficiently manage and configure topics.
-        - **Infrastructure as Code**: Define infrastructure using YAML files.
-      4. **User Collaboration**
-          - **Organization Management**: Invite users and manage their permissions within your organization.
-          - **Project Visibility**: Assign visibility and permissions to projects and environments.
-      5. **Development Tools**
-          - **Online Code Editors**: Modify applications and YAML files directly in the cloud.
-          - **Scaling**: Easily scale pipelines by adjusting replicas, CPU, and memory.
-          - **Synchronization**: Sync changes to your pipeline with a single operation.
-          - **Code Templates**: Access ready-made code samples and templates.
-          - **Connectors**: Connect to relevant data sources and sinks.
-          - **Dev Containers Support**: (Coming soon) Support for development containers.
-      6. **Data Exploration**
-          - **Data Explorer**: Query and explore data using waveform and table views.
-          - **Message Visualizer**: Visualize messages in your data topics.
-          - **Metrics Monitoring**: Track consumer lag and other metrics.
-      7. **Monitoring and Logging**
-          - **Real-Time Logs**: Monitor logs in real-time.
-          - **Build Logs**: View logs related to builds.
-          - **Data and Deployment Metrics**: Monitor topic data and deployment metrics (CPU/Memory).
-      8. **Dedicated/BYOC (Bring Your Own Cloud)**
-          - **Dedicated Infrastructure**: Run pipelines on a dedicated, private infrastructure.
-          - **SLA**: Service Level Agreements for guaranteed performance.
-          - **Historical Logs and Metrics**: Access historical logs and metrics using Loki and Prometheus.
-          - **Grafana Dashboards**: Visualize metrics with Grafana.
-          - **Private Code Samples Library**: Access a library of deployable application samples specific to your organization.
-
-      [Learn more about Quix Cloud features](../quix-cloud/why-quix-cloud.md) 
+[Learn more about Quix Cloud features](../quix-cloud/why-quix-cloud.md) 
 
 
 ## Next step
