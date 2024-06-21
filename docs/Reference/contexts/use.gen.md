@@ -4,7 +4,7 @@
 
 Uses the specified context
 
-**Aliases:** use
+**Aliases:** `use`
 
 **Usage:**
 

@@ -2,13 +2,19 @@
 
 ## Overview
 
-Sets the local debug broker to one accessible from your local machine (default: pipeline broker)
+Set the Sdk broker configuration to point to a 'Local' broker (default: pipeline broker)
 
-**Aliases:** local, enable
+**Aliases:** `local`, `enable`
 
 **Usage:**
 
 ```
 quix contexts broker local [options]
 ```
+
+**Options:**
+
+- `--env-file-name <env-file-name>` : Set the name of the environment file [default: .env]
+- `--directory <directory>` : Base directory (defaults to current directory)
+- `--update` : Update '.env' files of all the applications with the current Sdk broker configuration
 

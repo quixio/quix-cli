@@ -117,10 +117,10 @@ cd <your-repository>
 
 ## Step 6: Initialize your project as a Quix project
 
-In your Git project directory, enter ```quix local init```. This initializes your Quix project with a `quix.yaml` file, which describes your Quix project. As a convenience a `.gitignore` file is also created for you, or if one is present it is updated to ignore files such as virtual environment files, `.env` files, and so on.:
+In your Git project directory, enter ```quix init```. This initializes your Quix project with a `quix.yaml` file, which describes your Quix project. As a convenience a `.gitignore` file is also created for you, or if one is present it is updated to ignore files such as virtual environment files, `.env` files, and so on.:
 
 ```
-quix local init
+quix init
 ```
 
 
@@ -152,7 +152,7 @@ You can see there are currently no applications (deployments) or topics.
 Now create a source application that will ingest simulated telemetry data into the broker as if it were coming from a real car in real-time:
 
 ```
-quix local app create demo-data-source
+quix app create demo-data-source
 ```
 
 When prompted, assign it a name of `demo-data-source`.
@@ -164,7 +164,7 @@ This creates a demo data source for you. A directory has been created for this a
 Now let's create a simple transform application. This application will read data from the source and will generate a message when a hard braking is detected:
 
 ```
-quix local app create event-detection-transformation
+quix app create event-detection-transformation
 ```
 
 When prompted, assign it a name of `event-detection-transformation`.
@@ -176,7 +176,7 @@ This creates the transform for you. A directory has been created for this applic
 Update your pipeline with the newly created applications of the project:
 
 ```
-quix local pipeline update
+quix pipeline update
 ```
 
 This command updates the deployment configuration of your pipeline based on the default configuration of your applications.
@@ -237,21 +237,21 @@ You can see here the applications that are going to be deployed as part of the p
 View a graph representation of your local pipeline:
 
 ```
-quix local pipeline view
+quix pipeline view
 ```
 
 If you have VSCode installed, the pipeline is displayed in the IDE for you, otherwise the pipeline is displayed on your default browser:
 
 ![VSCode pipeline view](./images/cli/vscode-pipeline-view.png)
 
-When you update your `quix.yaml` using the command `quix local pipeline update`, the visualization is updated for you.
+When you update your `quix.yaml` using the command `quix pipeline update`, the visualization is updated for you.
 
 ## Step 11: Run your pipeline
 
 Run your pipeline in Docker based on your `quix.yaml` file:
 
 ```
-quix local pipeline up
+quix pipeline up
 ```
 
 You'll see various console messages displayed in your terminal. When these have finished, then your deployed services are running in Docker. 
@@ -277,7 +277,7 @@ You can see that hard braking has been detected.
 You can stop your pipeline with the following command:
 
 ```
-quix local pipeline down
+quix pipeline down
 ```
 
 If you switch to Docker Desktop, you'll see your container has been halted and removed.
@@ -287,7 +287,7 @@ If you switch to Docker Desktop, you'll see your container has been halted and r
 To push your changes to Git, and sync your pipeline to Quix Cloud, enter:
 
 ```
-quix local pipeline sync
+quix pipeline sync
 ```
 
 This pushes all changes to your Git repository. If you view your repository in your Git provider (for example GitHub), you'll see your files have been pushed.

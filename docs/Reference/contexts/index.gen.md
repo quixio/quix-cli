@@ -2,9 +2,9 @@
 
 ## Overview
 
-Manage the contexts for the CLI
+Manage alternative contexts for the CLI when using Dedicated or BYOC clusters
 
-**Aliases:** contexts, context, ctx
+**Aliases:** `contexts`, `context`, `ctx`
 
 **Usage:**
 
@@ -14,7 +14,7 @@ quix contexts [command] [options]
 
 **Commands:**
 
-- [broker](broker\index.md) : Manage the local debug broker configuration of the current context
+- [broker](broker\index.md) : Manage the Sdk broker configuration that is injected to QuixStreams while developing locally
 - [create](create.md) : Add a new context to the CLI
 - [current](current.md) : Gets information about the current context
 - [delete](delete.md) : Remove a context from the CLI

@@ -4,7 +4,7 @@
 
 Remove a context from the CLI
 
-**Aliases:** delete, del, remove, rm
+**Aliases:** `delete`, `del`, `remove`, `rm`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Select the default environment for the current context
 
-**Aliases:** use
+**Aliases:** `use`
 
 **Usage:**
 

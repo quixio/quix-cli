@@ -76,7 +76,7 @@ The status of your local pipeline is also displayed. If the pipeline is running 
 ```
 
 !!! tip
-    Use the [`quix local pipeline status`](local/pipeline/status.md) command to get detailed information about which services in your local pipeline are running and which are not.
+    Use the [`quix pipeline status`](pipeline/status.md) command to get detailed information about which services in your local pipeline are running and which are not.
 
 ### Git Repository Not Found
 

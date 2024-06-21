@@ -2,9 +2,9 @@
 
 ## Overview
 
-Global status check
+Get a global status check of the settings, dependencies and services managed by the CLI
 
-**Aliases:** status
+**Aliases:** `status`
 
 **Usage:**
 

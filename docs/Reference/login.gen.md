@@ -4,7 +4,7 @@
 
 Login to your Quix Cloud account
 
-**Aliases:** login
+**Aliases:** `login`
 
 **Usage:**
 
