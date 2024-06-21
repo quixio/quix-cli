@@ -4,7 +4,7 @@
 
 Sets the whole permissions of a user, replacing the current ones. Available roles: [Admin, Manager, Editor, Viewer]
 
-**Aliases:** set
+**Aliases:** `set`
 
 **Usage:**
 

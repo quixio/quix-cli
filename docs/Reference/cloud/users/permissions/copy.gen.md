@@ -4,7 +4,7 @@
 
 Copy the user permissions from a user to other users
 
-**Aliases:** copy
+**Aliases:** `copy`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Manage the applications of an environment
 
-**Aliases:** applications, application, apps, app
+**Aliases:** `applications`, `application`, `apps`, `app`
 
 **Usage:**
 

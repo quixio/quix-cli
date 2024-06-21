@@ -4,7 +4,7 @@
 
 Create and preview a mermaid diagram of the pipeline
 
-**Aliases:** view, render
+**Aliases:** `view`, `render`
 
 **Usage:**
 

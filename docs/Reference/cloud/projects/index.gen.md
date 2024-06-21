@@ -4,7 +4,7 @@
 
 Manage the projects of the current organisation
 
-**Aliases:** projects, project, repositories, repository, repos, repo
+**Aliases:** `projects`, `project`, `repositories`, `repository`, `repos`, `repo`
 
 **Usage:**
 

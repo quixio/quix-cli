@@ -4,7 +4,7 @@
 
 Gets the details of the currently-authenticated user
 
-**Aliases:** current
+**Aliases:** `current`
 
 **Usage:**
 

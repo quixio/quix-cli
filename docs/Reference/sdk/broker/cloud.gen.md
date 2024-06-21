@@ -4,7 +4,7 @@
 
 Set the Sdk broker configuration to point to a 'Quix Cloud' broker
 
-**Aliases:** cloud, disable
+**Aliases:** `cloud`, `disable`
 
 **Usage:**
 

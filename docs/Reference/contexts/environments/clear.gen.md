@@ -4,7 +4,7 @@
 
 Unset the default environment of the current context
 
-**Aliases:** clear
+**Aliases:** `clear`
 
 **Usage:**
 

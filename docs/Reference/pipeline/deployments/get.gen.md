@@ -4,7 +4,7 @@
 
 Get a local deployment
 
-**Aliases:** get
+**Aliases:** `get`
 
 **Usage:**
 

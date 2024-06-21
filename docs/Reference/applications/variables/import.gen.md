@@ -4,7 +4,7 @@
 
 Imports the .env file values to the app.yaml. The values from the .env file will replace the ones in the app.yaml file
 
-**Aliases:** import, imp, import-from-dotenv
+**Aliases:** `import`, `imp`, `import-from-dotenv`
 
 **Usage:**
 

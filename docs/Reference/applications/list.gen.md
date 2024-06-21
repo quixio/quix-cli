@@ -2,9 +2,9 @@
 
 ## Overview
 
-lists local applications
+Lists all the local applications of the project
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

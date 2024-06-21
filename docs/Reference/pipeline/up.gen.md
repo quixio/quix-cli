@@ -4,7 +4,7 @@
 
 Run your pipeline using docker compose
 
-**Aliases:** up, run
+**Aliases:** `up`, `run`
 
 **Usage:**
 

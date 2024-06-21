@@ -4,7 +4,7 @@
 
 Manage alternative contexts for the CLI when using Dedicated or BYOC clusters
 
-**Aliases:** contexts, context, ctx
+**Aliases:** `contexts`, `context`, `ctx`
 
 **Usage:**
 

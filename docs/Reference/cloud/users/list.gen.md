@@ -4,7 +4,7 @@
 
 List all users in the organisation
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

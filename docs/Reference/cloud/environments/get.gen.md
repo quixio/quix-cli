@@ -4,7 +4,7 @@
 
 Retrieves details of a specific environment accessible to the currently authenticated user
 
-**Aliases:** get
+**Aliases:** `get`
 
 **Usage:**
 

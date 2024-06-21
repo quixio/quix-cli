@@ -4,7 +4,7 @@
 
 Gets information about the current context
 
-**Aliases:** current
+**Aliases:** `current`
 
 **Usage:**
 

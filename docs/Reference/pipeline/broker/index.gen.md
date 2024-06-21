@@ -4,7 +4,7 @@
 
 Manage the broker instance of the local pipeline
 
-**Aliases:** broker
+**Aliases:** `broker`
 
 **Usage:**
 

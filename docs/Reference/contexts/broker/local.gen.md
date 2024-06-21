@@ -4,7 +4,7 @@
 
 Set the Sdk broker configuration to point to a 'Local' broker (default: pipeline broker)
 
-**Aliases:** local, enable
+**Aliases:** `local`, `enable`
 
 **Usage:**
 

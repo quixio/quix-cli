@@ -4,7 +4,7 @@
 
 Manage the deployments of an environment
 
-**Aliases:** deployments, deployment
+**Aliases:** `deployments`, `deployment`
 
 **Usage:**
 

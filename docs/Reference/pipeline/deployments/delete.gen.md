@@ -4,7 +4,7 @@
 
 Delete a local deployment
 
-**Aliases:** delete, del, remove, rm
+**Aliases:** `delete`, `del`, `remove`, `rm`
 
 **Usage:**
 

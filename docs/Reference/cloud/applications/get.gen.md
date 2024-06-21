@@ -4,7 +4,7 @@
 
 Get an application in the specified environment
 
-**Aliases:** get
+**Aliases:** `get`
 
 **Usage:**
 

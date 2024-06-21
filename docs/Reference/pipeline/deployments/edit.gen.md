@@ -4,7 +4,7 @@
 
 Edit a local deployment
 
-**Aliases:** edit
+**Aliases:** `edit`
 
 **Usage:**
 

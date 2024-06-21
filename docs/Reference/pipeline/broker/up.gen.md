@@ -4,7 +4,7 @@
 
 Start the broker instance of the local pipeline
 
-**Aliases:** up, run
+**Aliases:** `up`, `run`
 
 **Usage:**
 

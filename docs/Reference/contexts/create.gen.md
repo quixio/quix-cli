@@ -4,7 +4,7 @@
 
 Add a new context to the CLI
 
-**Aliases:** create, add
+**Aliases:** `create`, `add`
 
 **Usage:**
 

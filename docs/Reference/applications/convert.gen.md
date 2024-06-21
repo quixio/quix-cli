@@ -4,7 +4,7 @@
 
 Converts applications from and to library item format
 
-**Aliases:** convert
+**Aliases:** `convert`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Get all projects of the current organisation
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

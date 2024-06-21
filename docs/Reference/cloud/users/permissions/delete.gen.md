@@ -4,7 +4,7 @@
 
 Deletes the value of a single permission of a user in the organisation
 
-**Aliases:** delete, del, remove, rm
+**Aliases:** `delete`, `del`, `remove`, `rm`
 
 **Usage:**
 

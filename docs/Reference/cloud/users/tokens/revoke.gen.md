@@ -4,7 +4,7 @@
 
 Revokes an existing personal access token
 
-**Aliases:** revoke
+**Aliases:** `revoke`
 
 **Usage:**
 

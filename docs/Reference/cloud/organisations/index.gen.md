@@ -4,7 +4,7 @@
 
 Manage your organisation
 
-**Aliases:** organisations, organisation, organizations, organization, orgs, org
+**Aliases:** `organisations`, `organisation`, `organizations`, `organization`, `orgs`, `org`
 
 **Usage:**
 

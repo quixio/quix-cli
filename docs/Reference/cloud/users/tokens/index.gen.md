@@ -4,7 +4,7 @@
 
 Manage the personal access tokens of the current user
 
-**Aliases:** tokens, token
+**Aliases:** `tokens`, `token`
 
 **Usage:**
 

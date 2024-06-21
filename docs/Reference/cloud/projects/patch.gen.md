@@ -4,7 +4,7 @@
 
 Edit individual properties of a project
 
-**Aliases:** patch
+**Aliases:** `patch`
 
 **Usage:**
 

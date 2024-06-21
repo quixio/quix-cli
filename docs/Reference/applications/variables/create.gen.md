@@ -4,7 +4,7 @@
 
 Creates a variable of the current application
 
-**Aliases:** create, add
+**Aliases:** `create`, `add`
 
 **Usage:**
 

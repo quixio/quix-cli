@@ -4,7 +4,7 @@
 
 Set the Sdk configuration that is injected to QuixStreams while developing locally
 
-**Aliases:** sdk, settings, config
+**Aliases:** `sdk`, `settings`, `config`
 
 **Usage:**
 

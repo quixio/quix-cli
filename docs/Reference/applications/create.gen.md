@@ -2,9 +2,9 @@
 
 ## Overview
 
-Creates an application locally
+Creates a new application locally based on a code sample of the library
 
-**Aliases:** create, add
+**Aliases:** `create`, `add`
 
 **Usage:**
 

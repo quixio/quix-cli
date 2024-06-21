@@ -4,7 +4,7 @@
 
 Set a local broker address for the Sdk broker configuration
 
-**Aliases:** set
+**Aliases:** `set`
 
 **Usage:**
 

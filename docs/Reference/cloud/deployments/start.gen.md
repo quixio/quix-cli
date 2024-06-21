@@ -4,7 +4,7 @@
 
 Start a deployment
 
-**Aliases:** start
+**Aliases:** `start`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Launch your local IDE configuring all the settings for local application development
 
-**Aliases:** ide
+**Aliases:** `ide`
 
 **Usage:**
 

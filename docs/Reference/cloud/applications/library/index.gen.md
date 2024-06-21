@@ -4,7 +4,7 @@
 
 Manage the library items of an environment
 
-**Aliases:** library
+**Aliases:** `library`
 
 **Usage:**
 

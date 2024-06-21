@@ -4,7 +4,7 @@
 
 Resets your context to defaults
 
-**Aliases:** reset
+**Aliases:** `reset`
 
 **Usage:**
 

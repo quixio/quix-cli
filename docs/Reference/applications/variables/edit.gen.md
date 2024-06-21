@@ -4,7 +4,7 @@
 
 Edits a new variable of the current application
 
-**Aliases:** edit
+**Aliases:** `edit`
 
 **Usage:**
 

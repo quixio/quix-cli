@@ -4,7 +4,7 @@
 
 Manage the user permissions
 
-**Aliases:** permissions, permission
+**Aliases:** `permissions`, `permission`
 
 **Usage:**
 

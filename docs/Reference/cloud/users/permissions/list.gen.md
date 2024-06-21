@@ -4,7 +4,7 @@
 
 Get the permissions of all the users in the organisation
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

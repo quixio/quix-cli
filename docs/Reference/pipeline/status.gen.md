@@ -4,7 +4,7 @@
 
 Display the current status of the local pipeline
 
-**Aliases:** status
+**Aliases:** `status`
 
 **Usage:**
 

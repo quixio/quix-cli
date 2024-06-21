@@ -4,7 +4,7 @@
 
 Deletes a variable of the current application
 
-**Aliases:** delete, del, remove, rm
+**Aliases:** `delete`, `del`, `remove`, `rm`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Gets the organisation details the currently authenticated user belongs to
 
-**Aliases:** get
+**Aliases:** `get`
 
 **Usage:**
 

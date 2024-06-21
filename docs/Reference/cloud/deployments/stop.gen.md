@@ -4,7 +4,7 @@
 
 Stop a deployment
 
-**Aliases:** stop
+**Aliases:** `stop`
 
 **Usage:**
 

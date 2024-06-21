@@ -4,7 +4,7 @@
 
 Exports the variables from app.yaml to an .env file
 
-**Aliases:** export, exp, export-to-dotenv
+**Aliases:** `export`, `exp`, `export-to-dotenv`
 
 **Usage:**
 

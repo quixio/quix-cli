@@ -4,7 +4,7 @@
 
 Gets all the personal access tokens of the current user
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

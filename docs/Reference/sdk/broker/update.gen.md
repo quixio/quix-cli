@@ -4,7 +4,7 @@
 
 Update '.env' files of all the applications with the current Sdk broker configuration
 
-**Aliases:** update
+**Aliases:** `update`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Sync your environment based on the attached project
 
-**Aliases:** sync, deploy
+**Aliases:** `sync`, `deploy`
 
 **Usage:**
 

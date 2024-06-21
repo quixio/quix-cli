@@ -4,7 +4,7 @@
 
 Get information of a topic for the specified environment
 
-**Aliases:** get
+**Aliases:** `get`
 
 **Usage:**
 

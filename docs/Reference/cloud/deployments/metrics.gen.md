@@ -4,7 +4,7 @@
 
 Get deployments metrics
 
-**Aliases:** metrics
+**Aliases:** `metrics`
 
 **Usage:**
 

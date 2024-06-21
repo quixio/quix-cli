@@ -4,7 +4,7 @@
 
 Get the auditing details of the users of your organization
 
-**Aliases:** audit
+**Aliases:** `audit`
 
 **Usage:**
 

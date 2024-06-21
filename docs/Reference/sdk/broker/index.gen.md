@@ -4,7 +4,7 @@
 
 Manage the Sdk broker configuration that is injected to QuixStreams while developing locally
 
-**Aliases:** broker
+**Aliases:** `broker`
 
 **Usage:**
 

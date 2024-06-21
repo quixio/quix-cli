@@ -4,7 +4,7 @@
 
 Get all applications in the specified environment
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

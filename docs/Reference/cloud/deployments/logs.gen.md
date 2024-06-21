@@ -4,7 +4,7 @@
 
 Get deployments logs
 
-**Aliases:** logs
+**Aliases:** `logs`
 
 **Usage:**
 

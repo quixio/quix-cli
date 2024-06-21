@@ -4,7 +4,7 @@
 
 Generate the initial Quix files based on the existing repository
 
-**Aliases:** init
+**Aliases:** `init`
 
 **Usage:**
 

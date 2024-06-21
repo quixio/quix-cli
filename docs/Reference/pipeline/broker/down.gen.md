@@ -4,7 +4,7 @@
 
 Stop the broker instance of the local pipeline and all the services depending on it
 
-**Aliases:** down, stop
+**Aliases:** `down`, `stop`
 
 **Usage:**
 

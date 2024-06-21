@@ -4,7 +4,7 @@
 
 Get all topics information for the specified environment
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

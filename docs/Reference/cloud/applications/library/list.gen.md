@@ -4,7 +4,7 @@
 
 Get all library items
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

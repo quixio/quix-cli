@@ -4,7 +4,7 @@
 
 Edits an existing personal access token
 
-**Aliases:** edit
+**Aliases:** `edit`
 
 **Usage:**
 

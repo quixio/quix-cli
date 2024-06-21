@@ -4,7 +4,7 @@
 
 Get the permissions of a user or all the users in the organisation
 
-**Aliases:** get
+**Aliases:** `get`
 
 **Usage:**
 

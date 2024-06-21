@@ -4,7 +4,7 @@
 
 Performs cloud related operations
 
-**Aliases:** cloud, remote
+**Aliases:** `cloud`, `remote`
 
 **Usage:**
 

@@ -156,6 +156,7 @@ nav:
         - sdk broker set: Reference/sdk/broker/set.md
         - sdk broker update: Reference/sdk/broker/update.md
   - Other Commands:
+    - logout: Reference/logout.md
     - login: Reference/login.md
     - contexts:
       - Reference/contexts/index.md

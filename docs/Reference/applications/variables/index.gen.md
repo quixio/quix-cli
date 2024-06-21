@@ -4,7 +4,7 @@
 
 Manage your local application's variables
 
-**Aliases:** variables, variable, vars, var
+**Aliases:** `variables`, `variable`, `vars`, `var`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Get the details for a deployment
 
-**Aliases:** get
+**Aliases:** `get`
 
 **Usage:**
 

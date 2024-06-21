@@ -4,7 +4,7 @@
 
 Manage the deployments of the local pipeline
 
-**Aliases:** deployments, deployment
+**Aliases:** `deployments`, `deployment`
 
 **Usage:**
 

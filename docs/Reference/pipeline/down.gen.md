@@ -4,7 +4,7 @@
 
 Stop the execution of your local pipeline
 
-**Aliases:** down, stop
+**Aliases:** `down`, `stop`
 
 **Usage:**
 

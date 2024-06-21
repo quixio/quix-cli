@@ -4,7 +4,7 @@
 
 Manage the default environment
 
-**Aliases:** environments, environment, envs, env, workspaces, workspace
+**Aliases:** `environments`, `environment`, `envs`, `env`, `workspaces`, `workspace`
 
 **Usage:**
 

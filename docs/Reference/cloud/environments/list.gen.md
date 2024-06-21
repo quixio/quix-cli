@@ -4,7 +4,7 @@
 
 List all environments the current user has access to
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

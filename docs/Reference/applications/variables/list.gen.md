@@ -4,7 +4,7 @@
 
 Lists the variables of the current application
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

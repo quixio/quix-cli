@@ -4,7 +4,7 @@
 
 Manage your local pipeline operations and resources
 
-**Aliases:** pipeline, pipe
+**Aliases:** `pipeline`, `pipe`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Adds or edits the value of a single permission of a user in the organisation. Available roles: [Admin, Manager, Editor, Viewer]
 
-**Aliases:** edit
+**Aliases:** `edit`
 
 **Usage:**
 

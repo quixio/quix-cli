@@ -4,7 +4,7 @@
 
 Get the information for all the deployments in an environment
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 Add a local deployment
 
-**Aliases:** create, add
+**Aliases:** `create`, `add`
 
 **Usage:**
 

@@ -4,7 +4,7 @@
 
 List all the local deployments
 
-**Aliases:** list, ls
+**Aliases:** `list`, `ls`
 
 **Usage:**
 
