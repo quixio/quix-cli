@@ -4,19 +4,28 @@
 >
 > This repository is intended for internal use only and is currently a work in progress. Features and documentation may be incomplete or subject to change. Please ensure you have the necessary permissions and understand the implications of using unreleased or unstable features.
 
-Welcome to Quix CLI, your powerful command-line companion for seamlessly managing and interacting with the features of our Quix Cloud product. While Quix offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
+The **Quix CLI** is a free tool that enables you to create, debug, and run streaming pipelines locally using Docker and Quix Streams. 
 
-- **Effortless Control:** Execute commands effortlessly to manage various aspects of your Quix organisation.
-  
-- **Script Automation:** Integrate Quix operations into your scripts for automated workflows and enhanced productivity.
+It also serves as a companion app for seamlessly managing and interacting with the features of your [Quix Cloud](https://quix.io/docs/quix-cloud/overview.md){target=_blank} account. While Quix Cloud offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
 
-- **Accessibility:** Access and manipulate Quix features directly from the command line, providing an alternative interface for users who prefer terminal-based interactions.
+Quix CLI offers three groups of functionality:
 
-- **Scalability:** Seamlessly scale your Quix operations, whether you are working on a single instance or orchestrating tasks across multiple environments.
+1. Local commands
+2. Cloud commands
+3. Utility commands
 
-Quix CLI is designed to be intuitive, consistent, and respectful of user preferences following [CLI design best practices](https://clig.dev/). 
+Using the **local commands**, you can create your pipeline with predefined samples or write your code from scratch in Python, leveraging the power of Quix Streams. The CLI allows you to run these pipelines locally in Docker containers for testing and debugging. Optionally, you can deploy and synchronize your local pipeline to Quix Cloud.
 
-For more information and detailed documentation, visit [quix.io](https://www.quix.io/).
+Using the **cloud commands**, you can manage your Quix Cloud account from the command line. While Quix Cloud offers a robust frontend UI for a user-friendly experience, the CLI provides efficiency and flexibility, allowing you to streamline your workflow and take control from the command line. The CLI aims to offer feature parity with the Quix Cloud UI, although some Quix Cloud functionalities are only available through the CLI, such as:
+
+* Permissions - Management of user permissions against the resources
+* Auditing - Users auditing data
+
+With the **utility commands**, you can perform tasks such as checking your status, updating the CLI, changing the CLI configuration, using interactive help, and managing contexts (the endpoint or environment the CLI is connected to).
+
+For a quick tutorial of how to use the basic functionalities of Quix CLI, visit [CLI Quickstart](https://www.quix.io/).
+
+For more information and detailed documentation, visit [quix.io](https://www.quix.io/docs).
 
 ## Installation of Quix CLI
 
@@ -74,12 +83,6 @@ To view and choose from all available versions, visit the [releases section](htt
 1. Go to the [release page](https://github.com/quixio/quix-cli/releases) and dowload the executable matching your OS/architecture.
 2. Copy the executable to a location of your choice.
 3. Add the location to your system's PATH.
-
-### Installation via Dotnet Global tools
-
-```bash
-dotnet tool install --global QuixCLI --prerelease
-```
 
 ## Usage
 
