@@ -3,6 +3,7 @@ title: Quix CLI
 description: The Quix Command-Line Interface. A powerful command-line companion for developing locally, and deploying to local brokers, hosted brokers, or Quix Cloud.
 ---
 
+Test
 # Quix Command-Line Interface (CLI)
 
 The [Quix CLI](https://github.com/quixio/quix-cli){target=_blank} is a powerful command-line interface that enables you to develop stream processing pipelines and manage your Quix Cloud account. 
