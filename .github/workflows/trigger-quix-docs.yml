@@ -1,0 +1,29 @@
+name: Trigger Quix docs build
+
+on:
+  push:
+    paths:
+      - 'docs/**'
+    branches:
+      - main
+
+jobs:
+  trigger:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Quix docs build
+        env:
+          REPO: 'quixio/quix-docs' 
+          PAT: ${{ secrets.QUIX_DOCS_PAT }} 
+        run: |
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            -H "Authorization: token $PAT" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/repos/$REPO/dispatches \
+            -d '{"event_type":"cli_docs_updated"}')
+          if [ "$RESPONSE" -eq 204 ]; then
+            echo "Dispatch event sent successfully."
+          else
+            echo "Failed to send dispatch event. Response code: $RESPONSE"
+            exit 1
+          fi
