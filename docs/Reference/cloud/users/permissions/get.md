@@ -2,14 +2,14 @@
 
 ## How It Works
 
-The `quix user permissions get` command retrieves the permissions of a specified user or all users in the organization. This command allows you to view the roles and scopes assigned to users.
+The `quix cloud user permissions get` command retrieves the permissions of a specified user or all users in the organization. This command allows you to view the roles and scopes assigned to users.
 
 ## Example Usage
 
 ### Interactive Mode
 
 ```bash
-$ quix users permissions get
+$ quix cloud users permissions get
 ? Select user:
 > john.doe@example.com                    John Doe
   jane.doe@example.com                    Jane Doe
@@ -27,7 +27,7 @@ Organisation:myorg  | Admin
 ### Non-Interactive Mode
 
 ```bash
-$ quix users permissions get <userId>
+$ quix cloud users permissions get <userId>
 
 Scope               | Role
 --------------------|-------

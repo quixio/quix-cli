@@ -20,7 +20,7 @@ The `set` command is used to assign permissions to a user in your organization. 
 Select the user:
 
 ```bash
-$ quix user permissions set
+$ quix cloud user permissions set
 ? Select user:
 > john.doe@myorg.com                    John Doe
   jane.doe@myorg.com                    Jane Doe
@@ -66,7 +66,7 @@ Confirm the permissions:
 ### Non-Interactive Mode
 
 ```bash
-$ quix user permissions set <userId> --scope Workspace:myorg-projecta-environmentx --role Admin
+$ quix cloud user permissions set <userId> --scope Workspace:myorg-projecta-environmentx --role Admin
 ```
 
 !!! tip

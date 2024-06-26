@@ -18,7 +18,7 @@
 ## Example Usage
 
 ```bash
-$ quix user audit --email user@quix.io "06/12/2024" "06/13/2024" -s 3 -p 1
+$ quix cloud user audit --email user@quix.io "06/12/2024" "06/13/2024" -s 3 -p 1
 Auditing data from 06/12/2024 00:00:00 to 06/13/2024 00:00:00
 Page: 1
 
@@ -34,7 +34,7 @@ Press any key to continue to the next page (Press ESC to exit)
 You can also filter the parameters. For example, to filter by workspaceId:
 
 ```bash
-quix user audit --email user@quix.io "06/12/2024" "06/13/2024" -s 3 -p 1 -k workspaceId -v quix-proja-envx
+quix cloud user audit --email user@quix.io "06/12/2024" "06/13/2024" -s 3 -p 1 -k workspaceId -v quix-proja-envx
 Auditing data from 06/12/2024 00:00:00 to 06/13/2024 00:00:00
 Page: 1
 

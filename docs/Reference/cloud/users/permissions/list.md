@@ -2,12 +2,12 @@
 
 ## How It Works
 
-The `quix user permissions list` command retrieves the permissions of all users in the organization. This command provides a comprehensive overview of the roles and scopes assigned to each user.
+The `quix cloud user permissions list` command retrieves the permissions of all users in the organization. This command provides a comprehensive overview of the roles and scopes assigned to each user.
 
 ## Example Usage
 
 ```bash
-$ quix user permissions list
+$ quix cloud user permissions list
 
 User Id                              | Email           | Scope              | Role
 -------------------------------------|-----------------|--------------------|---------

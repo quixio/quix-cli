@@ -11,7 +11,7 @@ The `delete` command is used to remove a specific permission assigned to a user 
 If you run the command without specifying the user ID, it will enter interactive mode:
 
 ```bash
-$ quix users permissions delete --scope "Workspace:myorg-projecta-environmentx"
+$ quix cloud users permissions delete --scope "Workspace:myorg-projecta-environmentx"
 ```
 
 In this mode, you will be prompted to select the user from a list:
@@ -32,7 +32,7 @@ After successfully deleting the permission, the console will display your curren
 To delete a user's permission by directly specifying the user ID and permission scope:
 
 ```bash
-$ quix users permissions delete <user-id> --scope "Workspace:myorg-projecta-environmentx"
+$ quix cloud users permissions delete <user-id> --scope "Workspace:myorg-projecta-environmentx"
 ```
 
 !!! tip

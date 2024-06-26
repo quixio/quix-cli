@@ -13,13 +13,13 @@ This command is particularly useful the first time you edit an application, as i
 
 Each time you run or debug your code using the generated run configuration, the command exports variables from the `app.yaml` file to a `.env` file or a devcontainer configuration. This ensures that the environment is correctly set up before you begin editing and debugging. 
 
-Specifically, this command executes [`quix application variables export`](../applications/variables/export.md), which adds the application values along with the broker or SDK token to a `.env` file.
+Specifically, this command executes [`quix application variables export`](./applications/variables/export.md), which adds the application values along with the broker or SDK token to a `.env` file.
 
 #### Debug Broker Configuration
 
 === "Pipeline Broker"
 
-    To use a local debug broker, you can easily set one up by running `quix broker up`. This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix context broker local`.
+    To use a local debug broker, you can easily set one up by running [`quix pipeline broker up`](./pipeline/broker/up.md). This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix context broker local`.
 
 === "Quix Cloud Broker"
 
