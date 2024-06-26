@@ -57,6 +57,7 @@ nav:
 - 'Tutorials':
   - 'Using the CLI with a template': 'cli-template.md'
   - 'Using the CLI with GitHub Actions': 'cli-github-actions.md'
+  - 'Developing locally with Quix CLI': 'cli-local-debug.md'
 - Reference:
   - Cloud Commands:
     - Reference/cloud/index.md
