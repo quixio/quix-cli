@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix user permissions edit` command is used to add or edit the value of a single permission of a user in the organization. This command allows specifying the scope and role for the permission, effectively updating the user's permissions.
+The `quix cloud user permissions edit` command is used to add or edit the value of a single permission of a user in the organization. This command allows specifying the scope and role for the permission, effectively updating the user's permissions.
 
 !!! note
   If you want to assign multiple permissions at once, refer to [this](./set.md) command.
@@ -14,7 +14,7 @@ The `quix user permissions edit` command is used to add or edit the value of a s
 When you run the command without specifying the user ID or permission assignments, it will guide you through selecting a user and editing permissions interactively.
 
 ```bash
-$ quix user permissions edit
+$ quix cloud user permissions edit
 ? Select user:
 > john.doe@myorg.com                    John Doe
   jane.doe@myorg.com                    Jane Doe
@@ -50,7 +50,7 @@ Finally, confirm the permissions.
 You can also run the command by specifying the user ID and permission assignments directly. This allows for quick updates without interactive prompts.
 
 ```bash
-$ quix user permissions edit user1@myorg.com --permission-assignments "[{Workspace:myorg-projecta-environmentx, Admin}]"
+$ quix cloud user permissions edit user1@myorg.com --permission-assignments "[{Workspace:myorg-projecta-environmentx, Admin}]"
 ```
 
 After setting or editing the permissions, you will be asked to confirm the changes. If confirmed, the updated permissions will be saved.
@@ -61,3 +61,4 @@ After setting or editing the permissions, you will be asked to confirm the chang
   Workspace:myorg-projecta-environmentx           | Admin
 
 ? Use these permissions?: [y/n] (y):
+```

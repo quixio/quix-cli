@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix environments sync` command facilitates the synchronization between your local development environment and the cloud environment based on configurations specified in the `quix.yaml` file. It detects changes in your local configuration and updates the cloud environment accordingly. This includes updating existing deployments, adding new ones, and aligning topics as defined in the specification.
+The `quix cloud environments sync` command facilitates the synchronization between your local development environment and the cloud environment based on configurations specified in the `quix.yaml` file. It detects changes in your local configuration and updates the cloud environment accordingly. This includes updating existing deployments, adding new ones, and aligning topics as defined in the specification.
 
 ## Example Usage
 
@@ -11,7 +11,7 @@ The `quix environments sync` command facilitates the synchronization between you
 To check the synchronization status of a specific environment, use the following command:
 
 ```bash
-$ quix env sync quixdev-quickstart-prod --status
+$ quix cloud env sync quixdev-quickstart-prod --status
 ```
 
 The output will indicate whether the environment is in sync with the local repository:
@@ -27,7 +27,7 @@ Synchronized to commit: [9a9483d]
 To synchronize a specific environment, use the following command:
 
 ```bash
-$ quix env sync quixdev-quickstart-prod
+$ quix cloud env sync quixdev-quickstart-prod
 ```
 
 Given this `quix.yaml`:
@@ -93,4 +93,4 @@ The output will display the changes to be applied:
 !!! tip
     Ensure your `quix.yaml` file is up-to-date with the desired configurations before running the synchronization command. This helps avoid unexpected changes to your environment.
 
-By using the `quix environments sync` command, you can easily keep your cloud environment in sync with your local configurations, ensuring consistency and reliability across your development and production setups.
+By using the `quix cloud environments sync` command, you can easily keep your cloud environment in sync with your local configurations, ensuring consistency and reliability across your development and production setups.

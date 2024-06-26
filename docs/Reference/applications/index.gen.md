@@ -17,5 +17,5 @@ quix applications [command] [options]
 - [convert](convert.md) : Converts applications from and to library item format
 - [create](create.md) : Creates a new application locally based on a code sample of the library
 - [list](list.md) : Lists all the local applications of the project
-- [variables](variables\index.md) : Manage your local application's variables
+- [variables](variables/index.md) : Manage your local application's variables
 

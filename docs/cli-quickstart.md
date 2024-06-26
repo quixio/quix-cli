@@ -26,19 +26,19 @@ To install Quix CLI:
 
 === "macOS"
 
-    ```
+    ``` bash
     curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
     ```
 
 === "Linux"
 
-    ```
+    ``` bash
     curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
     ```
 
 === "Windows"
 
-    ```
+    ``` powershell
     iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb | iex
     ```
 
@@ -54,25 +54,8 @@ This guide requires you to have certain dependencies installed. These include [D
 
 To verify you have the dependencies installed, run the following command:
 
-```
+``` bash
 quix status
-```
-
-This produces output similar to the following:
-
-```
-✗ Not logged in
-  User:                       ! Not logged in to Quix Cloud
-  Current context:            default (https://portal-api.platform.quix.io)
-  Default environment:        ! Not set
-  Sdk Broker configuration:   Local (localhost:19092)
-! Local Pipeline Status:      Not Running
-! Local Broker Status:        Not Running
-✓ Docker installed
-✓ Git installed
-  Git Root:                   \path\to\your\repo
-✓ VS Code installed
-! PyCharm not installed
 ```
 
 View the output carefully to confirm you have Git and Docker installed:
@@ -84,14 +67,15 @@ View the output carefully to confirm you have Git and Docker installed:
 
 ## Step 3: Create a GitHub repository
 
-Create a Git repo in GitHub, where you are going to store your project files. Create a repo initialized with a `README.md` file, so it can be cloned more easily.
+Create a [**new Git repo**](https://github.com/new){target=_blank} on GitHub to store your project files. 
 
-See also the [GitHub documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories){target=_blank}.
+![Create a new Github repo](./images/cli/create-github-repo.png)
 
-!!! note
+Initialize the repo with a `README.md` file to make it easier to clone.
 
-    Make sure your GitHub repo is properly configured in your Git client to push changes to the remote repo.
+![Add a README.md](./images/cli/add-readme-github-repo.png) 
 
+If you encounter any issues creating your GitHub repository, refer to this [documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/quickstart-for-repositories){target=_blank} on Github.
 
 ## Step 4: Clone your GitHub repo into your local project directory
 
@@ -99,7 +83,7 @@ Copy your GitHub repository URL.
 
 Now, clone the repository using the URL. For example:
 
-```
+``` bash
 git clone https://github.com/<your-username>/<your-repository>
 ```
 
@@ -107,25 +91,23 @@ git clone https://github.com/<your-username>/<your-repository>
 
     Replace `<your-username>` and `<your-repository>` with your actual username and repository name. 
 
-See also the [GitHub documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository){target=_blank}.
+If you encounter any issues cloning your GitHub repository, refer to this [documentation](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository){target=_blank} on Github.
 
-## Step 5: Navigate to your project folder
+!!! note
+
+    Ensure your GitHub account is [correctly configured in your Git client](https://docs.github.com/en/get-started/getting-started-with-git/set-up-git) to push changes to the remote repository.
+
+## Step 5: Initialize your project as a Quix project
 
 Change into your project directory:
 
-```
+``` bash
 cd <your-repository>
 ```
 
-!!! tip
-
-    Replace `<your-repository>` with your repository name. 
-
-## Step 6: Initialize your project as a Quix project
-
 In your Git project directory, enter ```quix init```. This initializes your Quix project with a `quix.yaml` file, which describes your Quix project. As a convenience a `.gitignore` file is also created for you, or if one is present it is updated to ignore files such as virtual environment files, `.env` files, and so on.:
 
-```
+``` bash
 quix init
 ```
 
@@ -153,11 +135,11 @@ You can see there are currently no applications (deployments) or topics.
 
     The `quix.yaml` file defines the project pipeline in its entirety.
 
-## Step 7: Create a source application
+## Step 6: Create a source application
 
 Now create a source application that will ingest simulated telemetry data into the broker as if it were coming from a real car in real-time:
 
-```
+``` bash
 quix app create demo-data-source
 ```
 
@@ -165,11 +147,11 @@ When prompted, assign it a name of `demo-data-source`.
 
 This creates a demo data source for you. A directory has been created for this application, along with all the necessary files. You can explore the files created with `ls`.
 
-## Step 8: Create a transform application
+## Step 7: Create a transform application
 
 Now let's create a simple transform application. This application will read data from the source and will generate a message when a hard braking is detected:
 
-```
+``` bash
 quix app create event-detection-transformation
 ```
 
@@ -177,17 +159,20 @@ When prompted, assign it a name of `event-detection-transformation`.
 
 This creates the transform for you. A directory has been created for this application, along with all the necessary files. You can explore the files created with `ls`.
 
-## Step 9: Update your pipeline
+## Step 8: Update the deployments of your pipeline 
 
-Update your pipeline with the newly created applications of the project:
+Update the deployments of your pipeline with the newly created applications of the project:
 
-```
+``` bash
 quix pipeline update
 ```
 
-This command updates the deployment configuration of your pipeline based on the default configuration of your applications.
+This command adds or updates the deployment configuration of your pipeline based on the default configuration of the existing applications in the project.
 
-Now, view your `quix.yaml` file again to see how the applications have been added:
+!!! tip
+    Typically, each application corresponds to a single deployment (1:1). However, the system supports multiple deployments for a single application within your project (1:N)
+
+Now, view your `quix.yaml` file again to see how a deployment for each application has been added:
 
 ``` yaml
 # Quix Project Descriptor
@@ -236,13 +221,11 @@ deployments:
 topics: []
 ```
 
-You can see here the applications that are going to be deployed as part of the pipeline.
+Notice that the `quix.yaml` file has been updated with the variables defined in the `app.yaml` files located in each application folder.
 
-## Step 10: View your pipeline
+You can also view a graph representation of your local pipeline with the following command:
 
-View a graph representation of your local pipeline:
-
-```
+``` bash
 quix pipeline view
 ```
 
@@ -252,17 +235,17 @@ If you have VSCode installed, the pipeline is displayed in the IDE for you, othe
 
 When you update your `quix.yaml` using the command `quix pipeline update`, the visualization is updated for you.
 
-## Step 11: Run your pipeline
+## Step 9: Run your pipeline
 
-Run your pipeline in Docker based on your `quix.yaml` file:
+Run your pipeline in Docker:
 
-```
+``` bash
 quix pipeline up
 ```
 
-You'll see various console messages displayed in your terminal. When these have finished, then your deployed services are running in Docker. 
+This command generates a `compose.yaml` in the root of your project based on your `quix.yaml` file.
 
-## Step 12: View your pipeline running in Docker
+You'll see various console messages displayed in your terminal. When these have finished, then your deployed services are running in Docker. 
 
 Now switch to Docker Desktop and view the containers of the pipeline running:
 
@@ -272,33 +255,23 @@ You can also click on a **Event Detection** container and check its logs:
 
 ![Event detection transformation](./images/cli/docker-event-detection.png)
 
-You can see that **hard braking** has been detected.
+You can see that **hard braking** has been detected!
 
 !!! tip
 
-    A detailed explanation of the applications is beyond the scope of this Quickstart, but you can read more about the application code used in the [Quix Streams documentation](https://quix.io/docs/quix-streams/introduction.html).
+    A detailed explanation of the applications code is beyond the scope of this guide. However, you can read more about Quix Streams library [here](https://quix.io/docs/quix-streams/introduction.html).
 
-## Step 13: Stop your pipeline running
-
-You can stop your pipeline with the following command:
-
-```
-quix pipeline down
-```
-
-If you switch to Docker Desktop, you'll see your container has been halted and removed.
-
-## Step 14: Push your local pipeline to Github
+## Step 10: Push your local pipeline to Github
 
 To push your changes to Git, and sync your pipeline to Quix Cloud, enter:
 
-```
+``` bash
 quix pipeline sync
 ```
 
-This pushes all changes to your Git repository. If you view your repository in your Git provider (for example GitHub), you'll see your files have been pushed.
+This **pushes all changes** to your Git repository. If you view your repository in your Git provider (for example GitHub), you'll see your files have been pushed.
 
-This command also synchronizes your Git repository with Quix Cloud. But, at this stage you do not have Quix Cloud available, so you receive the following error message:
+This command also **synchronizes** your Git repository with Quix Cloud. But, at this stage you do not have Quix Cloud available, so you will receive the following error message:
 
 ```
 You're not connected to Quix Cloud
@@ -306,7 +279,7 @@ You're not connected to Quix Cloud
 
 ## Are you ready to level up?
 
-**Quix Cloud** offers a robust and user-friendly platform for managing data pipelines, making it an ideal choice for organizations looking to streamline their development processes, enhance collaboration, and maintain high levels of observability and security.
+[**Quix Cloud**](../quix-cloud/why-quix-cloud.md){target=_blank} offers a robust and user-friendly platform for managing data pipelines, making it an ideal choice for organizations looking to streamline their development processes, enhance collaboration, and maintain high levels of observability and security.
 
 - **Streamlined Development and Deployment**: Quix Cloud simplifies the development and deployment of data pipelines with its integrated online code editors, CI/CD tools, and YAML synchronization features.
 - **Enhanced Collaboration**: The platform allows multiple users to collaborate efficiently, manage permissions, and maintain visibility over projects and environments.
@@ -315,10 +288,7 @@ You're not connected to Quix Cloud
 - **Security and Compliance**: Securely manage secrets and ensure compliance with dedicated infrastructure and SLA options.
 - **Fully Managed Infrastructure**: Isolated cloud infrastructure, managed Kafka or BYO broker, topics management, and YAML-based infrastructure as code.
 
-[Learn more about Quix Cloud features](../quix-cloud/why-quix-cloud.md) 
-
-
-## Next step
+## Next steps
 
 <div class="grid cards" markdown>
 

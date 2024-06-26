@@ -5,32 +5,22 @@ description: The Quix Command-Line Interface. A powerful command-line companion 
 
 # Quix Command-Line Interface (CLI)
 
-The [Quix CLI](https://github.com/quixio/quix-cli){target=_blank} is a powerful command-line interface that enables you to develop stream processing pipelines and manage your Quix Cloud account. 
+The [Quix CLI](https://github.com/quixio/quix-cli){target=_blank} is a free tool that enables you to create, debug, and run streaming pipelines locally using Docker and Quix Streams. It also serves as a companion app for seamlessly managing and interacting with the features of your [Quix Cloud](../quix-cloud/overview.md){target=_blank} account.
 
 Quix CLI offers three groups of functionality:
 
-1. Local development commands
-2. Manage Quix Cloud commands
+1. Local commands
+2. Cloud commands
 3. Utility commands
 
-Using the local commands, you develop your pipeline using predefined samples, or write your code from scratch in Python, leveraging the power of Quix Streams. Using the CLI you can run these pipelines locally in Docker containers, for testing and debugging. You can then deploy to Cloud for scalability and observability.
+Using the **local commands**, you can create your pipeline with predefined samples or write your code from scratch in Python, leveraging the power of Quix Streams. The CLI allows you to run these pipelines locally in Docker containers for testing and debugging. Optionally, you can deploy and synchronize your local pipeline to Quix Cloud.
 
-Using the cloud commands, you can manage your Quix Cloud account, and all the pipelines within, as the CLI offers feature parity with the Quix Cloud UI. For example, you can manage:
-
-* Your organization
-* Projects
-* Environments
-* Applications
-* Deployments
-* Topics
-* Users
-
-There are some Quix Cloud functionaly that is only available from the CLI currently, such as:
+Using the **cloud commands**, you can manage your Quix Cloud account from the command line. While Quix Cloud offers a robust frontend UI for a user-friendly experience, the CLI provides efficiency and flexibility, allowing you to streamline your workflow and take control from the command line. The CLI aims to offer feature parity with the Quix Cloud UI, although some Quix Cloud functionalities are only available through the CLI, such as:
 
 * Permissions - Management of user permissions against the resources
 * Auditing - Users auditing data
 
-With the utility commands you can do things such as check your status, update the CLI, check version, use interactive help, and manage contexts (the environment the CLI is connected to).
+With the **utility commands**, you can perform tasks such as checking your status, updating the CLI, changing the CLI configuration, using interactive help, and managing contexts (the endpoint or environment the CLI is connected to).
 
 ## Development status
 
