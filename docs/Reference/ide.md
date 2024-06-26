@@ -13,7 +13,7 @@ This command is particularly useful the first time you edit an application, as i
 
 Each time you run or debug your code using the generated run configuration, the command exports variables from the `app.yaml` file to a `.env` file or a devcontainer configuration. This ensures that the environment is correctly set up before you begin editing and debugging. 
 
-Specifically, this command executes [`quix application variables export`](../applications/variables/export.md), which adds the application values along with the broker or SDK token to a `.env` file.
+Specifically, this command executes [`quix application variables export`](./applications/variables/export.md), which adds the application values along with the broker or SDK token to a `.env` file.
 
 #### Debug Broker Configuration
 

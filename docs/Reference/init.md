@@ -6,7 +6,7 @@ The `quix init` command sets up the initial Quix files based on your existing re
 If run at the root level of your project, it will also create a `quix.yaml` file if one does not exist, and it attempts to generate any missing `app.yaml` and `dockerfile` files for all applications within the project. This ensures that your development environment is properly configured for seamless development and deployment.
 
 !!! tip
-    The `-dev, --devcontainers`, `--vscode`, `--pycharm`, and `--ide <ide>` options work similarly to those in the [`quix debug ide`](debug/ide.md) command.
+    The `-dev, --devcontainers`, `--vscode`, `--pycharm`, and `--ide <ide>` options work similarly to those in the [`quix debug ide`](./ide.md) command.
 
 ## Example usage
 
