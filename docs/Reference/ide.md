@@ -19,7 +19,7 @@ Specifically, this command executes [`quix application variables export`](./appl
 
 === "Pipeline Broker"
 
-    To use a local debug broker, you can easily set one up by running `quix broker up`. This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix context broker local`.
+    To use a local debug broker, you can easily set one up by running [`quix pipeline broker up`](./pipeline/broker/up.md). This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix context broker local`.
 
 === "Quix Cloud Broker"
 
