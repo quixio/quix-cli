@@ -11,7 +11,7 @@ The `copy` command is used to replicate the permissions from one user to other u
 Select the source user:
 
 ```bash
-$ quix user permissions copy
+$ quix cloud user permissions copy
 ? Select user:
 > john.doe@myorg.com                    John Doe
   jane.doe@myorg.com                    Jane Doe
@@ -39,7 +39,7 @@ Then select the target user:
 ### Non-Interactive Mode
 
 ```bash
-$ quix user permissions copy <sourceUserId> --to <targetUserId1> --to <targetUserId2>
+$ quix cloud user permissions copy <sourceUserId> --to <targetUserId1> --to <targetUserId2>
 
   Scope                                           | Role
  -------------------------------------------------|------

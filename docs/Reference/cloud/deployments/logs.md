@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix deployment logs` command allows you to retrieve logs for a specific deployment. This command helps you monitor and debug your deployments by providing access to their log outputs.
+The `quix cloud deployment logs` command allows you to retrieve logs for a specific deployment. This command helps you monitor and debug your deployments by providing access to their log outputs.
 
 ## Example Usage
 
@@ -11,7 +11,7 @@ The `quix deployment logs` command allows you to retrieve logs for a specific de
 ### Interactive Mode
 
 ```bash
-$ quix deployment logs
+$ quix cloud deployment logs
 
 ? Select deployment:
   deployment-1
@@ -33,7 +33,7 @@ $ quix deployment logs
 ### Non-Interactive Mode
 
 ```bash
-$ quix deployment logs deployment-4
+$ quix cloud deployment logs deployment-4
 
 [ - Logs stream started - ]
 
