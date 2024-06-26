@@ -19,15 +19,15 @@ Specifically, this command executes [`quix application variables export`](./appl
 
 === "Pipeline Broker"
 
-    To use a local debug broker, you can easily set one up by running [`quix pipeline broker up`](./pipeline/broker/up.md). This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix context broker local`.
+    To use a local debug broker, you can easily set one up by running [`quix pipeline broker up`](./pipeline/broker/up.md). This will start a local broker instance that listens on `localhost:19092`. This setting is enabled by default. If you need to change it, use `quix sdk broker local`.
 
 === "Quix Cloud Broker"
 
-    To use the broker address from your Quix Cloud environment, use `quix context broker cloud`. Ensure you are logged into Quix Cloud by running `quix login` if you are not already logged in. If you have never selected an environment, run `quix use` to select it.
+    To use the broker address from your Quix Cloud environment, use `quix sdk broker cloud`. Ensure you are logged into Quix Cloud by running `quix login` if you are not already logged in. If you have never selected an environment, run `quix use` to select it.
 
 === "Other Broker"
 
-    To use a broker address other than `localhost:19092`, run `quix context broker set`.
+    To use a broker address other than `localhost:19092`, run `quix sdk broker set`.
 
     You can edit the *debug broker configuration* to suit your needs. The default configuration is designed to work out-of-the-box, but you can change it to point to any broker, including a Quix Cloud environment. 
 
