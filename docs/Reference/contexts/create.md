@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix contexts create` command allows you to add a new context to the Quix CLI. This context includes configurations such as the portal endpoint and the local debug broker address. If you do not provide the name or options, the command starts an interactive mode to guide you through the context creation process.
+The `quix contexts create` command allows you to add a new context to the Quix CLI. This context includes configurations such as the portal endpoint and the SDK broker configuration address. If you do not provide the name or options, the command starts an interactive mode to guide you through the context creation process.
 
 !!! warning
     Creating multiple contexts is intended for advanced users who need to store and access different sets of configurations. Use this feature only if you require distinct environments or settings.
@@ -32,7 +32,7 @@ You will then be prompted to enter the portal API URL:
     Changing the portal API URL is only necessary if you need to use a different portal API, such as for BYOC (Bring Your Own Cloud).
 
 
-Once you enter a valid URL, you will be prompted for the local debug broker address:
+Once you enter a valid URL, you will be prompted for the SDK broker configuration address:
 
 ```text
 ✓ Portal API URL: https://quix.example.com 
@@ -47,20 +47,20 @@ Once you enter a valid URL, you will be prompted for the local debug broker addr
     ```
 
 ```
-? Enter local debug broker address: (localhost:19092):
+? Enter SDK local broker address: (localhost:19092):
 ```
 
-After entering the local debug broker address, you will be asked if you want to use a local debug broker:
+After entering the SDK broker configuration address, you will be asked if you want to use a SDK broker configuration:
 
 ```text
-✓ Local debug broker address: localhost:9092
-? Use a local debug broker? [y/n] (y):
+✓ SDK local broker address: localhost:9092
+? Use 'Local' as SDK broker configuration? [y/n] (y):
 ```
 
-Confirm your choice to use a local debug broker:
+Confirm your choice to use a SDK broker configuration:
 
 ```text
-✓ Use a local debug broker?: ✓
+✓ Use 'Local' as SDK broker configuration?: ✓
 ```
 
 By following these steps, you can easily create a new context in the Quix CLI, ensuring that all necessary configurations are set correctly.

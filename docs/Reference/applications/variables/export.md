@@ -15,7 +15,7 @@ Existing environment variables in the `.env` file will remain untouched unless t
 
 #### Quix__Broker__Address
 
-When using a local debug broker, the `Quix__Broker__Address` environment variable is set to point to the address of the local broker. This allows your application to connect to the local broker instance for testing and debugging purposes.
+When using a SDK broker configuration that points to a local address, the `Quix__Broker__Address` environment variable is set to point to the address of the SDK broker configuration. This allows your application to connect to the local broker instance for testing and debugging purposes.
 
 ```
 Quix__Broker__Address={your_debug_broker_address}
