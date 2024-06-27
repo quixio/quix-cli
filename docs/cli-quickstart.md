@@ -216,9 +216,11 @@ deployments:
         description: This is the output topic for hard braking events
         required: true
         value: hard-braking
-
+        
 # This section describes the Topics of the data pipeline
-topics: []
+topics:
+  - name: f1-data
+  - name: hard-braking
 ```
 
 Notice that the `quix.yaml` file has been updated with the variables defined in the `app.yaml` files located in each application folder.
