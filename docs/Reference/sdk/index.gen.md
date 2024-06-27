@@ -2,7 +2,7 @@
 
 ## Overview
 
-Set the Sdk configuration that is injected to QuixStreams while developing locally
+Set the SDK configuration that is injected to QuixStreams while developing locally
 
 **Aliases:** `sdk`, `settings`, `config`
 
@@ -14,5 +14,5 @@ quix sdk [command] [options]
 
 **Commands:**
 
-- [broker](broker/index.md) : Manage the Sdk broker configuration that is injected to QuixStreams while developing locally
+- [broker](broker/index.md) : Manage the SDK broker configuration that is injected to QuixStreams while developing locally
 
