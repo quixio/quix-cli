@@ -33,7 +33,7 @@ If you are not logged into Quix Cloud, the status command will indicate this and
   User:                       ! Not logged in to Quix Cloud
   Current context:            default (https://portal-api.platform.quix.io)
   Default environment:        ! Not set
-  Local Debug Broker:         Local (localhost:19092)
+  SDK broker configuration:         Local (localhost:19092)
 ✓ Docker installed
 ! Local Pipeline Status:      Not Running
 ✓ Git installed
@@ -55,7 +55,7 @@ If you are logged into Quix Cloud and have a default environment set, the status
   Organization:               Example (example-org)
   Current context:            default (https://portal-api.platform.quix.io)
   Default environment:        example-org-project-env
-  Local Debug Broker:         Local (localhost:19092)
+  SDK Broker configuration:   Local (localhost:19092)
 ✓ Docker installed
 ! Local Pipeline Status:      Not Running
 ✓ Git installed

@@ -2,11 +2,11 @@
 
 ## How It Works
 
-The `quix sdk broker cloud` command configures the local debug broker to use the one in your Quix Cloud environment. This ensures that your local development setup uses the same broker as your Quix Cloud environment, which can be helpful for consistent testing and debugging.
+The `quix sdk broker cloud` command configures the SDK broker configuration to use the one in your Quix Cloud environment. This ensures that your local development setup uses the same broker as your Quix Cloud environment, which can be helpful for consistent testing and debugging.
 
 ## Example Usage
 
-To set the local debug broker to the one in your Quix Cloud environment, use the following command:
+To set the SDK broker configuration to the one in your Quix Cloud environment, use the following command:
 
 ```bash
 $ quix sdk broker cloud
@@ -15,7 +15,7 @@ $ quix sdk broker cloud
 If the default environment ID is set, you will see the following message:
 
 ```text
-✓ Local debug broker: Quix Cloud (your-env-id)
+✓ SDK broker configuration: Quix Cloud (your-env-id)
 ```
 
 ### No Default Environment ID Set
@@ -23,7 +23,7 @@ If the default environment ID is set, you will see the following message:
 If no default environment ID is set, you will see the following message:
 
 ```text
-✓ Local debug broker: Quix Cloud (! Not set)
+✓ SDK broker configuration: Quix Cloud (! Not set)
 ```
 
 !!! tip
