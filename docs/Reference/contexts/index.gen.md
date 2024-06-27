@@ -14,7 +14,7 @@ quix contexts [command] [options]
 
 **Commands:**
 
-- [broker](broker/index.md) : Manage the Sdk broker configuration that is injected to QuixStreams while developing locally
+- [broker](broker/index.md) : Manage the SDK broker configuration that is injected to QuixStreams while developing locally
 - [create](create.md) : Add a new context to the CLI
 - [current](current.md) : Gets information about the current context
 - [delete](delete.md) : Remove a context from the CLI
