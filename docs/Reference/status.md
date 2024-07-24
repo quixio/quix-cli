@@ -33,13 +33,12 @@ If you are not logged into Quix Cloud, the status command will indicate this and
   User:                       ! Not logged in to Quix Cloud
   Current context:            default (https://portal-api.platform.quix.io)
   Default environment:        ! Not set
-  SDK broker configuration:         Local (localhost:19092)
-✓ Docker installed
+  SDK broker configuration:   Local (localhost:19092)
 ! Local Pipeline Status:      Not Running
-✓ Git installed
+! Local Broker Status:        Not Running
+✓ Docker detected
+✓ Git detected
   Git Root:                   \path\to\your\repo
-✓ VS Code installed
-✓ PyCharm installed
 ```
 
 ### Logged In with Default Environment
@@ -56,12 +55,11 @@ If you are logged into Quix Cloud and have a default environment set, the status
   Current context:            default (https://portal-api.platform.quix.io)
   Default environment:        example-org-project-env
   SDK Broker configuration:   Local (localhost:19092)
-✓ Docker installed
 ! Local Pipeline Status:      Not Running
-✓ Git installed
+! Local Broker Status:        Not Running
+✓ Docker detected
+✓ Git detected
   Git Root:                   \path\to\your\repo
-✓ VS Code installed
-✓ PyCharm installed
 ```
 
 !!! tip
@@ -69,11 +67,20 @@ If you are logged into Quix Cloud and have a default environment set, the status
 
 ### Pipeline Status
 
-The status of your local pipeline is also displayed. If the pipeline is running but not all services are up, it will be indicated:
+The status of your local pipeline is also displayed:
 
 ```text
-✗ Local Pipeline Status:      Running (3/4)
+✓ Local Pipeline Status:      Running (2/2)
+✓ Local Broker Status:        Running (localhost:19092)
+✓ Local Broker GUI:           Running (http://localhost:8080)
 ```
+
+If the pipeline is running but not all services are up, it will be indicated:
+
+```text
+✗ Local Pipeline Status:      Running (1/2)
+```
+
 
 !!! tip
     Use the [`quix pipeline status`](pipeline/status.md) command to get detailed information about which services in your local pipeline are running and which are not.

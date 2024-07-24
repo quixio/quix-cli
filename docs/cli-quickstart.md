@@ -61,8 +61,8 @@ quix status
 View the output carefully to confirm you have Git and Docker installed:
 
 ```
-✓ Docker installed
-✓ Git installed
+✓ Docker detected
+✓ Git detected
 ```
 
 ## Step 3: Create a GitHub repository
@@ -110,8 +110,6 @@ In your Git project directory, enter ```quix init```. This initializes your Quix
 ``` bash
 quix init
 ```
-
-
 
 If you look at the initial `quix.yaml` file you'll see the following:
 
@@ -245,7 +243,7 @@ Run your pipeline in Docker:
 quix pipeline up
 ```
 
-This command generates a `compose.yaml` in the root of your project based on your `quix.yaml` file.
+This command generates a `compose.local.yaml` in the root of your project based on your `quix.yaml` file.
 
 You'll see various console messages displayed in your terminal. When these have finished, then your deployed services are running in Docker. 
 

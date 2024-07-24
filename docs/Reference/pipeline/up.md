@@ -2,9 +2,9 @@
 
 ## How It Works
 
-The `quix pipeline up` command sets up and runs your pipeline using Docker Compose. When executed, it generates the necessary `compose.yaml` file that defines the services in your pipeline. It then builds and starts the Docker containers based on this configuration by running the equivalent of `docker compose up --build -d`.
+The `quix pipeline up` command sets up and runs your pipeline using Docker Compose. When executed, it generates the necessary `compose.local.yaml` file that defines the services in your pipeline. It then builds and starts the Docker containers based on this configuration by running the equivalent of `docker compose up --build -d`.
 
-If the update option is used, the command updates the `quix.yaml` file with new local applications and variables of existing deployments. The dry-run option allows you to generate the `compose.yaml` file without starting the containers, providing a preview of the configuration.
+If the update option is used, the command updates the `quix.yaml` file with new local applications and variables of existing deployments. The dry-run option allows you to generate the `compose.local.yaml` file without starting the containers, providing a preview of the configuration.
 
 Deployments are connected using variables with `VariableType` of `InputTopic` and `OutputTopic`, ensuring seamless data flow between different services.
 
@@ -26,19 +26,19 @@ To start your pipeline, use the following command:
 $ quix pipeline up
 ```
 
-This command generates the necessary `compose.yaml` file and deployment configurations:
+This command generates the necessary `compose.local.yaml` file and deployment configurations:
 
 ```
-Generating 'compose.yaml'
+Generating 'compose.local.yaml'
 Generating deployment demo-data-source
 ✓ Generated deployment demo-data-source
 Generating deployment event-detection-transformation
 ✓ Generated deployment event-detection-transformation
-✓ Generated 'compose.yaml'
+✓ Generated 'compose.local.yaml'
 ```
 
 !!! tip
-    You can also use the `--dry-run` option to generate the `compose.yaml` file without running it:
+    You can also use the `--dry-run` option to generate the `compose.local.yaml` file without running it:
 
     ```bash
     $ quix pipeline up --dry-run
@@ -62,12 +62,12 @@ Containers  Started
 ```
 
 !!! tip
-    Using the `--update` option will perform the same actions as running [`quix pipeline update`](update.md) before generating the `compose.yaml` file.
+    Using the `--update` option will perform the same actions as running [`quix pipeline update`](update.md) before generating the `compose.local.yaml` file.
     
 
-#### Generated `compose.yaml` File Overview
+#### Generated `compose.local.yaml` File Overview
 
-The `compose.yaml` file configures the services in your pipeline. Here's an overview of what will be generated:
+The `compose.local.yaml` file configures the services in your pipeline. Here's an overview of what will be generated:
 
 - **demo-data-source** and **event-detection-transformation**:
   - **volumes**: Mounts a null file to `.env`, effectively ignoring your local `.env` folder.
@@ -93,4 +93,4 @@ The `compose.yaml` file configures the services in your pipeline. Here's an over
   - **kafka-broker**: Installs and configures a Redpanda Kafka broker for you.
   - **console**: Provides a management interface for interacting with the Kafka broker, including necessary environment configurations.
 
-For more details on the `compose.yaml` file and its configurations, refer to the [official Docker Compose documentation](https://docs.docker.com/compose/compose-file/).
+For more details on the `compose.local.yaml` file and its configurations, refer to the [official Docker Compose documentation](https://docs.docker.com/compose/compose-file/).

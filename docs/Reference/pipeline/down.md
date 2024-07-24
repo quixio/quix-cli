@@ -2,7 +2,7 @@
 
 ## How It Works
 
-The `quix pipeline down` command stops and removes all the Docker containers defined in your `compose.yaml` file. It acts as a shortcut for the `docker compose down` command, ensuring that all running services are stopped and all associated containers, networks, and volumes are removed.
+The `quix pipeline down` command stops and removes all the Docker containers defined in your `compose.local.yaml` file. It acts as a shortcut for the `docker compose down` command, ensuring that all running services are stopped and all associated containers, networks, and volumes are removed.
 
 When executed, this command performs the following steps:
 
@@ -23,7 +23,7 @@ This process ensures that your environment is clean and ready for the next time 
 
 ### Shutting Down the Pipeline with Docker Compose
 
-To stop and remove all the containers defined in your `compose.yaml` file, use the following command:
+To stop and remove all the containers defined in your `compose.local.yaml` file, use the following command:
 
 ```bash
 $ quix pipeline down

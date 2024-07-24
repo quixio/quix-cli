@@ -4,7 +4,7 @@
 
 ## How It Works
 
-The `quix pipeline broker down` command stops your local broker instance along with all the services that depend on it. When executed, it stops and removes the Docker containers defined in the `compose.yaml` file, effectively shutting down the local broker environment.
+The `quix pipeline broker down` command stops your local broker instance along with all the services that depend on it. When executed, it stops and removes the Docker containers defined in the `compose.local.yaml` file, effectively shutting down the local broker environment.
 
 If the force option is used, the command bypasses all safety checks, allowing for an immediate shutdown without any prompts or checks.
 
