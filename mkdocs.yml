@@ -81,6 +81,14 @@ nav:
       - cloud environments list: Reference/cloud/environments/list.md
       - cloud environments use: Reference/cloud/environments/use.md
       - cloud environments sync: Reference/cloud/environments/sync.md
+      - cloud environments tokens:
+        - Reference/cloud/environments/tokens/index.md
+        - cloud environments tokens get: Reference/cloud/environments/tokens/get.md
+        - cloud environments tokens rotate: Reference/cloud/environments/tokens/rotate.md
+        - cloud environments tokens create: Reference/cloud/environments/tokens/create.md
+        - cloud environments tokens edit: Reference/cloud/environments/tokens/edit.md
+        - cloud environments tokens list: Reference/cloud/environments/tokens/list.md
+        - cloud environments tokens revoke: Reference/cloud/environments/tokens/revoke.md
     - cloud organisations:
       - Reference/cloud/organisations/index.md
       - cloud organisations get: Reference/cloud/organisations/get.md
@@ -104,19 +112,16 @@ nav:
         - cloud users permissions get: Reference/cloud/users/permissions/get.md
         - cloud users permissions list: Reference/cloud/users/permissions/list.md
         - cloud users permissions set: Reference/cloud/users/permissions/set.md
-      - cloud users tokens:
-        - Reference/cloud/users/tokens/index.md
-        - cloud users tokens create: Reference/cloud/users/tokens/create.md
-        - cloud users tokens edit: Reference/cloud/users/tokens/edit.md
-        - cloud users tokens list: Reference/cloud/users/tokens/list.md
-        - cloud users tokens revoke: Reference/cloud/users/tokens/revoke.md
+      - cloud users tokens: Reference/cloud/users/tokens.md
       - cloud users current: Reference/cloud/users/current.md
       - cloud users list: Reference/cloud/users/list.md
   - Local Commands:
     - applications:
       - Reference/applications/index.md
+      - applications update: Reference/applications/update.md
       - applications convert: Reference/applications/convert.md
       - applications create: Reference/applications/create.md
+      - applications edit: Reference/applications/edit.md
       - applications list: Reference/applications/list.md
       - applications variables:
         - Reference/applications/variables/index.md
@@ -126,14 +131,18 @@ nav:
         - applications variables export: Reference/applications/variables/export.md
         - applications variables import: Reference/applications/variables/import.md
         - applications variables list: Reference/applications/variables/list.md
-    - ide: Reference/ide.md
     - init: Reference/init.md
+    - broker:
+      - Reference/broker/index.md
+      - broker down: Reference/broker/down.md
+      - broker up: Reference/broker/up.md
+      - broker topics:
+        - Reference/broker/topics/index.md
+        - broker topics list: Reference/broker/topics/list.md
+        - broker topics read: Reference/broker/topics/read.md
+        - broker topics update: Reference/broker/topics/update.md
     - pipeline:
       - Reference/pipeline/index.md
-      - pipeline broker:
-        - Reference/pipeline/broker/index.md
-        - pipeline broker down: Reference/pipeline/broker/down.md
-        - pipeline broker up: Reference/pipeline/broker/up.md
       - pipeline deployments:
         - Reference/pipeline/deployments/index.md
         - pipeline deployments create: Reference/pipeline/deployments/create.md
@@ -141,17 +150,28 @@ nav:
         - pipeline deployments edit: Reference/pipeline/deployments/edit.md
         - pipeline deployments get: Reference/pipeline/deployments/get.md
         - pipeline deployments list: Reference/pipeline/deployments/list.md
+        - pipeline deployments logs: Reference/pipeline/deployments/logs.md
       - pipeline down: Reference/pipeline/down.md
+      - pipeline logs: Reference/pipeline/logs.md
       - pipeline status: Reference/pipeline/status.md
       - pipeline sync: Reference/pipeline/sync.md
       - pipeline up: Reference/pipeline/up.md
       - pipeline update: Reference/pipeline/update.md
       - pipeline view: Reference/pipeline/view.md
+      - pipeline topics:
+        - Reference/pipeline/topics/index.md
+        - pipeline topics create: Reference/pipeline/topics/create.md
+        - pipeline topics delete: Reference/pipeline/topics/delete.md
+        - pipeline topics edit: Reference/pipeline/topics/edit.md
+        - pipeline topics get: Reference/pipeline/topics/get.md
+        - pipeline topics list: Reference/pipeline/topics/list.md
+    - run: Reference/run.md
     - sdk:
       - Reference/sdk/index.md
       - sdk broker:
         - Reference/sdk/broker/index.md
         - sdk broker cloud: Reference/sdk/broker/cloud.md
+        - sdk broker current: Reference/sdk/broker/current.md
         - sdk broker local: Reference/sdk/broker/local.md
         - sdk broker set: Reference/sdk/broker/set.md
         - sdk broker update: Reference/sdk/broker/update.md

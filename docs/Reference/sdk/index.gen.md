@@ -14,5 +14,5 @@ quix sdk [command] [options]
 
 **Commands:**
 
-- [broker](broker/index.md) : Manage the SDK broker configuration that is injected to QuixStreams while developing locally
+- [broker](broker\index.md) : Manage the SDK broker configuration that is injected to QuixStreams while developing locally
 

@@ -1,15 +1,15 @@
-# cloud projects list
+# cloud environments tokens list
 
 ## Overview
 
-List all projects of the current organisation
+Gets all the personal access tokens of the current user
 
 **Aliases:** `list`, `ls`
 
 **Usage:**
 
 ```
-quix cloud projects list [options]
+quix cloud environments tokens list [options]
 ```
 
 **Options:**

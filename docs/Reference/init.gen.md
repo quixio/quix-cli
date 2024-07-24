@@ -18,9 +18,8 @@ quix init [<directory>] [options]
 
 **Options:**
 
-- `-dev, --devcontainers` : If specified, generates devcontainers files
-- `--vscode` : If specified, generates VS Code launch files
-- `--pycharm` : If specified, generates PyCharm launch files
-- `--ide <ide>` : Selects the IDE explicitly. (vscode, pycharm)
-- `-d, --generate-dockerfiles` : If specified, generates dockerfiles based on the applications [default: True]
+- `-d, --devcontainer, --devcontainers` : If specified, generates devcontainers files
+- `-g, --generate-dockerfiles` : If specified, generates dockerfiles based on the applications [default: True]
+- `-u, --update, --update-dotenv` : Update the '.env' files even if they already exist
+- `-r, --reset, --reset-dotenv` : Reset the '.env' files and recreate them
 
