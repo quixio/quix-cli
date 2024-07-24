@@ -6,8 +6,6 @@ echo "Installing Quix CLI"
 set -e
 
 get_arch() {
-    # darwin/amd64: Darwin axetroydeMacBook-Air.local 20.5.0 Darwin Kernel Version 20.5.0: Sat May  8 05:10:33 PDT 2021; root:xnu-7195.121.3~9/RELEASE_X86_64 x86_64
-    # linux/amd64: Linux test-ubuntu1804 5.4.0-42-generic #46~18.04.1-Ubuntu SMP Fri Jul 10 07:21:24 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
     a=$(uname -m)
     case ${a} in
         "x86_64" | "amd64" )
@@ -22,7 +20,7 @@ get_arch() {
     esac
 }
 
-get_os(){
+get_os() {
     os=$(uname -s | awk '{print tolower($0)}')
     if [ "$os" = "darwin" ]; then
         echo "osx"
@@ -47,6 +45,18 @@ sign_binary() {
     fi
 }
 
+# Function to add path to profile files and return if updated
+add_to_path() {
+    profile_file=$1
+    if [ -f "$profile_file" ]; then
+        if ! grep -q "$HOME/.local/bin" "$profile_file"; then
+            echo 'export PATH=$HOME/.local/bin:$PATH' >> "$profile_file"
+            return 0
+        fi
+    fi
+    return 1
+}
+
 # Parse arguments
 for i in "$@"; do
     case $i in
@@ -66,7 +76,7 @@ githubUrl="https://github.com"
 exe_name="quix"
 
 downloadFolder="${TMPDIR:-/tmp}"
-mkdir -p ${downloadFolder} # make sure download folder exists
+mkdir -p "${downloadFolder}" # make sure download folder exists
 os=$(get_os)
 arch=$(get_arch)
 
@@ -79,10 +89,15 @@ file_extension="tar.gz"
 file_name="${os}-${arch}.${file_extension}" # the file name to download
 
 downloaded_file="${downloadFolder}/${file_name}" # the file path to download
-executable_folder="/usr/local/bin" # Eventually, the executable file will be placed here
+default_executable_folder="$HOME/.local/bin" # Default to user local bin folder
 
-# Create executable_folder if it does not exist
-mkdir -p "${executable_folder}"
+# Check if executable is already installed in /usr/local/bin
+if [ -x "/usr/local/bin/${exe_name}" ]; then
+    executable_folder="/usr/local/bin"
+else
+    executable_folder="$default_executable_folder"
+    mkdir -p "${executable_folder}"
+fi
 
 # if version is empty
 if [ -z "$version" ]; then
@@ -112,14 +127,32 @@ fi
 echo "[4/5] Cleaning '${downloaded_file}'"
 rm -f "${downloaded_file}"
 
-echo "[5/5] Adding '${exe_name}' to the environment variables"
-if command -v $exe_name --version >/dev/null; then
-    echo "Quix CLI was installed successfully"
+# Check if PATH includes $HOME/.local/bin and update profile files if necessary
+profile_updated=false
+if ! echo "$PATH" | grep -q "$HOME/.local/bin"; then
+    echo "$HOME/.local/bin is not in your PATH. Adding it now."
+
+    if [ "$os" = "osx" ]; then
+        add_to_path "$HOME/.zshrc" && profile_updated=true
+        add_to_path "$HOME/.bash_profile" && profile_updated=true
+    else
+        add_to_path "$HOME/.profile" && profile_updated=true
+        add_to_path "$HOME/.bashrc" && profile_updated=true
+    fi
+fi
+
+if $profile_updated; then
+    echo "Quix CLI was installed successfully, but you need to reload your shell for the changes to take effect."
 else
-    echo "We couldn't add '${exe_name}' to the environment variables automatically."
-    echo "Please add the directory to your \$HOME/.bash_profile (or similar):"
-    echo "  export PATH=${executable_folder}:\$PATH"
+    if command -v $exe_name --version >/dev/null; then
+        echo "Quix CLI was installed successfully"
+    else
+        echo "We couldn't verify the installation of '${exe_name}'."
+        echo "Please ensure that the directory is in your PATH and try again:"
+        echo "  export PATH=${executable_folder}:\$PATH"
+    fi
 fi
 
 echo "Run '${exe_name} --help' to get started"
+
 exit 0
