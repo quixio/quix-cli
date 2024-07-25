@@ -29,22 +29,47 @@ $ quix pipeline up
 This command generates the necessary `compose.local.yaml` file and deployment configurations:
 
 ```
-Generating 'compose.local.yaml'
-Generating deployment demo-data-source
+  Generating 'compose.local.yaml'
+  Generating deployment demo-data-source
 ✓ Generated deployment demo-data-source
-Generating deployment event-detection-transformation
+  Generating deployment event-detection-transformation
 ✓ Generated deployment event-detection-transformation
 ✓ Generated 'compose.local.yaml'
 ```
 
 !!! tip
-    You can also use the `--dry-run` option to generate the `compose.local.yaml` file without running it:
+    You can also use the `--dry-run` or `-D` option to generate the `compose.local.yaml` file without running it:
 
     ```bash
     $ quix pipeline up --dry-run
     ```
 
-Next, it executes `docker compose up --build -d --remove-orphans` to build and run the Docker containers:
+When the compose file is generated, it will start the kafka broker first:
+
+```
+Starting the pipeline broker ...
+
+Executing 'docker compose -f compose.local.yaml up --build -d --remove-orphans kafka-broker'
+
+ Container simplebroker-kafka-broker-1  Creating
+ Container simplebroker-kafka-broker-1  Created
+ Container simplebroker-kafka-broker-1  Starting
+ Container simplebroker-kafka-broker-1  Started
+``` 
+
+After the broker has started, the topics from `quix.yaml` will be created automatically:
+
+```
+Updating topics ...
+
+✓ Created topic: f1-data
+✓ Created topic: hard-braking
+✓ No topics to update
+
+✓ Started the pipeline broker
+```
+
+Next, it executes `docker compose compose.local.yaml up --build -d --remove-orphans` to build and run the your application Docker containers:
 
 ```text
 Executing 'docker compose up --build -d --remove-orphans'
@@ -63,34 +88,42 @@ Containers  Started
 
 !!! tip
     Using the `--update` option will perform the same actions as running [`quix pipeline update`](update.md) before generating the `compose.local.yaml` file.
-    
+
+Finally you will see your applications running in docker and you will have visual way to manage and view your pipeline topics:
+
+```
+✓ Open http://localhost:8080 to manage your pipeline broker
+```
 
 #### Generated `compose.local.yaml` File Overview
 
 The `compose.local.yaml` file configures the services in your pipeline. Here's an overview of what will be generated:
 
 - **demo-data-source** and **event-detection-transformation**:
-  - **volumes**: Mounts a null file to `.env`, effectively ignoring your local `.env` folder.
-  - **build**: Specifies the context directory and Dockerfile.
-  - **environment**: Injects environment variables for Kafka broker addresses and data inputs/outputs. These match the settings in `quix.yaml`.
+    - **volumes**: Mounts a null file to `.env`, effectively ignoring your local `.env` folder.
+    - **build**: Specifies the context directory and Dockerfile.
+    - **environment**: Injects environment variables for Kafka broker addresses and data inputs/outputs. These match the settings in `quix.yaml`.
 
-    ```yaml
-    environment:
-      input: f1-data
-      output: hard-braking
-      Quix__Broker__Address: kafka-broker:9092
-    ```
+      ```yaml
+      environment:
+        input: f1-data
+        output: hard-braking
+        Quix__Broker__Address: kafka-broker:9092
+      ```
 
-    These environment variables are injected into the container at runtime:
+      These environment variables are injected into the container at runtime:
 
-    - **input**: Specifies the input data stream (`f1-data`).
+      - **input**: Specifies the input data stream (`f1-data`).
 
-    - **output**: Specifies the output data stream (`hard-braking`).
+      - **output**: Specifies the output data stream (`hard-braking`).
 
-    - **Quix__Broker__Address**: Specifies the address of the Kafka broker (`kafka-broker:9092`).
+      - **Quix__Broker__Address**: Specifies the address of the Kafka broker (`kafka-broker:9092`).
+
 
 - **kafka-broker and console**:
-  - **kafka-broker**: Installs and configures a Redpanda Kafka broker for you.
-  - **console**: Provides a management interface for interacting with the Kafka broker, including necessary environment configurations.
+
+    - **kafka-broker**: Installs and configures a Redpanda Kafka broker for you.
+
+    - **console**: Provides a management interface for interacting with the Kafka broker, including necessary environment configurations.
 
 For more details on the `compose.local.yaml` file and its configurations, refer to the [official Docker Compose documentation](https://docs.docker.com/compose/compose-file/).
