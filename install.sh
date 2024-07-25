@@ -45,10 +45,36 @@ sign_binary() {
     fi
 }
 
+# Function to detect the running shell and return the profile file path
+detect_shell_profile() {
+    shell=$(basename "$SHELL")
+    case "$shell" in
+        "bash")
+            if [ "$os" = "osx" ]; then
+                echo "$HOME/.bash_profile"
+            else
+                echo "$HOME/.bashrc"
+            fi
+        ;;
+        "zsh")
+            echo "$HOME/.zshrc"
+        ;;
+        "fish")
+            echo "$HOME/.config/fish/config.fish"
+        ;;
+        *)
+            echo "$HOME/.profile"
+        ;;
+    esac
+}
+
 # Function to add path to profile files and return if updated
 add_to_path() {
     profile_file=$1
     if [ -f "$profile_file" ]; then
+        # Backup the profile file
+        cp "$profile_file" "${profile_file}.bak"
+        
         if ! grep -q "$HOME/.local/bin" "$profile_file"; then
             echo 'export PATH=$HOME/.local/bin:$PATH' >> "$profile_file"
             return 0
@@ -132,13 +158,8 @@ profile_updated=false
 if ! echo "$PATH" | grep -q "$HOME/.local/bin"; then
     echo "$HOME/.local/bin is not in your PATH. Adding it now."
 
-    if [ "$os" = "osx" ]; then
-        add_to_path "$HOME/.zshrc" && profile_updated=true
-        add_to_path "$HOME/.bash_profile" && profile_updated=true
-    else
-        add_to_path "$HOME/.profile" && profile_updated=true
-        add_to_path "$HOME/.bashrc" && profile_updated=true
-    fi
+    profile_file=$(detect_shell_profile)
+    add_to_path "$profile_file" && profile_updated=true
 fi
 
 if $profile_updated; then
