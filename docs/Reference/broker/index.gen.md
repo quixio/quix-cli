@@ -1,4 +1,4 @@
-# pipeline broker
+# broker
 
 ## Overview
 
@@ -9,11 +9,12 @@ Manage the broker instance of the local pipeline
 **Usage:**
 
 ```
-quix pipeline broker [command] [options]
+quix broker [command] [options]
 ```
 
 **Commands:**
 
 - [down](down.md) : Stop the broker instance of the local pipeline and all the services depending on it
+- [topics](topics\index.md) : Manage your pipeline topics
 - [up](up.md) : Start the broker instance of the local pipeline
 

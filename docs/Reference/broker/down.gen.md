@@ -1,4 +1,4 @@
-# pipeline broker down
+# broker down
 
 ## Overview
 
@@ -9,7 +9,7 @@ Stop the broker instance of the local pipeline and all the services depending on
 **Usage:**
 
 ```
-quix pipeline broker down [options]
+quix broker down [options]
 ```
 
 **Options:**

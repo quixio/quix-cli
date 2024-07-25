@@ -32,10 +32,10 @@ Generating 'compose.local.yaml'
 ✓ Generated 'compose.local.yaml'
 ```
 
-Next, it executes `docker compose up --build -d --remove-orphans` to build and run the Docker containers:
+Next, it executes `docker compose compose.local.yaml up --build -d --remove-orphans` to build and run the Docker containers:
 
 ```text
-Executing 'docker compose up --build -d --remove-orphans'
+Executing 'docker compose compose.local.yaml up --build -d --remove-orphans'
 ```
 
 ### Running the Containers
@@ -53,18 +53,28 @@ Container githubrepo-console-1  Starting
 Container githubrepo-kafka-broker-1  Starting
 Container githubrepo-kafka-broker-1  Started
 Container githubrepo-console-1  Started
+
+✓ Open http://localhost:8080 to manage your pipeline broker
 ```
+
+!!! tip
+    
+    Using the `--create-topics` or `-t"` options will create the topics from `quix.yaml` automatically.
 
 ## Generated `compose.local.yaml` File Overview
 
 The `compose.local.yaml` file configures the services in your local broker instance. Here's an overview of what will be generated:
 
 - **kafka-broker**:
+
     - **build**: Specifies the context directory and Dockerfile for the Kafka broker.
+
     - **environment**: Sets environment variables for the broker configuration, including the listener address and the Zookeeper instance address.
 
 - **console**:
+
     - **build**: Specifies the context directory and Dockerfile for the Kafka management console.
+
     - **environment**: Sets environment variables for the console configuration, including the Kafka broker address.
 
 For more details on the `compose.local.yaml` file and its configurations, refer to the [official Docker Compose documentation](https://docs.docker.com/compose/compose-file/).

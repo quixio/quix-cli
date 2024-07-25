@@ -57,7 +57,9 @@ Executing 'docker compose -f compose.local.yaml up --build -d --remove-orphans k
  Container simplebroker-kafka-broker-1  Started
 ``` 
 
-After the broker has started, the topics from `quix.yaml` will be created automatically:
+#### Updating the topics
+
+After the broker has started, the topics created automatically with the configuration provided in `quix.yaml`.
 
 ```
 Updating topics ...
@@ -68,6 +70,9 @@ Updating topics ...
 
 ✓ Started the pipeline broker
 ```
+
+!!! tip
+    Use the options `--skip-topics` or `-s` if you don't want to skip the topic creation.
 
 Next, it executes `docker compose compose.local.yaml up --build -d --remove-orphans` to build and run the your application Docker containers:
 
