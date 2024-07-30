@@ -4,20 +4,20 @@ Debugging an application locally using `quix run` has some nuances that need to 
 
 ## Prerequisites
 
-This tutorial asumes that you have read the [Quickstart](cli-quixtart.md) and installed the dependencies:
+This tutorial assumes that you have read the [Quickstart](cli-quixtart.md) and installed the dependencies:
 
 - [Docker Desktop](https://docs.docker.com/engine/install/){target=_blank}
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){target=_blank}
 
-For this tutorial you will also need the following installed:
+For this tutorial, you will also need the following installed:
 
 - [VS Code](https://code.visualstudio.com/){target=_blank}
 - [Python](https://www.python.org/){target=_blank}
 
 !!! tip
-    If you want to start developing after cloning a repository run:
+    If you want to start developing after cloning a repository, run:
 
-    ```
+    ```bash
     quix init
     ```
 
@@ -28,13 +28,13 @@ For this tutorial you will also need the following installed:
 ### Step 1: Setting Up the Broker
 
 !!! note
-    If you did all the steps from the [Quickstart](cli-quixtart.md) tutorial, your local pipeline broker is already up and running
+    If you followed all the steps from the [Quickstart](cli-quixtart.md) tutorial, your local pipeline broker is already up and running.
 
 Depending on your setup, you can choose to use your local pipeline broker, another local broker, or the Quix Cloud broker. Here are the steps to configure each:
 
 === "Local Pipeline Broker"
 
-    To use your local pipeline broker, start your local pipeline broker using:
+    To use your local pipeline broker, start it using:
 
     ```bash
     quix broker up
@@ -44,23 +44,23 @@ Depending on your setup, you can choose to use your local pipeline broker, anoth
 
     !!! question "How to ensure that your local application is pointing to your local pipeline broker?"
 
-        The SDK Broker configuration is just the broker you use when your run the application locally outside the pipeline.
+        The SDK Broker configuration is the broker you use when you run the application locally outside the pipeline.
 
-        Get your check it by running:
+        Verify it by running:
 
-        ```
+        ```bash
         quix status
         ```
 
-        And look for this line:
+        Look for this line:
         
         ```
         SDK Broker configuration:   Local (localhost:19092)
         ```
 
-        If you see something else and want a quick fix, please run:
+        If you see something else and want a quick fix, run:
 
-        ```
+        ```bash
         quix sdk broker set localhost:19092 --enable
         ```
 
@@ -74,14 +74,12 @@ Depending on your setup, you can choose to use your local pipeline broker, anoth
 
     If you don't want to run the interactive version, you can specify the parameters and enable it by running:
     
-    If your local Kafka broker is running on `localhost:9092`, you would use:
-
     ```bash
     quix sdk broker set localhost:9092 --enable
     ```
 
     !!! tip
-        If you had previously set your broker to Quix Cloud, you will need to switch it back to the local broker. You can do this by running:
+        If you had previously set your broker to Quix Cloud, you will need to switch it back to the local broker. Run:
 
         ```bash
         quix sdk broker local
@@ -90,7 +88,7 @@ Depending on your setup, you can choose to use your local pipeline broker, anoth
     For more details on the `set` command, refer to the [set broker documentation](./Reference/sdk/broker/set.md).
 
     !!! warning
-        This doesn't change your local pipeline broker, just the broker you use when your run the application locally outside the pipeline.
+        This doesn't change your local pipeline broker, just the broker you use when you run the application locally outside the pipeline.
         
 === "Quix Cloud Broker"
 
@@ -104,15 +102,14 @@ Depending on your setup, you can choose to use your local pipeline broker, anoth
 
     For more details on the `cloud` command, refer to the [cloud broker documentation](./Reference/sdk/broker/cloud.md).
 
-
     !!! warning
-        This doesn't change your local pipeline broker, just the broker you use when your run the application locally outside the pipeline.
+        This doesn't change your local pipeline broker, just the broker you use when you run the application locally outside the pipeline.
 
 ---
 
 For a comprehensive overview of all SDK broker commands, refer to the [SDK broker documentation](./Reference/sdk/broker/index.md).
 
-### Step 2: Preparing your local environment:
+### Step 2: Preparing Your Local Environment
 
 Creating a virtual environment helps isolate dependencies and avoid conflicts:
 
@@ -121,18 +118,17 @@ python -m venv .venv
 ```
 
 !!! warning
-    in your system instead of the previous command it can be:
-    
+    Depending on your system, the command might be:
+
     ```bash
     python3 -m venv .venv
     ```
 
-    or even
-    
+    or
+
     ```bash
     py -m venv .venv
     ```
-    
 
 Activate the virtual environment:
 
@@ -161,7 +157,6 @@ pip install -r requirements.txt
 ```
 
 !!! tip "Using DevContainers"
-
     If you prefer using DevContainers for an isolated development environment, you can set them up with the `--devcontainer` option:
 
     ```bash
@@ -174,16 +169,14 @@ pip install -r requirements.txt
 
     Your IDE will take care of the rest.
 
-
 ### Step 3: Understanding Application Variables
 
-Let's take a look at the `.env` file that we have generated for the `event-detection-transformation` application:
-
+Let's take a look at the `.env` file generated for the `event-detection-transformation` application:
 
 !!! note
     If you didn't follow the [Quickstart](cli-quixtart.md) you can get to this point by running:
 
-    ```
+    ```bash
     quix app create event-detection-transformation
     ```
 
@@ -197,7 +190,6 @@ Let's take a look at the `.env` file that we have generated for the `event-detec
 # To update the .env file from the quix.yaml file, use:
 #  🔄  quix init --update
 # ======================================================
-
 
 ### Quix SDK Configuration ###
 # Configuration settings for QuixStreams
@@ -219,24 +211,22 @@ output=hard-braking
 
 ### Untracked Variables ###
 # Variables that are not tracked by Quix CLI
-
 ```
 
 !!! tip
     You can get this `.env` file updated at any point by running:
 
-    ```
+    ```bash
     quix init --update
     ```
-    
 
-You can do create and remove variables for your local applications here.
+You can create and remove variables for your local applications here.
 
-### Step 4: Running your code with `quix run`
+### Step 4: Running Your Code with `quix run`
 
-By using [`quix run`](./reference/run.md) command the `.env` variables are injected into your python code as environment variables so you can read the values like this:
+By using the [`quix run`](./reference/run.md) command, the `.env` variables are injected into your Python code as environment variables so you can read the values like this:
 
-``` python title="main.py"
+```python title="main.py"
 import os
 ...
 input_topic = app.topic(os.environ["input"])
@@ -244,23 +234,21 @@ output_topic = app.topic(os.environ["output"])
 ```
 
 !!! tip "Working with a local pipeline"
-    The `--stop` or `--intercept` options can be used to stop or pause the deployed version of your application during the execution of this command
-
+    The `--stop` or `--intercept` options can be used to stop or pause the deployed version of your application during the execution of this command.
 
 !!! note
-    The sample provides also support for the `load_dotenv` library, that's useful if you want to run Python directly or your IDE doesn't have a way of loading `.env` files automatically.
+    The sample provides support for the `load_dotenv` library, which is useful if you want to run Python directly or if your IDE doesn't automatically load `.env` files.
 
-    ```
+    ```python
     from dotenv import load_dotenv
     load_dotenv()
     ```
 
-### Step 4: Updating your pipeline from your local variables
+### Step 5: Updating Your Pipeline from Your Local Variables
 
 Now you can create new variables:
 
-
-```.env title=".env"  hl_lines="29"
+```.env title=".env" hl_lines="28"
 # ======================================================
 #               🚀 Quix CLI guidelines 🚀
 # ======================================================
@@ -270,7 +258,6 @@ Now you can create new variables:
 # To update the .env file from the quix.yaml file, use:
 #  🔄  quix init --update
 # ======================================================
-
 
 ### Quix SDK Configuration ###
 # Configuration settings for QuixStreams
@@ -293,18 +280,17 @@ variable=my-value
 
 ### Untracked Variables ###
 # Variables that are not tracked by Quix CLI
-
 ```
 
-If you want to move your local variables to your pipeline you just simply run:
+To move your local variables to your pipeline, run:
 
-```
+```bash
 quix pipeline update
 ```
 
-Your `quix.yaml` file will now contain this new variable you created:
+Your `quix.yaml` file will now contain the new variable you created:
 
-``` yaml title="quix.yaml" hl_lines="18-21"
+```yaml title="quix.yaml" hl_lines="18-21"
   - name: event-detection-transformation
     application: event-detection-transformation
     version: latest
@@ -328,24 +314,24 @@ Your `quix.yaml` file will now contain this new variable you created:
         value: my-value
 ```
 
-### Step 5: Updating your local variables from your pipeline
+### Step 6: Updating Your Local Variables from Your Pipeline
 
-If your `quix.yaml` file contains values you want to use locally you can run:
+If your `quix.yaml` file contains values you want to use locally, run:
 
-``` 
+```bash
 quix init --update
 ```
 
 !!! tip 
-    You can also do this operation when you run an application:
+    You can also perform this operation when you run an application:
 
-    ``` 
+    ```bash
     quix run --update
     ```
 
-This is helpful when you merged remote changes form git and the variable values changed.
+This is helpful when you merge remote changes from git and the variable values have changed.
 
-``` yaml title="quix.yaml" hl_lines="13 17 21"
+```yaml title="quix.yaml" hl_lines="13 17 21"
   - name: event-detection-transformation
     application: event-detection-transformation
     version: latest
@@ -369,8 +355,7 @@ This is helpful when you merged remote changes form git and the variable values 
         value: a-pipeline-value
 ```
 
-
-```.env title=".env"  hl_lines="18 22 29"
+```.env title=".env" hl_lines="17 21 28"
 # ======================================================
 #               🚀 Quix CLI guidelines 🚀
 # ======================================================
@@ -380,7 +365,6 @@ This is helpful when you merged remote changes form git and the variable values 
 # To update the .env file from the quix.yaml file, use:
 #  🔄  quix init --update
 # ======================================================
-
 
 ### Quix SDK Configuration ###
 # Configuration settings for QuixStreams
@@ -403,5 +387,4 @@ variable=a-pipeline-value
 
 ### Untracked Variables ###
 # Variables that are not tracked by Quix CLI
-
 ```
