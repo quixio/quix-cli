@@ -8,50 +8,56 @@ These files contain mermaid code that visualizes your pipeline's structure and d
 
 ## Example Usage
 
-### Using VS Code
-
-To view the pipeline documentation in VS Code, use the following command:
+To view the pipeline documentation, use the following command:
 
 ```
 $ quix pipeline view
-✓ 'pipeline.md' was updated
-✓ VS Code started
+✓ The pipeline view was updated
+If the link doesn't show automatically, open file:///path/to/your/temp/quix-pipeline.html in your browser
+```
+This command updates the pipeline.md and a temporary quix-pipeline.html file, which opens automatically in your browser. This allows you to view and interact with your pipeline documentation directly.
+
+The screenshot below illustrates how the pipeline view appears when opened in a browser. It visually represents the structure and data flow of your pipeline, making it easy to understand and document your setup.
+
+![Generated HTML pipeline view](../../../images/cli/pipeline-view-screenshot.png)
+
+
+```mermaid
+%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
+graph LR;
+demo-data-source[fa:fa-rocket demo-data-source &#8205] --> f1-data{{ fa:fa-arrow-right-arrow-left f1-data &#8205}}:::topic;
+f1-data{{ fa:fa-arrow-right-arrow-left f1-data &#8205}}:::topic --> event-detection-transformation[fa:fa-rocket event-detection-transformation &#8205];
+event-detection-transformation[fa:fa-rocket event-detection-transformation &#8205] --> hard-braking{{ fa:fa-arrow-right-arrow-left hard-braking &#8205}}:::topic;
+
+
+classDef default font-size:110%;
+classDef topic font-size:80%;
+classDef topic fill:#3E89B3;
+classDef topic stroke:#3E89B3;
+classDef topic color:white;
 ```
 
-This command updates the `pipeline.md` file and opens it in VS Code automatically, allowing you to view and edit your pipeline documentation directly in the editor.
+### VS Code and GitHub 
 
-![VSCode pipeline view](../../../images/cli/vscode-pipeline-view.png)
+Visual Studio Code can display the pipeline diagram if you install the [Markdown Mermaid](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid) extension.
+
+Similarly, GitHub will automatically render the `pipeline.md` file with the included mermaid code, allowing you to visualize your pipeline directly on the platform.
 
 The `pipeline.md` file is generated with the following mermaid code to visualize your pipeline:
 
 ```markdown
 %%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
 graph LR;
-demo-data-source[demo-data-source] -->|f1-data|event-detection-transformation[event-detection-transformation];
-```
+demo-data-source[fa:fa-rocket demo-data-source &#8205] --> f1-data{{ fa:fa-arrow-right-arrow-left f1-data &#8205}}:::topic;
+f1-data{{ fa:fa-arrow-right-arrow-left f1-data &#8205}}:::topic --> event-detection-transformation[fa:fa-rocket event-detection-transformation &#8205];
+event-detection-transformation[fa:fa-rocket event-detection-transformation &#8205] --> hard-braking{{ fa:fa-arrow-right-arrow-left hard-braking &#8205}}:::topic;
 
-### Without VS Code
 
-If you prefer not to use VS Code or it is not installed, you can still view the pipeline documentation in your browser. Use the same command:
-
-```
-$ quix pipeline view
-```
-
-This command will attempt to open the generated `quix-pipeline.html` file in your default browser. If it does not open automatically, you will see a message with a file path like this:
-
-```
-Open file:///path/to/your/temp/quix-pipeline.html in your browser if the link didn't open in your browser.
-```
-
-Simply click the provided link to access the pipeline documentation.
-
-The `quix-pipeline.html` file will render the following mermaid graph:
-
-```mermaid
-%%{ init: { 'flowchart': { 'curve': 'monotoneX' } } }%%
-graph LR;
-demo-data-source[demo-data-source] -->|f1-data|event-detection-transformation[event-detection-transformation];
+classDef default font-size:110%;
+classDef topic font-size:80%;
+classDef topic fill:#3E89B3;
+classDef topic stroke:#3E89B3;
+classDef topic color:white;
 ```
 
 !!! tip

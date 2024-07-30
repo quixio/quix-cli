@@ -229,9 +229,9 @@ You can also view a graph representation of your local pipeline with the followi
 quix pipeline view
 ```
 
-If you have VSCode installed, the pipeline is displayed in the IDE for you, otherwise the pipeline is displayed on your default browser:
+The pipeline is displayed on your default browser:
 
-![VSCode pipeline view](./images/cli/vscode-pipeline-view.png)
+![Generated HTML pipeline view](../../../images/cli/pipeline-view-screenshot.png)
 
 When you update your `quix.yaml` using the command `quix pipeline update`, the visualization is updated for you.
 
