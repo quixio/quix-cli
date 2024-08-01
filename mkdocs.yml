@@ -56,8 +56,6 @@ nav:
 - 'Quickstart': 'cli-quickstart.md'
 - 'Local Development': 'cli-local-debug.md'
 - 'Commands Summary': 'cli-commands-summary.md'
-- 'How-To guides':
-  - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
 - Reference:
   - Cloud Commands:
     - Reference/cloud/index.md
@@ -201,4 +199,6 @@ nav:
     - status: Reference/status.md
     - update: Reference/update.md
     - use: Reference/use.md
+- 'How-To guides':
+  - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
 ...
