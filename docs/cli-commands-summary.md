@@ -1,6 +1,6 @@
 # Quix CLI Commands Summary
 
-This quick reference guide lists common use cases for the Quix CLI with the corresponding commands. Use this guide to quickly find and execute the commands you need.
+This quick reference guide lists common use cases for the Quix CLI with the corresponding commands. Use this guide to quickly find and execute the commands you need while developing Quix data pipelines locally.
 
 ## Core commands
 
