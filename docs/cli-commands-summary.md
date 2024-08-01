@@ -1,4 +1,4 @@
-# Quix CLI Quick Reference
+# Quix CLI Commands Summary
 
 This quick reference guide lists common use cases for the Quix CLI with the corresponding commands. Use this guide to quickly find and execute the commands you need.
 
@@ -6,11 +6,11 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 
 | Use Case                                                                           | Command                |
 | ---------------------------------------------------------------------------------- | ---------------------- |
-| [Update application from `quix.yaml`](./Reference/init.md)                         | `quix init -u`         |
-| [Run with the variables from `.env`](./Reference/run.md)                           | `quix run`             |
+| [Update application from `quix.yaml`](./Reference/init.md)                         | `quix init -update`    |
+| [Run applications with the variables from `.env`](./Reference/run.md)              | `quix run`             |
 | [Update pipeline configuration](./Reference/pipeline/update.md)                    | `quix pipeline update` |
 | [Bring pipeline up in Docker](./Reference/pipeline/up.md)                          | `quix pipeline up`     |
-| [Get a global status check of the settings](./Reference/status.md)                 | `quix status`          |
+| [Get a global status check of the CLI settings](./Reference/status.md)             | `quix status`          |
 | [Display the current status of the local pipeline](./Reference/pipeline/status.md) | `quix pipeline status` |
 | [Push local changes to Git and sync with Quix Cloud](./Reference/pipeline/sync.md) | `quix pipeline sync`   |
 
@@ -55,7 +55,7 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 | [List all the topics from your pipeline broker](./Reference/broker.md)         | `quix broker topic list` |
 | [Read the content of a topic from your pipeline broker](./Reference/broker.md) | `quix broker topic read` |
 
-## SDK Broker Management
+## SDK Broker Configuration
 
 | Use Case                                                                         | Command                                         |
 | -------------------------------------------------------------------------------- | ----------------------------------------------- |

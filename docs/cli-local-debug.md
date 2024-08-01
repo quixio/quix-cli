@@ -1,6 +1,6 @@
 # Developing QuixStreams Applications Locally with Quix CLI
 
-Debugging an application locally using `quix run` has some nuances that need to be properly explained. This tutorial will guide you through the process of debugging an application locally using a local broker, Quix Cloud broker, and DevContainers. We'll cover prerequisites, best practices, and common issues.
+Debugging an application locally using `quix run` has some nuances that need to be properly explained. This tutorial will guide you through the process of debugging an application of an existing Quix data pipeline using a local broker and the Quix CLI. We'll cover prerequisites, best practices, and common issues.
 
 ## Prerequisites
 
@@ -117,7 +117,7 @@ Creating a virtual environment helps isolate dependencies and avoid conflicts:
 python -m venv .venv
 ```
 
-!!! warning
+!!! note
     Depending on your system, the command might be:
 
     ```bash
@@ -180,6 +180,12 @@ Let's take a look at the `.env` file generated for the `event-detection-transfor
     quix app create event-detection-transformation
     ```
 
+    or, you can get this `.env` file updated at any point for any Quix applications by running:
+
+    ```bash
+    quix init --update
+    ```
+
 ```.env title=".env"
 # ======================================================
 #               🚀 Quix CLI guidelines 🚀
@@ -212,15 +218,9 @@ output=hard-braking
 ### Untracked Variables ###
 # Variables that are not tracked by Quix CLI
 ```
+Each section of the .env file is dedicated to different types of variables used in Quix, such as those for rendering the data pipeline or managing secrets.
 
-!!! tip
-    You can get this `.env` file updated at any point by running:
-
-    ```bash
-    quix init --update
-    ```
-
-You can create and remove variables for your local applications here.
+You can create and remove variables for your local applications here at your discretion, and they will be integrated into the system as needed.
 
 ### Step 4: Running Your Code with `quix run`
 
@@ -246,7 +246,7 @@ output_topic = app.topic(os.environ["output"])
 
 ### Step 5: Updating Your Pipeline from Your Local Variables
 
-Now you can create new variables:
+Now, you can create new variables by simply adding them to the appropriate section of the `.env` file:
 
 ```.env title=".env" hl_lines="28"
 # ======================================================
@@ -388,3 +388,30 @@ variable=a-pipeline-value
 ### Untracked Variables ###
 # Variables that are not tracked by Quix CLI
 ```
+
+## Other useful commands for Local Development
+
+There are several other CLI commands that you may find very useful during your local development. Here are some of the most relevant ones:
+
+- [quix pipeline view](./reference/pipeline/view.md): Create and preview a mermaid diagram of the pipeline.
+- [quix pipeline up](./reference/pipeline/up.md): Run your pipeline locally using docker compose
+- [quix pipeline status](./reference/pipeline/status.md): Display the current status of the local pipeline
+- [quix pipeline logs -f -n 10](./reference/pipeline/logs.md): View output from deployments of the local pipeline in realtime
+- [quix pipeline sync](./reference/pipeline/sync.md): Synchronize your local pipeline to Quix Cloud
+- [quix broker topics read](./reference/broker/topics/read.md): Read the messages from your pipeline topics
+
+You should also check our [CLI Commands Summary](./cli-commands-summary.md), where you'll find the most useful commands for developing QuixStreams data pipelines locally.
+
+## Next steps
+
+<div class="grid cards" markdown>
+
+- __Time to level up?__
+
+    ---
+
+    Deploy your local pipeline to the Cloud, for scalability, observability, and even more Quix magic.
+
+    [Deploy to Quix Cloud :octicons-arrow-right-24:](../quix-cloud/quickstart.md)
+
+</div>

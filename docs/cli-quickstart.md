@@ -301,3 +301,17 @@ You're not connected to Quix Cloud
     [Deploy to Quix Cloud :octicons-arrow-right-24:](../quix-cloud/quickstart.md)
 
 </div>
+
+Or
+
+<div class="grid cards" markdown>
+
+- __Continue debugging your pipeline with the CLI__
+
+    ---
+
+    Continue learning how to use Quix CLI to develop you pipeline locally.
+
+    [Quix CLI local development :octicons-arrow-right-24:](./cli-local-debug.md)
+
+</div>

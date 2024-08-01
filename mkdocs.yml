@@ -55,7 +55,7 @@ nav:
 - 'Overview': 'overview.md'
 - 'Quickstart': 'cli-quickstart.md'
 - 'Local Development': 'cli-local-debug.md'
-- 'Quick Reference': 'cli-quick-reference.md'
+- 'Commands Summary': 'cli-commands-summary.md'
 - 'Tutorials':
   - 'Using the CLI with a template': 'cli-template.md'
   - 'Using the CLI with GitHub Actions': 'cli-github-actions.md'
