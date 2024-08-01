@@ -19,5 +19,4 @@ quix pipeline deployments [command] [options]
 - [edit](edit.md) : Edit a local deployment
 - [get](get.md) : Get a local deployment
 - [list](list.md) : List all the local deployments
-- [logs](logs.md) : View output from a given deployment in the local pipeline
 

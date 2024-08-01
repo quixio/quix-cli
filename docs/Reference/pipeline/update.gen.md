@@ -18,6 +18,6 @@ quix pipeline update [options]
 - `--existing, --only-existing` : Update only existing deployments
 - `--new, --only-new` : Add only the applications that are not currently deployed
 - `-a, --all` : Forces the update of all applications regardless of the current directory
-- `--reset` : Removes all deployments from the 'quix.yaml' file. This operation is performed before any updates or additions to ensure a clean state
-- `-k, --keep-variables` : Keep the locally deleted variables
+- `--new-variables, --only-new-variables` : Only add new variables to the deployments without updating rest of the variables
+- `--reset` : Removes all deployments and topics from the 'quix.yaml' file. This operation is performed before any updates or additions to ensure a clean state
 

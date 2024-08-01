@@ -19,5 +19,5 @@ quix applications [command] [options]
 - [edit](edit.md) : Edit the application values
 - [list](list.md) : Lists all the local applications of the project
 - [update](update.md) : Updates the application's '.env' file with the variables from 'quix.yaml'
-- [variables](variables\index.md) : Manage your local application's variables
+- [variables](variables/index.md) : Manage your local application's variables
 

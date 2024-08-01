@@ -56,6 +56,8 @@ nav:
 - 'Quickstart': 'cli-quickstart.md'
 - 'Local Development': 'cli-local-debug.md'
 - 'Commands Summary': 'cli-commands-summary.md'
+- 'How-To guides':
+  - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
 - Reference:
   - Cloud Commands:
     - Reference/cloud/index.md
@@ -130,7 +132,6 @@ nav:
         - applications variables export: Reference/applications/variables/export.md
         - applications variables import: Reference/applications/variables/import.md
         - applications variables list: Reference/applications/variables/list.md
-    - init: Reference/init.md
     - broker:
       - Reference/broker/index.md
       - broker down: Reference/broker/down.md
@@ -140,6 +141,7 @@ nav:
         - broker topics list: Reference/broker/topics/list.md
         - broker topics read: Reference/broker/topics/read.md
         - broker topics update: Reference/broker/topics/update.md
+    - init: Reference/init.md
     - pipeline:
       - Reference/pipeline/index.md
       - pipeline deployments:
@@ -149,10 +151,11 @@ nav:
         - pipeline deployments edit: Reference/pipeline/deployments/edit.md
         - pipeline deployments get: Reference/pipeline/deployments/get.md
         - pipeline deployments list: Reference/pipeline/deployments/list.md
-        - pipeline deployments logs: Reference/pipeline/deployments/logs.md
       - pipeline down: Reference/pipeline/down.md
       - pipeline logs: Reference/pipeline/logs.md
+      - pipeline start: Reference/pipeline/start.md
       - pipeline status: Reference/pipeline/status.md
+      - pipeline stop: Reference/pipeline/stop.md
       - pipeline sync: Reference/pipeline/sync.md
       - pipeline up: Reference/pipeline/up.md
       - pipeline update: Reference/pipeline/update.md
@@ -198,6 +201,4 @@ nav:
     - status: Reference/status.md
     - update: Reference/update.md
     - use: Reference/use.md
-- 'How-To guides':
-  - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
 ...
