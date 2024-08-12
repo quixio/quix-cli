@@ -46,7 +46,7 @@ sign_binary() {
 }
 
 # Parse arguments
-prefix="/usr/local"  # Default prefix
+prefix="/opt/homebrew"  # Default prefix
 for i in "$@"; do
     case $i in
         -v=*|--version=*)
