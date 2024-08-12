@@ -82,7 +82,7 @@ file_extension="tar.gz"
 file_name="${os}-${arch}.${file_extension}" # the file name to download
 
 downloaded_file="${downloadFolder}/${file_name}" # the file path to download
-executable_folder="${prefix}/bin" # Install binary to the specified prefix/bin
+executable_folder="/opt/homebrew/bin" # Install binary to the specified prefix/bin
 
 # Create executable_folder if it does not exist
 mkdir -p "${executable_folder}"
