@@ -1,4 +1,4 @@
-# applications variables list
+# apps variables list
 
 ## Overview
 
@@ -9,7 +9,7 @@ Lists the variables of the current application
 **Usage:**
 
 ```
-quix applications variables list [options]
+quix apps variables list [options]
 ```
 
 **Options:**

@@ -1,4 +1,4 @@
-# applications create
+# apps create
 
 ## Overview
 
@@ -9,7 +9,7 @@ Creates a new application locally based on a code sample of the library
 **Usage:**
 
 ```
-quix applications create [<library-item>] [options]
+quix apps create [<library-item>] [options]
 ```
 
 **Arguments:**

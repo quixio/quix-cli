@@ -4,7 +4,7 @@
 
 Manage the topics of an environment
 
-**Aliases:** `topics`, `topic`
+**Aliases:** `topics`, `topic`, `tpc`
 
 **Usage:**
 

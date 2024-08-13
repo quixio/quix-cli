@@ -1,4 +1,4 @@
-# applications variables import
+# apps variables import
 
 ## Overview
 
@@ -9,7 +9,7 @@ Imports the .env file values to the app.yaml. The values from the .env file will
 **Usage:**
 
 ```
-quix applications variables import [options]
+quix apps variables import [options]
 ```
 
 **Options:**

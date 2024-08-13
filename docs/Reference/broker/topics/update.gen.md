@@ -4,7 +4,7 @@
 
 Update or create your pipeline broker topics from your 'quix.yaml' configuration
 
-**Aliases:** `update`
+**Aliases:** `update`, `upd`
 
 **Usage:**
 

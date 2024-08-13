@@ -1,4 +1,4 @@
-# cloud applications library list
+# cloud apps library list
 
 ## Overview
 
@@ -9,7 +9,7 @@ Get all library items
 **Usage:**
 
 ```
-quix cloud applications library list [options]
+quix cloud apps library list [options]
 ```
 
 **Options:**

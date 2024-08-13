@@ -1,4 +1,4 @@
-# applications list
+# apps list
 
 ## Overview
 
@@ -9,7 +9,7 @@ Lists all the local applications of the project
 **Usage:**
 
 ```
-quix applications list [options]
+quix apps list [options]
 ```
 
 **Options:**

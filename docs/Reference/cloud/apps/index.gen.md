@@ -1,15 +1,15 @@
-# cloud applications
+# cloud apps
 
 ## Overview
 
 Manage the applications of an environment
 
-**Aliases:** `applications`, `application`, `apps`, `app`
+**Aliases:** `apps`, `applications`, `application`, `app`
 
 **Usage:**
 
 ```
-quix cloud applications [command] [options]
+quix cloud apps [command] [options]
 ```
 
 **Commands:**

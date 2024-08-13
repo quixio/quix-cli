@@ -1,15 +1,15 @@
-# applications variables edit
+# apps variables create
 
 ## Overview
 
-Edits a new variable of the current application
+Creates a variable of the current application
 
-**Aliases:** `edit`
+**Aliases:** `create`, `add`
 
 **Usage:**
 
 ```
-quix applications variables edit [options]
+quix apps variables create [options]
 ```
 
 **Options:**

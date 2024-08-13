@@ -1,4 +1,4 @@
-# applications variables
+# apps variables
 
 ## Overview
 
@@ -9,7 +9,7 @@ Manage your local application's variables
 **Usage:**
 
 ```
-quix applications variables [command] [options]
+quix apps variables [command] [options]
 ```
 
 **Commands:**
