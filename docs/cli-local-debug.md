@@ -4,14 +4,10 @@ Debugging an application locally using `quix run` has some nuances that need to 
 
 ## Prerequisites
 
-This tutorial assumes that you have read the [Quickstart](cli-quixtart.md) and installed the dependencies:
+This tutorial assumes that you have read the [Quickstart](./cli-quickstart.md) and installed the dependencies:
 
 - [Docker Desktop](https://docs.docker.com/engine/install/){target=_blank}
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){target=_blank}
-
-For this tutorial, you will also need the following installed:
-
-- [VS Code](https://code.visualstudio.com/){target=_blank}
 - [Python](https://www.python.org/){target=_blank}
 
 !!! tip
@@ -28,7 +24,7 @@ For this tutorial, you will also need the following installed:
 ### Step 1: Setting Up the Broker
 
 !!! note
-    If you followed all the steps from the [Quickstart](cli-quixtart.md) tutorial, your local pipeline broker is already up and running.
+    If you followed all the steps from the [Quickstart](cli-quickstart.md) tutorial, your local pipeline broker is already up and running.
 
 Depending on your setup, you can choose to use your local pipeline broker, another local broker, or the Quix Cloud broker. Here are the steps to configure each:
 
@@ -111,14 +107,18 @@ For a comprehensive overview of all SDK broker commands, refer to the [SDK broke
 
 ### Step 2: Preparing Your Local Environment
 
-Creating a virtual environment helps isolate dependencies and avoid conflicts:
+To ensure your application runs smoothly across different environments, it's essential to create a virtual environment for each application you develop. This isolates the dependencies for each application, avoiding conflicts between them.
 
-```bash
-python -m venv .venv
-```
+**Create a Virtual Environment**
+
+   Navigate to your application's directory and run one of the following command:
+
+   ```bash
+   python -m venv .venv
+   ```
 
 !!! note
-    Depending on your system, the command might be:
+    Depending on your system configuration, the command might differ slightly. Use one of these alternatives if needed:
 
     ```bash
     python3 -m venv .venv
@@ -130,7 +130,11 @@ python -m venv .venv
     py -m venv .venv
     ```
 
-Activate the virtual environment:
+   This command sets up a virtual environment named `.venv` inside your application's directory.
+
+**Activate the Virtual Environment**
+
+After creating the virtual environment, you need to activate it to start using it for your application. The activation command varies by operating system:
 
 === "Windows"
 
@@ -150,11 +154,15 @@ Activate the virtual environment:
     source .venv/bin/activate
     ```
 
-Install dependencies from `requirements.txt`:
+**Install Dependencies**
 
-```bash
-pip install -r requirements.txt
-```
+   Once the virtual environment is active, you can install your application's dependencies from the `requirements.txt` file. Run the following command:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+   This ensures all necessary packages are installed specifically for this application.
 
 !!! tip "Using DevContainers"
     If you prefer using DevContainers for an isolated development environment, you can set them up with the `--devcontainer` option:
@@ -393,12 +401,12 @@ variable=a-pipeline-value
 
 There are several other CLI commands that you may find very useful during your local development. Here are some of the most relevant ones:
 
-- [quix pipeline view](./reference/pipeline/view.md): Create and preview a mermaid diagram of the pipeline.
-- [quix pipeline up](./reference/pipeline/up.md): Run your pipeline locally using docker compose
-- [quix pipeline status](./reference/pipeline/status.md): Display the current status of the local pipeline
-- [quix pipeline logs -f -n 10](./reference/pipeline/logs.md): View output from deployments of the local pipeline in realtime
-- [quix pipeline sync](./reference/pipeline/sync.md): Synchronize your local pipeline to Quix Cloud
-- [quix broker topics read](./reference/broker/topics/read.md): Read the messages from your pipeline topics
+- [quix pipeline view](./Reference/pipeline/view.md): Create and preview a mermaid diagram of the pipeline.
+- [quix pipeline up](./Reference/pipeline/up.md): Run your pipeline locally using docker compose
+- [quix pipeline status](./Reference/pipeline/status.md): Display the current status of the local pipeline
+- [quix pipeline logs -f -n 10](./Reference/pipeline/logs.md): View output from deployments of the local pipeline in realtime
+- [quix pipeline sync](./Reference/pipeline/sync.md): Synchronize your local pipeline to Quix Cloud
+- [quix broker topics read](./Reference/broker/topics/read.md): Read the messages from your pipeline topics
 
 You should also check our [CLI Commands Summary](./cli-commands-summary.md), where you'll find the most useful commands for developing QuixStreams data pipelines locally.
 
