@@ -182,7 +182,7 @@ After creating the virtual environment, you need to activate it to start using i
 Let's take a look at the `.env` file generated for the `event-detection-transformation` application:
 
 !!! note
-    If you didn't follow the [Quickstart](cli-quixtart.md) you can get to this point by running:
+    If you didn't follow the [Quickstart](cli-quickstart.md) you can get to this point by running:
 
     ```bash
     quix app create event-detection-transformation
@@ -232,7 +232,7 @@ You can create and remove variables for your local applications here at your dis
 
 ### Step 4: Running Your Code with `quix run`
 
-By using the [`quix run`](./reference/run.md) command, the `.env` variables are injected into your Python code as environment variables so you can read the values like this:
+By using the [`quix run`](./Reference/run.md) command, the `.env` variables are injected into your Python code as environment variables so you can read the values like this:
 
 ```python title="main.py"
 import os
