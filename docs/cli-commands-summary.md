@@ -16,11 +16,11 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 
 ## Initialization
 
-| Use Case                                                                                | Command                    |
-| --------------------------------------------------------------------------------------- | -------------------------- |
-| [Initialize a new Quix project](./Reference/init.md)                                    | `quix init`                |
-| [Initialize with DevContainer support](./Reference/init.md)                             | `quix init --devcontainer` |
-| [Initialize a project updating `.env` files from `quix.yaml`](./Reference/init.md)      | `quix init --update`       |
+| Use Case                                                                           | Command                    |
+| ---------------------------------------------------------------------------------- | -------------------------- |
+| [Initialize a new Quix project](./Reference/init.md)                               | `quix init`                |
+| [Initialize with DevContainer support](./Reference/init.md)                        | `quix init --devcontainer` |
+| [Initialize a project updating `.env` files from `quix.yaml`](./Reference/init.md) | `quix init --update`       |
 
 ## Application Management
 
@@ -48,12 +48,12 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 
 ## Broker Management
 
-| Use Case                                                                       | Command                  |
-| ------------------------------------------------------------------------------ | ------------------------ |
-| [Start local pipeline broker](./Reference/sdk/broker/up.md)                    | `quix broker up`         |
-| [Stop local pipeline broker](./Reference/sdk/broker/down.md)                   | `quix broker down`       |
-| [List all the topics from your pipeline broker](./Reference/broker.md)         | `quix broker topic list` |
-| [Read the content of a topic from your pipeline broker](./Reference/broker.md) | `quix broker topic read` |
+| Use Case                                                                                   | Command                  |
+| ------------------------------------------------------------------------------------------ | ------------------------ |
+| [Start local pipeline broker](./Reference/broker/up.md)                                    | `quix broker up`         |
+| [Stop local pipeline broker](./Reference/broker/down.md)                                   | `quix broker down`       |
+| [List all the topics from your pipeline broker](./Reference/broker/topics/list.md)         | `quix broker topic list` |
+| [Read the content of a topic from your pipeline broker](./Reference/broker/topics/read.md) | `quix broker topic read` |
 
 ## SDK Broker Configuration
 
@@ -65,9 +65,9 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 
 ## Running Applications
 
-| Use Case                                                                     | Command                |
-| ---------------------------------------------------------------------------- | ---------------------- |
-| [Run with the variables from `.env`](./Reference/run.md)                     | `quix run`             |
-| [Update the `.env` variables from the pipeline and run](./Reference/run.md)  | `quix run --update`    |
-| [Run and stop deployed version of the application](./Reference/run.md)       | `quix run --stop`      |
-| [Run and intercept deployed version of the application](./Reference/run.md)  | `quix run --intercept` |
+| Use Case                                                                    | Command                |
+| --------------------------------------------------------------------------- | ---------------------- |
+| [Run with the variables from `.env`](./Reference/run.md)                    | `quix run`             |
+| [Update the `.env` variables from the pipeline and run](./Reference/run.md) | `quix run --update`    |
+| [Run and stop deployed version of the application](./Reference/run.md)      | `quix run --stop`      |
+| [Run and intercept deployed version of the application](./Reference/run.md) | `quix run --intercept` |
