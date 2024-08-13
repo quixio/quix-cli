@@ -4,7 +4,7 @@
 
 Manage the topics of the local pipeline
 
-**Aliases:** `topics`, `topic`
+**Aliases:** `topics`, `topic`, `tpc`
 
 **Usage:**
 

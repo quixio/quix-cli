@@ -1,4 +1,4 @@
-# applications convert
+# apps convert
 
 ## Overview
 
@@ -9,7 +9,7 @@ Converts applications from and to library item format
 **Usage:**
 
 ```
-quix applications convert <file-path> [options]
+quix apps convert <file-path> [options]
 ```
 
 **Arguments:**

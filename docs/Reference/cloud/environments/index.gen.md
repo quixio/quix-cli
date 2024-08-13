@@ -4,7 +4,7 @@
 
 Manage the environments of your projects (e.g., Dev, Staging, Production)
 
-**Aliases:** `environments`, `environment`, `envs`, `env`, `workspaces`, `workspace`
+**Aliases:** `environments`, `environment`, `envs`, `env`, `workspaces`, `workspace`, `ws`
 
 **Usage:**
 

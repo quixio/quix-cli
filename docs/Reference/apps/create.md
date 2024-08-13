@@ -10,6 +10,7 @@ The command generates the application with a default structure relative to the c
 
 - The main Python file, usually `main.py`
 - `app.yaml` for application configuration
+- `.env` for environment variable management, allowing you to securely configure sensitive information like API keys and connection strings without hardcoding them into your scripts.
 - `requirements.txt` for Python dependencies
 - `dockerfile` for containerization
 - `README.md` for documentation
@@ -59,6 +60,24 @@ Leave the name empty so the default name is used:
 
 ```
 ✓ Application name: Starter Source
+```
+
+You can then select the values of the library item variables, such as topics. In this case, a list of existing topics is presented, where you can pick an existing topic or create a new one:
+
+```
+? [Output Topic] output:
+
+> csv-data
+  grouped-transactions
+  transactions-output
+  + New topic
+```
+
+After selecting the output topic:
+
+```
+✓ [Output Topic] output: csv-data
 ✓ Application 'Starter Source' created successfully in '$\Starter Source'
 ```
+
 Then your new `Starter Source` application is created.

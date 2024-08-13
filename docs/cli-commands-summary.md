@@ -24,13 +24,13 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 
 ## Application Management
 
-| Use Case                                                                           | Command              |
-| ---------------------------------------------------------------------------------- | -------------------- |
-| [Create a new application](./Reference/applications/create.md)                     | `quix app add`       |
-| [Edit the variables of an application](./Reference/applications/edit.md)           | `quix app edit`      |
-| [List applications in the project](./Reference/applications/list.md)               | `quix app list`      |
-| [Add a variable to an application](./Reference/applications/variables/create.md)   | `quix app vars add`  |
-| [Edit the variables of an application](./Reference/applications/variables/edit.md) | `quix app vars edit` |
+| Use Case                                                                   | Command              |
+| -------------------------------------------------------------------------- | -------------------- |
+| [Create a new application](./Reference/apps/create.md)                     | `quix app add`       |
+| [Edit the variables of an application](./Reference/apps/edit.md)           | `quix app edit`      |
+| [List applications in the project](./Reference/apps/list.md)               | `quix app list`      |
+| [Add a variable to an application](./Reference/apps/variables/create.md)   | `quix app vars add`  |
+| [Edit the variables of an application](./Reference/apps/variables/edit.md) | `quix app vars edit` |
 
 ## Pipeline Management
 

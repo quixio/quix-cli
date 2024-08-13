@@ -1,4 +1,4 @@
-# cloud applications get
+# cloud apps get
 
 ## Overview
 
@@ -9,7 +9,7 @@ Get an application in the specified environment
 **Usage:**
 
 ```
-quix cloud applications get [<workspace-id> <application-id>] [options]
+quix cloud apps get [<workspace-id> <application-id>] [options]
 ```
 
 **Arguments:**

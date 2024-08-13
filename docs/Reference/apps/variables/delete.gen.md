@@ -1,4 +1,4 @@
-# applications variables delete
+# apps variables delete
 
 ## Overview
 
@@ -9,7 +9,7 @@ Deletes a variable of the current application
 **Usage:**
 
 ```
-quix applications variables delete [<name>] [options]
+quix apps variables delete [<name>] [options]
 ```
 
 **Arguments:**

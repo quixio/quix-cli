@@ -1,4 +1,4 @@
-# applications edit
+# apps edit
 
 ## Overview
 
@@ -9,7 +9,7 @@ Edit the application values
 **Usage:**
 
 ```
-quix applications edit [options]
+quix apps edit [options]
 ```
 
 **Options:**

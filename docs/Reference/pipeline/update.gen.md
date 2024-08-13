@@ -4,7 +4,7 @@
 
 Update 'quix.yaml' with the new local applications and update the variables of the existing deployments
 
-**Aliases:** `update`
+**Aliases:** `update`, `upd`
 
 **Usage:**
 

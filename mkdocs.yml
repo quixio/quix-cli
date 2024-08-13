@@ -56,16 +56,18 @@ nav:
 - 'Quickstart': 'cli-quickstart.md'
 - 'Local Development': 'cli-local-debug.md'
 - 'Commands Summary': 'cli-commands-summary.md'
+- 'How-To guides':
+  - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
 - Reference:
   - Cloud Commands:
     - Reference/cloud/index.md
-    - cloud applications:
-      - Reference/cloud/applications/index.md
-      - cloud applications get: Reference/cloud/applications/get.md
-      - cloud applications list: Reference/cloud/applications/list.md
-      - cloud applications library:
-        - Reference/cloud/applications/library/index.md
-        - cloud applications library list: Reference/cloud/applications/library/list.md
+    - cloud apps:
+      - Reference/cloud/apps/index.md
+      - cloud apps get: Reference/cloud/apps/get.md
+      - cloud apps list: Reference/cloud/apps/list.md
+      - cloud apps library:
+        - Reference/cloud/apps/library/index.md
+        - cloud apps library list: Reference/cloud/apps/library/list.md
     - cloud deployments:
       - Reference/cloud/deployments/index.md
       - cloud deployments get: Reference/cloud/deployments/get.md
@@ -115,21 +117,21 @@ nav:
       - cloud users current: Reference/cloud/users/current.md
       - cloud users list: Reference/cloud/users/list.md
   - Local Commands:
-    - applications:
-      - Reference/applications/index.md
-      - applications update: Reference/applications/update.md
-      - applications convert: Reference/applications/convert.md
-      - applications create: Reference/applications/create.md
-      - applications edit: Reference/applications/edit.md
-      - applications list: Reference/applications/list.md
-      - applications variables:
-        - Reference/applications/variables/index.md
-        - applications variables create: Reference/applications/variables/create.md
-        - applications variables delete: Reference/applications/variables/delete.md
-        - applications variables edit: Reference/applications/variables/edit.md
-        - applications variables export: Reference/applications/variables/export.md
-        - applications variables import: Reference/applications/variables/import.md
-        - applications variables list: Reference/applications/variables/list.md
+    - apps:
+      - Reference/apps/index.md
+      - apps update: Reference/apps/update.md
+      - apps convert: Reference/apps/convert.md
+      - apps create: Reference/apps/create.md
+      - apps edit: Reference/apps/edit.md
+      - apps list: Reference/apps/list.md
+      - apps variables:
+        - Reference/apps/variables/index.md
+        - apps variables create: Reference/apps/variables/create.md
+        - apps variables delete: Reference/apps/variables/delete.md
+        - apps variables edit: Reference/apps/variables/edit.md
+        - apps variables export: Reference/apps/variables/export.md
+        - apps variables import: Reference/apps/variables/import.md
+        - apps variables list: Reference/apps/variables/list.md
     - broker:
       - Reference/broker/index.md
       - broker down: Reference/broker/down.md
@@ -194,6 +196,4 @@ nav:
     - status: Reference/status.md
     - update: Reference/update.md
     - use: Reference/use.md
-- 'How-To guides':
-  - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
 ...

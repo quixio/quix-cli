@@ -4,7 +4,7 @@
 
 Update the version of the CLI
 
-**Aliases:** `update`
+**Aliases:** `update`, `upd`
 
 **Usage:**
 

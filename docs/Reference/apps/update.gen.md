@@ -1,15 +1,15 @@
-# applications update
+# apps update
 
 ## Overview
 
 Updates the application's '.env' file with the variables from 'quix.yaml'
 
-**Aliases:** `update`
+**Aliases:** `update`, `upd`
 
 **Usage:**
 
 ```
-quix applications update [options]
+quix apps update [options]
 ```
 
 **Options:**

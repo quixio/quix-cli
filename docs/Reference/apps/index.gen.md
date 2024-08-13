@@ -1,15 +1,15 @@
-# applications
+# apps
 
 ## Overview
 
 Manage your local applications and their variables
 
-**Aliases:** `applications`, `application`, `apps`, `app`
+**Aliases:** `apps`, `applications`, `application`, `app`
 
 **Usage:**
 
 ```
-quix applications [command] [options]
+quix apps [command] [options]
 ```
 
 **Commands:**

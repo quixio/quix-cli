@@ -1,15 +1,15 @@
-# cloud applications library
+# cloud apps library
 
 ## Overview
 
 Manage the library items of an environment
 
-**Aliases:** `library`
+**Aliases:** `library`, `lib`
 
 **Usage:**
 
 ```
-quix cloud applications library [command] [options]
+quix cloud apps library [command] [options]
 ```
 
 **Commands:**

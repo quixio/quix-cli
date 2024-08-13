@@ -1,4 +1,4 @@
-# cloud applications list
+# cloud apps list
 
 ## Overview
 
@@ -9,7 +9,7 @@ Get all applications in the specified environment
 **Usage:**
 
 ```
-quix cloud applications list [<workspace-id>] [options]
+quix cloud apps list [<workspace-id>] [options]
 ```
 
 **Arguments:**
