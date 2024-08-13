@@ -6,7 +6,7 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 
 | Use Case                                                                           | Command                |
 | ---------------------------------------------------------------------------------- | ---------------------- |
-| [Update application `.env` files from `quix.yaml`](./Reference/init.md)            | `quix init -update`    |
+| [Update application `.env` files from `quix.yaml`](./Reference/init.md)            | `quix init --update`   |
 | [Run applications with the variables from `.env`](./Reference/run.md)              | `quix run`             |
 | [Update pipeline configuration](./Reference/pipeline/update.md)                    | `quix pipeline update` |
 | [Bring pipeline up in Docker](./Reference/pipeline/up.md)                          | `quix pipeline up`     |

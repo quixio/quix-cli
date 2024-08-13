@@ -9,10 +9,9 @@ It performs the following checks:
 1. **Authentication Status**: Verifies if you are logged into Quix Cloud and displays your user information if logged in.
 2. **Current Context**: Shows details about the current context, including the name, URL, environment ID, and local broker settings.
 3. **Git Repository**: Identifies and displays the root directory of your Git repository.
-4. **Installed IDEs**: Checks for installed IDEs (VS Code and PyCharm) and reports any issues.
-5. **Docker Installation**: Verifies if Docker is installed and reports the status.
-6. **Git Installation**: Confirms if Git is installed and reports the status.
-7. **Local Pipeline Status**: Checks and reports the status of your local pipeline.
+4. **Docker Installation**: Verifies if Docker is installed and reports the status.
+5. **Git Installation**: Confirms if Git is installed and reports the status.
+6. **Local Pipeline Status**: Checks and reports the status of your local pipeline.
 
 This command is useful for quickly assessing the overall health and configuration of your development environment.
 
