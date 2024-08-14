@@ -6,6 +6,8 @@ echo "Installing Quix CLI"
 set -e
 
 get_arch() {
+    # darwin/amd64: Darwin axetroydeMacBook-Air.local 20.5.0 Darwin Kernel Version 20.5.0: Sat May  8 05:10:33 PDT 2021; root:xnu-7195.121.3~9/RELEASE_X86_64 x86_64
+    # linux/amd64: Linux test-ubuntu1804 5.4.0-42-generic #46~18.04.1-Ubuntu SMP Fri Jul 10 07:21:24 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
     a=$(uname -m)
     case ${a} in
         "x86_64" | "amd64" )
@@ -46,15 +48,10 @@ sign_binary() {
 }
 
 # Parse arguments
-prefix="/opt/homebrew"  # Default prefix
 for i in "$@"; do
     case $i in
         -v=*|--version=*)
             version="${i#*=}"
-            shift # past argument=value
-        ;;
-        --prefix=*)
-            prefix="${i#*=}"
             shift # past argument=value
         ;;
         *)
@@ -82,7 +79,7 @@ file_extension="tar.gz"
 file_name="${os}-${arch}.${file_extension}" # the file name to download
 
 downloaded_file="${downloadFolder}/${file_name}" # the file path to download
-executable_folder="/opt/homebrew/bin" # Install binary to the specified prefix/bin
+executable_folder="/usr/local/bin" # Eventually, the executable file will be placed here
 
 # Create executable_folder if it does not exist
 mkdir -p "${executable_folder}"
@@ -99,10 +96,18 @@ echo "[2/5] Downloading '${asset_uri}' to '${downloaded_file}'"
 curl --fail --location --output "${downloaded_file}" "${asset_uri}"
 
 echo "[3/5] Installing '${exe_name}' to '${executable_folder}'"
-tar -xzf "${downloaded_file}" -C "${executable_folder}"
-exe="${executable_folder}/${exe_name}"
-chmod +x "${exe}"
-sign_binary "$os" "$exe"
+if [ ! -w "${executable_folder}" ]; then
+    echo "Permission denied for ${executable_folder}. Trying with sudo..."
+    sudo tar -xzf "${downloaded_file}" -C "${executable_folder}"
+    exe="${executable_folder}/${exe_name}"
+    sudo chmod +x "${exe}"
+    sign_binary "$os" "$exe" "true"
+else
+    tar -xzf "${downloaded_file}" -C "${executable_folder}"
+    exe="${executable_folder}/${exe_name}"
+    chmod +x "${exe}"
+    sign_binary "$os" "$exe"
+fi
 
 echo "[4/5] Cleaning '${downloaded_file}'"
 rm -f "${downloaded_file}"
