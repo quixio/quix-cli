@@ -2,24 +2,24 @@
 
 ## How It Works
 
-The `quix sdk broker update` command updates or creates the `.env` files of all your applications with the current SDK broker configuration. This ensures that every application is synchronized with the latest local broker settings.
+The `quix sdk broker update` command ensures that the `.env` files for all your applications are synchronized with the current SDK broker configuration. By updating these files, the command guarantees that every application is correctly configured to connect with the latest local broker settings.
 
-When you run this command, it scans each application's `.env` file and updates the SDK configuration to match the current local broker configuration. If the `.env` file is already aligned with the current configuration, it will remain unchanged.
+Upon execution, the command scans each application's `.env` file and updates the SDK configuration to reflect the current local broker. If an application's `.env` file is already up-to-date, it remains unchanged, ensuring stability and consistency across your development environment.
 
 !!! note
-    The `quix sdk broker update` command only updates the broker configuration in the `.env` files. All other variables remain unchanged. To synchronize all variables with your `quix.yaml` file, use the [`quix init --update`](../../init.md) command.
+    The `quix sdk broker update` command specifically updates the broker configuration within the `.env` files. Other environment variables remain unchanged. To update all variables according to your `quix.yaml` configuration, use the [`quix init --update`](../../init.md) command.
 
 ## Example Usage
 
 ### Running the Update
 
-To update the broker configuration across all applications:
+To synchronize the broker configuration across all your applications, use:
 
 ```bash
 quix sdk broker update
 ```
 
-The command will output which applications were updated:
+After running this command, you will see which applications were updated:
 
 ```bash
 quix sdk broker update
@@ -30,16 +30,16 @@ quix sdk broker update
 
 ### Before and After
 
-Before running the command, your `.env` file might look like this:
+Consider the following example of an `.env` file before running the update:
 
 ```dotenv title=".env before"
 Quix__Broker__Address=localhost:9092
 ```
 
-After running `quix sdk broker update`, it updates to:
+After running `quix sdk broker update`, the file is updated to reflect the new broker address:
 
 ```dotenv title=".env after"
 Quix__Broker__Address=localhost:19092
 ```
 
-This ensures all your applications are pointing to the correct broker, maintaining consistent operation across your local development environment.
+This update ensures that all your applications are correctly pointing to the current broker, maintaining consistent and reliable operation across your local development environment.
