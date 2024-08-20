@@ -231,9 +231,11 @@ You can also view a graph representation of your local pipeline with the followi
 quix pipeline view
 ```
 
-If you have VSCode installed, the pipeline is displayed in the IDE for you, otherwise the pipeline is displayed on your default browser:
+This command will open a graphical representation of the pipeline in your default web browser:
 
-![VSCode pipeline view](./images/cli/vscode-pipeline-view.png)
+![pipeline view](./images/cli/pipeline-view.png)
+
+If, for any reason, the CLI fails to open your browser and detects that Visual Studio Code (VS Code) is installed, it will automatically open the pipeline visualization in VS Code instead.
 
 When you update your `quix.yaml` using the command `quix pipeline update`, the visualization is updated for you.
 
