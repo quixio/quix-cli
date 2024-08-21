@@ -245,7 +245,7 @@ Run your pipeline in Docker:
 quix pipeline up
 ```
 
-This command generates a `compose.local.yaml` in the root of your project based on your `quix.yaml` file.
+This command generates a `compose.local.yaml` in the root folder of your project based on your `quix.yaml` file.
 
 You'll see various console messages displayed in your terminal. When these have finished, then your deployed services are running in Docker. 
 

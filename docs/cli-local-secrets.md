@@ -88,7 +88,7 @@ deployments:
       - name: api_secret_token
         inputType: Secret
         required: false
-        secretKey: api_secret_token-key
+        secretKey: api_secret_token_key
 ```
 
 Additionally, a `.secrets` file is generated or updated with the actual value associated with the secret key:
@@ -100,7 +100,7 @@ Additionally, a `.secrets` file is generated or updated with the actual value as
 # Secrets here are referenced in quix.yaml using secret keys.
 #
 # Keep this file secure and out of version control.
-api_secret_token-key=SECRET-API-TOKEN-VALUE
+api_secret_token_key=SECRET-API-TOKEN-VALUE
 ```
 
 !!! tip
@@ -131,7 +131,7 @@ deployments:
       - name: api_secret_token
         inputType: Secret
         required: false
-        secretKey: api_secret_token-key
+        secretKey: api_secret_token_key
 
   - name: other-deployment
     application: other-application
@@ -145,10 +145,10 @@ deployments:
       - name: a_different_variable_name
         inputType: Secret
         required: false
-        secretKey: api_secret_token-key
+        secretKey: api_secret_token_key
 ```
 
-In this setup, both `starter-source` and `other-deployment` use the same secret key (`api_secret_token-key`), even though they reference it with different variable names (`api_secret_token` and `a_different_variable_name`). This ensures consistency across deployments and reduces redundancy.
+In this setup, both `starter-source` and `other-deployment` use the same secret key (`api_secret_token_key`), even though they reference it with different variable names (`api_secret_token` and `a_different_variable_name`). This ensures consistency across deployments and reduces redundancy.
 
 !!! tip
     Reusing secret keys across deployments simplifies management and ensures all services have access to the necessary secrets.
@@ -223,7 +223,7 @@ If you need to update the value of a secret locally, modify the `.secrets` file 
 # Secrets here are referenced in quix.yaml using secret keys.
 #
 # Keep this file secure and out of version control.
-api_secret_token-key=NEW-SECRET
+api_secret_token_key=NEW-SECRET
 ```
 
 To synchronize the updated secret with your `.env` file, run:
