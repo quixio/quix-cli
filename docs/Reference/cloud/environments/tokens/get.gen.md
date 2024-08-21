@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get the sdk/environment token
+Get the SDK/environment token
 
 **Aliases:** `get`
 

@@ -18,5 +18,5 @@ quix pipeline topics [command] [options]
 - [delete](delete.md) : Delete a local topic
 - [edit](edit.md) : Edit a local topic
 - [get](get.md) : Get a local topic
-- [list](list.md) : List all the local deployments
+- [list](list.md) : List all the local topics
 

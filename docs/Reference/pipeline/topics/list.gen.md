@@ -2,7 +2,7 @@
 
 ## Overview
 
-List all the local deployments
+List all the local topics
 
 **Aliases:** `list`, `ls`
 

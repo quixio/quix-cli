@@ -87,10 +87,6 @@ nav:
         - Reference/cloud/environments/tokens/index.md
         - cloud environments tokens get: Reference/cloud/environments/tokens/get.md
         - cloud environments tokens rotate: Reference/cloud/environments/tokens/rotate.md
-        - cloud environments tokens create: Reference/cloud/environments/tokens/create.md
-        - cloud environments tokens edit: Reference/cloud/environments/tokens/edit.md
-        - cloud environments tokens list: Reference/cloud/environments/tokens/list.md
-        - cloud environments tokens revoke: Reference/cloud/environments/tokens/revoke.md
     - cloud organisations:
       - Reference/cloud/organisations/index.md
       - cloud organisations get: Reference/cloud/organisations/get.md
@@ -114,7 +110,12 @@ nav:
         - cloud users permissions get: Reference/cloud/users/permissions/get.md
         - cloud users permissions list: Reference/cloud/users/permissions/list.md
         - cloud users permissions set: Reference/cloud/users/permissions/set.md
-      - cloud users tokens: Reference/cloud/users/tokens.md
+      - cloud users tokens:
+        - Reference/cloud/users/tokens/index.md
+        - cloud users tokens create: Reference/cloud/users/tokens/create.md
+        - cloud users tokens edit: Reference/cloud/users/tokens/edit.md
+        - cloud users tokens list: Reference/cloud/users/tokens/list.md
+        - cloud users tokens revoke: Reference/cloud/users/tokens/revoke.md
       - cloud users current: Reference/cloud/users/current.md
       - cloud users list: Reference/cloud/users/list.md
   - Local Commands:
