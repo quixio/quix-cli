@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get a local topic
+Get a topic from your local pipeline
 
 **Aliases:** `get`
 

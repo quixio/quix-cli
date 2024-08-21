@@ -2,7 +2,7 @@
 
 ## Overview
 
-List all the local topics
+List all the topics from your local
 
 **Aliases:** `list`, `ls`
 

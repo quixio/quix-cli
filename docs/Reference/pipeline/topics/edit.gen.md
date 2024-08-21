@@ -2,7 +2,7 @@
 
 ## Overview
 
-Edit a local topic
+Edit a topic from your local pipeline
 
 **Aliases:** `edit`
 

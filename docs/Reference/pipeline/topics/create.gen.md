@@ -2,7 +2,7 @@
 
 ## Overview
 
-Add a local topic
+Add a topic to your local pipeline
 
 **Aliases:** `create`, `add`
 

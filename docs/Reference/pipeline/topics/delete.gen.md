@@ -2,7 +2,7 @@
 
 ## Overview
 
-Delete a local topic
+Delete a topic from your local pipeline
 
 **Aliases:** `delete`, `del`, `remove`, `rm`
 
