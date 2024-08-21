@@ -1,1 +1,0 @@
-{% include-markdown './logs.gen.md' %}

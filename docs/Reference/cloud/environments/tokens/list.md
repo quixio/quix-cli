@@ -1,1 +1,0 @@
-{% include-markdown './list.gen.md' %}
