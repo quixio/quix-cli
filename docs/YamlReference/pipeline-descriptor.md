@@ -1,4 +1,3 @@
-                    
 # Pipeline YAML descriptor (quix.yaml)
 
 The `quix.yaml` file serves as the Infrastructure as Code (IaC) descriptor for a Quix project. It defines the data pipeline, including the applications (deployments) and topics that compose the pipeline. This file allows you to configure and manage your data pipeline in a declarative manner, ensuring consistency across environments.
@@ -37,6 +36,27 @@ deployments:
         description: Name of the output topic to write into
         required: true
         value: csv-data
+  - name: data-visualizer
+    application: data-visualizer
+    version: latest
+    deploymentType: Service
+    resources:
+      cpu: 500
+      memory: 1000
+      replicas: 1
+    publicAccess:
+      enabled: true
+      urlPrefix: visualization
+    network:
+      ports:
+        - port: 80
+          targetPort: 8050
+    variables:
+      - name: input
+        inputType: InputTopic
+        description: This is the input topic to read data from
+        required: true
+        value: csv-data
 ```
 
 **Explanation:**
@@ -56,6 +76,15 @@ deployments:
 
 - **desiredStatus:** The state in which you want the application to be. Common statuses include `Running` and `Stopped`.
 
+- **publicAccess:** Configures the public accessibility of the deployment. If enabled, the service will be accessible via a public URL.
+  - **enabled:** A boolean value that determines if public access is enabled (`true` or `false`).
+  - **urlPrefix:** The URL prefix under which the service will be accessible.
+
+- **network:** Defines the network settings for the deployment, including the exposed ports.
+  - **ports:** A list of ports to expose.
+    - **port:** The external port number that will be exposed.
+    - **targetPort:** The internal port number the traffic will be directed to.
+
 - **variables:** Defines any configurable parameters for the deployment. These are typically inputs or outputs such as:
   - **name:** The name of the variable.
   - **inputType:** The type of input, usually `InputTopic`, `OutputTopic`, `Secret`, or `FreeText`.
@@ -71,12 +100,10 @@ The `topics` section describes the data streams that your applications will prod
 
 ```yaml
 topics:
-  - name: counted-names
-    persisted: false
   - name: csv-data
     persisted: false
     configuration:
-      partitions: 4
+      partitions: 1
       retentionInMinutes: 6540
       retentionInBytes: 182452224
       cleanupPolicy: Delete
