@@ -198,4 +198,6 @@ nav:
     - status: Reference/status.md
     - update: Reference/update.md
     - use: Reference/use.md
+- YamlReference:
+  - 'Pipeline YAML descriptor (quix.yaml)': 'YamlReference/pipeline-descriptor.md'
 ...
