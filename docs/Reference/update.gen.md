@@ -16,3 +16,7 @@ quix update [<version>] [options]
 
 - `<version>`
 
+**Options:**
+
+- `-p, --pre-release` : 
+
