@@ -200,4 +200,5 @@ nav:
     - use: Reference/use.md
 - YamlReference:
   - 'Pipeline YAML descriptor (quix.yaml)': 'YamlReference/pipeline-descriptor.md'
+  - 'Application YAML descriptor (app.yaml)': 'YamlReference/app-descriptor.md'
 ...
