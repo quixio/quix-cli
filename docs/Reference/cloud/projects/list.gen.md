@@ -2,7 +2,7 @@
 
 ## Overview
 
-Get all projects of the current organisation
+List all projects of the current organisation
 
 **Aliases:** `list`, `ls`
 

@@ -15,6 +15,6 @@ quix cloud projects [command] [options]
 **Commands:**
 
 - [get](get.md) : Get all projects of the current organisation
-- [list](list.md) : Get all projects of the current organisation
+- [list](list.md) : List all projects of the current organisation
 - [patch](patch.md) : Edit individual properties of a project
 

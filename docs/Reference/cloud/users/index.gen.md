@@ -4,7 +4,7 @@
 
 Manage the users of the organisation including audit, permissions and tokens
 
-**Aliases:** `users`, `user`
+**Aliases:** `users`, `user`, `usr`
 
 **Usage:**
 

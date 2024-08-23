@@ -4,7 +4,7 @@
 
 Update 'quix.yaml' with the new local applications and update the variables of the existing deployments
 
-**Aliases:** `update`
+**Aliases:** `update`, `upd`
 
 **Usage:**
 
@@ -17,6 +17,7 @@ quix pipeline update [options]
 - `--directory <directory>` : Base directory (defaults to current directory)
 - `--existing, --only-existing` : Update only existing deployments
 - `--new, --only-new` : Add only the applications that are not currently deployed
-- `--current, --only-current` : Update only the deployments of the current application folder. (Fails if not in an 'app.yaml' is not in the current directory)
-- `--reset` : Removes all deployments from the 'quix.yaml' file. This operation is performed before any updates or additions to ensure a clean state
+- `-a, --all` : Forces the update of all applications regardless of the current directory
+- `--new-variables, --only-new-variables` : Only add new variables to the deployments without updating rest of the variables
+- `--reset` : Removes all deployments and topics from the 'quix.yaml' file. This operation is performed before any updates or additions to ensure a clean state
 

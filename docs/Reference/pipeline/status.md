@@ -29,9 +29,9 @@ If all services in the pipeline are running, you will see output similar to the 
 
 ```
 Local Pipeline Status:           ✓ Running (4/4)
-  console                        ✓ Up 1 second
+  console                        ✓ Up 1 second    http://localhost:19092
+  kafka-broker                   ✓ Up 1 second    localhost:19092
   demo-data-source               ✓ Up 1 second
-  kafka-broker                   ✓ Up 1 second
   event-detection-transformation ✓ Up 1 second
 ```
 
@@ -41,10 +41,10 @@ If some services are not running, the output will indicate which services have e
 
 ```
 Local Pipeline Status:           ✗ Running (3/4)
-  console                        ✓ Up 1 second
-  demo-data-source               ✓ Up 1 second
-  kafka-broker                   ✓ Up 1 second
-  event-detection-transformation ✗ Exited (1) 1 second ago
+  console                        ✓ Up 1 second              http://localhost:19092
+  kafka-broker                   ✓ Up 1 second              localhost:19092
+  demo-data-source               ✓ Up 1 second 
+  event-detection-transformation ✗ Exited (0) 1 second ago
 ```
 
 #### No Services Running

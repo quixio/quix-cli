@@ -54,19 +54,21 @@ plugins:
 nav:
 - 'Overview': 'overview.md'
 - 'Quickstart': 'cli-quickstart.md'
-- 'Tutorials':
-  - 'Using the CLI with a template': 'cli-template.md'
-  - 'Using the CLI with GitHub Actions': 'cli-github-actions.md'
+- 'Local Development': 'cli-local-debug.md'
+- 'Local Secrets': 'cli-local-secrets.md'
+- 'Commands Summary': 'cli-commands-summary.md'
+- 'How-To guides':
+  - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
 - Reference:
   - Cloud Commands:
     - Reference/cloud/index.md
-    - cloud applications:
-      - Reference/cloud/applications/index.md
-      - cloud applications get: Reference/cloud/applications/get.md
-      - cloud applications list: Reference/cloud/applications/list.md
-      - cloud applications library:
-        - Reference/cloud/applications/library/index.md
-        - cloud applications library list: Reference/cloud/applications/library/list.md
+    - cloud apps:
+      - Reference/cloud/apps/index.md
+      - cloud apps get: Reference/cloud/apps/get.md
+      - cloud apps list: Reference/cloud/apps/list.md
+      - cloud apps library:
+        - Reference/cloud/apps/library/index.md
+        - cloud apps library list: Reference/cloud/apps/library/list.md
     - cloud deployments:
       - Reference/cloud/deployments/index.md
       - cloud deployments get: Reference/cloud/deployments/get.md
@@ -81,6 +83,10 @@ nav:
       - cloud environments list: Reference/cloud/environments/list.md
       - cloud environments use: Reference/cloud/environments/use.md
       - cloud environments sync: Reference/cloud/environments/sync.md
+      - cloud environments tokens:
+        - Reference/cloud/environments/tokens/index.md
+        - cloud environments tokens get: Reference/cloud/environments/tokens/get.md
+        - cloud environments tokens rotate: Reference/cloud/environments/tokens/rotate.md
     - cloud organisations:
       - Reference/cloud/organisations/index.md
       - cloud organisations get: Reference/cloud/organisations/get.md
@@ -113,27 +119,33 @@ nav:
       - cloud users current: Reference/cloud/users/current.md
       - cloud users list: Reference/cloud/users/list.md
   - Local Commands:
-    - applications:
-      - Reference/applications/index.md
-      - applications convert: Reference/applications/convert.md
-      - applications create: Reference/applications/create.md
-      - applications list: Reference/applications/list.md
-      - applications variables:
-        - Reference/applications/variables/index.md
-        - applications variables create: Reference/applications/variables/create.md
-        - applications variables delete: Reference/applications/variables/delete.md
-        - applications variables edit: Reference/applications/variables/edit.md
-        - applications variables export: Reference/applications/variables/export.md
-        - applications variables import: Reference/applications/variables/import.md
-        - applications variables list: Reference/applications/variables/list.md
-    - ide: Reference/ide.md
+    - apps:
+      - Reference/apps/index.md
+      - apps update: Reference/apps/update.md
+      - apps convert: Reference/apps/convert.md
+      - apps create: Reference/apps/create.md
+      - apps edit: Reference/apps/edit.md
+      - apps list: Reference/apps/list.md
+      - apps variables:
+        - Reference/apps/variables/index.md
+        - apps variables create: Reference/apps/variables/create.md
+        - apps variables delete: Reference/apps/variables/delete.md
+        - apps variables edit: Reference/apps/variables/edit.md
+        - apps variables export: Reference/apps/variables/export.md
+        - apps variables import: Reference/apps/variables/import.md
+        - apps variables list: Reference/apps/variables/list.md
+    - broker:
+      - Reference/broker/index.md
+      - broker down: Reference/broker/down.md
+      - broker up: Reference/broker/up.md
+      - broker topics:
+        - Reference/broker/topics/index.md
+        - broker topics list: Reference/broker/topics/list.md
+        - broker topics read: Reference/broker/topics/read.md
+        - broker topics update: Reference/broker/topics/update.md
     - init: Reference/init.md
     - pipeline:
       - Reference/pipeline/index.md
-      - pipeline broker:
-        - Reference/pipeline/broker/index.md
-        - pipeline broker down: Reference/pipeline/broker/down.md
-        - pipeline broker up: Reference/pipeline/broker/up.md
       - pipeline deployments:
         - Reference/pipeline/deployments/index.md
         - pipeline deployments create: Reference/pipeline/deployments/create.md
@@ -142,16 +154,28 @@ nav:
         - pipeline deployments get: Reference/pipeline/deployments/get.md
         - pipeline deployments list: Reference/pipeline/deployments/list.md
       - pipeline down: Reference/pipeline/down.md
+      - pipeline logs: Reference/pipeline/logs.md
+      - pipeline start: Reference/pipeline/start.md
       - pipeline status: Reference/pipeline/status.md
+      - pipeline stop: Reference/pipeline/stop.md
       - pipeline sync: Reference/pipeline/sync.md
       - pipeline up: Reference/pipeline/up.md
       - pipeline update: Reference/pipeline/update.md
       - pipeline view: Reference/pipeline/view.md
+      - pipeline topics:
+        - Reference/pipeline/topics/index.md
+        - pipeline topics create: Reference/pipeline/topics/create.md
+        - pipeline topics delete: Reference/pipeline/topics/delete.md
+        - pipeline topics edit: Reference/pipeline/topics/edit.md
+        - pipeline topics get: Reference/pipeline/topics/get.md
+        - pipeline topics list: Reference/pipeline/topics/list.md
+    - run: Reference/run.md
     - sdk:
       - Reference/sdk/index.md
       - sdk broker:
         - Reference/sdk/broker/index.md
         - sdk broker cloud: Reference/sdk/broker/cloud.md
+        - sdk broker current: Reference/sdk/broker/current.md
         - sdk broker local: Reference/sdk/broker/local.md
         - sdk broker set: Reference/sdk/broker/set.md
         - sdk broker update: Reference/sdk/broker/update.md
@@ -160,11 +184,6 @@ nav:
     - login: Reference/login.md
     - contexts:
       - Reference/contexts/index.md
-      - contexts broker:
-        - Reference/contexts/broker/index.md
-        - contexts broker cloud: Reference/contexts/broker/cloud.md
-        - contexts broker local: Reference/contexts/broker/local.md
-        - contexts broker set: Reference/contexts/broker/set.md
       - contexts create: Reference/contexts/create.md
       - contexts current: Reference/contexts/current.md
       - contexts list: Reference/contexts/list.md
