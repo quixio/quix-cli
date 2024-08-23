@@ -59,7 +59,7 @@ nav:
 - 'Commands Summary': 'cli-commands-summary.md'
 - 'How-To guides':
   - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
-- Reference:
+- CLI Reference:
   - Cloud Commands:
     - Reference/cloud/index.md
     - cloud apps:
