@@ -2,7 +2,7 @@
 
 ## Overview
 
-Set the SDK broker configuration to point to a 'Local' broker (default: pipeline broker)
+Configure the SDK to use a local broker (default: localhost:19092)
 
 **Aliases:** `local`, `enable`
 

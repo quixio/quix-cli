@@ -60,145 +60,149 @@ nav:
 - 'How-To guides':
   - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
 - Yaml Reference:
-  - 'Pipeline YAML descriptor (quix.yaml)': 'Yaml Reference/pipeline-descriptor.md'
-  - 'Application YAML descriptor (app.yaml)': 'Yaml Reference/app-descriptor.md'
+  - 'Pipeline YAML descriptor (quix.yaml)': 'yaml-reference/pipeline-descriptor.md'
+  - 'Application YAML descriptor (app.yaml)': 'yaml-reference/app-descriptor.md'
 - CLI Reference:
   - Cloud Commands:
-    - CLI Reference/cloud/index.md
+    - cli-reference/cloud/index.md
     - cloud apps:
-      - CLI Reference/cloud/apps/index.md
-      - cloud apps get: CLI Reference/cloud/apps/get.md
-      - cloud apps list: CLI Reference/cloud/apps/list.md
+      - cli-reference/cloud/apps/index.md
+      - cloud apps get: cli-reference/cloud/apps/get.md
+      - cloud apps list: cli-reference/cloud/apps/list.md
       - cloud apps library:
-        - CLI Reference/cloud/apps/library/index.md
-        - cloud apps library list: CLI Reference/cloud/apps/library/list.md
+        - cli-reference/cloud/apps/library/index.md
+        - cloud apps library list: cli-reference/cloud/apps/library/list.md
     - cloud deployments:
-      - CLI Reference/cloud/deployments/index.md
-      - cloud deployments get: CLI Reference/cloud/deployments/get.md
-      - cloud deployments list: CLI Reference/cloud/deployments/list.md
-      - cloud deployments logs: CLI Reference/cloud/deployments/logs.md
-      - cloud deployments metrics: CLI Reference/cloud/deployments/metrics.md
-      - cloud deployments start: CLI Reference/cloud/deployments/start.md
-      - cloud deployments stop: CLI Reference/cloud/deployments/stop.md
+      - cli-reference/cloud/deployments/index.md
+      - cloud deployments get: cli-reference/cloud/deployments/get.md
+      - cloud deployments list: cli-reference/cloud/deployments/list.md
+      - cloud deployments logs: cli-reference/cloud/deployments/logs.md
+      - cloud deployments metrics: cli-reference/cloud/deployments/metrics.md
+      - cloud deployments start: cli-reference/cloud/deployments/start.md
+      - cloud deployments stop: cli-reference/cloud/deployments/stop.md
     - cloud environments:
-      - CLI Reference/cloud/environments/index.md
-      - cloud environments get: CLI Reference/cloud/environments/get.md
-      - cloud environments list: CLI Reference/cloud/environments/list.md
-      - cloud environments use: CLI Reference/cloud/environments/use.md
-      - cloud environments sync: CLI Reference/cloud/environments/sync.md
+      - cli-reference/cloud/environments/index.md
+      - cloud environments get: cli-reference/cloud/environments/get.md
+      - cloud environments list: cli-reference/cloud/environments/list.md
+      - cloud environments use: cli-reference/cloud/environments/use.md
+      - cloud environments sync: cli-reference/cloud/environments/sync.md
       - cloud environments tokens:
-        - CLI Reference/cloud/environments/tokens/index.md
-        - cloud environments tokens get: CLI Reference/cloud/environments/tokens/get.md
-        - cloud environments tokens rotate: CLI Reference/cloud/environments/tokens/rotate.md
+        - cli-reference/cloud/environments/tokens/index.md
+        - cloud environments tokens get: cli-reference/cloud/environments/tokens/get.md
+        - cloud environments tokens rotate: cli-reference/cloud/environments/tokens/rotate.md
     - cloud organisations:
-      - CLI Reference/cloud/organisations/index.md
-      - cloud organisations get: CLI Reference/cloud/organisations/get.md
+      - cli-reference/cloud/organisations/index.md
+      - cloud organisations get: cli-reference/cloud/organisations/get.md
     - cloud projects:
-      - CLI Reference/cloud/projects/index.md
-      - cloud projects patch: CLI Reference/cloud/projects/patch.md
-      - cloud projects get: CLI Reference/cloud/projects/get.md
-      - cloud projects list: CLI Reference/cloud/projects/list.md
+      - cli-reference/cloud/projects/index.md
+      - cloud projects patch: cli-reference/cloud/projects/patch.md
+      - cloud projects get: cli-reference/cloud/projects/get.md
+      - cloud projects list: cli-reference/cloud/projects/list.md
     - cloud topics:
-      - CLI Reference/cloud/topics/index.md
-      - cloud topics get: CLI Reference/cloud/topics/get.md
-      - cloud topics list: CLI Reference/cloud/topics/list.md
+      - cli-reference/cloud/topics/index.md
+      - cloud topics get: cli-reference/cloud/topics/get.md
+      - cloud topics list: cli-reference/cloud/topics/list.md
     - cloud users:
-      - CLI Reference/cloud/users/index.md
-      - cloud users audit: CLI Reference/cloud/users/audit.md
+      - cli-reference/cloud/users/index.md
+      - cloud users audit: cli-reference/cloud/users/audit.md
       - cloud users permissions:
-        - CLI Reference/cloud/users/permissions/index.md
-        - cloud users permissions copy: CLI Reference/cloud/users/permissions/copy.md
-        - cloud users permissions delete: CLI Reference/cloud/users/permissions/delete.md
-        - cloud users permissions edit: CLI Reference/cloud/users/permissions/edit.md
-        - cloud users permissions get: CLI Reference/cloud/users/permissions/get.md
-        - cloud users permissions list: CLI Reference/cloud/users/permissions/list.md
-        - cloud users permissions set: CLI Reference/cloud/users/permissions/set.md
+        - cli-reference/cloud/users/permissions/index.md
+        - cloud users permissions copy: cli-reference/cloud/users/permissions/copy.md
+        - cloud users permissions delete: cli-reference/cloud/users/permissions/delete.md
+        - cloud users permissions edit: cli-reference/cloud/users/permissions/edit.md
+        - cloud users permissions get: cli-reference/cloud/users/permissions/get.md
+        - cloud users permissions list: cli-reference/cloud/users/permissions/list.md
+        - cloud users permissions set: cli-reference/cloud/users/permissions/set.md
       - cloud users tokens:
-        - CLI Reference/cloud/users/tokens/index.md
-        - cloud users tokens create: CLI Reference/cloud/users/tokens/create.md
-        - cloud users tokens edit: CLI Reference/cloud/users/tokens/edit.md
-        - cloud users tokens list: CLI Reference/cloud/users/tokens/list.md
-        - cloud users tokens revoke: CLI Reference/cloud/users/tokens/revoke.md
-      - cloud users current: CLI Reference/cloud/users/current.md
-      - cloud users list: CLI Reference/cloud/users/list.md
+        - cli-reference/cloud/users/tokens/index.md
+        - cloud users tokens create: cli-reference/cloud/users/tokens/create.md
+        - cloud users tokens edit: cli-reference/cloud/users/tokens/edit.md
+        - cloud users tokens list: cli-reference/cloud/users/tokens/list.md
+        - cloud users tokens revoke: cli-reference/cloud/users/tokens/revoke.md
+      - cloud users current: cli-reference/cloud/users/current.md
+      - cloud users list: cli-reference/cloud/users/list.md
   - Local Commands:
     - apps:
-      - CLI Reference/apps/index.md
-      - apps update: CLI Reference/apps/update.md
-      - apps convert: CLI Reference/apps/convert.md
-      - apps create: CLI Reference/apps/create.md
-      - apps edit: CLI Reference/apps/edit.md
-      - apps list: CLI Reference/apps/list.md
+      - cli-reference/apps/index.md
+      - apps library: cli-reference/apps/library.md
+      - apps update: cli-reference/apps/update.md
+      - apps convert: cli-reference/apps/convert.md
+      - apps create: cli-reference/apps/create.md
+      - apps delete: cli-reference/apps/delete.md
+      - apps edit: cli-reference/apps/edit.md
+      - apps list: cli-reference/apps/list.md
       - apps variables:
-        - CLI Reference/apps/variables/index.md
-        - apps variables create: CLI Reference/apps/variables/create.md
-        - apps variables delete: CLI Reference/apps/variables/delete.md
-        - apps variables edit: CLI Reference/apps/variables/edit.md
-        - apps variables export: CLI Reference/apps/variables/export.md
-        - apps variables import: CLI Reference/apps/variables/import.md
-        - apps variables list: CLI Reference/apps/variables/list.md
+        - cli-reference/apps/variables/index.md
+        - apps variables create: cli-reference/apps/variables/create.md
+        - apps variables delete: cli-reference/apps/variables/delete.md
+        - apps variables edit: cli-reference/apps/variables/edit.md
+        - apps variables export: cli-reference/apps/variables/export.md
+        - apps variables import: cli-reference/apps/variables/import.md
+        - apps variables list: cli-reference/apps/variables/list.md
     - broker:
-      - CLI Reference/broker/index.md
-      - broker down: CLI Reference/broker/down.md
-      - broker up: CLI Reference/broker/up.md
+      - cli-reference/broker/index.md
+      - broker down: cli-reference/broker/down.md
+      - broker up: cli-reference/broker/up.md
       - broker topics:
-        - CLI Reference/broker/topics/index.md
-        - broker topics list: CLI Reference/broker/topics/list.md
-        - broker topics read: CLI Reference/broker/topics/read.md
-        - broker topics update: CLI Reference/broker/topics/update.md
-    - init: CLI Reference/init.md
+        - cli-reference/broker/topics/index.md
+        - broker topics list: cli-reference/broker/topics/list.md
+        - broker topics read: cli-reference/broker/topics/read.md
+        - broker topics update: cli-reference/broker/topics/update.md
+        - broker topics write: cli-reference/broker/topics/write.md
+    - init: cli-reference/init.md
     - pipeline:
-      - CLI Reference/pipeline/index.md
+      - cli-reference/pipeline/index.md
       - pipeline deployments:
-        - CLI Reference/pipeline/deployments/index.md
-        - pipeline deployments create: CLI Reference/pipeline/deployments/create.md
-        - pipeline deployments delete: CLI Reference/pipeline/deployments/delete.md
-        - pipeline deployments edit: CLI Reference/pipeline/deployments/edit.md
-        - pipeline deployments get: CLI Reference/pipeline/deployments/get.md
-        - pipeline deployments list: CLI Reference/pipeline/deployments/list.md
-      - pipeline down: CLI Reference/pipeline/down.md
-      - pipeline logs: CLI Reference/pipeline/logs.md
-      - pipeline start: CLI Reference/pipeline/start.md
-      - pipeline status: CLI Reference/pipeline/status.md
-      - pipeline stop: CLI Reference/pipeline/stop.md
-      - pipeline sync: CLI Reference/pipeline/sync.md
-      - pipeline up: CLI Reference/pipeline/up.md
-      - pipeline update: CLI Reference/pipeline/update.md
-      - pipeline view: CLI Reference/pipeline/view.md
+        - cli-reference/pipeline/deployments/index.md
+        - pipeline deployments create: cli-reference/pipeline/deployments/create.md
+        - pipeline deployments delete: cli-reference/pipeline/deployments/delete.md
+        - pipeline deployments edit: cli-reference/pipeline/deployments/edit.md
+        - pipeline deployments get: cli-reference/pipeline/deployments/get.md
+        - pipeline deployments list: cli-reference/pipeline/deployments/list.md
+      - pipeline down: cli-reference/pipeline/down.md
+      - pipeline logs: cli-reference/pipeline/logs.md
+      - pipeline start: cli-reference/pipeline/start.md
+      - pipeline status: cli-reference/pipeline/status.md
+      - pipeline stop: cli-reference/pipeline/stop.md
+      - pipeline sync: cli-reference/pipeline/sync.md
+      - pipeline up: cli-reference/pipeline/up.md
+      - pipeline update: cli-reference/pipeline/update.md
+      - pipeline view: cli-reference/pipeline/view.md
       - pipeline topics:
-        - CLI Reference/pipeline/topics/index.md
-        - pipeline topics create: CLI Reference/pipeline/topics/create.md
-        - pipeline topics delete: CLI Reference/pipeline/topics/delete.md
-        - pipeline topics edit: CLI Reference/pipeline/topics/edit.md
-        - pipeline topics get: CLI Reference/pipeline/topics/get.md
-        - pipeline topics list: CLI Reference/pipeline/topics/list.md
-    - run: CLI Reference/run.md
+        - cli-reference/pipeline/topics/index.md
+        - pipeline topics create: cli-reference/pipeline/topics/create.md
+        - pipeline topics delete: cli-reference/pipeline/topics/delete.md
+        - pipeline topics edit: cli-reference/pipeline/topics/edit.md
+        - pipeline topics get: cli-reference/pipeline/topics/get.md
+        - pipeline topics list: cli-reference/pipeline/topics/list.md
+    - run: cli-reference/run.md
     - sdk:
-      - CLI Reference/sdk/index.md
+      - cli-reference/sdk/index.md
       - sdk broker:
-        - CLI Reference/sdk/broker/index.md
-        - sdk broker cloud: CLI Reference/sdk/broker/cloud.md
-        - sdk broker current: CLI Reference/sdk/broker/current.md
-        - sdk broker local: CLI Reference/sdk/broker/local.md
-        - sdk broker set: CLI Reference/sdk/broker/set.md
-        - sdk broker update: CLI Reference/sdk/broker/update.md
+        - cli-reference/sdk/broker/index.md
+        - sdk broker cloud: cli-reference/sdk/broker/cloud.md
+        - sdk broker current: cli-reference/sdk/broker/current.md
+        - sdk broker local: cli-reference/sdk/broker/local.md
+        - sdk broker pipeline: cli-reference/sdk/broker/pipeline.md
+        - sdk broker set: cli-reference/sdk/broker/set.md
+        - sdk broker update: cli-reference/sdk/broker/update.md
   - Other Commands:
-    - logout: CLI Reference/logout.md
-    - login: CLI Reference/login.md
+    - logout: cli-reference/logout.md
+    - login: cli-reference/login.md
     - contexts:
-      - CLI Reference/contexts/index.md
-      - contexts create: CLI Reference/contexts/create.md
-      - contexts current: CLI Reference/contexts/current.md
-      - contexts list: CLI Reference/contexts/list.md
-      - contexts delete: CLI Reference/contexts/delete.md
-      - contexts reset: CLI Reference/contexts/reset.md
-      - contexts use: CLI Reference/contexts/use.md
+      - cli-reference/contexts/index.md
+      - contexts create: cli-reference/contexts/create.md
+      - contexts current: cli-reference/contexts/current.md
+      - contexts list: cli-reference/contexts/list.md
+      - contexts delete: cli-reference/contexts/delete.md
+      - contexts reset: cli-reference/contexts/reset.md
+      - contexts use: cli-reference/contexts/use.md
       - contexts environments:
-        - CLI Reference/contexts/environments/index.md
-        - contexts environments clear: CLI Reference/contexts/environments/clear.md
-        - contexts environments get: CLI Reference/contexts/environments/get.md
-        - contexts environments use: CLI Reference/contexts/environments/use.md
-    - status: CLI Reference/status.md
-    - update: CLI Reference/update.md
-    - use: CLI Reference/use.md
+        - cli-reference/contexts/environments/index.md
+        - contexts environments clear: cli-reference/contexts/environments/clear.md
+        - contexts environments get: cli-reference/contexts/environments/get.md
+        - contexts environments use: cli-reference/contexts/environments/use.md
+    - status: cli-reference/status.md
+    - update: cli-reference/update.md
+    - use: cli-reference/use.md
 ...
