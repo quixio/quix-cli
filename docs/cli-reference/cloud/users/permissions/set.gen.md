@@ -2,7 +2,7 @@
 
 ## Overview
 
-Sets the whole permissions of a user, replacing the current ones. Available roles: [Admin, Manager, Editor, Viewer]
+Sets the whole permissions of a user, replacing the current ones. Available roles: [Admin, Manager, Editor, Viewer, None]
 
 **Aliases:** `set`
 

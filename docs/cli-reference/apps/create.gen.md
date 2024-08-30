@@ -9,12 +9,12 @@ Creates a new application locally based on a code sample of the library
 **Usage:**
 
 ```
-quix apps create [<library-item>] [options]
+quix apps create [<library-item-id>] [options]
 ```
 
 **Arguments:**
 
-- `<library-item>` : If omitted, an interactive list is displayed. Use this argument to manually specify the library item you want to use. Use `quix cloud applications library list` to see all available items.
+- `<library-item-id>` : If omitted, an interactive list is displayed. Use this argument to manually specify the library item you want to use. Use 'quix app library' to see all available items.
 
 **Options:**
 
