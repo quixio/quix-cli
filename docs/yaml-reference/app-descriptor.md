@@ -1,4 +1,3 @@
-
 # Application YAML Descriptor (app.yaml)
 
 The `app.yaml` file is used to define the configuration of a Quix application. This file serves as a contract for the application, outlining its variables and settings. It is similar to deployment configurations, but specific to the application itself.
@@ -11,7 +10,7 @@ The `app.yaml` file is used to define the configuration of a Quix application. T
 name: Slack Alerts
 language: python
 ```
-a
+
 **Explanation:**
 
 - **name:** The name of the application. This should be a clear and descriptive identifier that reflects the application's purpose.
@@ -53,10 +52,14 @@ variables:
 - **name:** The name of the variable, which identifies it within the application.
   
 - **inputType:** Defines the type of input expected. This can be:
-  - `InputTopic`: Refers to a topic that the application will consume data from.
-  - `OutputTopic`: Refers to a topic where the application will produce data.
-  - `Secret`: Refers to a sensitive piece of information, such as API keys or webhook URLs, that needs to be securely handled.
-  - `FreeText`: A flexible text input that can be used for various settings or parameters.
+  
+    - `InputTopic`: Refers to a topic that the application will consume data from.
+  
+    - `OutputTopic`: Refers to a topic where the application will produce data.
+
+    - `Secret`: Refers to a sensitive piece of information, such as API keys or webhook URLs, that needs to be securely handled.
+     
+    - `FreeText`: A flexible text input that can be used for various settings or parameters.
 
 - **description:** A brief explanation of the variable's purpose and how it should be used.
 
@@ -91,7 +94,9 @@ Changes to the `app.yaml` file should be made thoughtfully, as they can affect a
 ## Best Practices
 
 - **Consistent Naming:** Ensure that variable names are clear and descriptive to avoid confusion during deployment.
+- 
 - **Security:** Handle `Secret` type variables with care to ensure sensitive information is not exposed.
+- 
 - **Documentation:** Keep the `description` field updated to accurately reflect the purpose and usage of each variable.
 
 By managing your `app.yaml` file effectively, you can ensure that your application is deployed consistently and operates reliably in various environments, while retaining the flexibility to adapt or remove elements as needed.
