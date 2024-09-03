@@ -106,18 +106,20 @@ After setting up your context and logging in, you're ready to explore the capabi
 
 #### Quickstart and Essentials
 
-- **[Quickstart Guide](https://quix.io/docs/quix-cli/cli-quickstart.html):** Step-by-step instructions to get up and running quickly with the Quix CLI.
+- **[Quickstart Guide](https://quix.io/docs/quix-cli/cli-quickstart.html):** Follow these step-by-step instructions to quickly set up and start using the Quix CLI.
+
+- **[Commands Summary](https://quix.io/docs/quix-cli/cli-commands-summary.html):** Use this quick reference guide to find and execute the most common Quix CLI commands for developing and managing your data pipelines. This guide is essential for efficiently navigating the CLI during your initial setup and beyond.
 
 #### Local Development
 
-- **[Local Development](https://quix.io/docs/quix-cli/cli-local-debug.html):** Learn how to create, run, and debug streaming pipelines locally using Quix CLI.
-- 
-- **[Local Secrets Management](https://quix.io/docs/quix-cli/cli-local-secrets.html):** Securely manage secrets during local development for safe and effective pipeline management.
+- **[Local Development](https://quix.io/docs/quix-cli/cli-local-debug.html):** Discover how to create, run, and debug streaming pipelines locally with the Quix CLI.
+  
+- **[Local Secrets Management](https://quix.io/docs/quix-cli/cli-local-secrets.html):** Learn to securely manage secrets during local development to ensure safe and effective pipeline management.
 
 #### YAML Descriptors
 
-- **[Pipeline YAML Descriptor](https://quix.io/docs/quix-cli/yaml-reference/pipeline-descriptor.html):** Detailed guidance on defining pipelines using the `quix.yaml` file.
-- 
+- **[Pipeline YAML Descriptor](https://quix.io/docs/quix-cli/yaml-reference/pipeline-descriptor.html):** Get detailed guidance on defining pipelines using the `quix.yaml` file.
+  
 - **[Application YAML Descriptor](https://quix.io/docs/quix-cli/yaml-reference/app-descriptor.html):** Instructions for configuring applications with the `app.yaml` descriptor.
 
 ### Using dedicated Quix clusters
