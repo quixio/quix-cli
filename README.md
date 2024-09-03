@@ -1,12 +1,8 @@
 # Quix Command Line Interface (CLI)
 
-> :warning: **WARNING: Internal Use Only & Work In Progress** :warning:
->
-> This repository is intended for internal use only and is currently a work in progress. Features and documentation may be incomplete or subject to change. Please ensure you have the necessary permissions and understand the implications of using unreleased or unstable features.
-
 The **Quix CLI** is a free tool that enables you to create, debug, and run streaming pipelines locally using Docker and Quix Streams. 
 
-It also serves as a companion app for seamlessly managing and interacting with the features of your [Quix Cloud](https://quix.io/docs/quix-cloud/overview.md){target=_blank} account. While Quix Cloud offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
+It also serves as a companion app for seamlessly managing and interacting with the features of your [Quix Cloud](https://quix.io/docs/quix-cloud/overview.md) account. While Quix Cloud offers a robust Frontend UI for a user-friendly experience, the CLI empowers you with efficiency and flexibility, allowing you to streamline your workflow and take control from the command line.
 
 Quix CLI offers three groups of functionality:
 
@@ -27,88 +23,113 @@ For a quick tutorial of how to use the basic functionalities of Quix CLI, visit 
 
 For more information and detailed documentation, visit [quix.io](https://www.quix.io/docs).
 
+
 ## Installation of Quix CLI
 
-To install the Quix CLI, users have multiple methods depending on their operating system. Here's an expanded installation section including the main ways to install Quix CLI on Linux, macOS, and Windows.
+To install the Quix CLI, users have multiple methods depending on their operating system.
 
-### For macOS:
+### Script Installation
 
-- **Install latest version:**
+Here's an expanded installation section including the main ways to install Quix CLI on Linux, macOS, and Windows.
+
+#### For macOS:
+
+- **Install the latest version:**
 
   ```bash
   curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
   ```
   
-- **Install with explicit version:**
+- **Install a specific version:**
 
   ```bash
   curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash -s -- -v={version}
   ```
 
-### For Linux:
+#### For Linux:
 
-- **Install latest version:**
+- **Install the latest version:**
 
     ```bash
     curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
     ```
     
-- **Install with explicit version:**
+- **Install a specific version:**
 
     ```bash
     curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash -s -- -v={version}
     ```
 
-### For Windows (PowerShell):
+#### For Windows (PowerShell):
 
-- **Install latest version:**
+- **Install the latest version:**
 
   ```powershell
   iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb | iex
   ```
   
-- **Install with explicit version:**
+- **Install a specific version:**
 
   ```powershell
   $quixCliInstall = (iwr https://github.com/quixio/quix-cli/raw/main/install.ps1 -useb).Content; $version="{version}"; iex "$quixCliInstall"
   ```
 
-#### Notes
-- **Version Specification:** Replace `{version}` with the actual version number you intend to install (e.g., `1.2.3`). Omitting the `{version}` parameter will automatically default to installing the latest available version of Quix CLI. You have the option to install the latest version or specify a particular version according to your needs. 
-To view and choose from all available versions, visit the [releases section](https://github.com/quixio/quix-cli/releases).
-- **PATH Verification:** After installation, ensure that the directory where Quix CLI is installed is included in your system's PATH.
+> [!NOTE]
+> For version specification, replace `{version}` with the actual version number you intend to install (e.g., `1.2.3`). Omitting the `{version}` parameter will automatically install the latest available version of Quix CLI. Ensure that the directory where Quix CLI is installed is included in your system's PATH.
 
-### Installation using release binaries
+### Installation using Release Binaries
 
-1. Go to the [release page](https://github.com/quixio/quix-cli/releases) and dowload the executable matching your OS/architecture.
+1. Go to the [latest release page](https://github.com/quixio/quix-cli/releases/latest) and download the executable matching your OS/architecture.
 2. Copy the executable to a location of your choice.
 3. Add the location to your system's PATH.
 
+
 ## Usage
 
-in order to get a list of available commands run: 
+To get a complete list of available commands, run:  
 ```bash
 quix --help
 ```
 
+For an overview of all CLI commands, refer to the [Commands Summary](https://quix.io/docs/cli-commands-summary.md) in the documentation.
+
 ### Login
 
-You have 2 ways of logging in:
+You have two ways to log in:
 
-1. Interactive login
-```bash
-quix login
-```
-This will open the browser in order to complete the login.
+1. **Interactive Login**
 
-2. PAT Token
-```bash
-quix login <patToken>
-```
+   Run the following command to open your browser and complete the login:
+
+   ```bash
+   quix login
+   ```
+
+2. **Login with PAT (Personal Access Token)**
+
+   Use your PAT token for login by running:
+
+   ```bash
+   quix login <patToken>
+   ```
 
 ### Get Started
 
-After setting up your context and logging in you will be able to access your Quix organisation. For more information visit [Quix Docs](https://quix.io/docs/quix-cli/overview.html).
+After setting up your context and logging in, you're ready to explore the capabilities of your Quix organization. Begin by visiting the [Quix CLI Documentation](https://quix.io/docs/quix-cli/overview.html) for a complete overview of all features, commands, and essential guides. To help you get started with the Quix CLI, we recommend the following resources:
+
+#### Quickstart and Essentials
+
+- **[Quickstart Guide](https://quix.io/docs/quix-cli/cli-quickstart.html):** Get up and running quickly with step-by-step instructions on setting up and using the Quix CLI.
+
+#### Local Development
+
+- **[Local Development](https://quix.io/docs/quix-cli/cli-local-debug.html):** Learn how to create, run, and debug streaming pipelines locally using Quix CLI.
+- **[Local Secrets Management](https://quix.io/docs/quix-cli/cli-local-secrets.html):** Securely manage secrets during local development to ensure safe and effective pipeline management.
+
+#### YAML Descriptors
+
+- **[Pipeline YAML Descriptor](https://quix.io/docs/quix-cli/yaml-reference/pipeline-descriptor.html):** Detailed guidance on defining pipelines using the `quix.yaml` file.
+- **[Application YAML Descriptor](https://quix.io/docs/quix-cli/yaml-reference/app-descriptor.html):** Instructions on configuring applications with the `app.yaml` descriptor.
 
 ### Using dedicated Quix clusters
 
