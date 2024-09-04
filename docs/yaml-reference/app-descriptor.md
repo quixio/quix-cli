@@ -94,9 +94,9 @@ Changes to the `app.yaml` file should be made thoughtfully, as they can affect a
 ## Best Practices
 
 - **Consistent Naming:** Ensure that variable names are clear and descriptive to avoid confusion during deployment.
-- 
+
 - **Security:** Handle `Secret` type variables with care to ensure sensitive information is not exposed.
-- 
+
 - **Documentation:** Keep the `description` field updated to accurately reflect the purpose and usage of each variable.
 
 By managing your `app.yaml` file effectively, you can ensure that your application is deployed consistently and operates reliably in various environments, while retaining the flexibility to adapt or remove elements as needed.
