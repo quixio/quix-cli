@@ -22,12 +22,6 @@ Using the **cloud commands**, you can manage your Quix Cloud account from the co
 
 With the **utility commands**, you can perform tasks such as checking your status, updating the CLI, changing the CLI configuration, using interactive help, and managing contexts (the endpoint or environment the CLI is connected to).
 
-## Development status
-
-!!! warning "Quix CLI is in development"
-
-    Quix CLI is currently Beta, and is under development. This documentation may not be completely up to date, as the CLI is updated frequently, with new commands added, some commands removed, and changes to command syntax. Please use the Quix CLI built-in help for the very latest information.
-
 ## GitHub repository
 
 View additional information about the CLI in the [GitHub repository](https://github.com/quixio/quix-cli){target=_blank}.

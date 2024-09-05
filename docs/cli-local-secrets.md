@@ -47,7 +47,7 @@ Adding the `api_secret_token` under the "Secrets" section ensures it is handled 
 To integrate the new secret into your pipeline, run the following command:
 
 ```bash
-$ quix pipeline update
+quix pipeline update
 ```
 
 This command updates your pipeline configuration, incorporating the secret into the `quix.yaml` file and generating or updating the `.secrets` file:
