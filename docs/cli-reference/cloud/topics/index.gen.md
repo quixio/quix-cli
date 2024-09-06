@@ -14,6 +14,6 @@ quix cloud topics [command] [options]
 
 **Commands:**
 
-- [get](get.md) : Get information of a topic for the specified environment
-- [list](list.md) : Get all topics information for the specified environment
+- [get](get.md): Get information of a topic for the specified environment
+- [list](list.md): Get all topics information for the specified environment
 

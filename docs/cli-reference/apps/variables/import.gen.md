@@ -14,7 +14,7 @@ quix apps variables import [options]
 
 **Options:**
 
-- `--env-file-name <env-file-name>` : Set the name of the environment file [default: .env]
-- `--directory <directory>` : Base directory (defaults to current directory)
-- `--reset` : Removes all variables from the app.yaml file and adds them from the .env file [default: False]
+- `--env-file-name <env-file-name>`: Set the name of the environment file [default: .env]
+- `--directory <directory>`: Base directory (defaults to current directory)
+- `--reset`: Removes all variables from the app.yaml file and adds them from the .env file [default: False]
 

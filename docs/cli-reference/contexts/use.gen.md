@@ -14,5 +14,5 @@ quix contexts use [<name>] [options]
 
 **Arguments:**
 
-- `<name>`
+- `<name>`: The name of the context
 

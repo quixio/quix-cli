@@ -14,5 +14,5 @@ quix cloud organisations [command] [options]
 
 **Commands:**
 
-- [get](get.md) : Gets the organisation details the currently authenticated user belongs to
+- [get](get.md): Gets the organisation details the currently authenticated user belongs to
 

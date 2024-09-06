@@ -14,5 +14,5 @@ quix use [<workspace-id>] [options]
 
 **Arguments:**
 
-- `<workspace-id>` : The ID of the environment to set as default
+- `<workspace-id>`: The ID of the environment to set as default
 

@@ -14,6 +14,6 @@ quix broker down [options]
 
 **Options:**
 
-- `--directory <directory>` : If specified, it will use that directory instead of the current one
-- `--force` : Bypass all safety checks
+- `--directory <directory>`: If specified, it will use that directory instead of the current one
+- `--force`: Bypass all safety checks
 

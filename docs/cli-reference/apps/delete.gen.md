@@ -14,5 +14,5 @@ quix apps delete [options]
 
 **Options:**
 
-- `-d, --directory <directory>` : Base directory (defaults to current directory)
+- `-d, --directory <directory>`: Base directory (defaults to current directory)
 

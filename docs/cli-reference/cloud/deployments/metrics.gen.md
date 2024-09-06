@@ -14,5 +14,5 @@ quix cloud deployments metrics [<deployment-id>] [options]
 
 **Arguments:**
 
-- `<deployment-id>` : deployment-id
+- `<deployment-id>`: deployment-id
 

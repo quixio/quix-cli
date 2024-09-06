@@ -14,9 +14,9 @@ quix cloud users permissions edit [<user-id>] [options]
 
 **Arguments:**
 
-- `<user-id>` : id of the user
+- `<user-id>`: id of the user
 
 **Options:**
 
-- `-p, --permission-assignments <permission-assignments>` : Array of permission assignments in the format "[{Scope, Role}, {Scope, Role}, ...]"
+- `-p, --permission-assignments <permission-assignments>`: Array of permission assignments in the format "[{Scope, Role}, {Scope, Role}, ...]"
 

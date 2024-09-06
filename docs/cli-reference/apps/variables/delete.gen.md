@@ -14,9 +14,9 @@ quix apps variables delete [<name>] [options]
 
 **Arguments:**
 
-- `<name>` : Variable name
+- `<name>`: Variable name
 
 **Options:**
 
-- `--directory <directory>` : Base directory (defaults to current directory)
+- `--directory <directory>`: Base directory (defaults to current directory)
 
