@@ -75,3 +75,25 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 | [Update the `.env` variables from the pipeline and run](./cli-reference/run.md) | `quix run --update`    |
 | [Run and stop deployed version of the application](./cli-reference/run.md)      | `quix run --stop`      |
 | [Run and intercept deployed version of the application](./cli-reference/run.md) | `quix run --intercept` |
+
+## Common Options
+
+Quix CLI offers several common options that can be used across all commands:
+
+| Option                       | Description                                                    |
+| ---------------------------- | -------------------------------------------------------------- |
+| `-v, --verbose, --verbosity` | Displays detailed, verbose output, useful for troubleshooting. |
+| `-h, -?, --help`             | Shows help and usage information for the current command.      |
+
+### Help Output Overview
+
+When using the `--help` option with any command, you’ll see the following structure:
+
+- **Description**: A short explanation of what the command does.
+- **Aliases**: Lists any alternative names or shortcuts for the command.
+- **Usage**: The command syntax, showing how to apply arguments and options.
+- **Commands** (optional): If the command has subcommands, these will be listed here.
+- **Options**: Displays all available flags and parameters that modify the command’s behavior.
+- **Documentation Link**: A link to detailed documentation for further guidance.
+
+This layout provides a quick, at-a-glance reference to help you efficiently run and customize the command.

@@ -18,5 +18,5 @@ quix update [<version>] [options]
 
 **Options:**
 
-- `-p, --pre-release` : 
+- `-p, --pre-release` : Installs the latest pre-release version of the Quix CLI
 
