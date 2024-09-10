@@ -14,9 +14,9 @@ quix cloud users tokens revoke <token-id> [options]
 
 **Arguments:**
 
-- `<token-id>` : The id of the token you want to revoke
+- `<token-id>`: The id of the token you want to revoke
 
 **Options:**
 
-- `-o, --output <json|table>` : Output type of the retrieved data
+- `-o, --output <json|table>`: Output type of the retrieved data
 

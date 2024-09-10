@@ -14,9 +14,9 @@ quix cloud topics list [<workspace-id>] [options]
 
 **Arguments:**
 
-- `<workspace-id>`
+- `<workspace-id>`: The ID of the environment
 
 **Options:**
 
-- `-o, --output <json|table>` : Output type of the retrieved data
+- `-o, --output <json|table>`: Output type of the retrieved data
 

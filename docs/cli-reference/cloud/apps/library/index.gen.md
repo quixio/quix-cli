@@ -14,5 +14,5 @@ quix cloud apps library [command] [options]
 
 **Commands:**
 
-- [list](list.md) : Get all library items
+- [list](list.md): Get all library items
 

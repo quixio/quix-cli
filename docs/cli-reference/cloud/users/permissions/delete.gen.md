@@ -14,9 +14,9 @@ quix cloud users permissions delete [<user-id>] [options]
 
 **Arguments:**
 
-- `<user-id>` : ID of the user
+- `<user-id>`: ID of the user
 
 **Options:**
 
-- `--scope <scope> (REQUIRED)` : The scope of this permission
+- `--scope <scope> (REQUIRED)`: The scope of this permission
 

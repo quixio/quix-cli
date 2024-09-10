@@ -14,9 +14,9 @@ quix update [<version>] [options]
 
 **Arguments:**
 
-- `<version>`
+- `<version>`: The version to update Quix CLI to
 
 **Options:**
 
-- `-p, --pre-release` : 
+- `-p, --pre-release`: Use the latest pre-release version of the Quix CLI
 

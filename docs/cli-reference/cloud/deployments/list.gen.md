@@ -14,11 +14,11 @@ quix cloud deployments list [<workspace-id>] [options]
 
 **Arguments:**
 
-- `<workspace-id>` : If specified, only deployments in the specified environment will be returned
+- `<workspace-id>`: If specified, only deployments in the specified environment will be returned
 
 **Options:**
 
-- `-o, --output <json|table>` : Output type of the retrieved data
-- `-f, --follow` : If specified, the command will not exit and will continually watch for changes
-- `-c, --cls` : If specified, clear the screen before printing
+- `-o, --output <json|table>`: Output type of the retrieved data
+- `-f, --follow`: If specified, the command will not exit and will continually watch for changes
+- `-c, --cls`: If specified, clear the screen before printing
 

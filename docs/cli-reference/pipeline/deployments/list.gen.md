@@ -14,6 +14,6 @@ quix pipeline deployments list [options]
 
 **Options:**
 
-- `--directory <directory>` : Base directory (defaults to current directory)
-- `-o, --output <json|table>` : Output type of the retrieved data
+- `--directory <directory>`: Base directory (defaults to current directory)
+- `-o, --output <json|table>`: Output type of the retrieved data
 

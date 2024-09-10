@@ -14,8 +14,8 @@ quix broker topics [command] [options]
 
 **Commands:**
 
-- [list](list.md) : List your pipeline broker topics
-- [read](read.md) : Read the messages from your pipeline topics
-- [update](update.md) : Update or create your pipeline broker topics from your 'quix.yaml' configuration
-- [write](write.md) : Write messages from the standard input to your pipeline topics
+- [list](list.md): List your pipeline broker topics
+- [read](read.md): Read the messages from your pipeline topics
+- [update](update.md): Update or create your pipeline broker topics from your 'quix.yaml' configuration
+- [write](write.md): Write messages from the standard input to your pipeline topics
 

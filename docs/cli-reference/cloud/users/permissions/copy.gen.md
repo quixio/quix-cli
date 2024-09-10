@@ -14,9 +14,9 @@ quix cloud users permissions copy [<user-id>] [options]
 
 **Arguments:**
 
-- `<user-id>` : The source user
+- `<user-id>`: The source user
 
 **Options:**
 
-- `--to <to>` : The destination user
+- `--to <to>`: The destination user
 

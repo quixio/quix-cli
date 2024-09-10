@@ -14,5 +14,5 @@ quix apps variables list [options]
 
 **Options:**
 
-- `--directory <directory>` : Base directory (defaults to current directory)
+- `--directory <directory>`: Base directory (defaults to current directory)
 

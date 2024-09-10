@@ -65,11 +65,18 @@ Quix CLI can be installed on various operating systems using different methods. 
 > [!NOTE] 
 > For version specification, replace `{version}` with the actual version number you intend to install (e.g., `1.2.3`). Omitting the `{version}` parameter will install the latest available version of Quix CLI. Ensure that the directory where Quix CLI is installed is included in your system's PATH.
 
+
 ### Installation using Release Binaries
 
 1. Visit the [latest release page](https://github.com/quixio/quix-cli/releases/latest) and download the executable matching your OS/architecture.
 2. Copy the executable to a location of your choice.
 3. Add that location to your system's PATH.
+
+### Keeping Your CLI Up-to-Date
+
+It's important to regularly update your Quix CLI to ensure you have access to the latest features, bug fixes, and improvements. You can do this easily using the `quix update` command, which installs the latest stable version by default.
+
+You can also install specific versions or pre-releases if needed. For more details on the update process, including how to update to pre-release versions, visit the [Quix CLI update command documentation](https://quix.io/docs/quix-cli/cli-reference/update).
 
 ## Usage
 

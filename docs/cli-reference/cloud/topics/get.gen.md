@@ -14,10 +14,10 @@ quix cloud topics get <topic-id> [<workspace-id>] [options]
 
 **Arguments:**
 
-- `<topic-id>`
-- `<workspace-id>`
+- `<topic-id>`: The ID of the topic
+- `<workspace-id>`: The ID of the environment
 
 **Options:**
 
-- `-o, --output <json|table>` : Output type of the retrieved data
+- `-o, --output <json|table>`: Output type of the retrieved data
 

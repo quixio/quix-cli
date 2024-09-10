@@ -14,5 +14,5 @@ quix cloud environments list [options]
 
 **Options:**
 
-- `-o, --output <json|table>` : Output type of the retrieved data
+- `-o, --output <json|table>`: Output type of the retrieved data
 

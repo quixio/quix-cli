@@ -14,5 +14,5 @@ quix contexts delete <name> [options]
 
 **Arguments:**
 
-- `<name>` : Name of the context
+- `<name>`: Name of the context
 

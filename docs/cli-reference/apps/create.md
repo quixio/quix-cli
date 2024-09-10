@@ -81,3 +81,17 @@ After selecting the output topic:
 ```
 
 Then your new `Starter Source` application is created.
+
+
+!!! tip
+    If you prefer searching the library instead of using the interactive mode, you can use the `quix app library` command to filter by language, tags, or search terms:
+
+    ```bash
+    quix app library --tags Easy
+    ```
+
+    Once you've found the desired library item, create a new application with the following command, replacing `[library-item-id]` with the item's ID:
+
+    ```bash
+    quix apps create [library-item-id]
+    ```

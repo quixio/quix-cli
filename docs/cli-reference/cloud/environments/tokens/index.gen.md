@@ -14,6 +14,6 @@ quix cloud environments tokens [command] [options]
 
 **Commands:**
 
-- [get](get.md) : Get the SDK/environment token
-- [rotate](rotate.md) : Rotate and retrieve the SDK/environment token
+- [get](get.md): Get the SDK/environment token
+- [rotate](rotate.md): Rotate and retrieve the SDK/environment token
 

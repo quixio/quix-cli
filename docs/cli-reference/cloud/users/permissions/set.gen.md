@@ -14,10 +14,10 @@ quix cloud users permissions set [<user-id>] [options]
 
 **Arguments:**
 
-- `<user-id>` : id of the user
+- `<user-id>`: id of the user
 
 **Options:**
 
-- `--scope <scope>` : The scope of this permission
-- `--role <role>` : The role of this permission
+- `--scope <scope>`: The scope of this permission
+- `--role <role>`: The role of this permission
 

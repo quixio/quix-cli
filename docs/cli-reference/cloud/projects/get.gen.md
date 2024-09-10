@@ -14,9 +14,9 @@ quix cloud projects get <repository-id> [options]
 
 **Arguments:**
 
-- `<repository-id>` : The ID of the project
+- `<repository-id>`: The ID of the project
 
 **Options:**
 
-- `-o, --output <json|table>` : Output type of the retrieved data
+- `-o, --output <json|table>`: Output type of the retrieved data
 

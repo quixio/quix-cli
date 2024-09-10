@@ -14,6 +14,6 @@ quix pipeline down [options]
 
 **Options:**
 
-- `--directory <directory>` : If specified, it will use that directory instead of the current one
-- `--keep-broker` : Keep the local broker running
+- `--directory <directory>`: If specified, it will use that directory instead of the current one
+- `--keep-broker`: Keep the local broker running
 

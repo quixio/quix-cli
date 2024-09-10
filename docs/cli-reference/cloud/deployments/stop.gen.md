@@ -14,5 +14,5 @@ quix cloud deployments stop [<deployment-id>] [options]
 
 **Arguments:**
 
-- `<deployment-id>` : Deployment ID
+- `<deployment-id>`: Deployment ID
 
