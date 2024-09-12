@@ -2,7 +2,7 @@
 
 In any development environment, securing sensitive information like API tokens is essential. Quix CLI provides robust tools for managing these secrets within your data pipelines. This tutorial will walk you through the steps to securely add, update, and manage secrets in your Quix pipeline, ensuring that your sensitive data remains protected throughout the development process.
 
-Before diving into the details, make sure you've set up your local environment correctly. If you haven't already, complete the [Quickstart](./cli-quickstart.md) to get Quix CLI up and running. For detailed instructions on setting up your local development environment, refer to our [Local Development](./cli-local-debug.md) tutorial.
+Before diving into the details, make sure you've set up your local environment correctly. If you haven't already, complete the [Quickstart](./cli-quickstart.md) to get Quix CLI up and running. For detailed instructions on setting up your local development environment, refer to our [Local Development](./local-debug.md) tutorial.
 
 ## Step 1: Add the Secret to Your `.env` File
 

@@ -54,8 +54,10 @@ plugins:
 nav:
 - 'Overview': 'overview.md'
 - 'Quickstart': 'cli-quickstart.md'
-- 'Local Development': 'cli-local-debug.md'
-- 'Local Secrets': 'cli-local-secrets.md'
+- 'Local Development': 
+  - 'Running applications locally': 'local-development/local-debug.md'
+  - 'Managing secrets locally': 'local-development/local-secrets.md'
+  - 'Managing YAML variables': 'local-development/local-yaml-variables.md'
 - 'Commands Summary': 'cli-commands-summary.md'
 - 'How-To guides':
   - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
