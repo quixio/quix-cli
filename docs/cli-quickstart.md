@@ -314,6 +314,6 @@ Or
 
     Continue learning how to use Quix CLI to develop you pipeline locally.
 
-    [Quix CLI local development :octicons-arrow-right-24:](./cli-local-debug.md)
+    [Quix CLI local development :octicons-arrow-right-24:](./local-development/local-debug.md)
 
 </div>
