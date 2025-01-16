@@ -61,9 +61,10 @@ nav:
 - 'Commands Summary': 'cli-commands-summary.md'
 - 'How-To guides':
   - 'Using the CLI with GitHub Actions': 'How-To/cli-github-actions.md'
-- Yaml Reference:
+- File Reference:
   - 'Pipeline YAML (quix.yaml)': 'yaml-reference/pipeline-descriptor.md'
   - 'Application YAML (app.yaml)': 'yaml-reference/app-descriptor.md'
+  - 'Docker Configuration (dockerfile)': 'yaml-reference/dockerfile.md'
 - CLI Reference:
   - Cloud Commands:
     - cli-reference/cloud/index.md

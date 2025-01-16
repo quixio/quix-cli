@@ -70,7 +70,7 @@ variables:
 ### 3. Docker and Entry Points
 
 ```yaml
-dockerfile: build/dockerfile
+dockerfile: dockerfile
 runEntryPoint: main.py
 defaultFile: main.py
 ```
@@ -82,6 +82,23 @@ defaultFile: main.py
 - **runEntryPoint:** Specifies the main entry point script that will be executed when the application starts. This is typically the main file that kicks off the application's logic.
 
 - **defaultFile:** Refers to the default file or file of the application, mostly for ide purposes, most of the times it will be the same as runEntryPoint.
+
+### 4. Included Folders
+
+```yaml
+includedFolders:
+  - src-folder
+  - config-folder
+  - assets-folder
+```
+
+**Explanation:**
+
+- **includedFolders:** Lists any directories to be packaged and deployed alongside the application. If omitted, only the main application files (e.g., `main.py`) are included.
+- **Paths:** These paths are specified relative to the root of your Git repository, ensuring the intended folder structure is maintained during deployment.
+- **Default Behavior:** Without this section, only the essential application files are deployed, leaving out additional directories containing source code, configurations, or other assets.
+
+For further details on how these folders are incorporated during the Docker build process, refer to the [Dockerfile explanation](dockerfile.md).
 
 ## How to Use the `app.yaml` File
 
