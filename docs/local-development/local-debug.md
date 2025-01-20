@@ -408,7 +408,7 @@ There are several other CLI commands that you may find very useful during your l
 - [quix pipeline sync](./cli-reference/pipeline/sync.md): Synchronize your local pipeline to Quix Cloud
 - [quix broker topics read](./cli-reference/broker/topics/read.md): Read the messages from your pipeline topics
 
-You should also check our [CLI Commands Summary](./cli-commands-summary.md), where you'll find the most useful commands for developing QuixStreams data pipelines locally.
+You should also check our [CLI Commands Summary](../cli-commands-summary.md), where you'll find the most useful commands for developing QuixStreams data pipelines locally.
 
 ## Next steps
 
