@@ -101,6 +101,11 @@ nav:
       - cloud projects patch: cli-reference/cloud/projects/patch.md
       - cloud projects get: cli-reference/cloud/projects/get.md
       - cloud projects list: cli-reference/cloud/projects/list.md
+    - cloud secrets:
+      - cli-reference/cloud/secrets/index.md
+      - cloud secrets delete: cli-reference/cloud/secrets/delete.md
+      - cloud secrets list: cli-reference/cloud/secrets/list.md
+      - cloud secrets set: cli-reference/cloud/secrets/set.md
     - cloud topics:
       - cli-reference/cloud/topics/index.md
       - cloud topics get: cli-reference/cloud/topics/get.md

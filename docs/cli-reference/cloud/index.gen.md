@@ -16,6 +16,7 @@ quix cloud [command] [options]
 
 - [organisations](organisations/index.md): Manage your organisation
 - [projects](projects/index.md): Manage the projects of the current organisation
+- [secrets](secrets/index.md): Manage the secrets of an environment
 - [environments](environments/index.md): Manage the environments of your projects (e.g., Dev, Staging, Production)
 - [apps](apps/index.md): Manage the applications of an environment
 - [deployments](deployments/index.md): Manage the deployments of an environment
