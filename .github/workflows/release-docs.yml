@@ -23,7 +23,7 @@ jobs:
       run: curl -fsSL https://github.com/quixio/quix-cli/raw/main/install.sh | bash
 
     - name: Run Quix CLI to generate docs
-      run: quix docs ${{ github.workspace }}/docs/Reference
+      run: quix docs "${{ github.workspace }}/docs/cli-reference"
 
     - name: Create Pull Request
       uses: peter-evans/create-pull-request@v5
