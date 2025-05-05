@@ -1,7 +1,7 @@
 class QuixCli < Formula
     desc "Quix CLI"
     homepage "https://github.com/quixio/quix-cli"
-    version "latest" # Or specify a specific version if desired
+    version "1.4.2" # Or specify a specific version if desired
     license "MIT"
   
     # Define the URLs for the binaries based on architecture
