@@ -7,10 +7,10 @@ class QuixCli < Formula
     # Define the URLs for the binaries based on architecture
     if Hardware::CPU.intel?
       url "https://github.com/quixio/quix-cli/releases/latest/download/osx-x64.tar.gz"
-      sha256 "b966d3db258866183ddd9002ca910ddbd9af7460c82f3fb7c2e057ae96fc5ffb"
+      sha256 "b668dea36e781ac1f5c5abbe992a671d27a43a91d398b8177e35f6c219c43cec"
     elsif Hardware::CPU.arm?
       url "https://github.com/quixio/quix-cli/releases/latest/download/osx-arm64.tar.gz"
-      sha256 "60739eb440654b226ec5ccfb1da953693d8a8ee5e1a71b32ed1f717c6e82709e"
+      sha256 "60212915acd2a79d5d2a50245d00c2b76f99faec913b66012e92adb4db47ed69"
     else
       odie "Unsupported architecture"
     end
