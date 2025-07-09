@@ -64,9 +64,12 @@ ENTRYPOINT ["python3", "main.py"]
 
 ---
 
-## Build Argument and the Role of Included Folders
+## Build Arguments
 
-### `ARG MAINAPPPATH=.`
+### The Role of Included Folders
+ 
+`ARG MAINAPPPATH=.`
+
 - **Default Value**:  
   The build argument `MAINAPPPATH` defaults to `.` (the current directory), implying that the core application code is located at the project's root by default.
   
@@ -83,6 +86,47 @@ ENTRYPOINT ["python3", "main.py"]
 - **Seamless Integration**:  
   With all application files—regardless of their directory—residing under `/app`, Python immediately recognizes and imports modules from the included folders. This simplifies module resolution and reduces potential configuration issues.
 
----
+### Variables Injection as Build Arguments
 
-For further insights on Docker concepts and best practices, please refer to the official [Docker documentation](https://docs.docker.com/get-started/). Additional details on how Quix Cloud and Quix CLI handle folder inclusion and path injection can be found in their respective documentation.
+Quix Cloud automatically injects variables (including those defined as secrets) from your deployment configuration as Docker build arguments during the build process. This allows you to use these variables within your Dockerfile for dynamic configuration and customization.
+
+#### Example of Variable Injection
+
+Variables defined in your deployment configuration are automatically passed as build arguments:
+
+```yaml
+deployments:
+  - name: mydeployment
+    application: my-application
+    deploymentType: Service
+    variables:
+      - name: MY_VARIABLE
+        inputType: FreeText
+        value: my_variable_value
+      - name: MY_SECRET_VARIABLE
+        inputType: Secret
+        secretKey: my_secret_key
+```
+
+Both regular variables and secrets are injected using the same mechanism, ensuring consistent access during the build process.
+
+#### Usage in Dockerfile
+
+To use injected variables in your Dockerfile, declare them as build arguments:
+
+```dockerfile
+# Declare build arguments for variables
+ARG MY_VARIABLE
+ARG MY_SECRET_VARIABLE
+
+# Set as environment variables if needed at runtime
+ENV MY_VARIABLE=${MY_VARIABLE}
+
+# Or use directly in RUN commands during build
+RUN echo "Building with variable: ${MY_VARIABLE}"
+RUN echo "Building with secret variable: ${MY_SECRET_VARIABLE}"
+```
+
+For further insights on Docker build arguments, please refer to the official [Docker documentation](https://docs.docker.com/build/building/variables/#build-arguments).
+
+---
