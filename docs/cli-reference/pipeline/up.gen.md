@@ -19,4 +19,5 @@ quix pipeline up [options]
 - `-u, --update`: Update 'quix.yaml' with the new local applications and update the variables of the existing deployments
 - `-s, --skip-topics`: Skip topics creation, in this case Quix Streams might create the topics automatically
 - `-k, --keep-variables`: Keep the locally deleted variables
+- `-p, --preserve-dockerignore`: Retain existing <Dockerfile>.dockerignore files; skip automatic cleanup when an app no longer specifies IncludedFolders
 
