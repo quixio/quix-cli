@@ -15,4 +15,5 @@ quix pipeline view [options]
 **Options:**
 
 - `--directory <directory>`: If specified, it will use that directory instead of the current one
+- `-o, --orientation <BottomTop|LeftRight|RightLeft|TopDown>`: Diagram orientation. [default: LeftRight]
 
