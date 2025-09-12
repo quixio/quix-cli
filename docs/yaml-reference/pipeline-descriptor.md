@@ -187,6 +187,8 @@ Managed deployments (`deploymentType: Managed`) provide additional configuration
 - Are optimized for production environments with built-in scaling and monitoring
 - May have specific requirements defined by the managed service provider
 
+See more details in the [Managed Services Documentation](../../quix-cloud/managed-services/overview.md).
+
 ### Plugin System
 
 The plugin system allows deployments to provide enhanced user interface capabilities:
@@ -194,6 +196,8 @@ The plugin system allows deployments to provide enhanced user interface capabili
 - **Embedded Views:** Enable custom UI components directly within the deployment interface
 - **Sidebar Integration:** Add custom sidebar items with configurable labels, icons, and ordering
 - **Enhanced Monitoring:** Provide specialized monitoring and management interfaces for specific deployment types
+
+See more details in the [Plugin Documentation](../../quix-cloud/managed-services/plugin.md).
 
 ### Workspace Targeting
 
