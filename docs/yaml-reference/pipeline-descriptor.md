@@ -2,6 +2,8 @@
 
 The `quix.yaml` file serves as the Infrastructure as Code (IaC) descriptor for a Quix project. It defines the data pipeline, including the applications (deployments) and topics that compose the pipeline. This file allows you to configure and manage your data pipeline in a declarative manner, ensuring consistency across environments.
 
+---
+
 ## 1. Metadata
 
 ```yaml
@@ -10,6 +12,8 @@ metadata:
 ```
 
 The `metadata` section contains basic information about the file itself, such as the version of the schema being used. This versioning ensures compatibility and helps manage changes to the structure of the `quix.yaml` file over time.
+
+---
 
 ## 2. Deployments
 
@@ -110,14 +114,14 @@ deployments:
 | `deploymentType` | Yes | enum | `Service`, `Job`, `Managed` | long-running (`Service`), run-to-completion (`Job`), or [Quix managed service](../../quix-cloud/managed-services/overview.md) (`Managed`). |
 | `version` | Yes* | string | `latest`, semantic tag, commit SHA | Tag/commit for application build. Omit when using `image`. Use pinned value for reproducibility. |
 | `workspaceIds` | No | string[] | `["workspace-1"]` | An array of workspace identifiers where the deployment should be deployed. This allows you to target specific workspaces for deployment. |
-| `resources` | No | object | See Resources Fields | Defines the compute resources allocated to the deployment. |
+| [`resources`](#resources-fields) | No | object | See Resources Fields | Defines the compute resources allocated to the deployment. |
 | `desiredStatus` | No | enum | `Running`, `Stopped` | The state in which you want the deployment to be. Defaults to `Running` if omitted. |
-| `publicAccess` | No | object | See Public Access Fields | Configure public endpoint for service workloads only. |
-| `network` | No | object | See Network Fields | Defines the network settings for the deployment. Ignored for `Job`. |
-| `state` | No | object | See State Fields | Persistent volume claim definition for stateful services. |
-| `variables` | No | object[] | See Variable Fields | Declarative runtime/config variables and topic bindings. |
+| [`publicAccess`](#public-access-fields) | No | object | See Public Access Fields | Configure public endpoint for service workloads only. |
+| [`network`](#network-fields) | No | object | See Network Fields | Defines the network settings for the deployment. Ignored for `Job`. |
+| [`state`](#state-fields) | No | object | See State Fields | Persistent volume claim definition for stateful services. |
+| [`variables`](#variable-fields) | No | object[] | See Variable Fields | Declarative runtime/config variables and topic bindings. |
 | `configuration` | No | object | Arbitrary key/value pairs | A flexible key-value configuration section for managed deployments. |
-| `plugin` | No | object | See Plugin Fields | Configuration for deployment plugins that provide enhanced UI capabilities. |
+| [`plugin`](#plugin-fields) | No | object | See Plugin Fields | Configuration for deployment plugins that provide enhanced UI capabilities. |
 | `disabled` | No | boolean | `true` / `false` | Set to `true` to prevent the deployment from being started while keeping its configuration intact for future updates or removal. |
 
 !!! warning "Mutual exclusivity"
@@ -215,7 +219,7 @@ topics:
 |-------|----------|------|----------|---------------------|
 | `name` | Yes | string | `csv-data` | The unique identifier for the topic within your pipelines. |
 | `persisted` | No | boolean | `true` / `false` | A boolean value that indicates whether the data in this topic should be stored persistently. Setting this to `false` means data will not be stored permanently and might be deleted after processing. |
-| `configuration` | No | object | See Topic Configuration Fields | Advanced retention / partition tuning. |
+| [`configuration`](#topic-configuration-fields) | No | object | See Topic Configuration Fields | Advanced retention / partition tuning. |
 
 #### Topic Configuration Fields
 
@@ -234,13 +238,11 @@ This file is central to managing your Quix project. When you deploy your pipelin
 
 Whenever changes are needed, such as scaling an application or adjusting the topic configuration, you can simply modify the `quix.yaml` file and redeploy your pipeline. This approach allows for a repeatable and version-controlled method of managing your pipeline infrastructure.
 
-## Best Practices
+### Best Practices
 
 - **Version Control:** Always keep your `quix.yaml` file under version control (e.g., in Git) to track changes and collaborate with your team.
 - **Resource Management:** Regularly review the resources allocated to each deployment to ensure optimal use of infrastructure.
 - **Testing:** Test changes in a development environment before deploying to production to avoid disruptions in data processing.
-- **Configuration Management:** Use the `configuration` section for managed deployments to centralize application-specific settings.
 - **Security:** Use secret variables for sensitive configuration data instead of hardcoding values.
-- **Workspace Organization:** Use `workspaceIds` to properly target deployments to appropriate environments.
 
 By understanding and effectively managing your `quix.yaml` file, you can maintain a robust and scalable data pipeline that meets the needs of your organization.
