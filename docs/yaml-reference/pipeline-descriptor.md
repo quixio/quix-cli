@@ -120,7 +120,7 @@ deployments:
 | [`network`](#network-fields) | No | object | See Network Fields | Defines the network settings for the deployment. Ignored for `Job`. |
 | [`state`](#state-fields) | No | object | See State Fields | Persistent volume claim definition for stateful services. |
 | [`variables`](#variable-fields) | No | object[] | See Variable Fields | Declarative runtime/config variables and topic bindings. |
-| `configuration` | No | object | Arbitrary key/value pairs | A flexible key-value configuration section for managed deployments. |
+| `configuration` | No | object | `key: value`, `key: [value1, value2, value3]` | A flexible key-value configuration section for managed deployments. Can be single value or array. |
 | [`plugin`](#plugin-fields) | No | object | See Plugin Fields | Configuration for deployment plugins that provide enhanced UI capabilities. |
 | `disabled` | No | boolean | `true` / `false` | Set to `true` to prevent the deployment from being started while keeping its configuration intact for future updates or removal. |
 
