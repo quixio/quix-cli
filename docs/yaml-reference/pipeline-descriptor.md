@@ -114,7 +114,8 @@ deployments:
 - **deploymentType:** Defines the type of deployment. Supported types include:
   - `Service` for long-running services
   - `Job` for tasks that run to completion
-  - `Managed` for fully managed deployments with additional configuration options
+  - `Managed` for quix managed services
+    - See more details in the [Managed Services Documentation](../../quix-cloud/managed-services/overview.md).
 
 - **version:** Indicates the version of the application to deploy. Using `latest` ensures that the most recent version is deployed, but this can be set to a specific version to ensure consistency. You can also use a commit reference to specify a specific version.
 
@@ -170,6 +171,8 @@ deployments:
     - **icon:** The icon identifier to use for the sidebar item.
     - **order:** The display order of the sidebar item (lower numbers appear first).
 
+See more details in the [Plugin Documentation](../../quix-cloud/managed-services/plugin.md).
+
 - **disabled:** Set to `true` to prevent the deployment from being started while keeping its configuration intact for future updates or removal.
 
 ### Notes on Docker Image Deployments
@@ -177,35 +180,6 @@ deployments:
 - **Mutual Exclusivity:** You cannot specify both `application`/`version` and `image` in the same deployment definition. Choose one approach depending on your use case.
 - **Image References:** Ensure your Docker image reference includes the repository and tag (e.g., `custom-repo/my-service:1.2.3`).
 - **Compatibility:** Direct Docker image deployments provide greater flexibility, especially for non-standardized applications or third-party containers.
-
-### Managed Deployments
-
-Managed deployments (`deploymentType: Managed`) provide additional configuration capabilities for fully managed services. These deployments:
-
-- Support flexible configuration through the `configuration` section
-- Can accept both single values and arrays for configuration parameters
-- Are optimized for production environments with built-in scaling and monitoring
-- May have specific requirements defined by the managed service provider
-
-See more details in the [Managed Services Documentation](../../quix-cloud/managed-services/overview.md).
-
-### Plugin System
-
-The plugin system allows deployments to provide enhanced user interface capabilities:
-
-- **Embedded Views:** Enable custom UI components directly within the deployment interface
-- **Sidebar Integration:** Add custom sidebar items with configurable labels, icons, and ordering
-- **Enhanced Monitoring:** Provide specialized monitoring and management interfaces for specific deployment types
-
-See more details in the [Plugin Documentation](../../quix-cloud/managed-services/plugin.md).
-
-### Workspace Targeting
-
-Use the `workspaceIds` property to deploy applications to specific workspaces:
-
-- Supports multiple workspace targeting for multi-tenant deployments
-- Enables environment-specific deployments (development, staging, production)
-- Provides workspace-level isolation and resource management
 
 ### 3. Topics
 
