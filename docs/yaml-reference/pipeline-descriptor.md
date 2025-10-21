@@ -78,6 +78,7 @@ deployments:
       embeddedView:
         enabled: true
         hideHeader: false
+        default: true
       sidebarItem:
         show: true
         label: Data Visualizer
@@ -140,9 +141,10 @@ deployments:
 
 | Field | Required | Type | Examples | Description & Notes |
 |-------|----------|------|----------|---------------------|
-| `embeddedView` | No | boolean / object | `true` / `{ enabled: true, hideHeader: false }` | Can be a boolean or object. If `true`, equivalent to `{ enabled: true, hideHeader: false }`. If `false`, embedded view is disabled. |
+| `embeddedView` | No | boolean / object | `true` / `{ enabled: true, hideHeader: false, default: false }` | Can be a boolean or object. If `true`, equivalent to `{ enabled: true, hideHeader: false, default: false }`. If `false`, embedded view is disabled. |
 | `embeddedView.enabled` | No | boolean | `true` / `false` | Enables the embedded view. Default = `false`. |
 | `embeddedView.hideHeader` | No | boolean | `true` / `false` | If `true`, hides the header (deployment name + menu). Defaults to `false`. |
+| `embeddedView.default` | No | boolean | `true` / `false` | When enabled, displays the embedded view by default when clicking on a deployment. Defaults to `false` for standard deployments. |
 | `sidebarItem` | No | object | See nested fields | Optional object configuring the sidebar shortcut in the environment. |
 | `sidebarItem.show` | No | boolean | `true` / `false` | Whether to display a shortcut in the sidebar. |
 | `sidebarItem.label` | No | string | `Data Visualizer`, `Configuration` | Display name shown in navigation. |
