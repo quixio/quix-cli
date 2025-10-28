@@ -75,12 +75,16 @@ deployments:
         required: true
         value: csv-data
     plugin:
-      embeddedView: true
+      embeddedView:
+        enabled: true
+        hideHeader: false
+        default: true
       sidebarItem:
         show: true
         label: Data Visualizer
-        icon: chart-line
+        icon: tune
         order: 1
+        badge: Alpha
   - name: custom-service
     image: custom-repo/my-service:1.2.3
     deploymentType: Service
@@ -137,11 +141,16 @@ deployments:
 
 | Field | Required | Type | Examples | Description & Notes |
 |-------|----------|------|----------|---------------------|
-| `embeddedView` | No | boolean | `true` | Whether to enable an embedded view for the deployment. |
-| `sidebarItem.show` | No | boolean | `true` / `false` | Toggle sidebar visibility. |
-| `sidebarItem.label` | No | string | `Data Visualizer` | Display name shown in navigation. |
-| `sidebarItem.icon` | No | string | `chart-line`, `database` | Icon identifier (Material/Icon set supported by platform). |
-| `sidebarItem.order` | No | integer | `1`, `10` | The display order of the sidebar item (lower numbers appear first). |
+| `embeddedView` | No | boolean / object | `true` / `{ enabled: true, hideHeader: false, default: false }` | Can be a boolean or object. If `true`, equivalent to `{ enabled: true, hideHeader: false, default: false }`. If `false`, embedded view is disabled. |
+| `embeddedView.enabled` | No | boolean | `true` / `false` | Enables the embedded view. Default = `false`. |
+| `embeddedView.hideHeader` | No | boolean | `true` / `false` | If `true`, hides the header (deployment name + menu). Defaults to `false`. |
+| `embeddedView.default` | No | boolean | `true` / `false` | When enabled, displays the embedded view by default when clicking on a deployment. Defaults to `false` for standard deployments. |
+| `sidebarItem` | No | object | See nested fields | Optional object configuring the sidebar shortcut in the environment. |
+| `sidebarItem.show` | No | boolean | `true` / `false` | Whether to display a shortcut in the sidebar. |
+| `sidebarItem.label` | No | string | `Data Visualizer`, `Configuration` | Display name shown in navigation. |
+| `sidebarItem.icon` | No | string | `tune`, `chart-line`, `database` | Google Material icon name. |
+| `sidebarItem.order` | No | integer | `1`, `10` | Display order (lower numbers appear first). |
+| `sidebarItem.badge` | No | string (max 15 chars) | `Alpha`, `Beta`, `New`, `Experimental` | Optional short label displayed next to the sidebar item. |
 
 :material-file-document-outline: See more details in the [Plugin Documentation](../../quix-cloud/managed-services/plugin.md).
 
