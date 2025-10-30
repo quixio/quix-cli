@@ -74,6 +74,8 @@ deployments:
         description: This is the input topic to read data from
         required: true
         value: csv-data
+    blobStorage:
+      bind: true
     plugin:
       embeddedView:
         enabled: true
@@ -125,6 +127,7 @@ deployments:
 | [`state`](#state-fields) | No | object | See State Fields | Persistent volume claim definition for stateful services. |
 | [`variables`](#variable-fields) | No | object[] | See Variable Fields | Declarative runtime/config variables and topic bindings. |
 | `configuration` | No | object | `key: value`, `key: [value1, value2, value3]` | A flexible key-value configuration section for managed deployments. Can be single value or array. |
+| [`blobStorage`](#blob-storage-fields) | No | object | See Blob Storage Fields | Configuration to inject blob storage settings into non-managed deployments. |
 | [`plugin`](#plugin-fields) | No | object | See Plugin Fields | Configuration for deployment plugins that provide enhanced UI capabilities. |
 | `disabled` | No | boolean | `true` / `false` | Set to `true` to prevent the deployment from being started while keeping its configuration intact for future updates or removal. |
 
@@ -183,6 +186,12 @@ deployments:
 |-------|----------|------|----------|---------------------|
 | `enabled` | No | boolean | `true` / `false` | Allocate persistent storage volume. |
 | `size` | When enabled | integer | `1`, `5`, `20` | The size of the persistent state storage in gigabytes. |
+
+#### Blob Storage Fields
+
+| Field | Required | Type | Examples | Description & Notes |
+|-------|----------|------|----------|---------------------|
+| `bind` | No | boolean | `true` / `false` | When set to `true`, injects the default blob storage configuration assigned to the cluster into the deployment. This allows non-managed applications to access blob storage using the same system and libraries as managed services. |
 
 #### Variable Fields
 
