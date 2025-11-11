@@ -23,4 +23,5 @@ quix apps create [<library-item-id>] [options]
 - `-d, --directory <directory>`: Base directory (defaults to current directory)
 - `-l, --language <language>`: Application language [default: python]
 - `--no-git`: Skip the git root directory check
+- `--skip-variables`: Skip interactive variable configuration (variables can be set later in app.yaml)
 

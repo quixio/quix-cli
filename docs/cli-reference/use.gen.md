@@ -16,3 +16,7 @@ quix use [<workspace-id>] [options]
 
 - `<workspace-id>`: The ID of the environment to set as default
 
+**Options:**
+
+- `-b, --broker <broker>`: Set the SDK broker configuration (cloud, local, current)
+
