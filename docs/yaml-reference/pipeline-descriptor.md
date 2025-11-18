@@ -87,6 +87,11 @@ deployments:
         icon: tune
         order: 1
         badge: Alpha
+      globalItem:
+        show: true
+        label: Global Visualizer
+        order: 1
+        badge: New
   - name: custom-service
     image: custom-repo/my-service:1.2.3
     deploymentType: Service
@@ -154,6 +159,11 @@ deployments:
 | `sidebarItem.icon` | No | string | `tune`, `chart-line`, `database` | Google Material icon name. |
 | `sidebarItem.order` | No | integer | `1`, `10` | Display order (lower numbers appear first). |
 | `sidebarItem.badge` | No | string (max 15 chars) | `Alpha`, `Beta`, `New`, `Experimental` | Optional short label displayed next to the sidebar item. |
+| `globalItem` | No | object | See nested fields | Optional object configuring the global shortcut in the Quix Cloud top header. |
+| `globalItem.show` | No | boolean | `true` / `false` | Whether to display a shortcut in the global header. |
+| `globalItem.label` | No | string | `Data Visualizer`, `Configuration` | Display name shown in the global header. |
+| `globalItem.order` | No | integer | `1`, `10` | Display order (lower numbers appear first). |
+| `globalItem.badge` | No | string (max 15 chars) | `Alpha`, `Beta`, `New`, `Experimental` | Optional short label displayed next to the global item. |
 
 :material-file-document-outline: See more details in the [Plugin Documentation](../../quix-cloud/managed-services/plugin.md).
 
