@@ -21,4 +21,5 @@ quix cloud deployments list [<workspace-id>] [options]
 - `-o, --output <json|table>`: Output type of the retrieved data
 - `-f, --follow`: If specified, the command will not exit and will continually watch for changes
 - `-c, --cls`: If specified, clear the screen before printing
+- `--show-url`: If specified, show the public URL for deployments with public access enabled
 
