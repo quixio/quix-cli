@@ -1,0 +1,104 @@
+name: Update quix-cli Formula
+
+on:
+  schedule:
+    - cron: '0 6 * * *'  # Daily at 06:00 UTC
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Get latest quix-cli release
+        id: latest
+        run: |
+          LATEST=$(curl -s https://api.github.com/repos/quixio/quix-cli/releases/latest \
+            | jq -r '.tag_name')
+          echo "version=$LATEST" >> "$GITHUB_OUTPUT"
+
+      - name: Read current version from formula
+        id: current
+        run: |
+          VERSION=$(grep -E '^\s*version ' quix-cli.rb | head -1 | sed 's/.*"\(.*\)".*/\1/')
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Check if update is needed
+        id: check
+        run: |
+          if [ "${{ steps.latest.outputs.version }}" = "${{ steps.current.outputs.version }}" ]; then
+            echo "needed=false" >> "$GITHUB_OUTPUT"
+            echo "Formula is already at ${{ steps.latest.outputs.version }}, nothing to do."
+          else
+            echo "needed=true" >> "$GITHUB_OUTPUT"
+            echo "Update needed: ${{ steps.current.outputs.version }} -> ${{ steps.latest.outputs.version }}"
+          fi
+
+      - name: Download binaries and compute SHA256
+        if: steps.check.outputs.needed == 'true'
+        id: sha
+        run: |
+          VERSION="${{ steps.latest.outputs.version }}"
+          curl -fsSL "https://github.com/quixio/quix-cli/releases/download/${VERSION}/osx-x64.tar.gz" \
+            -o osx-x64.tar.gz
+          curl -fsSL "https://github.com/quixio/quix-cli/releases/download/${VERSION}/osx-arm64.tar.gz" \
+            -o osx-arm64.tar.gz
+          SHA_X64=$(sha256sum osx-x64.tar.gz | awk '{print $1}')
+          SHA_ARM64=$(sha256sum osx-arm64.tar.gz | awk '{print $1}')
+          echo "sha_x64=$SHA_X64" >> "$GITHUB_OUTPUT"
+          echo "sha_arm64=$SHA_ARM64" >> "$GITHUB_OUTPUT"
+
+      - name: Update quix-cli.rb
+        if: steps.check.outputs.needed == 'true'
+        run: |
+          VERSION="${{ steps.latest.outputs.version }}"
+          OLD_VERSION="${{ steps.current.outputs.version }}"
+          SHA_X64="${{ steps.sha.outputs.sha_x64 }}"
+          SHA_ARM64="${{ steps.sha.outputs.sha_arm64 }}"
+
+          sed -i "s|version \"${OLD_VERSION}\"|version \"${VERSION}\"|g" quix-cli.rb
+          sed -i "s|releases/download/${OLD_VERSION}/osx-x64.tar.gz|releases/download/${VERSION}/osx-x64.tar.gz|g" quix-cli.rb
+          sed -i "s|releases/download/${OLD_VERSION}/osx-arm64.tar.gz|releases/download/${VERSION}/osx-arm64.tar.gz|g" quix-cli.rb
+
+          # Replace sha256 for x64 (first occurrence)
+          awk -v sha="$SHA_X64" '
+            /sha256/ && !x64_done {
+              sub(/"[a-f0-9]{64}"/, "\"" sha "\"")
+              x64_done=1
+            }
+            { print }
+          ' quix-cli.rb > quix-cli.rb.tmp && mv quix-cli.rb.tmp quix-cli.rb
+
+          # Replace sha256 for arm64 (second occurrence)
+          awk -v sha="$SHA_ARM64" '
+            /sha256/ && !arm_done {
+              count++
+              if (count == 2) {
+                sub(/"[a-f0-9]{64}"/, "\"" sha "\"")
+                arm_done=1
+              }
+            }
+            { print }
+          ' quix-cli.rb > quix-cli.rb.tmp && mv quix-cli.rb.tmp quix-cli.rb
+
+      - name: Open pull request
+        if: steps.check.outputs.needed == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: "Update quix-cli to ${{ steps.latest.outputs.version }}"
+          branch: "update/quix-cli-${{ steps.latest.outputs.version }}"
+          title: "Update quix-cli to ${{ steps.latest.outputs.version }}"
+          body: |
+            Automated update of `quix-cli.rb` to version `${{ steps.latest.outputs.version }}`.
+
+            - Updated version string
+            - Updated download URLs
+            - Updated SHA256 checksums for `osx-x64` and `osx-arm64`
+          labels: automated
