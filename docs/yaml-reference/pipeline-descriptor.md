@@ -208,7 +208,7 @@ deployments:
 | Field | Required | Type | Examples | Description & Notes |
 |-------|----------|------|----------|---------------------|
 | `name` | Yes | string | `input`, `output`, `api_key` | The name of the variable. |
-| `inputType` | Yes | enum | `InputTopic`, `OutputTopic`, `Secret`, `FreeText` | Determines validation & UI control type. |
+| `inputType` | Yes | enum | `InputTopic`, `OutputTopic`, `Secret`, `FreeText`, `Options`, `HiddenText` | Determines validation & UI control type. The available options for `Options` type are defined in `app.yaml`. |
 | `description` | No | string | Free text | A brief explanation of what this variable does. |
 | `required` | No | boolean | `true` / `false` | Enforces presence of value (or secret) to start deployment. |
 | `value` | No | string | `csv-data` | Assigned value (not for secrets). |
