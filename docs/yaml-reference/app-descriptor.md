@@ -45,6 +45,16 @@ variables:
     description: Send alerts at most every x seconds (default 10 minutes)
     defaultValue: 600
     required: false
+  - name: content_store
+    inputType: Options
+    description: Where to store the content
+    defaultValue: mongo
+    required: false
+    options:
+      - label: MongoDB
+        value: mongo
+      - label: File System
+        value: file
 ```
 
 **Explanation:**
@@ -60,6 +70,14 @@ variables:
     - `Secret`: Refers to a sensitive piece of information, such as API keys or webhook URLs, that needs to be securely handled.
      
     - `FreeText`: A flexible text input that can be used for various settings or parameters.
+
+    - `HiddenText`: A sensitive text input that should not be displayed in the UI.
+
+    - `Options`: A selection from a predefined list of values. Requires an `options` array where each entry has a `label` (display text) and `value` (actual value).
+
+- **options:** An array of predefined choices, required when `inputType` is `Options`. Each entry contains:
+  - **label:** The human-readable text displayed in the UI dropdown.
+  - **value:** The actual value assigned to the environment variable.
 
 - **description:** A brief explanation of the variable's purpose and how it should be used.
 
