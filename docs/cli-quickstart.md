@@ -118,7 +118,7 @@ If you look at the initial `quix.yaml` file you'll see the following:
 # This file describes the data pipeline and configuration of resources of a Quix Project.
 
 metadata:
-  version: 1.0
+  version: 2.0
 
 # This section describes the Deployments of the data pipeline
 deployments: []
@@ -177,7 +177,7 @@ Now, view your `quix.yaml` file again to see how a deployment for each applicati
 # This file describes the data pipeline and configuration of resources of a Quix Project.
 
 metadata:
-  version: 1.0
+  version: 2.0
 
 # This section describes the Deployments of the data pipeline
 deployments:
@@ -186,8 +186,9 @@ deployments:
     deploymentType: Service
     version: latest
     resources:
-      cpu: 200
-      memory: 500
+      limits:
+        cpu: 200
+        memory: 500
       replicas: 1
     variables:
       - name: output
@@ -200,8 +201,9 @@ deployments:
     deploymentType: Service
     version: latest
     resources:
-      cpu: 200
-      memory: 500
+      limits:
+        cpu: 200
+        memory: 500
       replicas: 1
     variables:
       - name: input

@@ -304,8 +304,9 @@ Your `quix.yaml` file will now contain the new variable you created:
     version: latest
     deploymentType: Service
     resources:
-      cpu: 200
-      memory: 800
+      limits:
+        cpu: 200
+        memory: 800
       replicas: 1
     variables:
       - name: input
@@ -345,8 +346,9 @@ This is helpful when you merge remote changes from git and the variable values h
     version: latest
     deploymentType: Service
     resources:
-      cpu: 200
-      memory: 800
+      limits:
+        cpu: 200
+        memory: 800
       replicas: 1
     variables:
       - name: input
