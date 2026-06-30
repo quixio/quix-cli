@@ -65,14 +65,14 @@ Updating secrets ...
 
 ## Step 3: Verify the `quix.yaml` and `.secrets` Files
 
-After running the update command, verify that the `quix.yaml` file now includes the secret key. The key is linked to your secret and referenced by the relevant deployment:
+After running the update command, verify that the `quix.yaml` file now references the secret through its `variableKey`. This key links to your secret value and is used by the relevant deployment:
 
-```yaml title="quix.yaml" hl_lines="21"
+```yaml title="quix.yaml" hl_lines="22 23"
 # Quix Project Descriptor
 # This file describes the data pipeline and configuration of resources of a Quix Project.
 
 metadata:
-  version: 1.0
+  version: 2.0
 
 # This section describes the Deployments of the data pipeline
 deployments:
@@ -81,15 +81,21 @@ deployments:
     version: latest
     deploymentType: Service
     resources:
-      cpu: 200
-      memory: 800
+      limits:
+        cpu: 200
+        memory: 800
       replicas: 1
     variables:
       - name: api_secret_token
-        inputType: Secret
+        inputType: ProjectVariable
         required: false
-        secretKey: api_secret_token_key
+        secret: true
+        variableKey: api_secret_token_key
 ```
+
+!!! note "Secrets are project variables"
+
+    A secret is stored as a `ProjectVariable` with `secret: true`, referenced by `variableKey`. (The older `inputType: Secret` + `secretKey` form is still accepted but normalized to this shape on save.) See [YAML 1.0 and 2.0](../../quix-cloud/projects/yaml-2-0.md) and [Project variables](../../quix-cloud/deployments/project-variables.md) for the full model.
 
 Additionally, a `.secrets` file is generated or updated with the actual value associated with the secret key:
 
@@ -108,14 +114,14 @@ api_secret_token_key=SECRET-API-TOKEN-VALUE
 
 ## Step 4: Reuse Secrets Across Multiple Deployments
 
-To use the same secret across multiple deployments, reference the same `secretKey` in different deployments within your `quix.yaml` file. For example:
+To use the same secret across multiple deployments, reference the same `variableKey` in different deployments within your `quix.yaml` file. For example:
 
-```yaml title="quix.yaml" hl_lines="21 35"
+```yaml title="quix.yaml" hl_lines="23 39"
 # Quix Project Descriptor
 # This file describes the data pipeline and configuration of resources of a Quix Project.
 
 metadata:
-  version: 1.0
+  version: 2.0
 
 # This section describes the Deployments of the data pipeline
 deployments:
@@ -124,28 +130,32 @@ deployments:
     version: latest
     deploymentType: Service
     resources:
-      cpu: 200
-      memory: 800
+      limits:
+        cpu: 200
+        memory: 800
       replicas: 1
     variables:
       - name: api_secret_token
-        inputType: Secret
+        inputType: ProjectVariable
         required: false
-        secretKey: api_secret_token_key
+        secret: true
+        variableKey: api_secret_token_key
 
   - name: other-deployment
     application: other-application
     version: latest
     deploymentType: Service
     resources:
-      cpu: 200
-      memory: 800
+      limits:
+        cpu: 200
+        memory: 800
       replicas: 1
     variables:
       - name: a_different_variable_name
-        inputType: Secret
+        inputType: ProjectVariable
         required: false
-        secretKey: api_secret_token_key
+        secret: true
+        variableKey: api_secret_token_key
 ```
 
 In this setup, both `starter-source` and `other-deployment` use the same secret key (`api_secret_token_key`), even though they reference it with different variable names (`api_secret_token` and `a_different_variable_name`). This ensures consistency across deployments and reduces redundancy.

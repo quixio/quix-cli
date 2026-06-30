@@ -31,8 +31,9 @@ variables:
     defaultValue: enriched-click-data
     required: true
   - name: webhook_url
-    inputType: Secret
+    inputType: ProjectVariable
     description: The webhook url to send notifications to
+    secret: true
     defaultValue: webhook_url
     required: true
   - name: timeout
@@ -67,13 +68,15 @@ variables:
   
     - `OutputTopic`: Refers to a topic where the application will produce data.
 
-    - `Secret`: Refers to a sensitive piece of information, such as API keys or webhook URLs, that needs to be securely handled.
-     
     - `FreeText`: A flexible text input that can be used for various settings or parameters.
 
-    - `HiddenText`: A sensitive text input that should not be displayed in the UI.
+    - `HiddenText`: A text input masked in the UI. It is not a managed secret — use `ProjectVariable` with `secret: true` for sensitive values.
 
     - `Options`: A selection from a predefined list of values. Requires an `options` array where each entry has a `label` (display text) and `value` (actual value).
+
+    - `ProjectVariable`: A value looked up from the project's variables store, resolved per environment. Set `secret: true` to store a sensitive value such as an API key or webhook URL — the modern replacement for the legacy `Secret` type.
+
+    - `VariableGroup`: A reference to an organization-level variable group; the group's variables are injected together at deploy time.
 
 - **options:** An array of predefined choices, required when `inputType` is `Options`. Each entry contains:
   - **label:** The human-readable text displayed in the UI dropdown.
@@ -84,6 +87,8 @@ variables:
 - **defaultValue:** The default value assigned to the variable. This value will be used unless explicitly overridden during deployment.
 
 - **required:** A boolean value indicating whether this variable is mandatory (`true`) or optional (`false`) for the application's operation.
+
+- **secret:** When `true` (with `inputType: ProjectVariable`), the value is treated as sensitive — encrypted at rest and masked in the UI.
 
 ### 3. Docker and Entry Points
 
@@ -130,7 +135,7 @@ Changes to the `app.yaml` file should be made thoughtfully, as they can affect a
 
 - **Consistent Naming:** Ensure that variable names are clear and descriptive to avoid confusion during deployment.
 
-- **Security:** Handle `Secret` type variables with care to ensure sensitive information is not exposed.
+- **Security:** Store sensitive values as a `ProjectVariable` with `secret: true` so they are encrypted and masked, rather than as plain text.
 
 - **Documentation:** Keep the `description` field updated to accurately reflect the purpose and usage of each variable.
 

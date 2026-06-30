@@ -38,8 +38,9 @@ Here’s an example:
 
 ```yaml
 resources:
-  cpu: {{CPU}}
-  memory: {{RAM}}
+  limits:
+    cpu: {{CPU}}
+    memory: {{RAM}}
   replicas: {{REPLICAS}}
 
 # This section describes the Topics of the data pipeline

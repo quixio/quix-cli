@@ -8,16 +8,24 @@ The `quix.yaml` file serves as the Infrastructure as Code (IaC) descriptor for a
 
 ```yaml
 metadata:
-  version: 1.0
+  version: 2.0
 ```
 
-The `metadata` section contains basic information about the file itself, such as the version of the schema being used. This versioning ensures compatibility and helps manage changes to the structure of the `quix.yaml` file over time.
+The `metadata` section contains basic information about the file itself, such as the descriptor version. The version controls which platform capabilities apply to the file.
+
+!!! tip "Use descriptor version 2.0"
+
+    Two descriptor versions exist: **1.0** and **2.0**. Always use **2.0** to get the full capabilities of the platform — most importantly, deployments inherit their variables from each application's `app.yaml` instead of repeating them in `quix.yaml`. See [YAML 1.0 and 2.0](../../quix-cloud/projects/yaml-2-0.md) for the inheritance model and how to migrate from 1.0.
 
 ---
 
 ## 2. Deployments
 
 The `deployments` section is where you define each component of your data pipeline. Each deployment represents an application or service that performs a specific role in the pipeline, such as a source, transformation, or sink.
+
+!!! info "Version 2.0: most of this is inherited, not written by hand"
+
+    The examples and field references on this page show each deployment in **full**, for reference. Under [descriptor version 2.0](../../quix-cloud/projects/yaml-2-0.md), a deployment **inherits** its variables — and any property left at the application default — from the application's `app.yaml`. You do **not** repeat them in `quix.yaml`: a deployment lists a variable only to **override** it for that deployment, and a deployment that overrides nothing has no `variables:` block at all. The complete shape shown here is what the platform **resolves at deploy time**; what you actually write is usually much smaller. See [YAML 1.0 and 2.0](../../quix-cloud/projects/yaml-2-0.md) for what you write versus what the platform computes.
 
 ### Example
 
@@ -29,8 +37,9 @@ deployments:
     version: latest
     group: data-sources
     resources:
-      cpu: 200
-      memory: 500
+      limits:
+        cpu: 200
+        memory: 500
       replicas: 1
     desiredStatus: Running
     workspaceIds:
@@ -44,18 +53,20 @@ deployments:
         value: csv-data
         multiline: false
       - name: api_key
-        inputType: Secret
+        inputType: ProjectVariable
         description: API key for data source
         required: true
-        secretKey: data-source-api-key
+        secret: true
+        variableKey: data-source-api-key
     disabled: true
   - name: data-visualizer
     application: data-visualizer
     version: latest
     deploymentType: Service
     resources:
-      cpu: 500
-      memory: 1000
+      limits:
+        cpu: 500
+        memory: 1000
       replicas: 1
     publicAccess:
       enabled: true
@@ -96,8 +107,9 @@ deployments:
     image: custom-repo/my-service:1.2.3
     deploymentType: Service
     resources:
-      cpu: 300
-      memory: 600
+      limits:
+        cpu: 300
+        memory: 600
       replicas: 2
     desiredStatus: Running
   - name: Dynamic Configuration Manager
@@ -169,10 +181,12 @@ deployments:
 
 #### Resources Fields
 
+The `resources` object nests `cpu` and `memory` under a `limits` key; `replicas` sits alongside `limits`:
+
 | Field | Required | Type | Examples | Description & Notes |
 |-------|----------|------|----------|---------------------|
-| `cpu` | No | integer | `200`, `500`, `1000` | Millicores requested. |
-| `memory` | No | integer | `256`, `512`, `1024` | Memory request in MB. Monitor usage to adjust. |
+| `limits.cpu` | No | integer | `200`, `500`, `1000` | Millicores requested. |
+| `limits.memory` | No | integer | `256`, `512`, `1024` | Memory request in MB. Monitor usage to adjust. |
 | `replicas` | No | integer | `1`, `2`, `3` | The number of instances of the application to run for scalability and fault tolerance. |
 
 #### Public Access Fields
@@ -205,18 +219,24 @@ deployments:
 
 #### Variable Fields
 
+!!! info "Under version 2.0 these are usually inherited"
+
+    These fields define a deployment variable in full, but under [descriptor version 2.0](../../quix-cloud/projects/yaml-2-0.md) you declare them once in the application's `app.yaml` and each deployment inherits them. In `quix.yaml` you set a field here only to **override** the application default for that deployment.
+
 | Field | Required | Type | Examples | Description & Notes |
 |-------|----------|------|----------|---------------------|
 | `name` | Yes | string | `input`, `output`, `api_key` | The name of the variable. |
-| `inputType` | Yes | enum | `InputTopic`, `OutputTopic`, `Secret`, `FreeText`, `Options`, `HiddenText` | Determines validation & UI control type. The available options for `Options` type are defined in `app.yaml`. |
+| `inputType` | Yes | enum | `InputTopic`, `OutputTopic`, `FreeText`, `HiddenText`, `Options`, `ProjectVariable`, `VariableGroup` | Determines validation & UI control type. The list for `Options` is defined in `app.yaml`. (`Secret` is a legacy type, normalized to `ProjectVariable` + `secret: true` — see the note below.) |
 | `description` | No | string | Free text | A brief explanation of what this variable does. |
 | `required` | No | boolean | `true` / `false` | Enforces presence of value (or secret) to start deployment. |
-| `value` | No | string | `csv-data` | Assigned value (not for secrets). |
+| `value` | No | string | `csv-data` | Assigned value (not for project variables or secrets). |
+| `variableKey` | When `inputType=ProjectVariable` | string | `data-source-api-key` | Key looked up in the project variables store. Used for `ProjectVariable`, including secrets (with `secret: true`). |
+| `secret` | No | boolean | `true` / `false` | Marks a `ProjectVariable` value as sensitive — encrypted at rest and masked in the UI. |
 | `multiline` | No | boolean | `true` | Enable multi-line editing (mostly with `FreeText`). |
-| `secretKey` | When `inputType=Secret` | string | `data-source-api-key` | Reference to stored secret; secret value not stored here. |
+| `secretKey` | Legacy | string | `data-source-api-key` | **Legacy.** Secret reference for the old `inputType: Secret`. Superseded by `ProjectVariable` + `variableKey` + `secret: true`; normalized away on save. |
 
 !!! note "Secrets"
-    When `inputType: Secret`, supply the reference using `secretKey` (do not put the secret in `value`).
+    Declare a secret as a `ProjectVariable` with `secret: true`, and reference its key with `variableKey` (do not put the secret in `value`). The older `inputType: Secret` + `secretKey` form is still accepted but is normalized to this shape on save.
 
 ### Notes on Docker Image Deployments
 

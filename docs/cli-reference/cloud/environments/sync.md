@@ -34,7 +34,7 @@ Given this `quix.yaml`:
 
 ```yaml
 metadata:
-  version: 1.0
+  version: 2.0
 
 deployments:
   - name: Starter Source
@@ -42,8 +42,9 @@ deployments:
     version: latest
     deploymentType: Job
     resources:
-      cpu: 100
-      memory: 100
+      limits:
+        cpu: 100
+        memory: 100
       replicas: 1
     variables:
       - name: output
