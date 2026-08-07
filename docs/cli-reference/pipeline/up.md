@@ -6,6 +6,10 @@ The `quix pipeline up` command sets up and runs your pipeline using Docker Compo
 
 If the update option is used, the command updates the `quix.yaml` file with new local applications and variables of existing deployments. The dry-run option allows you to generate the `compose.local.yaml` file without starting the containers, providing a preview of the configuration.
 
+`-k`, `--keep-variables` applies to that update pass only: variables you deleted from the `.env` file are kept in `app.yaml` instead of being removed along with them. Use it when `.env` holds only a subset of the variables your application declares.
+
+Before building, the command also rewrites each application's `<Dockerfile>.dockerignore` from the `IncludedFolders` declared in its `app.yaml`, and deletes that file when the application declares none. Pass `-p`, `--preserve-dockerignore` to keep a `.dockerignore` you maintain yourself; an application that still declares `IncludedFolders` has its file regenerated either way.
+
 Deployments are connected using variables with `VariableType` of `InputTopic` and `OutputTopic`, ensuring seamless data flow between different services.
 
 This process ensures that your pipeline is correctly configured and running with all the necessary services. For more details on the `docker compose up` command, refer to the [official Docker documentation](https://docs.docker.com/reference/cli/docker/compose/up/).

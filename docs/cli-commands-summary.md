@@ -29,7 +29,7 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 | Use Case                                                                       | Command              |
 | ------------------------------------------------------------------------------ | -------------------- |
 | [Create a new application](./cli-reference/apps/create.md)                     | `quix app add`       |
-| [Edit the variables of an application](./cli-reference/apps/edit.md)           | `quix app edit`      |
+| [Edit the application values](./cli-reference/apps/edit.md)                    | `quix app edit`      |
 | [List applications in the project](./cli-reference/apps/list.md)               | `quix app list`      |
 | [Add a variable to an application](./cli-reference/apps/variables/create.md)   | `quix app vars add`  |
 | [Edit the variables of an application](./cli-reference/apps/variables/edit.md) | `quix app vars edit` |
@@ -54,8 +54,7 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 | ---------------------------------------------------------------------------------------------- | -------------------------- |
 | [Start local pipeline broker](./cli-reference/broker/up.md)                                    | `quix broker up`           |
 | [Stop local pipeline broker](./cli-reference/broker/down.md)                                   | `quix broker down`         |
-| [List all the topics from your pipeline broker](./cli-reference/broker/topics/list.md)         | `quix broker topic list`   |
-| [Read the content of a topic from your pipeline broker](./cli-reference/broker/topics/read.md) | `quix broker topic read`   |
+| [List all the topics from your pipeline broker](./cli-reference/broker/topics/list.md)         | `quix broker topics list`  |
 | [Read messages from a topic in your pipeline](./cli-reference/broker/topics/read.md)           | `quix broker topics read`  |
 | [Write messages to a topic in your pipeline](./cli-reference/broker/topics/write.md)           | `quix broker topics write` |
 
@@ -63,7 +62,7 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 
 | Use Case                                                                             | Command                                         |
 | ------------------------------------------------------------------------------------ | ----------------------------------------------- |
-| [Set SDK broker to custom local address](./cli-reference/sdk/broker/set.md)          | `quix sdk broker set <broker-address> --enable` |
+| [Set SDK broker to custom local address](./cli-reference/sdk/broker/set.md)          | `quix sdk broker set <address> --enable`        |
 | [Set SDK broker to Quix Cloud](./cli-reference/sdk/broker/cloud.md)                  | `quix sdk broker cloud`                         |
 | [Set SDK broker to default local configuration](./cli-reference/sdk/broker/local.md) | `quix sdk broker local`                         |
 
@@ -75,6 +74,16 @@ This quick reference guide lists common use cases for the Quix CLI with the corr
 | [Update the `.env` variables from the pipeline and run](./cli-reference/run.md) | `quix run --update`    |
 | [Run and stop deployed version of the application](./cli-reference/run.md)      | `quix run --stop`      |
 | [Run and intercept deployed version of the application](./cli-reference/run.md) | `quix run --intercept` |
+
+## Cloud Project Variables
+
+| Use Case                                                                                | Command                                           |
+| --------------------------------------------------------------------------------------- | ------------------------------------------------- |
+| [List the project variables of an environment](./cli-reference/cloud/variables/list.md) | `quix cloud variables list <workspace-id>`        |
+| [Get a single project variable](./cli-reference/cloud/variables/get.md)                 | `quix cloud variables get <key> <workspace-id>`   |
+| [Create or update a project variable](./cli-reference/cloud/variables/set.md)           | `quix cloud variables set <key> <value>`          |
+| [Store a project variable encrypted at rest](./cli-reference/cloud/variables/set.md)    | `quix cloud variables set <key> <value> --secret` |
+| [Delete a project variable](./cli-reference/cloud/variables/delete.md)                  | `quix cloud variables delete <key>`               |
 
 ## Common Options
 

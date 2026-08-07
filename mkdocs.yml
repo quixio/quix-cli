@@ -106,12 +106,6 @@ nav:
       - cloud secrets delete: cli-reference/cloud/secrets/delete.md
       - cloud secrets list: cli-reference/cloud/secrets/list.md
       - cloud secrets set: cli-reference/cloud/secrets/set.md
-    - cloud variables:
-      - cli-reference/cloud/variables/index.md
-      - cloud variables delete: cli-reference/cloud/variables/delete.md
-      - cloud variables get: cli-reference/cloud/variables/get.md
-      - cloud variables list: cli-reference/cloud/variables/list.md
-      - cloud variables set: cli-reference/cloud/variables/set.md
     - cloud topics:
       - cli-reference/cloud/topics/index.md
       - cloud topics get: cli-reference/cloud/topics/get.md
@@ -135,6 +129,12 @@ nav:
         - cloud users tokens revoke: cli-reference/cloud/users/tokens/revoke.md
       - cloud users current: cli-reference/cloud/users/current.md
       - cloud users list: cli-reference/cloud/users/list.md
+    - cloud variables:
+      - cli-reference/cloud/variables/index.md
+      - cloud variables delete: cli-reference/cloud/variables/delete.md
+      - cloud variables get: cli-reference/cloud/variables/get.md
+      - cloud variables list: cli-reference/cloud/variables/list.md
+      - cloud variables set: cli-reference/cloud/variables/set.md
   - Local Commands:
     - apps:
       - cli-reference/apps/index.md
