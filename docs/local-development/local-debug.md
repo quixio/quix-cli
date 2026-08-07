@@ -4,7 +4,7 @@ Debugging an application locally using `quix run` has some nuances that need to 
 
 ## Prerequisites
 
-This tutorial assumes that you have read the [Quickstart](./cli-quickstart.md) and installed the dependencies:
+This tutorial assumes that you have read the [Quickstart](../cli-quickstart.md) and installed the dependencies:
 
 - [Docker Desktop](https://docs.docker.com/engine/install/){target=_blank}
 - [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git){target=_blank}
@@ -24,7 +24,7 @@ This tutorial assumes that you have read the [Quickstart](./cli-quickstart.md) a
 ### Step 1: Setting Up the Broker
 
 !!! note
-    If you followed all the steps from the [Quickstart](cli-quickstart.md) tutorial, your local pipeline broker is already up and running.
+    If you followed all the steps from the [Quickstart](../cli-quickstart.md) tutorial, your local pipeline broker is already up and running.
 
 Depending on your setup, you can choose to use your local pipeline broker, another local broker, or the Quix Cloud broker. Here are the steps to configure each:
 
@@ -81,7 +81,7 @@ Depending on your setup, you can choose to use your local pipeline broker, anoth
         quix sdk broker local
         ```
 
-    For more details on the `set` command, refer to the [set broker documentation](./cli-reference/sdk/broker/set.md).
+    For more details on the `set` command, refer to the [set broker documentation](../cli-reference/sdk/broker/set.md).
 
     !!! warning
         This doesn't change your local pipeline broker, just the broker you use when you run the application locally outside the pipeline.
@@ -96,14 +96,14 @@ Depending on your setup, you can choose to use your local pipeline broker, anoth
 
     This configuration is ideal if you want to test your application in an environment that closely resembles production.
 
-    For more details on the `cloud` command, refer to the [cloud broker documentation](./cli-reference/sdk/broker/cloud.md).
+    For more details on the `cloud` command, refer to the [cloud broker documentation](../cli-reference/sdk/broker/cloud.md).
 
     !!! warning
         This doesn't change your local pipeline broker, just the broker you use when you run the application locally outside the pipeline.
 
 ---
 
-For a comprehensive overview of all SDK broker commands, refer to the [SDK broker documentation](./cli-reference/sdk/broker/index.md).
+For a comprehensive overview of all SDK broker commands, refer to the [SDK broker documentation](../cli-reference/sdk/broker/index.md).
 
 ### Step 2: Preparing Your Local Environment
 
@@ -182,7 +182,7 @@ After creating the virtual environment, you need to activate it to start using i
 Let's take a look at the `.env` file generated for the `event-detection-transformation` application:
 
 !!! note
-    If you didn't follow the [Quickstart](cli-quickstart.md) you can get to this point by running:
+    If you didn't follow the [Quickstart](../cli-quickstart.md) you can get to this point by running:
 
     ```bash
     quix app create event-detection-transformation
@@ -251,7 +251,7 @@ You can create and remove variables for your local applications here at your dis
 
 ### Step 4: Running Your Code with `quix run`
 
-By using the [`quix run`](./cli-reference/run.md) command, the `.env` variables are injected into your Python code as environment variables so you can read the values like this:
+By using the [`quix run`](../cli-reference/run.md) command, the `.env` variables are injected into your Python code as environment variables so you can read the values like this:
 
 ```python title="main.py"
 import os
@@ -434,12 +434,12 @@ variable=a-pipeline-value
 
 There are several other CLI commands that you may find very useful during your local development. Here are some of the most relevant ones:
 
-- [quix pipeline view](./cli-reference/pipeline/view.md): Create and preview a mermaid diagram of the pipeline.
-- [quix pipeline up](./cli-reference//pipeline/up.md): Run your pipeline locally using docker compose
-- [quix pipeline status](./cli-reference/pipeline/status.md): Display the current status of the local pipeline
-- [quix pipeline logs -f -n 10](./cli-reference/pipeline/logs.md): View output from deployments of the local pipeline in realtime
-- [quix pipeline sync](./cli-reference/pipeline/sync.md): Synchronize your local pipeline to Quix Cloud
-- [quix broker topics read](./cli-reference/broker/topics/read.md): Read the messages from your pipeline topics
+- [quix pipeline view](../cli-reference/pipeline/view.md): Create and preview a mermaid diagram of the pipeline.
+- [quix pipeline up](../cli-reference/pipeline/up.md): Run your pipeline locally using docker compose
+- [quix pipeline status](../cli-reference/pipeline/status.md): Display the current status of the local pipeline
+- [quix pipeline logs -f -n 10](../cli-reference/pipeline/logs.md): View output from deployments of the local pipeline in realtime
+- [quix pipeline sync](../cli-reference/pipeline/sync.md): Synchronize your local pipeline to Quix Cloud
+- [quix broker topics read](../cli-reference/broker/topics/read.md): Read the messages from your pipeline topics
 
 You should also check our [CLI Commands Summary](../cli-commands-summary.md), where you'll find the most useful commands for developing QuixStreams data pipelines locally.
 
