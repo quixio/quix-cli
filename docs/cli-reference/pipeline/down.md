@@ -40,21 +40,21 @@ For example:
 Executing 'docker compose down'
 
  Container githubrepo-console-1  Stopping
- Container githubrepo-event-detection-transformation-1  Stopping
- Container githubrepo-demo-data-source-1  Stopping
- Container githubrepo-kafka-broker-1  Stopping
- Container githubrepo-event-detection-transformation-1  Stopped
- Container githubrepo-event-detection-transformation-1  Removing
- Container githubrepo-demo-data-source-1  Stopped
- Container githubrepo-demo-data-source-1  Removing
- Container githubrepo-event-detection-transformation-1  Removed
- Container githubrepo-demo-data-source-1  Removed
+ Container githubrepo-event_detection_transformation-1  Stopping
+ Container githubrepo-demo_data_source-1  Stopping
+ Container githubrepo-kafka_broker-1  Stopping
+ Container githubrepo-event_detection_transformation-1  Stopped
+ Container githubrepo-event_detection_transformation-1  Removing
+ Container githubrepo-demo_data_source-1  Stopped
+ Container githubrepo-demo_data_source-1  Removing
+ Container githubrepo-event_detection_transformation-1  Removed
+ Container githubrepo-demo_data_source-1  Removed
  Container githubrepo-console-1  Stopped
  Container githubrepo-console-1  Removing
  Container githubrepo-console-1  Removed
- Container githubrepo-kafka-broker-1  Stopped
- Container githubrepo-kafka-broker-1  Removing
- Container githubrepo-kafka-broker-1  Removed
+ Container githubrepo-kafka_broker-1  Stopped
+ Container githubrepo-kafka_broker-1  Removing
+ Container githubrepo-kafka_broker-1  Removed
  Network githubrepo_default  Removing
  Network githubrepo_default  Removed
 ```

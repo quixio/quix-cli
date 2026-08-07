@@ -223,10 +223,29 @@ output=hard-braking
 ### Free Text ###
 # Add any free text or comments here
 
+### Project Variables ###
+# Project-scoped variables resolved from .env
+
+### Groups ###
+# Variables from variable groups, flattened into individual keys
+
 ### Untracked Variables ###
 # Variables that are not tracked by Quix CLI
 ```
 Each section of the .env file is dedicated to different types of variables used in Quix, such as those for rendering the data pipeline or managing secrets.
+
+Members of a [variable group](./local-yaml-variables.md#variable-group-member-values) are flattened one per line under `### Groups ###`, preceded by a comment naming the group they came from. Dots in a member key become double underscores, since a dotted name is not a legal environment variable name:
+
+```.env title=".env"
+### Groups ###
+# Variables from variable groups, flattened into individual keys
+# GROUP: DatabaseConfig
+database__host=localhost
+database__port=5432
+```
+
+!!! note
+    `.env` has no section of its own for `HiddenText` and `Options` variables, so both are listed under `### Free Text ###`. Their declared type is preserved: `quix pipeline update` writes them back to `app.yaml` as `HiddenText` and `Options`.
 
 You can create and remove variables for your local applications here at your discretion, and they will be integrated into the system as needed.
 
@@ -285,6 +304,12 @@ output=hard-braking
 ### Free Text ###
 # Add any free text or comments here
 variable=my-value
+
+### Project Variables ###
+# Project-scoped variables resolved from .env
+
+### Groups ###
+# Variables from variable groups, flattened into individual keys
 
 ### Untracked Variables ###
 # Variables that are not tracked by Quix CLI
@@ -394,6 +419,12 @@ output=deployed-output-topic
 ### Free Text ###
 # Add any free text or comments here
 variable=a-pipeline-value
+
+### Project Variables ###
+# Project-scoped variables resolved from .env
+
+### Groups ###
+# Variables from variable groups, flattened into individual keys
 
 ### Untracked Variables ###
 # Variables that are not tracked by Quix CLI

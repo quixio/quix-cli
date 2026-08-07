@@ -18,6 +18,6 @@ quix apps variables edit [options]
 - `--name <name>`: Variable name
 - `--default-value <default-value>`: Default value
 - `--description <description>`: Variable description
-- `--type <FreeText|HiddenText|InputTopic|OutputTopic|Secret|Topic>`: Variable input type
+- `--type <FreeText|HiddenText|InputTopic|Options|OutputTopic|ProjectVariable|Secret|Topic|VariableGroup>`: Variable input type
 - `--required`: If this flag is set, the variable will be required
 

@@ -56,27 +56,42 @@ variables:
         value: mongo
       - label: File System
         value: file
+  - name: api_token
+    inputType: Secret
+    description: Token used to call the external API
+    defaultValue: external.api.token
+    required: true
+  - name: DatabaseConfig
+    inputType: VariableGroup
+    description: Connection settings shared across the project
+    variables:
+      - key: database.host
+        defaultValue: localhost
+      - key: database.password
+        secret: true
 ```
 
 **Explanation:**
 
 - **name:** The name of the variable, which identifies it within the application.
   
-- **inputType:** Defines the type of input expected. This can be:
-  
-    - `InputTopic`: Refers to a topic that the application will consume data from.
-  
-    - `OutputTopic`: Refers to a topic where the application will produce data.
+- **inputType:** Defines the type of input expected, what `defaultValue` means for it, and where the value comes from when you run the application locally.
 
-    - `FreeText`: A flexible text input that can be used for various settings or parameters.
+    | `inputType` | Meaning | `defaultValue` holds | Local value source |
+    |---|---|---|---|
+    | `InputTopic` | Topic the application consumes data from | the topic name | none — the value is inline |
+    | `OutputTopic` | Topic the application produces data to | the topic name | none — the value is inline |
+    | `Topic` | Topic reference that is not fixed as input or output | the topic name | none — the value is inline |
+    | `FreeText` | Flexible text input for settings or parameters | the value | none — the value is inline |
+    | `HiddenText` | Text input masked in the UI; **not** a managed secret | the value | none — the value is inline |
+    | `Options` | Selection from the predefined `options` list | the selected `value` | none — the value is inline |
+    | `Secret` | Managed secret; the value never appears in the descriptor | the **secret key** | [`.secrets`](../local-development/local-secrets.md), keyed by the secret key. Left blank in the generated `.env` |
+    | `ProjectVariable` | Value from the project's variables store, resolved per environment | the **project variable key** | the project variables store, or [`.quix.yaml.variables`](../local-development/local-yaml-variables.md) keyed by the project variable key |
+    | `VariableGroup` | Named group whose members are injected together | not used — `name` is the group name, and the members are listed under [`variables`](#variable-group-members) | [`.quix.yaml.variables`](../local-development/local-yaml-variables.md), keyed by each member `key` |
 
-    - `HiddenText`: A text input masked in the UI. It is not a managed secret — use `ProjectVariable` with `secret: true` for sensitive values.
+    `Secret` and `ProjectVariable` with `secret: true` are **two independent mechanisms**, both current — the CLI keeps whichever type you declare. They read from different files locally: `.secrets` for `Secret`, `.quix.yaml.variables` for project variables and variable-group members. A project variable marked `secret: true` has its value withheld by the API, so its local value must be set in `.quix.yaml.variables`.
 
-    - `Options`: A selection from a predefined list of values. Requires an `options` array where each entry has a `label` (display text) and `value` (actual value).
-
-    - `ProjectVariable`: A value looked up from the project's variables store, resolved per environment. Set `secret: true` to store a sensitive value such as an API key or webhook URL — the modern replacement for the legacy `Secret` type.
-
-    - `VariableGroup`: A reference to an organization-level variable group; the group's variables are injected together at deploy time.
+    When the CLI generates `.env` it sections `HiddenText` and `Options` under Free Text and `Topic` under Input Topics; the type you declare is preserved in `app.yaml`.
 
 - **options:** An array of predefined choices, required when `inputType` is `Options`. Each entry contains:
   - **label:** The human-readable text displayed in the UI dropdown.
@@ -84,11 +99,25 @@ variables:
 
 - **description:** A brief explanation of the variable's purpose and how it should be used.
 
-- **defaultValue:** The default value assigned to the variable. This value will be used unless explicitly overridden during deployment.
+- **defaultValue:** The default value assigned to the variable, used unless explicitly overridden during deployment. For `Secret` and `ProjectVariable` it is not a value but a **key** — see the table above.
 
 - **required:** A boolean value indicating whether this variable is mandatory (`true`) or optional (`false`) for the application's operation.
 
-- **secret:** When `true` (with `inputType: ProjectVariable`), the value is treated as sensitive — encrypted at rest and masked in the UI.
+- **secret:** When `true` — on a `ProjectVariable` or on a variable-group member — the value is treated as sensitive and is left blank in the generated `.env`; supply it locally in the file named in the table above. A secret `ProjectVariable` is also encrypted at rest and withheld from API responses.
+
+- **variables:** The members of a `VariableGroup` — see [Variable group members](#variable-group-members).
+
+#### Variable Group Members
+
+A `VariableGroup` variable carries its own `variables` list. Each member is resolved locally from `.quix.yaml.variables` under its `key`.
+
+| Field | Required | Type | Examples | Description & Notes |
+|-------|----------|------|----------|---------------------|
+| `key` | Yes | string | `database.host`, `database.password` | The member's key. Also the key used to look the value up in `.quix.yaml.variables`. |
+| `defaultValue` | No | string | `localhost`, `develop` | Default value for the member. |
+| `secret` | No | boolean | `true` / `false` | Marks the member as sensitive. Secret members use `.quix.yaml.variables` like every other member — **not** `.secrets`. |
+
+In the generated `.env`, group members appear under a `# GROUP: <name>` comment with their key sanitized to environment-variable form — dots become double underscores, so `database.host` becomes `database__host`.
 
 ### 3. Docker and Entry Points
 
@@ -135,7 +164,7 @@ Changes to the `app.yaml` file should be made thoughtfully, as they can affect a
 
 - **Consistent Naming:** Ensure that variable names are clear and descriptive to avoid confusion during deployment.
 
-- **Security:** Store sensitive values as a `ProjectVariable` with `secret: true` so they are encrypted and masked, rather than as plain text.
+- **Security:** Store sensitive values as a `Secret`, or as a `ProjectVariable` with `secret: true`, so the descriptor holds only a key and never the value. `HiddenText` only masks the value in the UI — it is not a managed secret.
 
 - **Documentation:** Keep the `description` field updated to accurately reflect the purpose and usage of each variable.
 

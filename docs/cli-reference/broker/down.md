@@ -31,14 +31,14 @@ Executing 'docker compose down'
 Once the command is executed, Docker Compose will stop and remove the containers:
 
 ```text
-Container githubrepo-kafka-broker-1  Stopping
+Container githubrepo-kafka_broker-1  Stopping
 Container githubrepo-console-1  Stopping
 Container githubrepo-console-1  Stopped
 Container githubrepo-console-1  Removing
 Container githubrepo-console-1  Removed
-Container githubrepo-kafka-broker-1  Stopped
-Container githubrepo-kafka-broker-1  Removing
-Container githubrepo-kafka-broker-1  Removed
+Container githubrepo-kafka_broker-1  Stopped
+Container githubrepo-kafka_broker-1  Removing
+Container githubrepo-kafka_broker-1  Removed
 Network githubrepo_default  Removing
 Network githubrepo_default  Removed
 ```
