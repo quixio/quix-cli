@@ -4,10 +4,12 @@
 
 Get a specific project variable
 
+**Aliases:** `get`
+
 **Usage:**
 
 ```
-quix cloud variables get <key> <workspace-id> [options]
+quix cloud variables get <key> [<workspace-id>] [options]
 ```
 
 **Arguments:**
@@ -18,3 +20,4 @@ quix cloud variables get <key> <workspace-id> [options]
 **Options:**
 
 - `-o, --output <json|table>`: Output type of the retrieved data
+

@@ -4,6 +4,8 @@
 
 Create or update a project variable
 
+**Aliases:** `set`
+
 **Usage:**
 
 ```
@@ -22,3 +24,4 @@ quix cloud variables set <key> <value> [options]
 - `-r, --repository-id <repository-id>`: The ID of the repository in case no workspace-id is provided and --default is set
 - `-w, --workspace-id <workspace-id>`: The ID of the environment
 - `-o, --output <json|table>`: Output type of the retrieved data
+

@@ -9,7 +9,7 @@ List the project variables of an environment
 **Usage:**
 
 ```
-quix cloud variables list <workspace-id> [options]
+quix cloud variables list [<workspace-id>] [options]
 ```
 
 **Arguments:**
@@ -19,3 +19,4 @@ quix cloud variables list <workspace-id> [options]
 **Options:**
 
 - `-o, --output <json|table>`: Output type of the retrieved data
+

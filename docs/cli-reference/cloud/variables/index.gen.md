@@ -18,3 +18,4 @@ quix cloud variables [command] [options]
 - [get](get.md): Get a specific project variable
 - [list](list.md): List the project variables of an environment
 - [set](set.md): Create or update a project variable
+

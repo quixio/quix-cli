@@ -23,3 +23,4 @@ quix cloud variables delete <key> [options]
 - `-w, --workspace-id <workspace-id>`: The ID of the environment
 - `-a, --delete-all-values`: Deletes all the values for a given key instead of the value from a single environment or the default
 - `-o, --output <json|table>`: Output type of the retrieved data
+
