@@ -453,6 +453,6 @@ You should also check our [CLI Commands Summary](../cli-commands-summary.md), wh
 
     Deploy your local pipeline to the Cloud, for scalability, observability, and even more Quix magic.
 
-    [Deploy to Quix Cloud :octicons-arrow-right-24:](../quix-cloud/quickstart.md)
+    [Deploy to Quix Cloud :octicons-arrow-right-24:](../../quix-cloud/quickstart.md)
 
 </div>

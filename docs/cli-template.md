@@ -96,7 +96,7 @@ This updates your `quix.yaml` and pushes your modified code to the Gitea reposit
 
 In Quix Cloud you can view the pipeline and examine it in detail.
 
-![Quix Cloud pipeline view](../images/hello-quix-pipeline-view.png)
+![Quix Cloud pipeline view](images/hello-quix-pipeline-view.png)
 
 ## Next step
 
