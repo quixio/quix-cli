@@ -249,6 +249,20 @@ database__port=5432
 
 You can create and remove variables for your local applications here at your discretion, and they will be integrated into the system as needed.
 
+#### Where each value lives
+
+`.env` is generated per application and holds the values your application reads. Two other files sit beside it at the repository root, and between them they answer the question you will keep coming back to — *which file does this value go in?*
+
+| File | Where | Holds | Keyed by |
+|---|---|---|---|
+| `.env` | one per application | the resolved values your application reads, secrets excepted | the variable's **name** |
+| [`.secrets`](./local-secrets.md) | repository root | values for `inputType: Secret` variables | the **secret key** |
+| [`.quix.yaml.variables`](./local-yaml-variables.md) | repository root | values for project variables, variable group members and `{{ }}` placeholders | the **key being looked up** |
+
+All three are gitignored: `quix.yaml` and `app.yaml` are committed and carry only the *reference* to a value, never the value itself.
+
+A secret's line in `.env` stays blank on purpose, so that a value which must not be committed only ever exists in the file dedicated to it. Both ways of running the application inject those values for you at the moment they start it, so a blank line is not something to fix.
+
 ### Step 4: Running Your Code with `quix run`
 
 By using the [`quix run`](../cli-reference/run.md) command, the `.env` variables are injected into your Python code as environment variables so you can read the values like this:
@@ -259,6 +273,8 @@ import os
 input_topic = app.topic(os.environ["input"])
 output_topic = app.topic(os.environ["output"])
 ```
+
+Secret values do not come from `.env`, since it holds them blank. `quix run` reads them from `.secrets` and `.quix.yaml.variables` as it starts the process, so `os.environ` sees them exactly as a deployed application would — see [Where the variables come from](../cli-reference/run.md#where-the-variables-come-from).
 
 !!! tip "Working with a local pipeline"
     The `--stop` or `--intercept` options can be used to stop or pause the deployed version of your application during the execution of this command.
