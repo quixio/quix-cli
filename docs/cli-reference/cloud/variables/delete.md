@@ -6,6 +6,8 @@ The `quix cloud variables delete` command removes one stored value: by default t
 
 Removing an environment's value does not remove the variable — the environment falls back to the default from then on. When nothing matches, the command reports that nothing was changed instead of failing.
 
+Either way it then prints the project's full variable matrix, the same table [`list`](list.md) produces, so you can see what the deletion left behind.
+
 {% include-markdown '../utils/tip-use.md' %}
 
 ## Example Usage

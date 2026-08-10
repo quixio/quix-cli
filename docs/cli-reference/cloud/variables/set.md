@@ -4,7 +4,7 @@
 
 The `quix cloud variables set` command creates the key if the project does not have it yet and overwrites the value if it does. Without `--default` the value is written for a single environment; with `--default` it is written as the project-wide default that environments without their own value resolve to.
 
-`--secret` encrypts the value at rest and stops the API returning it, so [`get`](get.md) and [`list`](list.md) show `***` afterwards. The flag is applied as given on every call: re-setting an existing secret without `--secret` turns it back into a plain value.
+`--secret` encrypts the value at rest and stops the API returning it, so [`get`](get.md) and [`list`](list.md) show `***` afterwards. The flag is applied as given on every call: re-setting an existing secret without `--secret` turns it back into a plain value. It is stored per value, but [`list`](list.md) reports it per key — so while any environment still holds a secret value, the whole key keeps showing `Yes` and `***`.
 
 After writing, the command prints the project's full variable matrix, the same table [`list`](list.md) produces.
 

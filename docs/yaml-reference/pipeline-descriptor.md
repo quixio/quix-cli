@@ -231,7 +231,7 @@ The `resources` object nests `cpu` and `memory` under a `limits` key; `replicas`
 | `required` | No | boolean | `true` / `false` | Enforces presence of value (or secret) to start deployment. |
 | `value` | No | string | `csv-data` | Assigned value (not for project variables or secrets). |
 | `variableKey` | When `inputType=ProjectVariable` | string | `data-source-api-key` | Key looked up in the project variables store, including for secrets (with `secret: true`). Resolved locally from `.quix.yaml.variables`. |
-| `secret` | No | boolean | `true` / `false` | Marks a `ProjectVariable` value as sensitive — encrypted at rest and masked in the UI. |
+| `secret` | No | boolean | `true` / `false` | Marks a `ProjectVariable` value as sensitive — encrypted at rest and withheld from API responses. |
 | `multiline` | No | boolean | `true` | Enable multi-line editing (mostly with `FreeText`). |
 | `secretKey` | When `inputType=Secret` | string | `data-source-api-key` | Key of the secret holding the value. Resolved locally from `.secrets`. |
 

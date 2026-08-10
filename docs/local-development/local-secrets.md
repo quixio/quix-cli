@@ -10,13 +10,13 @@ Start by adding your secret as an environment variable in the `.env` file. Here�
 
 ```dotenv title=".env" hl_lines="23"
 # ======================================================
-#               Quix CLI guidelines
+#               🚀 Quix CLI guidelines 🚀
 # ======================================================
 # To update the quix.yaml from this .env file, use:
-#  quix pipeline update
+#  🔄  quix pipeline update
 #
 # To update the .env file from the quix.yaml file, use:
-#  quix init --update
+#  🔄  quix init --update
 # ======================================================
 
 ### Quix SDK Configuration ###
@@ -265,17 +265,26 @@ Updating application starter-source
 ✓ starter-source → starter-source
 ```
 
+!!! warning "Making a variable secret does not clear what `.env` already holds"
+    The CLI cannot tell a value it wrote itself from one you typed, and destroying yours would be the worse mistake, so it keeps the line either way. A variable that was plain at the last refresh therefore leaves its plaintext behind once it becomes secret; `quix init --reset-dotenv` rebuilds the file without it.
+
+    For a non-secret project variable or group member that resolves to nothing, the refresh reports the line it kept rather than blanking it:
+
+    ```text
+    ! Keeping the existing 'db_host' in '.env': nothing resolved for it. Use 'quix init --reset-dotenv' to rebuild the file.
+    ```
+
 A `.env` generated from scratch — in a fresh clone, or after `quix init --reset-dotenv` — deliberately leaves secret values blank, so the sensitive value only ever lives in `.secrets`:
 
 ```dotenv title=".env" hl_lines="23"
 # ======================================================
-#               Quix CLI guidelines
+#               🚀 Quix CLI guidelines 🚀
 # ======================================================
 # To update the quix.yaml from this .env file, use:
-#  quix pipeline update
+#  🔄  quix pipeline update
 #
 # To update the .env file from the quix.yaml file, use:
-#  quix init --update
+#  🔄  quix init --update
 # ======================================================
 
 ### Quix SDK Configuration ###
@@ -306,4 +315,6 @@ api_secret_token=
 ```
 
 !!! note "A blank secret line is expected"
-    The same blanking applies to a `ProjectVariable` with `secret: true` and to secret variable group members. There is nothing to fix: `quix pipeline up` and `quix run` both take the value from `.secrets` or `.quix.yaml.variables`, not from `.env`. Type a value next to a blank secret line only when you want to change it — the next `quix pipeline update` moves it back into `.secrets`.
+    The same blanking applies to a `ProjectVariable` with `secret: true` and to secret variable group members. There is nothing to fix: `quix pipeline up` and `quix run` both take the value from `.secrets` or `.quix.yaml.variables`, not from `.env`.
+
+    Only under `### Secrets ###` does typing a value next to a blank line change the stored one: the next `quix pipeline update` moves it into `.secrets`. For a secret project variable or a secret group member the value belongs in `.quix.yaml.variables` — a value typed into `.env` is used by the run that reads it, but nothing ever promotes it out of that file.

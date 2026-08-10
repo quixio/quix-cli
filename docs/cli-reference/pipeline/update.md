@@ -11,7 +11,7 @@ During the update process, the command checks for any new variables or changes i
 
     ```text
     ✗ Deployment demo-data-source can't be updated because variable 'my-new-variable' is required and it has no value
-    ✓ 'quix.yaml' is updated
+    ✓ 'quix.yaml' was updated
     ✗ Some deployments have warnings. Please, update 'quix.yaml' manually and try again
     ```
 
@@ -48,15 +48,17 @@ $ quix pipeline update
 The update process starts:
 
 ```text
-Updating applications ...
-✓ demo-data-source
-✓ Event Detection Transformation
+Updating application deployments ...
+✓ demo-data-source → demo-data-source
+✓ event-detection-transformation → event-detection-transformation
 ```
+
+Each line names the application and the deployment it updated. With a single application in scope, the heading names it instead: `Updating deployments of application demo-data-source`.
 
 If everything is updated successfully:
 
 ```text
-✓ 'quix.yaml' is updated
+✓ 'quix.yaml' was updated
 ```
 
 !!! info

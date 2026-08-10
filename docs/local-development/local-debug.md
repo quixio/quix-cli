@@ -263,6 +263,8 @@ All three are gitignored: `quix.yaml` and `app.yaml` are committed and carry onl
 
 A secret's line in `.env` stays blank on purpose, so that a value which must not be committed only ever exists in the file dedicated to it. Both ways of running the application inject those values for you at the moment they start it, so a blank line is not something to fix.
 
+A refresh never overwrites a line it has nothing to put there, because it cannot tell its own earlier output from a value you typed. Two things follow: plaintext an earlier refresh wrote for a variable that has since become secret stays in `.env` until [`quix init --reset-dotenv`](../cli-reference/init.md) rebuilds the file, and a project variable or group member that resolves to nothing is reported rather than blanked.
+
 ### Step 4: Running Your Code with `quix run`
 
 By using the [`quix run`](../cli-reference/run.md) command, the `.env` variables are injected into your Python code as environment variables so you can read the values like this:

@@ -4,7 +4,7 @@
 
 The `quix cloud variables list` command prints every project variable as a matrix: one row per key, one column per environment in the project, plus the default value column. A cell is empty when that environment has no value of its own and therefore resolves to the default.
 
-Secret variables are marked in the `Secret` column and their values are shown as `***` — the API never returns them.
+Secret variables are marked in the `Secret` column and their values are shown as `***` — the API never returns them. The mark is per key, not per value: one secret value anywhere under a key marks the whole row `Yes` and prints `***` in every cell of it, including environments whose value is not secret.
 
 {% include-markdown '../utils/tip-use.md' %}
 
