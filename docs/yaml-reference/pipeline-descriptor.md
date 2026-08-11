@@ -225,18 +225,26 @@ The `resources` object nests `cpu` and `memory` under a `limits` key; `replicas`
 
 | Field | Required | Type | Examples | Description & Notes |
 |-------|----------|------|----------|---------------------|
-| `name` | Yes | string | `input`, `output`, `api_key` | The name of the variable. |
-| `inputType` | Yes | enum | `InputTopic`, `OutputTopic`, `FreeText`, `HiddenText`, `Options`, `ProjectVariable`, `VariableGroup` | Determines validation & UI control type. The list for `Options` is defined in `app.yaml`. (`Secret` is a legacy type, normalized to `ProjectVariable` + `secret: true` — see the note below.) |
+| `name` | Yes | string | `input`, `output`, `api_key` | The name of the variable. For a `VariableGroup` this is the group name, and no reference field is needed. |
+| `inputType` | Yes | enum | `InputTopic`, `OutputTopic`, `Topic`, `FreeText`, `HiddenText`, `Options`, `Secret`, `ProjectVariable`, `VariableGroup` | Determines validation & UI control type. The list for `Options` is defined in `app.yaml`. `Secret` and `ProjectVariable` are two independent mechanisms — see the note below. |
 | `description` | No | string | Free text | A brief explanation of what this variable does. |
 | `required` | No | boolean | `true` / `false` | Enforces presence of value (or secret) to start deployment. |
 | `value` | No | string | `csv-data` | Assigned value (not for project variables or secrets). |
-| `variableKey` | When `inputType=ProjectVariable` | string | `data-source-api-key` | Key looked up in the project variables store. Used for `ProjectVariable`, including secrets (with `secret: true`). |
-| `secret` | No | boolean | `true` / `false` | Marks a `ProjectVariable` value as sensitive — encrypted at rest and masked in the UI. |
+| `variableKey` | When `inputType=ProjectVariable` | string | `data-source-api-key` | Key looked up in the project variables store, including for secrets (with `secret: true`). Resolved locally from `.quix.yaml.variables`. |
+| `secret` | No | boolean | `true` / `false` | Marks a `ProjectVariable` value as sensitive — encrypted at rest and withheld from API responses. |
 | `multiline` | No | boolean | `true` | Enable multi-line editing (mostly with `FreeText`). |
-| `secretKey` | Legacy | string | `data-source-api-key` | **Legacy.** Secret reference for the old `inputType: Secret`. Superseded by `ProjectVariable` + `variableKey` + `secret: true`; normalized away on save. |
+| `secretKey` | When `inputType=Secret` | string | `data-source-api-key` | Key of the secret holding the value. Resolved locally from `.secrets`. |
 
-!!! note "Secrets"
-    Declare a secret as a `ProjectVariable` with `secret: true`, and reference its key with `variableKey` (do not put the secret in `value`). The older `inputType: Secret` + `secretKey` form is still accepted but is normalized to this shape on save.
+!!! note "Secrets: two independent mechanisms"
+
+    `inputType: Secret` and `inputType: ProjectVariable` + `secret: true` are **different systems**, both current — the CLI writes and keeps whichever one you declare, and they read from different files. Never put a sensitive value in `value`.
+
+    | Shape | Reference field | Local value file |
+    |---|---|---|
+    | `inputType: Secret` | `secretKey` | [`.secrets`](../local-development/local-secrets.md) |
+    | `inputType: ProjectVariable` + `secret: true` | `variableKey` | [`.quix.yaml.variables`](../local-development/local-yaml-variables.md) |
+
+    The API withholds the value of a secret project variable, so its local value must come from `.quix.yaml.variables`.
 
 ### Notes on Docker Image Deployments
 

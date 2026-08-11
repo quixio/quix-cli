@@ -45,13 +45,13 @@ Once the images are built, Docker Compose will create and start the containers:
 ```text
 Network githubrepo_default  Creating
 Network githubrepo_default  Created
-Container githubrepo-kafka-broker-1  Creating
+Container githubrepo-kafka_broker-1  Creating
 Container githubrepo-console-1  Creating
 Container githubrepo-console-1  Created
-Container githubrepo-kafka-broker-1  Created
+Container githubrepo-kafka_broker-1  Created
 Container githubrepo-console-1  Starting
-Container githubrepo-kafka-broker-1  Starting
-Container githubrepo-kafka-broker-1  Started
+Container githubrepo-kafka_broker-1  Starting
+Container githubrepo-kafka_broker-1  Started
 Container githubrepo-console-1  Started
 
 ✓ Open http://localhost:8080 to manage your pipeline broker
@@ -65,7 +65,7 @@ Container githubrepo-console-1  Started
 
 The `compose.local.yaml` file configures the services in your local broker instance. Here's an overview of what will be generated:
 
-- **kafka-broker**:
+- **kafka_broker**:
 
     - **build**: Specifies the context directory and Dockerfile for the Kafka broker.
 

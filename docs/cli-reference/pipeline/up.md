@@ -6,6 +6,10 @@ The `quix pipeline up` command sets up and runs your pipeline using Docker Compo
 
 If the update option is used, the command updates the `quix.yaml` file with new local applications and variables of existing deployments. The dry-run option allows you to generate the `compose.local.yaml` file without starting the containers, providing a preview of the configuration.
 
+`-k`, `--keep-variables` applies to that update pass only: variables you deleted from the `.env` file are kept in `app.yaml` instead of being removed along with them. Use it when `.env` holds only a subset of the variables your application declares.
+
+Before building, the command also rewrites each application's `<Dockerfile>.dockerignore` from the `IncludedFolders` declared in its `app.yaml`, and deletes that file when the application declares none. Pass `-p`, `--preserve-dockerignore` to keep a `.dockerignore` you maintain yourself; an application that still declares `IncludedFolders` has its file regenerated either way.
+
 Deployments are connected using variables with `VariableType` of `InputTopic` and `OutputTopic`, ensuring seamless data flow between different services.
 
 This process ensures that your pipeline is correctly configured and running with all the necessary services. For more details on the `docker compose up` command, refer to the [official Docker documentation](https://docs.docker.com/reference/cli/docker/compose/up/).
@@ -49,12 +53,12 @@ When the compose file is generated, it will start the kafka broker first:
 ```
 Starting the pipeline broker ...
 
-Executing 'docker compose -f compose.local.yaml up --build -d --remove-orphans kafka-broker'
+Executing 'docker compose -f compose.local.yaml up --build -d --remove-orphans kafka_broker'
 
- Container simplebroker-kafka-broker-1  Creating
- Container simplebroker-kafka-broker-1  Created
- Container simplebroker-kafka-broker-1  Starting
- Container simplebroker-kafka-broker-1  Started
+ Container simplebroker-kafka_broker-1  Creating
+ Container simplebroker-kafka_broker-1  Created
+ Container simplebroker-kafka_broker-1  Starting
+ Container simplebroker-kafka_broker-1  Started
 ``` 
 
 #### Updating the topics
@@ -72,9 +76,9 @@ Updating topics ...
 ```
 
 !!! tip
-    Use the options `--skip-topics` or `-s` if you don't want to skip the topic creation.
+    Use `--skip-topics` or `-s` to skip topic creation. Quix Streams may then create the topics automatically.
 
-Next, it executes `docker compose compose.local.yaml up --build -d --remove-orphans` to build and run the your application Docker containers:
+Next, it executes `docker compose -f compose.local.yaml up --build -d --remove-orphans` to build and run your application containers:
 
 ```text
 Executing 'docker compose up --build -d --remove-orphans'
@@ -113,7 +117,7 @@ The `compose.local.yaml` file configures the services in your pipeline. Here's a
       environment:
         input: f1-data
         output: hard-braking
-        Quix__Broker__Address: kafka-broker:9092
+        Quix__Broker__Address: kafka_broker:9092
       ```
 
       These environment variables are injected into the container at runtime:
@@ -122,12 +126,12 @@ The `compose.local.yaml` file configures the services in your pipeline. Here's a
 
       - **output**: Specifies the output data stream (`hard-braking`).
 
-      - **Quix__Broker__Address**: Specifies the address of the Kafka broker (`kafka-broker:9092`).
+      - **Quix__Broker__Address**: Specifies the address of the Kafka broker (`kafka_broker:9092`).
 
 
-- **kafka-broker and console**:
+- **kafka_broker and console**:
 
-    - **kafka-broker**: Installs and configures a Redpanda Kafka broker for you.
+    - **kafka_broker**: Installs and configures a Redpanda Kafka broker for you.
 
     - **console**: Provides a management interface for interacting with the Kafka broker, including necessary environment configurations.
 

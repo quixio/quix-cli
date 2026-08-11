@@ -14,6 +14,25 @@ The `quix run` command allows you to execute your Quix applications locally, pro
 
 This command is essential for maintaining a controlled and consistent environment across different stages of development, ensuring that your application functions correctly before being deployed to production.
 
+## Where the Variables Come From
+
+The application's `.env` file supplies the environment the process runs with — every section of it, so topics, free text, project variables and variable group members all arrive under the names the application reads.
+
+Secret values are the exception, because the generated `.env` deliberately leaves them blank. `quix run` resolves them as it starts the process, from the same files [`quix pipeline up`](pipeline/up.md) injects into containers:
+
+| Declared as | Value read from |
+|---|---|
+| `inputType: Secret` | [`.secrets`](../local-development/local-secrets.md), by its `secretKey` |
+| `inputType: ProjectVariable` with `secret: true` | [`.quix.yaml.variables`](../local-development/local-yaml-variables.md), by its `variableKey` |
+| A variable group member with `secret: true` | [`.quix.yaml.variables`](../local-development/local-yaml-variables.md), by the member key |
+
+Where a deployment overrides the key its application declares, the deployment being run decides which value is used — the one named by `--deployment`, or the application's only deployment. With several deployments and no `--deployment`, there is nothing to disambiguate on, so no deployment is selected and the application's own declarations apply. This is the same resolution the pipeline performs, so a local run and a container receive the same secret.
+
+A value you typed into `.env` yourself is still used when the store holds nothing for that key, so nothing forces you to populate the stores before you can run.
+
+!!! tip
+    `--verbose` prints the variables read from `.env`, before the store-resolved secrets and the Python settings are added, so it is not the full environment the process ends up with. Anything flagged secret is masked, and a store-resolved value never reaches the table at all — the output is safe to paste into an issue or a CI log.
+
 ## Example Usage
 
 ### Running Locally with Default Settings

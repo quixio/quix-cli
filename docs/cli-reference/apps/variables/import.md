@@ -4,7 +4,7 @@
 
 The `quix applications variables import` command updates the `app.yaml` file with variables from the `.env` file. This process ensures that the environment-specific configurations in the `.env` file are accurately reflected in the `app.yaml` file, which is used by your Quix applications.
 
-- **Existing Variables**: If a variable from the `.env` file matches an existing variable in the `app.yaml` file, its value will be updated only if the `replaceAppVariables` flag is set to true.
+- **Existing Variables**: If a variable from the `.env` file matches an existing variable in the `app.yaml` file, its `defaultValue` is replaced by the value from the `.env` file. This command always replaces — there is no option to import new variables while leaving existing ones alone. Values under the `### Secrets ###` and `### Project Variables ###` sections, and secret members of a variable group, are the exception: they are never overwritten, because their `defaultValue` holds a key that points at the value rather than the value itself. Every project variable is protected this way, secret or not.
 - **New Variables**: If a variable from the `.env` file does not exist in the `app.yaml` file, it will be added. The type of the new variable is determined based on its name:
   - Variables containing "output" are classified as `OutputTopic`.
   - Variables containing "input" or "topic" are classified as `InputTopic`.
@@ -40,4 +40,4 @@ This command will start an interactive process. If your current directory is not
   ✗ Cancel
 ```
 
-After selecting the application, the variables from the `.env` file will be imported into the `app.yaml` file. Existing variables in the `app.yaml` file will be updated with values from the `.env` file, while variables not defined in the `.env` file will remain untouched.
+After selecting the application, the variables from the `.env` file will be imported into the `app.yaml` file. Existing variables in the `app.yaml` file will be updated with values from the `.env` file, while variables not defined in the `.env` file will remain untouched — unless you pass `--reset`, which empties `app.yaml` of variables first, so anything absent from `.env` is gone.
