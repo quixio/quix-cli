@@ -18,6 +18,21 @@ For in-depth details on all features and commands, visit the [Quix Documentation
 
 Quix CLI can be installed on various operating systems using different methods. Below are the instructions for Linux, macOS, and Windows.
 
+### Homebrew (macOS)
+
+The easiest way to install Quix CLI on macOS is via [Homebrew](https://brew.sh):
+
+```bash
+brew tap spkis/quix-cli
+brew install quix-cli
+```
+
+To update to the latest version:
+
+```bash
+brew upgrade quix-cli
+```
+
 ### Script Installation
 
 #### For macOS:
